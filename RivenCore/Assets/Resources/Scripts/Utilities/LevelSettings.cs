@@ -13,7 +13,7 @@
 using System;
 using UnityEngine;
 
-public class Level_Settings : MonoBehaviour
+public class LevelSettings : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
@@ -34,7 +34,7 @@ public class Level_Settings : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    private Game_Instance gameInstance;
+    private GameInstance gameInstance;
 
 
     //=-----------------=
@@ -42,7 +42,7 @@ public class Level_Settings : MonoBehaviour
     //=-----------------=
     private void Start()
     {
-        gameInstance = FindObjectOfType<Game_Instance>();
+        gameInstance = FindObjectOfType<GameInstance>();
         if (!gameInstance.localPlayerCharacter)
         {
             gameInstance.CreateNewPlayerCharacter(defaultLevelGamemode, true);

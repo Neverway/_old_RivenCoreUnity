@@ -14,7 +14,7 @@ public class Entity : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public bool isPossessed;
+    public bool isPossessed; // Unused, don't really know why I have this here
 
 
     //=-----------------=

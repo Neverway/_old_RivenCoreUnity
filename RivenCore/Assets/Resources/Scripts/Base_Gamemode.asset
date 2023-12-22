@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35194962c82d2e42f96aace8091f31b6, type: 3}
-  m_Name: Menu_Gamemode
+  m_Name: Base_Gamemode
   m_EditorClassIdentifier: 
   playerCharacter: {fileID: 5542459799266477335, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
