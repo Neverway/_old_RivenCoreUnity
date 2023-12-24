@@ -52,14 +52,16 @@ public class GameInstance : MonoBehaviour
     public void CreateNewPlayerCharacter(Gamemode _gamemode)
     {
         // NEED FUNCTION TO FIND VALID PLAYER START POINT
-        localPlayerCharacter = Instantiate(_gamemode.playerCharacter, GetPlayerStartPoint()).GetComponent<Entity>();
+        var startpoint = GetPlayerStartPoint().transform;
+        localPlayerCharacter = Instantiate(_gamemode.playerCharacter, startpoint.position, startpoint.rotation).GetComponent<Entity>();
         localPlayerCharacter.isPossessed = false;
     }
     
     public void CreateNewPlayerCharacter(Gamemode _gamemode, bool _isLocalPlayer)
     {
         // NEED FUNCTION TO FIND VALID PLAYER START POINT
-        localPlayerCharacter = Instantiate(_gamemode.playerCharacter, GetPlayerStartPoint()).GetComponent<Entity>();
+        var startpoint = GetPlayerStartPoint().transform;
+        localPlayerCharacter = Instantiate(_gamemode.playerCharacter, startpoint.position, startpoint.rotation).GetComponent<Entity>();
         localPlayerCharacter.isPossessed = _isLocalPlayer;
     }
 
