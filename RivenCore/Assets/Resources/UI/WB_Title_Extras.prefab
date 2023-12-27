@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4808704303127405105}
   - component: {fileID: 6506678086327546048}
   m_Layer: 5
-  m_Name: Bttn_MainGame
+  m_Name: Bttn_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -844,7 +844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &2112516570101201449
@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 111949863081012438}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.9590163
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1907,6 +1907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6488063969766451833}
   - component: {fileID: 1327881181875435901}
+  - component: {fileID: -6323143422031469296}
   m_Layer: 5
   m_Name: WB_Title_Extras
   m_TagString: Untagged
@@ -1943,6 +1944,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5723820799935820191}
   m_CullTransparentMesh: 1
+--- !u!114 &-6323143422031469296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723820799935820191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95af4a422c76c876aacdc48436f1dea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bttn_Back: {fileID: 6506678086327546048}
 --- !u!1 &5749528216657847029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,7 +3227,7 @@ GameObject:
   - component: {fileID: 5220074437695961793}
   - component: {fileID: 1794258838415341862}
   m_Layer: 5
-  m_Name: '[Text] "Main Game"'
+  m_Name: '[Text] "Back"'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

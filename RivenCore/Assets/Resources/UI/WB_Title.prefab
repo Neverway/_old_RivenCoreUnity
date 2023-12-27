@@ -1877,6 +1877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3751048224017064207}
   - component: {fileID: 2437789706530842432}
+  - component: {fileID: -2230403489895040439}
   m_Layer: 5
   m_Name: WB_Title
   m_TagString: Untagged
@@ -1912,6 +1913,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7188767005104075587}
   m_CullTransparentMesh: 1
+--- !u!114 &-2230403489895040439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188767005104075587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01462a8c692ebb4cd98e67f9d13a2e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bttn_MainGame: {fileID: 8925088038381875649}
+  Bttn_Extras: {fileID: 7618855327056813593}
+  Bttn_Ranking: {fileID: 4023995205481974577}
+  Bttn_Settings: {fileID: 2556769393251226905}
+  Bttn_Quit: {fileID: 9151283074223067829}
+  UI_Extras: {fileID: 5723820799935820191, guid: 731bae0b7912bc22aa046df4039ed7da, type: 3}
+  UI_Ranking: {fileID: 2745800784265810973, guid: 345ae10d2c25c181aa1384f72b9cdba1, type: 3}
+  UI_Settings: {fileID: 0}
 --- !u!1 &7198247667612448556
 GameObject:
   m_ObjectHideFlags: 0

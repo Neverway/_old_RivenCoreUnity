@@ -27,6 +27,7 @@ public class GameInstance : MonoBehaviour
     //=-----------------=
     public Entity localPlayerCharacter;
     [SerializeField] private GameObject WB_Title;
+    [SerializeField] private GameObject WB_Loading;
 
 
     //=-----------------=
@@ -37,13 +38,6 @@ public class GameInstance : MonoBehaviour
     //=-----------------=
     // Internal Functions
     //=-----------------=
-    private void AddWidget(GameObject WidgetBluprint)
-    {
-        var canvas = FindObjectOfType<Canvas>();
-        var newWidget = Instantiate(WidgetBluprint);
-        newWidget.transform.SetParent(canvas.transform, false);
-        newWidget.transform.localScale = new Vector3(1, 1, 1);
-    }
 
 
     //=-----------------=
@@ -87,6 +81,14 @@ public class GameInstance : MonoBehaviour
         return null;
     }
     
+    public void AddWidget(GameObject WidgetBluprint)
+    {
+        var canvas = FindObjectOfType<Canvas>();
+        var newWidget = Instantiate(WidgetBluprint);
+        newWidget.transform.SetParent(canvas.transform, false);
+        newWidget.transform.localScale = new Vector3(1, 1, 1);
+    }
+    
     
     //=-----------------=
     // User External Functions
@@ -94,5 +96,9 @@ public class GameInstance : MonoBehaviour
     public void UI_ShowTitle()
     {
         AddWidget(WB_Title);
+    }
+    public void UI_ShowLoading()
+    {
+        AddWidget(WB_Loading);
     }
 }
