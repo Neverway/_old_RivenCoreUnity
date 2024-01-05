@@ -51,15 +51,19 @@ public class WB_Title : MonoBehaviour
         switch (button)
         {
             case "MainGame":
+                if (!sceneLoader) sceneLoader = FindObjectOfType<System_SceneLoader>();
                 sceneLoader.LoadScene("Dev_Test");
                 break;
             case "Extras":
+                if (!gameInstance) gameInstance = FindObjectOfType<GameInstance>();
                 gameInstance.AddWidget(UI_Extras);
                 break;
             case "Ranking":
+                if (!gameInstance) gameInstance = FindObjectOfType<GameInstance>();
                 gameInstance.AddWidget(UI_Ranking);
                 break;
             case "Settings":
+                if (!gameInstance) gameInstance = FindObjectOfType<GameInstance>();
                 //gameInstance.AddWidget(UI_Settings);
                 break;
             case "Quit":

@@ -8,6 +8,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class GameInstance : MonoBehaviour
@@ -28,6 +29,7 @@ public class GameInstance : MonoBehaviour
     public Entity localPlayerCharacter;
     [SerializeField] private GameObject WB_Title;
     [SerializeField] private GameObject WB_Loading;
+    [SerializeField] private GameObject WB_Pause;
 
 
     //=-----------------=
@@ -49,6 +51,7 @@ public class GameInstance : MonoBehaviour
         var startpoint = GetPlayerStartPoint().transform;
         localPlayerCharacter = Instantiate(_gamemode.playerCharacter, startpoint.position, startpoint.rotation).GetComponent<Entity>();
         localPlayerCharacter.isPossessed = false;
+        localPlayerCharacter.name = localPlayerCharacter.name.Replace("(Clone)","").Trim();
     }
     
     public void CreateNewPlayerCharacter(Gamemode _gamemode, bool _isLocalPlayer)
@@ -57,6 +60,7 @@ public class GameInstance : MonoBehaviour
         var startpoint = GetPlayerStartPoint().transform;
         localPlayerCharacter = Instantiate(_gamemode.playerCharacter, startpoint.position, startpoint.rotation).GetComponent<Entity>();
         localPlayerCharacter.isPossessed = _isLocalPlayer;
+        localPlayerCharacter.name = localPlayerCharacter.name.Replace("(Clone)","").Trim();
     }
 
     public Transform GetPlayerStartPoint()
@@ -87,6 +91,18 @@ public class GameInstance : MonoBehaviour
         var newWidget = Instantiate(WidgetBluprint);
         newWidget.transform.SetParent(canvas.transform, false);
         newWidget.transform.localScale = new Vector3(1, 1, 1);
+        newWidget.name = newWidget.name.Replace("(Clone)","").Trim();
+    }
+    
+    public GameObject GetWidget(string WidgetName)
+    {
+        var canvas = FindObjectOfType<Canvas>();
+        for (int i = 0; i < canvas.transform.childCount; i++)
+        {
+            var widget = canvas.transform.GetChild(i).gameObject;
+            if (widget.name == WidgetName) return widget;
+        }
+        return null;
     }
     
     
@@ -100,5 +116,16 @@ public class GameInstance : MonoBehaviour
     public void UI_ShowLoading()
     {
         AddWidget(WB_Loading);
+    }
+    public void UI_ShowPause()
+    {
+        if (GetWidget("WB_Pause") == null)
+        {
+            AddWidget(WB_Pause);
+        }
+        else
+        {
+            Destroy(GetWidget("WB_Pause"));
+        }
     }
 }
