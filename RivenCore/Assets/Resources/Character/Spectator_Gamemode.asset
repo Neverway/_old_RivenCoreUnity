@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35194962c82d2e42f96aace8091f31b6, type: 3}
   m_Name: Spectator_Gamemode
   m_EditorClassIdentifier: 
-  playerCharacter: {fileID: 5542459799266477335, guid: 67a479da681461565916a1a60abd0689, type: 3}
+  playerCharacter: {fileID: 983150482109662942, guid: 060c198bf06a3a427bef8ddaa5d985d6, type: 3}

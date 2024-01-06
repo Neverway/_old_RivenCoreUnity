@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label tabindex="-1" text="Controller" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
+    <uie:ObjectField label="Current Controller" tooltip="This is what controller is currently possesing this entity, this will change if for instance, a spectator posseses an NPC" type="Entity_Controller, Assembly-CSharp" binding-path="currentController" style="border-left-color: rgb(0, 153, 255); border-left-width: 5px;" />
+    <uie:ObjectField label="Fallback Controller" tooltip="This is the default controller of this entity. When the current controller is cleared, this will become the new current controller. This should probably never change during runtime." type="Entity_Controller, Assembly-CSharp" binding-path="fallbackController" style="border-left-color: rgb(255, 119, 0); border-left-width: 5px;" />
+    <ui:Button text="Create New Controller" display-tooltip-when-elided="true" />
+    <ui:Label tabindex="-1" text="Stats" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px; -unity-text-align: upper-left;" />
+    <uie:ObjectField label="Stats" tooltip="This is the data of the entity, like their name, how fast they move, their max health, etc." type="Entity_Stats, Assembly-CSharp" binding-path="stats" />
+    <ui:FloatField label="Movement Multiplier" value="1" tooltip="This will multiply the current movement speed of the entity. This is usually set by external scripts during runtime, like if you have a speed boost trigger." binding-path="movementMultiplier" />
+    <ui:Button text="Create New Stats" display-tooltip-when-elided="true" />
+    <ui:VisualElement style="height: 5px; border-top-width: 2px; border-top-color: rgba(0, 0, 0, 0.3); margin-top: 5px;" />
+    <uie:PropertyField binding-path="groundMask" label="Ground Mask" />
+    <ui:Foldout text="Debuging" name="Foldout" value="false" focusable="false">
+        <ui:FloatField label="Current Health" name="FloatField" readonly="true" binding-path="currentHealth" />
+        <ui:FloatField label="Current Movement Speed" binding-path="currentMovementSpeed" readonly="true" />
+        <ui:Vector2Field label="Movement Direction" binding-path="movementDirection" name="Vector2Field" />
+        <ui:Vector2Field label="Facing Direction" binding-path="facingDirection" />
+        <ui:Toggle label="Paused" name="Toggle" binding-path="paused" />
+        <ui:Toggle label="Invulnerable" name="Toggle" binding-path="invulnerable" />
+        <ui:Toggle label="Grounded" name="Toggle" binding-path="isGrounded" />
+        <ui:IntegerField label="Double Jumps" value="0" readonly="true" binding-path="currentDoubleJumps" />
+        <uie:ObjectField label="Player Controller" tooltip="This is the player controller type used to see if the current controller is controlled by a player" type="Entity_Controller_Player, Assembly-CSharp" binding-path="playerController" style="border-left-color: rgb(0, 153, 255); border-left-width: 5px;" />
+    </ui:Foldout>
+</ui:UXML>

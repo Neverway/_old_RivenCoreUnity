@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2416759698645315920}
   - component: {fileID: 4980226983612558421}
   - component: {fileID: 5560401287924879969}
+  - component: {fileID: 2929944446092088672}
   m_Layer: 0
   m_Name: Game Instance
   m_TagString: Untagged
@@ -77,3 +78,18 @@ MonoBehaviour:
   delayBeforeSceneChange: 0.25
   minRequiredLoadTime: 1
   loadingScreenSceneID: _Travel
+--- !u!114 &2929944446092088672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579284705886236655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6404b549e40a47f11bb1adc141a5c298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  primaryChannel: {fileID: 0}
+  secondaryChannel: {fileID: 0}
