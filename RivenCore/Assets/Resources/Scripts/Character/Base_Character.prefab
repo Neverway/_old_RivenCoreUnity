@@ -140,9 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75174819a141df1c58ca071f9515de35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentController: {fileID: 0}
-  fallbackController: {fileID: 0}
-  stats: {fileID: 0}
+  currentController: {fileID: 11400000, guid: 9ed85f81ebb0e6d1a81146df3053af55, type: 2}
+  fallbackController: {fileID: 11400000, guid: 9ed85f81ebb0e6d1a81146df3053af55, type: 2}
+  stats: {fileID: 11400000, guid: b6ad207926a38db798964a4f77412e57, type: 2}
   movementMultiplier: 1
   groundMask:
     serializedVersion: 2
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Spectator
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 9137317661361399833}
 --- !u!82 &8827679789710251220

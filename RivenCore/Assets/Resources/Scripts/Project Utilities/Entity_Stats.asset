@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25c8d6596867b33fb28a8dafca3d6bc, type: 3}
+  m_Name: Entity_Stats
+  m_EditorClassIdentifier: 
+  characterName: ???
+  animationController: {fileID: 0}
+  walkSpeed: 3
+  runSpeed: 7
+  maxHealth: 100
+  invulnerabilityDuration: 1
+  teamGroups: []
+  partyPriority: 0
+  groundDrag: 6
+  airDrag: 2
+  aerialControlMultiplier: 0.6
+  entityHeight: 1
+  jumpForce: 15
+  jumpCooldown: 0.25
+  fallRate: 32
+  doubleJumpForce: 25
+  doubleJumps: 0
+  sounds:
+    heal: {fileID: 0}
+    hurt: {fileID: 0}
+    step: {fileID: 0}
+    die: {fileID: 0}
