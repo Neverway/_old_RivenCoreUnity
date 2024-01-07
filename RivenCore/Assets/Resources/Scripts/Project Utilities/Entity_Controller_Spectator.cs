@@ -10,7 +10,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Spectator_Blueprint : MonoBehaviour
+[CreateAssetMenu(fileName="Entity_Controller_Spectator", menuName="Neverway/ScriptableObjects/Entity/Controller/Spectator")]
+public class Entity_Controller_Spectator : Entity_Controller
 {
     //=-----------------=
     // Public Variables
@@ -20,35 +21,34 @@ public class Spectator_Blueprint : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
-
-
+    
+    
     //=-----------------=
     // Reference Variables
     //=-----------------=
     private GameInstance gameInstance;
-    private PlayerInput playerInput;
-
-
-    //=-----------------=
-    // Mono Functions
-    //=-----------------=
-    private void Start()
-    {
-        gameInstance = FindObjectOfType<GameInstance>();
-        playerInput = GetComponent<PlayerInput>();
-    }
-
-    public void OnPause()
-    {
-    }
-
-    private void Update()
-    {
-    }
+    public InputActions.SpectatorActions spectatorActions;
+    
 
     //=-----------------=
     // Internal Functions
     //=-----------------=
+    public override void EntityAwake(Entity entity)
+    {
+        gameInstance = FindObjectOfType<GameInstance>();
+        spectatorActions = new InputActions().Spectator;
+        spectatorActions.Enable();
+    }
+    
+    public override void Think(Entity entity)
+    {
+        if (!entity.isPossessed) return;
+        
+        if (spectatorActions.Pause.WasPressedThisFrame())
+        {
+            gameInstance.UI_ShowPause();
+        }
+    }
 
 
     //=-----------------=

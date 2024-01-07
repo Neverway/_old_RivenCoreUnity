@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f437682b907b17083e94360f13f642, type: 3}
-  m_Name: Entity_Controller_Player
+  m_Script: {fileID: 11500000, guid: 8c9609622af4e76eca05f91bb7fc03b2, type: 3}
+  m_Name: Entity_Controller_Base
   m_EditorClassIdentifier: 

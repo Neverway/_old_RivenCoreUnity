@@ -102,7 +102,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7183290310932379079}
   - component: {fileID: -8446112204308764326}
-  - component: {fileID: 5921449660255741128}
   - component: {fileID: 8827679789710251220}
   - component: {fileID: 1311118280544114163}
   m_Layer: 0
@@ -140,8 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75174819a141df1c58ca071f9515de35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentController: {fileID: 11400000, guid: 9ed85f81ebb0e6d1a81146df3053af55, type: 2}
-  fallbackController: {fileID: 11400000, guid: 9ed85f81ebb0e6d1a81146df3053af55, type: 2}
+  currentController: {fileID: 0}
+  fallbackController: {fileID: 11400000, guid: 07ed7122b25f7e4c099060dcb4ec8483, type: 2}
   stats: {fileID: 11400000, guid: b6ad207926a38db798964a4f77412e57, type: 2}
   movementMultiplier: 1
   groundMask:
@@ -157,36 +156,6 @@ MonoBehaviour:
   isGrounded: 0
   currentDoubleJumps: 0
   isPossessed: 0
---- !u!114 &5921449660255741128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5542459799266477335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 5fa0b253babc4d73ea861c5528a17d2d, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Spectator
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 9137317661361399833}
 --- !u!82 &8827679789710251220
 AudioSource:
   m_ObjectHideFlags: 0

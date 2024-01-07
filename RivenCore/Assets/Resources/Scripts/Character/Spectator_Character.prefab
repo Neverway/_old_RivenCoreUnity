@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8446112204308764326, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
+      propertyPath: fallbackController
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ed85f81ebb0e6d1a81146df3053af55, type: 2}
     - target: {fileID: 5542459799266477335, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: m_Name
-      value: Base_Character Variant
+      value: Spectator_Character
       objectReference: {fileID: 0}
     - target: {fileID: 7183290310932379079, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: m_LocalPosition.x

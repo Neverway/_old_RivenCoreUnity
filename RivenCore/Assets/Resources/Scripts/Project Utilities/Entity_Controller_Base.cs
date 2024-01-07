@@ -9,8 +9,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName="Entity_Controller_Player", menuName="Neverway/ScriptableObjects/Entity/Controller/Player")]
-public class Entity_Controller_Player : Entity_Controller
+[CreateAssetMenu(fileName="Entity_Controller_Base", menuName="Neverway/ScriptableObjects/Entity/Controller/Base")]
+public class Entity_Controller_Base : Entity_Controller
 {
     //=-----------------=
     // Public Variables
@@ -20,8 +20,6 @@ public class Entity_Controller_Player : Entity_Controller
     //=-----------------=
     // Private Variables
     //=-----------------=
-    private Vector2 movement;
-    private bool is3DEntity;
     
     
     //=-----------------=
