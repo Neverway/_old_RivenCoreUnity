@@ -37,6 +37,10 @@ public class Entity_Controller_Base : Entity_Controller
     public override void Think(Entity entity)
     {
     }
+    
+    public override void FixedRateThink(Entity entity)
+    {
+    }
 
 
     //=-----------------=
