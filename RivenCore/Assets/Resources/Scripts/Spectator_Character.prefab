@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: fallbackController
       value: 
       objectReference: {fileID: 11400000, guid: 9ed85f81ebb0e6d1a81146df3053af55, type: 2}
+    - target: {fileID: 49327090878398165, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
+      propertyPath: fallbackController
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ed85f81ebb0e6d1a81146df3053af55, type: 2}
     - target: {fileID: 5542459799266477335, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: m_Name
       value: Spectator_Character

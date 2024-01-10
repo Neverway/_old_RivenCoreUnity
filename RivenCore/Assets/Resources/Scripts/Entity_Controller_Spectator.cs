@@ -44,26 +44,21 @@ public class Entity_Controller_Spectator : Entity_Controller
     {
         if (!entity.isPossessed) return;
         
-        if (spectatorActions.Pause.WasPressedThisFrame())
-        {
-            gameInstance.UI_ShowPause();
-        }
+        if (spectatorActions.Pause.WasPressedThisFrame()) gameInstance.UI_ShowPause();
         
-        // Add movement code here
-        Debug.Log(spectatorActions.Move.ReadValue<Vector2>());
+        if (entity.isPaused) return;
+        
+        var movement = spectatorActions.Move.ReadValue<Vector2>();
+        entity.Move(new Vector3(movement.x, 0, movement.y), "translate");
+        
+        if (spectatorActions.Ascend.IsPressed()) entity.Move(new Vector3(0, 1, 0), "translate");
+        if (spectatorActions.Descend.IsPressed()) entity.Move(new Vector3(0, -1, 0), "translate");
     }
     
     public override void FixedRateThink(Entity entity)
     {
         if (!entity.isPossessed) return;
-        
-        if (spectatorActions.Pause.WasPressedThisFrame())
-        {
-            gameInstance.UI_ShowPause();
-        }
-        
-        // Add movement code here
-        Debug.Log(spectatorActions.Move.ReadValue<Vector2>());
+        if (entity.isPaused) return;
     }
 
 

@@ -12,3 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3780b5c0f9b14ce4b60140437eb07bbb, type: 3}
   m_Name: Entity_CharacterStats_Base
   m_EditorClassIdentifier: 
+  stats:
+    characterName: 
+    team: 
+    health: 100
+    movementSpeed: 5
+    animator: {fileID: 0}
+    sounds:
+      hurt: {fileID: 0}
+      heal: {fileID: 0}
+      death: {fileID: 0}
+      alerted: {fileID: 0}

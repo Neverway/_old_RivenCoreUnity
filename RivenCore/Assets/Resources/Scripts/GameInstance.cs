@@ -40,6 +40,13 @@ public class GameInstance : MonoBehaviour
     //=-----------------=
     // Internal Functions
     //=-----------------=
+    private void SetAllEntitiesIsPaused(bool _isPaused)
+    {
+        foreach (var entity in FindObjectsOfType<Entity>())
+        {
+            entity.isPaused = _isPaused;
+        }
+    }
 
 
     //=-----------------=
@@ -122,10 +129,12 @@ public class GameInstance : MonoBehaviour
         if (GetWidget("WB_Pause") == null)
         {
             AddWidget(WB_Pause);
+            SetAllEntitiesIsPaused(true);
         }
         else
         {
             Destroy(GetWidget("WB_Pause"));
+            SetAllEntitiesIsPaused(false);
         }
     }
 }

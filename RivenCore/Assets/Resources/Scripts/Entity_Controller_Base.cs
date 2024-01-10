@@ -36,10 +36,14 @@ public class Entity_Controller_Base : Entity_Controller
     
     public override void Think(Entity entity)
     {
+        if (!entity.isPossessed) return;
+        if (entity.isPaused) return;
     }
     
     public override void FixedRateThink(Entity entity)
     {
+        if (!entity.isPossessed) return;
+        if (entity.isPaused) return;
     }
 
 

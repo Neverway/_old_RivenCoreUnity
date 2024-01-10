@@ -17,7 +17,7 @@ public class AudioVarienceModulator : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    [SerializeField] private Vector2 pitchVariance;
+    [SerializeField] private Vector2 pitchVariance = new Vector2(0.8f,1.2f);
     [SerializeField] private bool delayedPlayOnAwake;
     [SerializeField] private float playOnAwakeDelay;
 

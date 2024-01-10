@@ -53,6 +53,24 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ascend"",
+                    ""type"": ""Button"",
+                    ""id"": ""0d1d8865-b9c1-4463-a87d-55c8c1d25d81"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Descend"",
+                    ""type"": ""Button"",
+                    ""id"": ""47e25114-af47-4716-b92d-0c3668ec75a0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -297,6 +315,50 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c30f56b5-d408-44d0-9b67-8ed953d53a90"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Ascend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""946ade0f-069c-457b-a4b5-e43b3ae12fe2"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Ascend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3cef0753-5e2b-4051-8883-2678ceb5a551"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Descend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f8b5780-1db3-475b-8799-57dedb8c1ebe"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Descend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -336,6 +398,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Spectator_Move = m_Spectator.FindAction("Move", throwIfNotFound: true);
         m_Spectator_Look = m_Spectator.FindAction("Look", throwIfNotFound: true);
         m_Spectator_Pause = m_Spectator.FindAction("Pause", throwIfNotFound: true);
+        m_Spectator_Ascend = m_Spectator.FindAction("Ascend", throwIfNotFound: true);
+        m_Spectator_Descend = m_Spectator.FindAction("Descend", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -400,6 +464,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Spectator_Move;
     private readonly InputAction m_Spectator_Look;
     private readonly InputAction m_Spectator_Pause;
+    private readonly InputAction m_Spectator_Ascend;
+    private readonly InputAction m_Spectator_Descend;
     public struct SpectatorActions
     {
         private @InputActions m_Wrapper;
@@ -407,6 +473,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Spectator_Move;
         public InputAction @Look => m_Wrapper.m_Spectator_Look;
         public InputAction @Pause => m_Wrapper.m_Spectator_Pause;
+        public InputAction @Ascend => m_Wrapper.m_Spectator_Ascend;
+        public InputAction @Descend => m_Wrapper.m_Spectator_Descend;
         public InputActionMap Get() { return m_Wrapper.m_Spectator; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -425,6 +493,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Ascend.started += instance.OnAscend;
+            @Ascend.performed += instance.OnAscend;
+            @Ascend.canceled += instance.OnAscend;
+            @Descend.started += instance.OnDescend;
+            @Descend.performed += instance.OnDescend;
+            @Descend.canceled += instance.OnDescend;
         }
 
         private void UnregisterCallbacks(ISpectatorActions instance)
@@ -438,6 +512,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Ascend.started -= instance.OnAscend;
+            @Ascend.performed -= instance.OnAscend;
+            @Ascend.canceled -= instance.OnAscend;
+            @Descend.started -= instance.OnDescend;
+            @Descend.performed -= instance.OnDescend;
+            @Descend.canceled -= instance.OnDescend;
         }
 
         public void RemoveCallbacks(ISpectatorActions instance)
@@ -478,5 +558,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnAscend(InputAction.CallbackContext context);
+        void OnDescend(InputAction.CallbackContext context);
     }
 }
