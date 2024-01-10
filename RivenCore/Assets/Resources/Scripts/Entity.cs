@@ -22,7 +22,7 @@
 // and network player driven entities.
 //
 //=============================================================================
-
+/*
 
 using System;
 using System.Collections;
@@ -351,3 +351,4 @@ public class Entity : MonoBehaviour
         return rotation;
     }
 }
+*/

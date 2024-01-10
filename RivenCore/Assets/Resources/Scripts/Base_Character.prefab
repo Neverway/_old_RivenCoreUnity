@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7183290310932379079}
-  - component: {fileID: -8446112204308764326}
+  - component: {fileID: 49327090878398165}
   - component: {fileID: 8827679789710251220}
   - component: {fileID: 1311118280544114163}
   m_Layer: 0
@@ -127,7 +127,7 @@ Transform:
   - {fileID: 5880410918590927608}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8446112204308764326
+--- !u!114 &49327090878398165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,26 +136,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 5542459799266477335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75174819a141df1c58ca071f9515de35, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f4ab43838dfdc82a58f9b08920cc46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentController: {fileID: 0}
   fallbackController: {fileID: 11400000, guid: 07ed7122b25f7e4c099060dcb4ec8483, type: 2}
-  stats: {fileID: 11400000, guid: b6ad207926a38db798964a4f77412e57, type: 2}
-  movementMultiplier: 1
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 0
-  paused: 0
-  currentMovementSpeed: 0
-  currentHealth: 0
-  currentGold: 0
-  movementDirection: {x: 0, y: 0}
-  facingDirection: {x: 0, y: 0}
-  invulnerable: 0
-  isGrounded: 0
-  currentDoubleJumps: 0
+  characterStats: {fileID: 11400000, guid: 4a1b075b1a888c5b9a5e2837ab5adf12, type: 2}
+  currentStats:
+    characterName: 
+    team: 
+    health: 0
+    movementSpeed: 0
+    animator: {fileID: 0}
+    sounds:
+      hurt: {fileID: 0}
+      heal: {fileID: 0}
+      death: {fileID: 0}
+      alerted: {fileID: 0}
   isPossessed: 0
+  isPaused: 0
 --- !u!82 &8827679789710251220
 AudioSource:
   m_ObjectHideFlags: 0
