@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f437682b907b17083e94360f13f642, type: 3}
-  m_Name: Entity_Controller_Spectator
+  m_Script: {fileID: 11500000, guid: 35194962c82d2e42f96aace8091f31b6, type: 3}
+  m_Name: Spectator3D_Gamemode
   m_EditorClassIdentifier: 
+  playerCharacter: {fileID: 983150482109662942, guid: 060c198bf06a3a427bef8ddaa5d985d6, type: 3}

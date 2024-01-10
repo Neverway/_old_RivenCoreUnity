@@ -10,8 +10,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(fileName="Entity_Controller_Spectator", menuName="Neverway/ScriptableObjects/Entity/Controller/Spectator")]
-public class Entity_Controller_Spectator : Entity_Controller
+[CreateAssetMenu(fileName="Entity_Controller_Spectator3D", menuName="Neverway/ScriptableObjects/Entity/Controller/Spectator3D")]
+public class Entity_Controller_Spectator3D : Entity_Controller
 {
     //=-----------------=
     // Public Variables
