@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Entity_CharacterStats_Fox
   m_EditorClassIdentifier: 
   stats:
-    characterName: 
-    team: 
-    health: 0
-    movementSpeed: 6
+    characterName: Fox
+    team: Howelfen
+    health: 100
+    movementSpeed: 5
+    walkSpeed: 5
+    sprintSpeed: 7
     animator: {fileID: 9100000, guid: 3e75189684fc1a4b3a190287119ceaba, type: 2}
     sounds:
       hurt: {fileID: 0}

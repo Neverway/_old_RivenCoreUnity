@@ -20,6 +20,8 @@ public class Entity_Stats
     public string team;
     public float health;
     public float movementSpeed;
+    public float walkSpeed;
+    public float sprintSpeed;
     public RuntimeAnimatorController animator;
     public Sounds sounds;
 

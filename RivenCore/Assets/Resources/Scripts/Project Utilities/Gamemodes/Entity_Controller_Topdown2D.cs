@@ -51,10 +51,11 @@ public class Entity_Controller_Topdown2D : Entity_Controller
     
     public override void Think(Entity entity)
     {
+        Debug.Log(entity.currentStats.movementSpeed);
         if (!entity.isPossessed) return;
         if (topdown2DActions.Pause.WasPressedThisFrame()) gameInstance.UI_ShowPause();
         if (entity.isPaused) return;
-        // Add movement code here
+        entity.currentStats.movementSpeed = topdown2DActions.Action.IsPressed() ? entity.currentStats.sprintSpeed : entity.currentStats.walkSpeed; 
         movementDirection = topdown2DActions.Move.ReadValue<Vector2>();
     }
     
@@ -70,6 +71,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
     {
         entityRigidbody2D = entity.GetComponent<Rigidbody2D>();
         animator = entity.GetComponent<Animator>();
+        entity.currentStats = entity.characterStats.stats;
     }
     
     private void UpdateMovement(Entity entity)

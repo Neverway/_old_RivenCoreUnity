@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Entity_CharacterStats_Miyu
   m_EditorClassIdentifier: 
   stats:
-    characterName: 
-    team: 
-    health: 0
-    movementSpeed: 6
+    characterName: Miyu
+    team: Howelfen
+    health: 100
+    movementSpeed: 5
+    walkSpeed: 5
+    sprintSpeed: 7
     animator: {fileID: 9100000, guid: 89ad8ef3336ee59f1983f6a47cf341e1, type: 2}
     sounds:
       hurt: {fileID: 0}

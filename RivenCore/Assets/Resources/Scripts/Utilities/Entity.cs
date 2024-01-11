@@ -39,8 +39,7 @@ public class Entity : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    [Tooltip(
-        "The current controller that's driving this entity, can be swapped during runtime for things like cutscenes or a possession-like game mechanic")]
+    [Tooltip("The current controller that's driving this entity, can be swapped during runtime for things like cutscenes or a possession-like game mechanic")]
     public Entity_Controller currentController;
 
     [Tooltip("The default controller for this entities gamemode")]
@@ -79,10 +78,8 @@ public class Entity : MonoBehaviour
     private void Awake()
     {
         VerifyCurrentController();
+        GetCharacterStats();
         currentController.EntityAwake(this);
-        currentStats = characterStats.stats;
-        if (GetComponent<Animator>() && characterStats.stats.animator)
-            GetComponent<Animator>().runtimeAnimatorController = characterStats.stats.animator;
     }
 
     private void Update()
@@ -107,6 +104,12 @@ public class Entity : MonoBehaviour
             Debug.LogError(gameObject.name +
                            "'s 'Entity' script requires a 'fallbackController' but none was specified!");
         currentController = fallbackController;
+    }
+
+    private void GetCharacterStats()
+    {
+        GetComponent<Animator>().runtimeAnimatorController = characterStats.stats.animator;
+        currentStats = characterStats.stats;
     }
 
 
