@@ -1,0 +1,11 @@
+What do these folders mean?
+Components – Scripts that can be imported into any project, and are intended to be attached to game objects in the current project
+
+Project – Scripts created for the current project with no real intention on being used elsewhere
+
+Project Utilities – Scripts that can be imported into any project, but may require a little bit of setup or code modification for use in the current project
+
+Utilities – Scripts that can be imported into any project, the code should not be modified only referenced, but the objects they are attached to may provide configuration options
+
+
+

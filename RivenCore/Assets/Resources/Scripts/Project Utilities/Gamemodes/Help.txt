@@ -1,0 +1,13 @@
+How do I create a new character object/gamemode?
+1. Drag the Base_Character prefab into the scene
+2. Modify it to fit your gamemodes character (including renaming the game object to {ModeName}_Character)
+3. Create a prefab variant out of the new character object
+4. Delete it from the scene
+
+5. Duplicate the Entity_Controller_Base script
+6. Rename the script, class, and file name to Entity_Controller_{ModeName}, and rename menu name's "/Base" to "/{ModeName}"
+7. On the entity component of the character, assign the newly created controller
+8. You can now modify the Entity_Controller_{ModeName} script to fit your needs
+
+9. Create a new character stats by right click Neverway/ScriptableObjects/Entity/CharacterStats
+10. Change the values to meet your requirements and assign it on the entity component of the character prefab varient

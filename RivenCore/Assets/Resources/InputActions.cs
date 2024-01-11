@@ -361,6 +361,226 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""TopDown2D"",
+            ""id"": ""485d3547-5cf4-4532-8b1b-c2cb4a3b79db"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""edc9a795-5252-4e7c-b215-7c696cd69dca"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""InvertVector2(invertX=false,invertY=false),ScaleVector2"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""0a69ec40-7be0-45d0-875a-9ca9ce9618d7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""158c174f-54bb-4182-b97b-7a89a2bbd22b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""2ca22a01-323e-4fa6-82f2-69e499440b55"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""3b65cb76-d7d9-4209-95e1-485e42ad59a9"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e47e8442-0c0b-4f59-ab77-7e57395e7130"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Keyboard&Mouse"",
+                    ""id"": ""4368fad4-dcc2-48cf-9467-a2ecb94cb6bf"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""3245c815-14c8-4b3a-a19e-7f4c43fe73ca"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""6b67de67-c1b9-42e5-afc4-a31cfbddd28f"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""97a32fea-239b-4a8e-b702-4f4e5194f513"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""459ead7b-e305-4b4e-841e-2af00037c821"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Gamepad"",
+                    ""id"": ""88c6a7ef-c029-4d55-8ecf-d912d9ee1984"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""cca73af3-b8bd-4dbb-a335-692131590f45"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""f84a3695-fd51-40be-9223-bcb5a7685bad"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""3770c718-7561-4822-9407-f1048f0c16b6"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""95c5154b-71bb-48bf-86be-b46f9ad99e36"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64926b93-3af8-411e-8639-b981b3f98917"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a3072a5-c67f-47b9-8e44-012058066b92"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c8302c4-2198-4250-8773-840c884445bb"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e578ed08-c102-4515-a4b9-931cd2c183ac"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -400,6 +620,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Spectator_Pause = m_Spectator.FindAction("Pause", throwIfNotFound: true);
         m_Spectator_Ascend = m_Spectator.FindAction("Ascend", throwIfNotFound: true);
         m_Spectator_Descend = m_Spectator.FindAction("Descend", throwIfNotFound: true);
+        // TopDown2D
+        m_TopDown2D = asset.FindActionMap("TopDown2D", throwIfNotFound: true);
+        m_TopDown2D_Move = m_TopDown2D.FindAction("Move", throwIfNotFound: true);
+        m_TopDown2D_Pause = m_TopDown2D.FindAction("Pause", throwIfNotFound: true);
+        m_TopDown2D_Interact = m_TopDown2D.FindAction("Interact", throwIfNotFound: true);
+        m_TopDown2D_Action = m_TopDown2D.FindAction("Action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -535,6 +761,76 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public SpectatorActions @Spectator => new SpectatorActions(this);
+
+    // TopDown2D
+    private readonly InputActionMap m_TopDown2D;
+    private List<ITopDown2DActions> m_TopDown2DActionsCallbackInterfaces = new List<ITopDown2DActions>();
+    private readonly InputAction m_TopDown2D_Move;
+    private readonly InputAction m_TopDown2D_Pause;
+    private readonly InputAction m_TopDown2D_Interact;
+    private readonly InputAction m_TopDown2D_Action;
+    public struct TopDown2DActions
+    {
+        private @InputActions m_Wrapper;
+        public TopDown2DActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_TopDown2D_Move;
+        public InputAction @Pause => m_Wrapper.m_TopDown2D_Pause;
+        public InputAction @Interact => m_Wrapper.m_TopDown2D_Interact;
+        public InputAction @Action => m_Wrapper.m_TopDown2D_Action;
+        public InputActionMap Get() { return m_Wrapper.m_TopDown2D; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TopDown2DActions set) { return set.Get(); }
+        public void AddCallbacks(ITopDown2DActions instance)
+        {
+            if (instance == null || m_Wrapper.m_TopDown2DActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_TopDown2DActionsCallbackInterfaces.Add(instance);
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+            @Action.started += instance.OnAction;
+            @Action.performed += instance.OnAction;
+            @Action.canceled += instance.OnAction;
+        }
+
+        private void UnregisterCallbacks(ITopDown2DActions instance)
+        {
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+            @Action.started -= instance.OnAction;
+            @Action.performed -= instance.OnAction;
+            @Action.canceled -= instance.OnAction;
+        }
+
+        public void RemoveCallbacks(ITopDown2DActions instance)
+        {
+            if (m_Wrapper.m_TopDown2DActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ITopDown2DActions instance)
+        {
+            foreach (var item in m_Wrapper.m_TopDown2DActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_TopDown2DActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public TopDown2DActions @TopDown2D => new TopDown2DActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -560,5 +856,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnAscend(InputAction.CallbackContext context);
         void OnDescend(InputAction.CallbackContext context);
+    }
+    public interface ITopDown2DActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnAction(InputAction.CallbackContext context);
     }
 }
