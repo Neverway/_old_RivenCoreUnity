@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Sys_LoadingBar
   layers:
   - Default
   - TransparentFX
@@ -11,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Depth Layer 1
+  - Depth Layer 2
+  - Depth Layer 3
   - 
   - 
   - 
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Depth Layer 1
+    uniqueID: 3275856515
+    locked: 0
+  - name: Depth Layer 2
+    uniqueID: 4006931597
+    locked: 0
+  - name: Depth Layer 3
+    uniqueID: 1083045315
+    locked: 0
+  - name: Trigger
+    uniqueID: 4007127635
     locked: 0

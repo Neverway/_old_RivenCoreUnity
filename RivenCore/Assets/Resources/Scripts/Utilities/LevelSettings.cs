@@ -72,6 +72,8 @@ public class LevelSettings : MonoBehaviour
             if (distanceToEntity >= deathBarrierRange || distanceToEntity <= (deathBarrierRange * -1))
             {
                 Destroy(_entity.gameObject);
+                // Fail-Safe: If the local player character was the out of bounds entity, spawn the default character specified for the level
+                if (!gameInstance.localPlayerCharacter) gameInstance.CreateNewPlayerCharacter(defaultLevelGamemode, true);
             }
         }
     }
