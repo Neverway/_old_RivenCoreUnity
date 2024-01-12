@@ -51,7 +51,6 @@ public class Entity_Controller_Topdown2D : Entity_Controller
     
     public override void Think(Entity entity)
     {
-        Debug.Log(entity.currentStats.movementSpeed);
         if (!entity.isPossessed) return;
         if (topdown2DActions.Pause.WasPressedThisFrame()) gameInstance.UI_ShowPause();
         if (entity.isPaused) return;
