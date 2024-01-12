@@ -42,21 +42,17 @@ public class Trigger_LayerChange : MonoBehaviour
         if (other.transform.parent.GetComponent<Entity>())
         {
             var entity = other.transform.parent.GetComponent<Entity>();
-            Debug.Log($"{entity.currentStats.characterName}");
             switch (targetLayer)
             {
                 case 0:
-                    Debug.Log($"{entity.currentStats.characterName} switched to Layer 1");
                     other.gameObject.layer = 6;
                     entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 1";
                     break;
                 case 1:
-                    Debug.Log($"{entity.currentStats.characterName} switched to Layer 2");
                     other.gameObject.layer = 7;
                     entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 2";
                     break;
                 case 2:
-                    Debug.Log($"{entity.currentStats.characterName} switched to Layer 3");
                     other.gameObject.layer = 8;
                     entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 3";
                     break;
