@@ -39,28 +39,26 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.parent.GetComponent<Entity>())
+        if (!other.CompareTag("Entity")) return;
+        var entity = other.transform.parent.GetComponent<Entity>();
+        var entityPos = entity.transform.position;
+        switch (targetLayer)
         {
-            var entity = other.transform.parent.GetComponent<Entity>();
-            var entityPos = entity.transform.position;
-            switch (targetLayer)
-            {
-                case 0:
-                    other.gameObject.layer = 6;
-                    entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 1";
-                    entity.transform.position = new Vector3(entityPos.x, entityPos.y, 0);
-                    break;
-                case 1:
-                    other.gameObject.layer = 7;
-                    entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 2";
-                    entity.transform.position = new Vector3(entityPos.x, entityPos.y, -1);
-                    break;
-                case 2:
-                    other.gameObject.layer = 8;
-                    entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 3";
-                    entity.transform.position = new Vector3(entityPos.x, entityPos.y, -2);
-                    break;
-            }
+            case 0:
+                other.gameObject.layer = 6;
+                entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 1";
+                entity.transform.position = new Vector3(entityPos.x, entityPos.y, 0);
+                break;
+            case 1:
+                other.gameObject.layer = 7;
+                entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 2";
+                entity.transform.position = new Vector3(entityPos.x, entityPos.y, -1);
+                break;
+            case 2:
+                other.gameObject.layer = 8;
+                entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 3";
+                entity.transform.position = new Vector3(entityPos.x, entityPos.y, -2);
+                break;
         }
     }
 
