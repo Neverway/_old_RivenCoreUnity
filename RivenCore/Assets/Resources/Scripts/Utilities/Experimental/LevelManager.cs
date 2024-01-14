@@ -34,8 +34,6 @@ public class LevelManager : MonoBehaviour
     //=-----------------=
     [SerializeField] private Button Bttn_New, Bttn_Load, Bttn_Save;
 
-    [SerializeField] private InputField InptFld_levelName;
-
 
     //=-----------------=
     // Mono Functions

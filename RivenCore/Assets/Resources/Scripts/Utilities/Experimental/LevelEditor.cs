@@ -8,6 +8,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
@@ -35,6 +36,7 @@ public class LevelEditor : MonoBehaviour
 
     public int selectedTileIndex;
     public int selectedHotbarTile;
+    public bool inventoryOpen;
 
 
     //=-----------------=
@@ -46,6 +48,8 @@ public class LevelEditor : MonoBehaviour
     [SerializeField] private Image[] Img_Tile;
 
     [SerializeField] private int[] hotbarTiles;
+    [SerializeField] private TMP_Text debugText;
+    [SerializeField] private GameObject inventory;
 
 
     //=-----------------=
@@ -82,6 +86,7 @@ public class LevelEditor : MonoBehaviour
 
         UpdateHotbarTileImages();
         selectedTileIndex = hotbarTiles[selectedHotbarTile];
+        debugText.text = $"Hotbar: {selectedHotbarTile},\n Tile: {currentTile.name},\n Layer: {LevelManager.instance.tilemap.name}";
     }
 
 
@@ -130,6 +135,7 @@ public class LevelEditor : MonoBehaviour
                 selectedHotbarTile = 8;
                 break;
             case "TileInventory":
+                ToggleInventoryOpen();
                 break;
         }
     }
@@ -148,6 +154,13 @@ public class LevelEditor : MonoBehaviour
                 Img_Tile[i].GetComponent<Image>().enabled = false;
             }
         }
+    }
+
+    private void ToggleInventoryOpen()
+    {
+        inventoryOpen = !inventoryOpen;
+        if (inventoryOpen) inventory.SetActive(true);
+        else inventory.SetActive(false);
     }
 
 
