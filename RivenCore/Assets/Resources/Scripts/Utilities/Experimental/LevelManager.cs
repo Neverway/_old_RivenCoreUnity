@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.IO;
+using UnityEditor;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -19,7 +21,7 @@ public class LevelManager : MonoBehaviour
     //=-----------------=
     public static LevelManager instance;
     public Tilemap tilemap;
-    public List<TileBase> tiles = new List<TileBase>();
+    public List<Tile> tiles = new List<Tile>();
 
 
     //=-----------------=
@@ -30,6 +32,9 @@ public class LevelManager : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
+    [SerializeField] private Button Bttn_New, Bttn_Load, Bttn_Save;
+
+    [SerializeField] private InputField InptFld_levelName;
 
 
     //=-----------------=
@@ -39,23 +44,39 @@ public class LevelManager : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(this);
+        Bttn_New.onClick.AddListener(delegate { OnClick("New"); });
+        Bttn_Load.onClick.AddListener(delegate { OnClick("Load"); });
+        Bttn_Save.onClick.AddListener(delegate { OnClick("Save"); });
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.A)) SaveLevel();
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.W)) LoadLevel();
     }
 
     //=-----------------=
     // Internal Functions
     //=-----------------=
+    private void OnClick(string button)
+    {
+        switch (button)
+        {
+            case "New":
+                tilemap.ClearAllTiles();
+                break;
+            case "Load":
+                LoadLevel(EditorUtility.OpenFilePanel("Selected level file", Application.persistentDataPath, "ctmap"));
+                break;
+            case "Save":
+                SaveLevel(EditorUtility.SaveFilePanel("Selected level file", Application.persistentDataPath, "NewLevel", "ctmap"));
+                break;
+        }
+    }
 
 
     //=-----------------=
     // External Functions
     //=-----------------=
-    public void SaveLevel()
+    public void SaveLevel(string levelFile)
     {
         Debug.Log("Saved");
         BoundsInt bounds = tilemap.cellBounds;
@@ -78,13 +99,13 @@ public class LevelManager : MonoBehaviour
         }
 
         string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/testLevel.json",json);
+        File.WriteAllText(levelFile,json);
     }
     
-    public void LoadLevel()
+    public void LoadLevel(string levelFile)
     {
         Debug.Log("Loaded");
-        string json = File.ReadAllText(Application.dataPath + "/testLevel.json");
+        string json = File.ReadAllText(levelFile);
         LevelData data = JsonUtility.FromJson<LevelData>(json);
         
         tilemap.ClearAllTiles();
