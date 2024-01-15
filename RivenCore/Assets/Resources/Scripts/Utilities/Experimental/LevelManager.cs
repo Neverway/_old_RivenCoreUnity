@@ -11,8 +11,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.IO;
-using UnityEditor;
 using UnityEngine.UI;
+using SimpleFileBrowser;
 
 public class LevelManager : MonoBehaviour
 {
@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
     //=-----------------=
     private bool isTesting;
     private Entity editorPlayer;
-
+    
 
     //=-----------------=
     // Reference Variables
@@ -37,12 +37,15 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Button Bttn_New, Bttn_Load, Bttn_Save, Bttn_StartTest, Bttn_StopTest;
     [SerializeField] private Gamemode testingGamemode;
 
+    [SerializeField] private UISkin fileBrowserSkin;
+
 
     //=-----------------=
     // Mono Functions
     //=-----------------=
     private void Awake()
     {
+        FileBrowser.Skin = fileBrowserSkin;
         if (instance == null) instance = this;
         else Destroy(this);
         Bttn_New.onClick.AddListener(delegate { OnClick("New"); });
@@ -67,10 +70,11 @@ public class LevelManager : MonoBehaviour
                 tilemap.ClearAllTiles();
                 break;
             case "Load":
-                LoadLevel(EditorUtility.OpenFilePanel("Selected level file", Application.persistentDataPath, "ctmap"));
+                StartCoroutine( ShowLoadDialogCoroutine() );
                 break;
             case "Save":
-                SaveLevel(EditorUtility.SaveFilePanel("Selected level file", Application.persistentDataPath, "NewLevel", "ctmap"));
+                StartCoroutine( ShowSaveDialogCoroutine() );
+                //SaveLevel(EditorUtility.SaveFilePanel("Selected level file", Application.persistentDataPath, "NewLevel", "ctmap"));
                 break;
             case "StartTest":
                 if (!editorPlayer) editorPlayer = FindObjectOfType<GameInstance>().localPlayerCharacter;
@@ -86,6 +90,26 @@ public class LevelManager : MonoBehaviour
                 Bttn_StartTest.gameObject.SetActive(true);
                 Bttn_StopTest.gameObject.SetActive(false);
                 break;
+        }
+    }
+
+    IEnumerator ShowLoadDialogCoroutine()
+    {		
+        FileBrowser.SetFilters( false, new FileBrowser.Filter( "CT Maps", ".ctmap"));
+        yield return FileBrowser.WaitForLoadDialog( FileBrowser.PickMode.FilesAndFolders, false, Application.persistentDataPath, null, "Load Cartographer Map File", "Load" );
+        if (FileBrowser.Success)
+        {
+            LoadLevel(FileBrowser.Result[0]);
+        }
+    }
+
+    IEnumerator ShowSaveDialogCoroutine()
+    {		
+        FileBrowser.SetFilters( false, new FileBrowser.Filter( "CT Maps", ".ctmap"));
+        yield return FileBrowser.WaitForSaveDialog( FileBrowser.PickMode.FilesAndFolders, false, Application.persistentDataPath, null, "Save Cartographer Map File", "Save" );
+        if (FileBrowser.Success)
+        {
+            SaveLevel(FileBrowser.Result[0]);
         }
     }
 

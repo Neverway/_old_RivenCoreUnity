@@ -745,6 +745,7 @@ MonoBehaviour:
   Bttn_StartTest: {fileID: 461052959}
   Bttn_StopTest: {fileID: 672763976}
   testingGamemode: {fileID: 11400000, guid: e80d964a612af80ba99992319a963502, type: 2}
+  fileBrowserSkin: {fileID: 0}
 --- !u!114 &764120273
 MonoBehaviour:
   m_ObjectHideFlags: 0
