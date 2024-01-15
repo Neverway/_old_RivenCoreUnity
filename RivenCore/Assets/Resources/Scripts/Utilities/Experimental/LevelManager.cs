@@ -21,18 +21,21 @@ public class LevelManager : MonoBehaviour
     //=-----------------=
     public static LevelManager instance;
     public Tilemap tilemap;
-    public List<Tile> tiles = new List<Tile>();
+    public List<Tile> masterTileIndex = new List<Tile>();
 
 
     //=-----------------=
     // Private Variables
     //=-----------------=
+    private bool isTesting;
+    private Entity editorPlayer;
 
 
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    [SerializeField] private Button Bttn_New, Bttn_Load, Bttn_Save;
+    [SerializeField] private Button Bttn_New, Bttn_Load, Bttn_Save, Bttn_StartTest, Bttn_StopTest;
+    [SerializeField] private Gamemode testingGamemode;
 
 
     //=-----------------=
@@ -45,6 +48,8 @@ public class LevelManager : MonoBehaviour
         Bttn_New.onClick.AddListener(delegate { OnClick("New"); });
         Bttn_Load.onClick.AddListener(delegate { OnClick("Load"); });
         Bttn_Save.onClick.AddListener(delegate { OnClick("Save"); });
+        Bttn_StartTest.onClick.AddListener(delegate { OnClick("StartTest"); });
+        Bttn_StopTest.onClick.AddListener(delegate { OnClick("StopTest"); });
     }
 
     private void Update()
@@ -67,6 +72,20 @@ public class LevelManager : MonoBehaviour
             case "Save":
                 SaveLevel(EditorUtility.SaveFilePanel("Selected level file", Application.persistentDataPath, "NewLevel", "ctmap"));
                 break;
+            case "StartTest":
+                if (!editorPlayer) editorPlayer = FindObjectOfType<GameInstance>().localPlayerCharacter;
+                editorPlayer.gameObject.SetActive(false);
+                Bttn_StartTest.gameObject.SetActive(false);
+                Bttn_StopTest.gameObject.SetActive(true);
+                FindObjectOfType<GameInstance>().CreateNewPlayerCharacter(testingGamemode, true, false);
+                break;
+            case "StopTest":
+                Destroy(FindObjectOfType<GameInstance>().localPlayerCharacter.gameObject);
+                FindObjectOfType<GameInstance>().localPlayerCharacter = editorPlayer;
+                editorPlayer.gameObject.SetActive(true);
+                Bttn_StartTest.gameObject.SetActive(true);
+                Bttn_StopTest.gameObject.SetActive(false);
+                break;
         }
     }
 
@@ -86,7 +105,7 @@ public class LevelManager : MonoBehaviour
             for (int y = bounds.min.y; y < bounds.max.y; y++)
             {
                 TileBase temp = tilemap.GetTile(new Vector3Int(x, y, 0));
-                TileBase tempTile = tiles.Find(t => t == temp);
+                TileBase tempTile = masterTileIndex.Find(t => t == temp);
                 
                 if (tempTile != null)
                 {
@@ -110,7 +129,7 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < data.poses.Count; i++)
         {
-            tilemap.SetTile(data.poses[i], tiles.Find(t => t.name == data.tiles[i]));
+            tilemap.SetTile(data.poses[i], masterTileIndex.Find(t => t.name == data.tiles[i]));
         }
     }
 }

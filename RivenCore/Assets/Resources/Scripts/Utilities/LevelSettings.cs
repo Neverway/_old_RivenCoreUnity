@@ -20,6 +20,8 @@ public class LevelSettings : MonoBehaviour
     //=-----------------=
     [Tooltip("This will determine what type of player character should be spawned when the level begins")]
     public Gamemode defaultLevelGamemode;
+    [Tooltip("Disable this if you always want to spawn the player at the world origin")]
+    public bool usePlayerStart = true;
     [Tooltip("This will determine how far out a player character can travel before being killed")]
     public int deathBarrierRange;
     public bool enableLevelDeathBarrier;
@@ -45,7 +47,7 @@ public class LevelSettings : MonoBehaviour
         gameInstance = FindObjectOfType<GameInstance>();
         if (!gameInstance.localPlayerCharacter)
         {
-            gameInstance.CreateNewPlayerCharacter(defaultLevelGamemode, true);
+            gameInstance.CreateNewPlayerCharacter(defaultLevelGamemode, true, usePlayerStart);
         }
     }
 

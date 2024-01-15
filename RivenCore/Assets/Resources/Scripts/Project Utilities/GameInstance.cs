@@ -70,9 +70,23 @@ public class GameInstance : MonoBehaviour
         localPlayerCharacter.isPossessed = _isLocalPlayer;
         localPlayerCharacter.name = localPlayerCharacter.name.Replace("(Clone)","").Trim();
     }
-
-    public Transform GetPlayerStartPoint()
+    
+    public void CreateNewPlayerCharacter(Gamemode _gamemode, bool _isLocalPlayer, bool _usePlayerStart)
     {
+        // NEED FUNCTION TO FIND VALID PLAYER START POINT
+        if (_usePlayerStart)
+        {
+            var startpoint = GetPlayerStartPoint().transform;
+            localPlayerCharacter = Instantiate(_gamemode.playerCharacter, startpoint.position, startpoint.rotation).GetComponent<Entity>();
+        }
+        else localPlayerCharacter = Instantiate(_gamemode.playerCharacter, new Vector3(0,0,0), new Quaternion(0,0,0,0)).GetComponent<Entity>();
+        localPlayerCharacter.isPossessed = _isLocalPlayer;
+        localPlayerCharacter.name = localPlayerCharacter.name.Replace("(Clone)","").Trim();
+    }
+
+    public Transform GetPlayerStartPoint(bool _usePlayerStart = true)
+    {
+        if (!_usePlayerStart) return null;
         var allPossibleStartPoints = FindObjectsOfType<PlayerStart>();
         var allValidStartPoints = new List<PlayerStart>();
         
