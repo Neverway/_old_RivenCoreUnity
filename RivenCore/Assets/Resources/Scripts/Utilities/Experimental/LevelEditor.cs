@@ -27,6 +27,7 @@ public class LevelEditor : MonoBehaviour
     //=-----------------=
     public TileBase currentTile { get { return LevelManager.instance.masterTileIndex[selectedTileIndex]; } }
     public int selectedTileIndex;
+    public int selectedTilemapIndex;
 
 
     //=-----------------=

@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     // Public Variables
     //=-----------------=
     public static LevelManager instance;
-    public Tilemap tilemap;
+    public List<Tilemap> tilemaps;
     public List<Tile> masterTileIndex = new List<Tile>();
 
 
@@ -67,14 +67,13 @@ public class LevelManager : MonoBehaviour
         switch (button)
         {
             case "New":
-                tilemap.ClearAllTiles();
+                foreach (var tilemap in tilemaps) tilemap.ClearAllTiles();
                 break;
             case "Load":
                 StartCoroutine( ShowLoadDialogCoroutine() );
                 break;
             case "Save":
                 StartCoroutine( ShowSaveDialogCoroutine() );
-                //SaveLevel(EditorUtility.SaveFilePanel("Selected level file", Application.persistentDataPath, "NewLevel", "ctmap"));
                 break;
             case "StartTest":
                 if (!editorPlayer) editorPlayer = FindObjectOfType<GameInstance>().localPlayerCharacter;
@@ -120,21 +119,27 @@ public class LevelManager : MonoBehaviour
     public void SaveLevel(string levelFile)
     {
         Debug.Log("Saved");
-        BoundsInt bounds = tilemap.cellBounds;
-
+            
         LevelData levelData = new LevelData();
-        
-        for (int x = bounds.min.x; x < bounds.max.x; x++)
+
+        for (int i = 0; i < tilemaps.Count; i++)
         {
-            for (int y = bounds.min.y; y < bounds.max.y; y++)
+            BoundsInt bounds = tilemaps[i].cellBounds;
+            
+            for (int x = bounds.min.x; x < bounds.max.x; x++)
             {
-                TileBase temp = tilemap.GetTile(new Vector3Int(x, y, 0));
-                TileBase tempTile = masterTileIndex.Find(t => t == temp);
-                
-                if (tempTile != null)
+                for (int y = bounds.min.y; y < bounds.max.y; y++)
                 {
-                    levelData.tiles.Add(tempTile.name);
-                    levelData.poses.Add(new Vector3Int(x, y, 0));
+                    Tilemap tempTileMap = tilemaps[i];
+                    TileBase temp = tilemaps[i].GetTile(new Vector3Int(x, y, 0));
+                    TileBase tempTile = masterTileIndex.Find(t => t == temp);
+                    
+                    if (tempTile != null)
+                    {
+                        levelData.tilemap.Add(i);
+                        levelData.tiles.Add(tempTile.name);
+                        levelData.poses.Add(new Vector3Int(x, y, 0));
+                    }
                 }
             }
         }
@@ -149,17 +154,18 @@ public class LevelManager : MonoBehaviour
         string json = File.ReadAllText(levelFile);
         LevelData data = JsonUtility.FromJson<LevelData>(json);
         
-        tilemap.ClearAllTiles();
+        foreach (var tilemap in tilemaps) tilemap.ClearAllTiles();
 
         for (int i = 0; i < data.poses.Count; i++)
         {
-            tilemap.SetTile(data.poses[i], masterTileIndex.Find(t => t.name == data.tiles[i]));
+            tilemaps[data.tilemap[i]].SetTile(data.poses[i], masterTileIndex.Find(t => t.name == data.tiles[i]));
         }
     }
 }
 
 public class LevelData
 {
+    public List<int> tilemap = new List<int>();
     public List<string> tiles = new List<string>();
     public List<Vector3Int> poses = new List<Vector3Int>();
 }
