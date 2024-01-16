@@ -155,9 +155,16 @@ public class WB_LevelEditor : MonoBehaviour
         // Create and assign inventory tiles
         for (int i = 0; i < MasterTileIndex.Count; i++)
         {
-            var asset = Instantiate(inventoryTile, inventoryRoot.transform);
-            asset.GetComponent<WB_LevelEditor_InventoryTile>().tileIndex = i;
-            asset.GetComponent<WB_LevelEditor_InventoryTile>().tileSprite = MasterTileIndex[i].sprite;
+            if (MasterTileIndex[i] != null)
+            {
+                var asset = Instantiate(inventoryTile, inventoryRoot.transform);
+                asset.GetComponent<WB_LevelEditor_InventoryTile>().tileIndex = i;
+                asset.GetComponent<WB_LevelEditor_InventoryTile>().tileSprite = MasterTileIndex[i].sprite;
+            }
+            else
+            {
+                var asset = Instantiate(inventorySpacer, inventoryRoot.transform);
+            }
         }
     }
 
@@ -171,13 +178,13 @@ public class WB_LevelEditor : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0.01f)
         {
-            if ((selectedHotbarTile + 1) > hotbarTiles.Length-1) selectedHotbarTile = 0;
-            else selectedHotbarTile++;
+            if ((selectedHotbarTile - 1) < 0) selectedHotbarTile = hotbarTiles.Length-1;
+            else selectedHotbarTile--;
         }
         if (Input.GetAxis("Mouse ScrollWheel") < -0.01f)
         {
-            if ((selectedHotbarTile - 1) < 0) selectedHotbarTile = hotbarTiles.Length-1;
-            else selectedHotbarTile--;
+            if ((selectedHotbarTile + 1) > hotbarTiles.Length-1) selectedHotbarTile = 0;
+            else selectedHotbarTile++;
         }
     }
 
