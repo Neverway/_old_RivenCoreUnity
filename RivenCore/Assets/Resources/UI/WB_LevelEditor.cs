@@ -135,6 +135,12 @@ public class WB_LevelEditor : MonoBehaviour
                 Img_Tile[i].GetComponent<Image>().enabled = false;
             }
         }
+
+        for (int i = 0; i < Img_Tile.Length; i++)
+        {
+            Img_Tile[i].transform.parent.GetChild(1).gameObject.SetActive(false);
+            Img_Tile[selectedHotbarTile].transform.parent.GetChild(1).gameObject.SetActive(true);
+        }
     }
 
     private void InitializeTileInventory()
