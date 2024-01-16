@@ -70,6 +70,7 @@ public class WB_LevelEditor : MonoBehaviour
     private void Update()
     {
         UpdateHotbarTileImages();
+        PlayerInput();
     }
 
 
@@ -157,6 +158,26 @@ public class WB_LevelEditor : MonoBehaviour
             var asset = Instantiate(inventoryTile, inventoryRoot.transform);
             asset.GetComponent<WB_LevelEditor_InventoryTile>().tileIndex = i;
             asset.GetComponent<WB_LevelEditor_InventoryTile>().tileSprite = MasterTileIndex[i].sprite;
+        }
+    }
+
+    private void PlayerInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            InitializeTileInventory();
+            ToggleInventoryOpen();
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0.01f)
+        {
+            if ((selectedHotbarTile + 1) > hotbarTiles.Length-1) selectedHotbarTile = 0;
+            else selectedHotbarTile++;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < -0.01f)
+        {
+            if ((selectedHotbarTile - 1) < 0) selectedHotbarTile = hotbarTiles.Length-1;
+            else selectedHotbarTile--;
         }
     }
 

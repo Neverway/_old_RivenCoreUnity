@@ -44,15 +44,8 @@ public class LevelEditor : MonoBehaviour
         viewCamera = FindObjectOfType<Camera>();
         Vector3Int pos = currentTilemap.WorldToCell(viewCamera.ScreenToWorldPoint(Input.mousePosition));
 
-        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
-        {
-            PlaceTile(pos);
-        }
-
-        if (Input.GetMouseButton(1) && !EventSystem.current.IsPointerOverGameObject())
-        {
-            EraseTile(pos);
-        }
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject()) { PlaceTile(pos); }
+        if (Input.GetMouseButton(1) && !EventSystem.current.IsPointerOverGameObject()) { EraseTile(pos); }
 
     }
 

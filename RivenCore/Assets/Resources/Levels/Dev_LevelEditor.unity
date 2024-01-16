@@ -6031,8 +6031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: 50}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 5, y: 68}
+  m_SizeDelta: {x: 300, y: 125}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &2063937235434756159
 MonoBehaviour:
@@ -6349,11 +6349,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[LMB] Place Tile
+  m_text: '[Tab] Asset Browser
+
+    [LMB] Place Tile
 
     [RMB] Erase Tile
 
-'
+    [W,A,S,D]
+    Move'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f64e7374afa47b6e5a6085e2326df0f2, type: 2}
   m_sharedMaterial: {fileID: -3746113135514448195, guid: f64e7374afa47b6e5a6085e2326df0f2, type: 2}
