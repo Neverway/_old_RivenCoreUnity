@@ -5,7 +5,6 @@
 //
 //=============================================================================
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,7 +35,6 @@ public class LevelManager : MonoBehaviour
     //=-----------------=
     [SerializeField] private Button Bttn_New, Bttn_Load, Bttn_Save, Bttn_StartTest, Bttn_StopTest;
     [SerializeField] private Gamemode testingGamemode;
-
     [SerializeField] private UISkin fileBrowserSkin;
 
 
@@ -46,18 +44,15 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         FileBrowser.Skin = fileBrowserSkin;
-        if (instance == null) instance = this;
-        else Destroy(this);
-        Bttn_New.onClick.AddListener(delegate { OnClick("New"); });
-        Bttn_Load.onClick.AddListener(delegate { OnClick("Load"); });
-        Bttn_Save.onClick.AddListener(delegate { OnClick("Save"); });
-        Bttn_StartTest.onClick.AddListener(delegate { OnClick("StartTest"); });
-        Bttn_StopTest.onClick.AddListener(delegate { OnClick("StopTest"); });
+        instance = this;
+        Bttn_New.onClick.AddListener(() => OnClick("New"));
+        Bttn_Load.onClick.AddListener(() => StartCoroutine(ShowFileDialogCoroutine("Load")));
+        Bttn_Save.onClick.AddListener(() => StartCoroutine(ShowFileDialogCoroutine("Save")));
+        Bttn_StartTest.onClick.AddListener(() => OnClick("StartTest"));
+        Bttn_StopTest.onClick.AddListener(() => OnClick("StopTest"));
     }
 
-    private void Update()
-    {
-    }
+    
 
     //=-----------------=
     // Internal Functions
@@ -70,45 +65,58 @@ public class LevelManager : MonoBehaviour
                 foreach (var tilemap in tilemaps) tilemap.ClearAllTiles();
                 break;
             case "Load":
-                StartCoroutine( ShowLoadDialogCoroutine() );
+                StartCoroutine(ShowFileDialogCoroutine("Load"));
                 break;
             case "Save":
-                StartCoroutine( ShowSaveDialogCoroutine() );
+                StartCoroutine(ShowFileDialogCoroutine("Save"));
                 break;
             case "StartTest":
-                if (!editorPlayer) editorPlayer = FindObjectOfType<GameInstance>().localPlayerCharacter;
-                editorPlayer.gameObject.SetActive(false);
-                Bttn_StartTest.gameObject.SetActive(false);
-                Bttn_StopTest.gameObject.SetActive(true);
-                FindObjectOfType<GameInstance>().CreateNewPlayerCharacter(testingGamemode, true, false);
+                StartTest();
                 break;
             case "StopTest":
-                Destroy(FindObjectOfType<GameInstance>().localPlayerCharacter.gameObject);
-                FindObjectOfType<GameInstance>().localPlayerCharacter = editorPlayer;
-                editorPlayer.gameObject.SetActive(true);
-                Bttn_StartTest.gameObject.SetActive(true);
-                Bttn_StopTest.gameObject.SetActive(false);
+                StopTest();
                 break;
         }
     }
-
-    IEnumerator ShowLoadDialogCoroutine()
-    {		
-        FileBrowser.SetFilters( false, new FileBrowser.Filter( "CT Maps", ".ctmap"));
-        yield return FileBrowser.WaitForLoadDialog( FileBrowser.PickMode.FilesAndFolders, false, Application.persistentDataPath, null, "Load Cartographer Map File", "Load" );
-        if (FileBrowser.Success)
-        {
-            LoadLevel(FileBrowser.Result[0]);
-        }
+    
+    private void StartTest()
+    {
+        if (!editorPlayer) editorPlayer = FindObjectOfType<GameInstance>().localPlayerCharacter;
+        editorPlayer.gameObject.SetActive(false);
+        Bttn_StartTest.gameObject.SetActive(false);
+        Bttn_StopTest.gameObject.SetActive(true);
+        FindObjectOfType<GameInstance>().CreateNewPlayerCharacter(testingGamemode, true, false);
     }
 
-    IEnumerator ShowSaveDialogCoroutine()
-    {		
-        FileBrowser.SetFilters( false, new FileBrowser.Filter( "CT Maps", ".ctmap"));
-        yield return FileBrowser.WaitForSaveDialog( FileBrowser.PickMode.FilesAndFolders, false, Application.persistentDataPath, null, "Save Cartographer Map File", "Save" );
-        if (FileBrowser.Success)
+    private void StopTest()
+    {
+        Destroy(FindObjectOfType<GameInstance>().localPlayerCharacter.gameObject);
+        FindObjectOfType<GameInstance>().localPlayerCharacter = editorPlayer;
+        editorPlayer.gameObject.SetActive(true);
+        Bttn_StartTest.gameObject.SetActive(true);
+        Bttn_StopTest.gameObject.SetActive(false);
+    }
+
+    private IEnumerator ShowFileDialogCoroutine(string mode)
+    {
+        FileBrowser.SetFilters(false, new FileBrowser.Filter("CT Maps", ".ctmap"));
+        yield return mode switch
         {
-            SaveLevel(FileBrowser.Result[0]);
+            "Load" => FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.FilesAndFolders, false, Application.persistentDataPath, null, "Load Cartographer Map File", "Load"),
+            "Save" => FileBrowser.WaitForSaveDialog(FileBrowser.PickMode.FilesAndFolders, false, Application.persistentDataPath, null, "Save Cartographer Map File", "Save"),
+            _ => null
+        };
+
+        if (!FileBrowser.Success) yield break;
+        var filePath = FileBrowser.Result[0];
+        switch (mode)
+        {
+            case "Load":
+                LoadLevel(filePath);
+                break;
+            case "Save":
+                SaveLevel(filePath);
+                break;
         }
     }
 
@@ -116,47 +124,40 @@ public class LevelManager : MonoBehaviour
     //=-----------------=
     // External Functions
     //=-----------------=
-    public void SaveLevel(string levelFile)
+    private void SaveLevel(string levelFile)
     {
-        Debug.Log("Saved");
-            
-        LevelData levelData = new LevelData();
+        var levelData = new LevelData();
 
-        for (int i = 0; i < tilemaps.Count; i++)
+        foreach (var tilemap in tilemaps)
         {
-            BoundsInt bounds = tilemaps[i].cellBounds;
-            
-            for (int x = bounds.min.x; x < bounds.max.x; x++)
+            var bounds = tilemap.cellBounds;
+
+            for (var x = bounds.min.x; x < bounds.max.x; x++)
             {
-                for (int y = bounds.min.y; y < bounds.max.y; y++)
+                for (var y = bounds.min.y; y < bounds.max.y; y++)
                 {
-                    Tilemap tempTileMap = tilemaps[i];
-                    TileBase temp = tilemaps[i].GetTile(new Vector3Int(x, y, 0));
-                    TileBase tempTile = masterTileIndex.Find(t => t == temp);
-                    
-                    if (tempTile != null)
-                    {
-                        levelData.tilemap.Add(i);
-                        levelData.tiles.Add(tempTile.name);
-                        levelData.poses.Add(new Vector3Int(x, y, 0));
-                    }
+                    TileBase tempTile = masterTileIndex.Find(t => t == tilemap.GetTile(new Vector3Int(x, y, 0)));
+
+                    if (tempTile == null) continue;
+                    levelData.tilemap.Add(tilemaps.IndexOf(tilemap));
+                    levelData.tiles.Add(tempTile.name);
+                    levelData.poses.Add(new Vector3Int(x, y, 0));
                 }
             }
         }
 
-        string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(levelFile,json);
+        var json = JsonUtility.ToJson(levelData, true);
+        File.WriteAllText(levelFile, json);
     }
-    
-    public void LoadLevel(string levelFile)
+
+    private void LoadLevel(string levelFile)
     {
-        Debug.Log("Loaded");
-        string json = File.ReadAllText(levelFile);
-        LevelData data = JsonUtility.FromJson<LevelData>(json);
-        
+        var json = File.ReadAllText(levelFile);
+        var data = JsonUtility.FromJson<LevelData>(json);
+
         foreach (var tilemap in tilemaps) tilemap.ClearAllTiles();
 
-        for (int i = 0; i < data.poses.Count; i++)
+        for (var i = 0; i < data.poses.Count; i++)
         {
             tilemaps[data.tilemap[i]].SetTile(data.poses[i], masterTileIndex.Find(t => t.name == data.tiles[i]));
         }
