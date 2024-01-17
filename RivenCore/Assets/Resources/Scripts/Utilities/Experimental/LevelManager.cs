@@ -5,6 +5,7 @@
 //
 //=============================================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,7 +53,12 @@ public class LevelManager : MonoBehaviour
         Bttn_StopTest.onClick.AddListener(() => OnClick("StopTest"));
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S)) StartCoroutine(ShowFileDialogCoroutine("Save"));
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.O)) StartCoroutine(ShowFileDialogCoroutine("Load"));
+    }
+
 
     //=-----------------=
     // Internal Functions
@@ -127,7 +133,7 @@ public class LevelManager : MonoBehaviour
     private void SaveLevel(string levelFile)
     {
         var levelData = new LevelData();
-
+        /*
         foreach (var tilemap in tilemaps)
         {
             var bounds = tilemap.cellBounds;
@@ -144,7 +150,7 @@ public class LevelManager : MonoBehaviour
                     levelData.poses.Add(new Vector3Int(x, y, 0));
                 }
             }
-        }
+        }*/
 
         var json = JsonUtility.ToJson(levelData, true);
         File.WriteAllText(levelFile, json);
@@ -155,18 +161,30 @@ public class LevelManager : MonoBehaviour
         var json = File.ReadAllText(levelFile);
         var data = JsonUtility.FromJson<LevelData>(json);
 
+        
+        /*
         foreach (var tilemap in tilemaps) tilemap.ClearAllTiles();
 
         for (var i = 0; i < data.poses.Count; i++)
         {
+            TileBase tempTile = masterTileIndex.Find(t => t.name == data.tiles[i]);
+            if (tempTile == null) continue;
+            print(tempTile);
+            Debug.Log(masterTileIndex.Find(t => t.name == data.tiles[i]));
             tilemaps[data.tilemap[i]].SetTile(data.poses[i], masterTileIndex.Find(t => t.name == data.tiles[i]));
-        }
+        }*/
     }
 }
 
 public class LevelData
 {
-    public List<int> tilemap = new List<int>();
-    public List<string> tiles = new List<string>();
-    public List<Vector3Int> poses = new List<Vector3Int>();
+    public List<SpotData> tiles = new List<SpotData>();
+    public List<SpotData> assets = new List<SpotData>();
+}
+
+public class SpotData
+{
+    public int layer;
+    public string id;
+    public Vector3 position;
 }

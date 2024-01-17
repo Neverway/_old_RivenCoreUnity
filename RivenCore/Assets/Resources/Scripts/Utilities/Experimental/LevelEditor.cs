@@ -58,6 +58,7 @@ public class LevelEditor : MonoBehaviour
         var previousTile = currentTilemap.GetTile(pos);
         currentTilemap.SetTile(pos, currentTile);
         RecordChange(pos, previousTile);
+        Debug.Log($"Placed tile with selectedTileIndex: {selectedTileIndex}");
     }
 
     private void EraseTile(Vector3Int pos)

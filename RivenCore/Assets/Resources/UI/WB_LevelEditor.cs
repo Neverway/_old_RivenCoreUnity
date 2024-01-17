@@ -94,13 +94,20 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void HandleHotbarClick(string button)
     {
+        print("Clicked");
         var lastSelectedHotbarTile = selectedHotbarTile;
-        if (!buttonToTileIndex.ContainsKey(button)) return;
-        selectedHotbarTile = buttonToTileIndex[button];
-        if (selectedHotbarTile != -1) return;
-        InitializeTileInventory();
-        ToggleInventoryOpen();
-        selectedHotbarTile = lastSelectedHotbarTile;
+        if (buttonToTileIndex.ContainsKey(button))
+        {
+            selectedHotbarTile = buttonToTileIndex[button];
+            debugText.text = $"Hotbar: {selectedHotbarTile},\n Layer: {LevelManager.instance.GetComponent<LevelEditor>().currentTilemap.name}";
+            if (selectedHotbarTile == -1)
+            {
+                InitializeTileInventory();
+                ToggleInventoryOpen();
+                selectedHotbarTile = lastSelectedHotbarTile;
+            }
+            LevelManager.instance.GetComponent<LevelEditor>().selectedTileIndex = hotbarTiles[selectedHotbarTile];
+        }
     }   
     
     private void HandleLayerClick(string button)
@@ -108,7 +115,6 @@ public class WB_LevelEditor : MonoBehaviour
         var layerIndex = button.StartsWith("Layer") ? int.Parse(button.Substring(5, 1)) : -1;
         if (layerIndex <= 0) return;
         LevelManager.instance.GetComponent<LevelEditor>().currentTilemap = LevelManager.instance.tilemaps[layerIndex + 1];
-        LevelManager.instance.GetComponent<LevelEditor>().selectedTileIndex = hotbarTiles[selectedHotbarTile];
         debugText.text = $"Hotbar: {selectedHotbarTile},\n Layer: {LevelManager.instance.GetComponent<LevelEditor>().currentTilemap.name}";
     }
     

@@ -3239,7 +3239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTilemap: {fileID: 890445192}
   selectedTileIndex: 0
-  selectedTilemapIndex: 0
   viewCamera: {fileID: 0}
 --- !u!1 &803933899
 GameObject:
@@ -13219,21 +13218,23 @@ MonoBehaviour:
   selectedHotbarTile: 0
   inventoryOpen: 0
   hotbarTiles: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
-  Bttn_Tile1: {fileID: 7274223796561105886}
-  Bttn_Tile2: {fileID: 8312930807093693511}
-  Bttn_Tile3: {fileID: 4520859073469022897}
-  Bttn_Tile4: {fileID: 79168841696266278}
-  Bttn_Tile5: {fileID: 3910959362116273623}
-  Bttn_Tile6: {fileID: 393962843601959851}
-  Bttn_Tile7: {fileID: 811199219612534341}
-  Bttn_Tile8: {fileID: 1547646856841253868}
-  Bttn_Tile9: {fileID: 7594593230988920333}
-  Bttn_Tile10: {fileID: 6061053491231458388}
-  Bttn_TileInventory: {fileID: 5255927084127234063}
-  Bttn_Layer1Ground: {fileID: 745861263}
-  Bttn_Layer1Wall: {fileID: 1287741289}
-  Bttn_Layer2Ground: {fileID: 4893113249533555509}
-  Bttn_Layer2Wall: {fileID: 2497364045669395567}
+  hotbarButtons:
+  - {fileID: 7274223796561105886}
+  - {fileID: 8312930807093693511}
+  - {fileID: 4520859073469022897}
+  - {fileID: 79168841696266278}
+  - {fileID: 3910959362116273623}
+  - {fileID: 393962843601959851}
+  - {fileID: 811199219612534341}
+  - {fileID: 1547646856841253868}
+  - {fileID: 7594593230988920333}
+  - {fileID: 6061053491231458388}
+  - {fileID: 5255927084127234063}
+  layerButtons:
+  - {fileID: 745861263}
+  - {fileID: 1287741289}
+  - {fileID: 4893113249533555509}
+  - {fileID: 2497364045669395567}
   Img_Tile:
   - {fileID: 2470712764483401039}
   - {fileID: 2369371843749728278}
