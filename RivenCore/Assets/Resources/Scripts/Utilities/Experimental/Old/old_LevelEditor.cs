@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
-public class LevelEditor : MonoBehaviour
+public class old_LevelEditor : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
@@ -32,7 +32,7 @@ public class LevelEditor : MonoBehaviour
     // Reference Variables
     //=-----------------=
     [SerializeField] private Camera viewCamera;
-    [SerializeField] private TileBase currentTile { get { return LevelManager.instance.masterTileIndex[selectedTileIndex]; } }
+    [SerializeField] private TileBase currentTile { get { return old_LevelManager.instance.masterTileIndex[selectedTileIndex]; } }
 
     
     //=-----------------=

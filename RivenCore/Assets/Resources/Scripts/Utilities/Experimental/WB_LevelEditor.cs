@@ -8,15 +8,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class WB_LevelEditor_InventoryTile : MonoBehaviour
+public class WB_LevelEditor : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public int tileIndex;
-    public Sprite tileSprite;
 
 
     //=-----------------=
@@ -34,9 +31,13 @@ public class WB_LevelEditor_InventoryTile : MonoBehaviour
     //=-----------------=
     private void Start()
     {
-        transform.GetChild(0).GetComponent<Image>().sprite = tileSprite;
-    }
     
+    }
+
+    private void Update()
+    {
+    
+    }
 
     //=-----------------=
     // Internal Functions
@@ -46,9 +47,4 @@ public class WB_LevelEditor_InventoryTile : MonoBehaviour
     //=-----------------=
     // External Functions
     //=-----------------=
-    public void SendTileToHotbar()
-    {
-        var LevelEditorWidget = FindObjectOfType<old_WB_LevelEditor>();
-        LevelEditorWidget.hotbarTiles[LevelEditorWidget.selectedHotbarTile] = tileIndex;
-    }
 }

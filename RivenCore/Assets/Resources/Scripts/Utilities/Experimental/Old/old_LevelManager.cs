@@ -14,12 +14,12 @@ using System.IO;
 using UnityEngine.UI;
 using SimpleFileBrowser;
 
-public class LevelManager : MonoBehaviour
+public class old_LevelManager : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public static LevelManager instance;
+    public static old_LevelManager instance;
     public List<Tilemap> tilemaps;
     public List<Tile> masterTileIndex = new List<Tile>();
 
@@ -133,6 +133,9 @@ public class LevelManager : MonoBehaviour
     private void SaveLevel(string levelFile)
     {
         var levelData = new LevelData();
+        
+        
+        
         /*
         foreach (var tilemap in tilemaps)
         {
@@ -174,17 +177,4 @@ public class LevelManager : MonoBehaviour
             tilemaps[data.tilemap[i]].SetTile(data.poses[i], masterTileIndex.Find(t => t.name == data.tiles[i]));
         }*/
     }
-}
-
-public class LevelData
-{
-    public List<SpotData> tiles = new List<SpotData>();
-    public List<SpotData> assets = new List<SpotData>();
-}
-
-public class SpotData
-{
-    public int layer;
-    public string id;
-    public Vector3 position;
 }

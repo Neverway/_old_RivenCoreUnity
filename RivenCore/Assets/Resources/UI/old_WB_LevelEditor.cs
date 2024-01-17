@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
-public class WB_LevelEditor : MonoBehaviour
+public class old_WB_LevelEditor : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
@@ -26,7 +26,7 @@ public class WB_LevelEditor : MonoBehaviour
     public bool inventoryOpen;
     public int[] hotbarTiles;
 
-    private List<Tile> MasterTileIndex => LevelManager.instance.masterTileIndex;
+    private List<Tile> MasterTileIndex => old_LevelManager.instance.masterTileIndex;
 
     
     //=-----------------=
@@ -99,14 +99,14 @@ public class WB_LevelEditor : MonoBehaviour
         if (buttonToTileIndex.ContainsKey(button))
         {
             selectedHotbarTile = buttonToTileIndex[button];
-            debugText.text = $"Hotbar: {selectedHotbarTile},\n Layer: {LevelManager.instance.GetComponent<LevelEditor>().currentTilemap.name}";
+            debugText.text = $"Hotbar: {selectedHotbarTile},\n Layer: {old_LevelManager.instance.GetComponent<old_LevelEditor>().currentTilemap.name}";
             if (selectedHotbarTile == -1)
             {
                 InitializeTileInventory();
                 ToggleInventoryOpen();
                 selectedHotbarTile = lastSelectedHotbarTile;
             }
-            LevelManager.instance.GetComponent<LevelEditor>().selectedTileIndex = hotbarTiles[selectedHotbarTile];
+            old_LevelManager.instance.GetComponent<old_LevelEditor>().selectedTileIndex = hotbarTiles[selectedHotbarTile];
         }
     }   
     
@@ -114,8 +114,8 @@ public class WB_LevelEditor : MonoBehaviour
     {
         var layerIndex = button.StartsWith("Layer") ? int.Parse(button.Substring(5, 1)) : -1;
         if (layerIndex <= 0) return;
-        LevelManager.instance.GetComponent<LevelEditor>().currentTilemap = LevelManager.instance.tilemaps[layerIndex + 1];
-        debugText.text = $"Hotbar: {selectedHotbarTile},\n Layer: {LevelManager.instance.GetComponent<LevelEditor>().currentTilemap.name}";
+        old_LevelManager.instance.GetComponent<old_LevelEditor>().currentTilemap = old_LevelManager.instance.tilemaps[layerIndex + 1];
+        debugText.text = $"Hotbar: {selectedHotbarTile},\n Layer: {old_LevelManager.instance.GetComponent<old_LevelEditor>().currentTilemap.name}";
     }
     
     private void ToggleInventoryOpen()
