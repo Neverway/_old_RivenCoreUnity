@@ -29,6 +29,7 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
+    [SerializeField] private LevelData levelData;
 
 
     //=-----------------=
@@ -79,12 +80,10 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     private void SaveLevel(string levelFile)
     {
-        var testData = new LevelData();
-        Debug.Log("Saving level...");
+        var levelData = new LevelData();
         // Save tile data
         foreach (var tilemap in tilemaps)
         {
-            Debug.Log($"In {tilemap.name}");
             // Get the size of the tilemap
             var bounds = tilemap.cellBounds;
             // Iterate through each tile in the tile map
@@ -93,17 +92,14 @@ public class System_LevelManager : MonoBehaviour
                 for (var y = bounds.min.y; y < bounds.max.y; y++)
                 {
                     
-                    TileBase tempTile = null;
-                    var tileGroup = "";
                     
                     // Check in each tileMemory group
+                    TileBase tempTile = null;
                     foreach (var group in tileMemory)
                     {
-                        Debug.Log($"In {group.name}");
                         if (group.tiles.Find(t => t == tilemap.GetTile(new Vector3Int(x, y, 0))))
                         {
                             tempTile = group.tiles.Find(t => t == tilemap.GetTile(new Vector3Int(x, y, 0)));
-                            Debug.Log($"Found tile {tempTile}");
                             break;
                         }
                     }
@@ -113,10 +109,9 @@ public class System_LevelManager : MonoBehaviour
                     // Else add the tile data to the level data
                     SpotData newSpotData = new SpotData();
                     newSpotData.id = tempTile.name;
-                    newSpotData.position = new Vector3(x, y, 0);
+                    newSpotData.position = new Vector3Int(x, y, 0);
                     newSpotData.layer = tilemaps.IndexOf(tilemap);
-                    Debug.Log($"Writing {newSpotData.id}");
-                    testData.tiles.Add(newSpotData);
+                    levelData.tiles.Add(newSpotData);
                 }
             }
         }
@@ -125,13 +120,34 @@ public class System_LevelManager : MonoBehaviour
         //{
         //}
         
-        Debug.Log($"SAVING FILE");
-        var json = JsonUtility.ToJson(testData, true);
+        var json = JsonUtility.ToJson(levelData, true);
         File.WriteAllText(levelFile, json);
     }
+    
     private void LoadLevel(string levelFile)
     {
         var json = File.ReadAllText(levelFile);
         var data = JsonUtility.FromJson<LevelData>(json);
+        
+        foreach (var tilemap in tilemaps) tilemap.ClearAllTiles();
+
+        for (var i = 0; i < data.tiles.Count; i++)
+        {
+            TileBase tempTile = null;
+            var tempIndex = 0;
+
+            foreach (var tileMemoryGroup in tileMemory)
+            {
+                if (tileMemoryGroup.tiles.Find(t => t.name == data.tiles[i].id))
+                {
+                    tempTile = tileMemoryGroup.tiles.Find(t => t.name == data.tiles[i].id);
+                    tempIndex = tileMemory.IndexOf(tileMemoryGroup);
+                }
+            }
+            
+            if (tempTile == null) continue;
+            print(tempTile);
+            tilemaps[data.tiles[i].layer].SetTile(data.tiles[i].position, tempTile);
+        }
     }
 }

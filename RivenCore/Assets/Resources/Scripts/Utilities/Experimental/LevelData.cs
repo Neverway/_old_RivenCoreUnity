@@ -23,7 +23,7 @@ public class SpotData
 {
     public int layer;
     public string id;
-    public Vector3 position;
+    public Vector3Int position;
 }
 
 [Serializable]
