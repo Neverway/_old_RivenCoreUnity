@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sys_LoadingBar
   - Entity
+  - Sys_Tilemap
   layers:
   - Default
   - TransparentFX

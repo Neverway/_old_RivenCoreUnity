@@ -1,11 +1,10 @@
 //===================== (Neverway 2024) Written by Liz M. =====================
 //
-// Purpose:
+// Purpose: Handles the saving and loading of map data
 // Notes:
 //
 //=============================================================================
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -43,15 +42,13 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S)) StartCoroutine(ShowFileDialogCoroutine("Save"));
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.O)) StartCoroutine(ShowFileDialogCoroutine("Load"));
     }
 
 
     //=-----------------=
     // Internal Functions
     //=-----------------=
-    private IEnumerator ShowFileDialogCoroutine(string mode)
+    public IEnumerator ShowFileDialogCoroutine(string mode)
     {
         FileBrowser.SetFilters(false, new FileBrowser.Filter("CT Maps", ".ctmap"));
         yield return mode switch
@@ -91,8 +88,6 @@ public class System_LevelManager : MonoBehaviour
             {
                 for (var y = bounds.min.y; y < bounds.max.y; y++)
                 {
-                    
-                    
                     // Check in each tileMemory group
                     TileBase tempTile = null;
                     foreach (var group in tileMemory)
@@ -134,14 +129,12 @@ public class System_LevelManager : MonoBehaviour
         for (var i = 0; i < data.tiles.Count; i++)
         {
             TileBase tempTile = null;
-            var tempIndex = 0;
 
             foreach (var tileMemoryGroup in tileMemory)
             {
                 if (tileMemoryGroup.tiles.Find(t => t.name == data.tiles[i].id))
                 {
                     tempTile = tileMemoryGroup.tiles.Find(t => t.name == data.tiles[i].id);
-                    tempIndex = tileMemory.IndexOf(tileMemoryGroup);
                 }
             }
             
@@ -149,5 +142,23 @@ public class System_LevelManager : MonoBehaviour
             print(tempTile);
             tilemaps[data.tiles[i].layer].SetTile(data.tiles[i].position, tempTile);
         }
+    }
+
+    public void LevelFile(string mode)
+    {
+        StartCoroutine(ShowFileDialogCoroutine(mode));
+    }
+
+    public Tile GetTileFromMemory(string tileID)
+    {
+        foreach (var tileMemoryGroup in tileMemory)
+        {
+            foreach (var tile in tileMemoryGroup.tiles)
+            {
+                if (tile.name == tileID) return tile;
+            }
+        }
+
+        return null;
     }
 }

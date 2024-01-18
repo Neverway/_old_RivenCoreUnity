@@ -6,7 +6,6 @@
 //=============================================================================
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -24,6 +23,7 @@ public class SpotData
     public int layer;
     public string id;
     public Vector3Int position;
+    public Vector3 unsnappedPosition;
 }
 
 [Serializable]
