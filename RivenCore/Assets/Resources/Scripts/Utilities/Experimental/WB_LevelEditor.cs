@@ -22,21 +22,24 @@ public class WB_LevelEditor : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
-    [SerializeField] private Tilemap currentTilemap;
-    [SerializeField] private int currentHotbarIndex;
-    [SerializeField] private string[] hotbarTileID;
+    private Tilemap currentTilemap;
+    private int currentHotbarIndex;
+    private string[] hotbarTileID = new []{"","","","","","","","","",""};
     private bool inventoryOpen;
+    private bool isTesting;
+    private Entity editorPlayer;
 
 
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    [SerializeField] private System_LevelManager levelManager;
-    [SerializeField] private Camera viewCamera;
+    private System_LevelManager levelManager;
+    private Camera viewCamera;
     [SerializeField] private Button[] topbarButtons;
     [SerializeField] private Button[] sidebarButtons;
     [SerializeField] private Button[] hotbarButtons;
     [SerializeField] private GameObject inventory;
+    [SerializeField] private Gamemode testingGamemode;
 
 
     //=-----------------=
@@ -66,8 +69,8 @@ public class WB_LevelEditor : MonoBehaviour
         topbarButtons[0].onClick.AddListener(() => { foreach (var tilemap in levelManager.tilemaps) tilemap.ClearAllTiles(); });
         topbarButtons[1].onClick.AddListener(() => { levelManager.LevelFile("Load"); });
         topbarButtons[2].onClick.AddListener(() => { levelManager.LevelFile("Save"); });
-        topbarButtons[3].onClick.AddListener(() => {  });
-        topbarButtons[4].onClick.AddListener(() => {  });
+        topbarButtons[3].onClick.AddListener(() => { StartTest(); });
+        topbarButtons[4].onClick.AddListener(() => { StopTest(); });
         hotbarButtons[0].onClick.AddListener(() => { currentHotbarIndex = 0; });
         hotbarButtons[1].onClick.AddListener(() => { currentHotbarIndex = 1; });
         hotbarButtons[2].onClick.AddListener(() => { currentHotbarIndex = 2; });
@@ -123,15 +126,16 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void UpdateHotbarImages()
     {
-
         for (var i = 0; i < hotbarButtons.Length-1; i++)
         {
             // Set sprite for each hotbar tile
             var hotbarPreview = hotbarButtons[i].transform.GetChild(0).GetComponent<Image>();
             if (levelManager.GetTileFromMemory(hotbarTileID[i]))
             {
+                hotbarPreview.enabled = true;
                 hotbarPreview.sprite = levelManager.GetTileFromMemory(hotbarTileID[i]).sprite;
             }
+            else hotbarPreview.enabled = false;
             
             // Show hotbar selection indicator
             var hotbarSelection = hotbarButtons[i].transform.GetChild(1).gameObject;
@@ -144,6 +148,24 @@ public class WB_LevelEditor : MonoBehaviour
     {
         inventoryOpen = !inventoryOpen;
         inventory.SetActive(inventoryOpen);
+    }
+    
+    private void StartTest()
+    {
+        if (!editorPlayer) editorPlayer = FindObjectOfType<GameInstance>().localPlayerCharacter;
+        editorPlayer.gameObject.SetActive(false);
+        topbarButtons[3].gameObject.SetActive(false);
+        topbarButtons[4].gameObject.SetActive(true);
+        FindObjectOfType<GameInstance>().CreateNewPlayerCharacter(testingGamemode, true, false);
+    }
+
+    private void StopTest()
+    {
+        Destroy(FindObjectOfType<GameInstance>().localPlayerCharacter.gameObject);
+        FindObjectOfType<GameInstance>().localPlayerCharacter = editorPlayer;
+        editorPlayer.gameObject.SetActive(true);
+        topbarButtons[3].gameObject.SetActive(true);
+        topbarButtons[4].gameObject.SetActive(false);
     }
 
 
