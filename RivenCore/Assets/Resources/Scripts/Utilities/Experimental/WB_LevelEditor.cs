@@ -25,6 +25,7 @@ public class WB_LevelEditor : MonoBehaviour
     [SerializeField] private Tilemap currentTilemap;
     [SerializeField] private int currentHotbarIndex;
     [SerializeField] private string[] hotbarTileID;
+    private bool inventoryOpen;
 
 
     //=-----------------=
@@ -35,6 +36,7 @@ public class WB_LevelEditor : MonoBehaviour
     [SerializeField] private Button[] topbarButtons;
     [SerializeField] private Button[] sidebarButtons;
     [SerializeField] private Button[] hotbarButtons;
+    [SerializeField] private GameObject inventory;
 
 
     //=-----------------=
@@ -44,6 +46,7 @@ public class WB_LevelEditor : MonoBehaviour
     {
         levelManager = FindObjectOfType<System_LevelManager>();
         currentTilemap = levelManager.tilemaps[0];
+        InitializeButtons();
     }
 
     private void Update()
@@ -58,6 +61,26 @@ public class WB_LevelEditor : MonoBehaviour
     //=-----------------=
     // Internal Functions
     //=-----------------=
+    private void InitializeButtons()
+    {
+        topbarButtons[0].onClick.AddListener(() => { foreach (var tilemap in levelManager.tilemaps) tilemap.ClearAllTiles(); });
+        topbarButtons[1].onClick.AddListener(() => { levelManager.LevelFile("Load"); });
+        topbarButtons[2].onClick.AddListener(() => { levelManager.LevelFile("Save"); });
+        topbarButtons[3].onClick.AddListener(() => {  });
+        topbarButtons[4].onClick.AddListener(() => {  });
+        hotbarButtons[0].onClick.AddListener(() => { currentHotbarIndex = 0; });
+        hotbarButtons[1].onClick.AddListener(() => { currentHotbarIndex = 1; });
+        hotbarButtons[2].onClick.AddListener(() => { currentHotbarIndex = 2; });
+        hotbarButtons[3].onClick.AddListener(() => { currentHotbarIndex = 3; });
+        hotbarButtons[4].onClick.AddListener(() => { currentHotbarIndex = 4; });
+        hotbarButtons[5].onClick.AddListener(() => { currentHotbarIndex = 5; });
+        hotbarButtons[6].onClick.AddListener(() => { currentHotbarIndex = 6; });
+        hotbarButtons[7].onClick.AddListener(() => { currentHotbarIndex = 7; });
+        hotbarButtons[8].onClick.AddListener(() => { currentHotbarIndex = 8; });
+        hotbarButtons[9].onClick.AddListener(() => { currentHotbarIndex = 9; });
+        hotbarButtons[10].onClick.AddListener(() => { ToggleInventoryOpen(); });
+    }
+    
     private void UserInput()
     {
         // Place/Erase
@@ -76,7 +99,7 @@ public class WB_LevelEditor : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             //InitializeTileInventory();
-            //ToggleInventoryOpen();
+            ToggleInventoryOpen();
         }
         
         // Scroll wheel hotbar
@@ -105,7 +128,6 @@ public class WB_LevelEditor : MonoBehaviour
         {
             // Set sprite for each hotbar tile
             var hotbarPreview = hotbarButtons[i].transform.GetChild(0).GetComponent<Image>();
-            print(levelManager.GetTileFromMemory(hotbarTileID[i]).name);
             if (levelManager.GetTileFromMemory(hotbarTileID[i]))
             {
                 hotbarPreview.sprite = levelManager.GetTileFromMemory(hotbarTileID[i]).sprite;
@@ -116,6 +138,12 @@ public class WB_LevelEditor : MonoBehaviour
             if (i != currentHotbarIndex) hotbarSelection.SetActive(false);
             else hotbarSelection.SetActive(true);
         }
+    }
+    
+    private void ToggleInventoryOpen()
+    {
+        inventoryOpen = !inventoryOpen;
+        inventory.SetActive(inventoryOpen);
     }
 
 

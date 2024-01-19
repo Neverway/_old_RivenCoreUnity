@@ -15,7 +15,7 @@ public class WB_LevelEditor_InventoryTile : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public int tileIndex;
+    public string tileID;
     public Sprite tileSprite;
 
 
@@ -48,7 +48,7 @@ public class WB_LevelEditor_InventoryTile : MonoBehaviour
     //=-----------------=
     public void SendTileToHotbar()
     {
-        var LevelEditorWidget = FindObjectOfType<old_WB_LevelEditor>();
-        LevelEditorWidget.hotbarTiles[LevelEditorWidget.selectedHotbarTile] = tileIndex;
+        //var LevelEditorWidget = FindObjectOfType<old_WB_LevelEditor>();
+        //LevelEditorWidget.hotbarTiles[LevelEditorWidget.selectedHotbarTile] = tileID;
     }
 }
