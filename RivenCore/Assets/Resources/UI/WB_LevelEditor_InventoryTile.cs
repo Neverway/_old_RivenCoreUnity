@@ -7,6 +7,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +36,7 @@ public class WB_LevelEditor_InventoryTile : MonoBehaviour
     private void Start()
     {
         transform.GetChild(0).GetComponent<Image>().sprite = tileSprite;
+        transform.GetChild(2).GetComponent<TMP_Text>().text = tileID;
     }
     
 
@@ -48,7 +50,7 @@ public class WB_LevelEditor_InventoryTile : MonoBehaviour
     //=-----------------=
     public void SendTileToHotbar()
     {
-        //var LevelEditorWidget = FindObjectOfType<old_WB_LevelEditor>();
-        //LevelEditorWidget.hotbarTiles[LevelEditorWidget.selectedHotbarTile] = tileID;
+        var LevelEditorWidget = FindObjectOfType<WB_LevelEditor>();
+        LevelEditorWidget.SetCurrentHotbarTile(tileID);
     }
 }

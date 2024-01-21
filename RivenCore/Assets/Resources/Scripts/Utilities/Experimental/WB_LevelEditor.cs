@@ -5,6 +5,7 @@
 //
 //=============================================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,10 +25,12 @@ public class WB_LevelEditor : MonoBehaviour
     //=-----------------=
     private Tilemap currentTilemap;
     private int currentHotbarIndex;
-    private string[] hotbarTileID = new []{"","","","","","","","","",""};
+    [SerializeField] private string[] hotbarTileID = new []{"","","","","","","","","",""};
     private bool inventoryOpen;
     private bool isTesting;
     private Entity editorPlayer;
+    private Vector3 cursorPos;
+    private int currentDepth;
 
 
     //=-----------------=
@@ -39,6 +42,7 @@ public class WB_LevelEditor : MonoBehaviour
     [SerializeField] private Button[] sidebarButtons;
     [SerializeField] private Button[] hotbarButtons;
     [SerializeField] private GameObject inventory;
+    [SerializeField] private GameObject assetRoot;
     [SerializeField] private Gamemode testingGamemode;
 
 
@@ -55,7 +59,8 @@ public class WB_LevelEditor : MonoBehaviour
     private void Update()
     {
         viewCamera = FindObjectOfType<Camera>();
-        var pos = currentTilemap.WorldToCell(viewCamera.ScreenToWorldPoint(Input.mousePosition));
+        //cursorPos = currentTilemap.WorldToCell(viewCamera.ScreenToWorldPoint(Input.mousePosition));
+        cursorPos = viewCamera.ScreenToWorldPoint(Input.mousePosition);
 
         UserInput();
         UpdateHotbarImages();
@@ -87,7 +92,7 @@ public class WB_LevelEditor : MonoBehaviour
     private void UserInput()
     {
         // Place/Erase
-        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject()) { /*PlaceTile(pos);*/ }
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject()) Place();
         if (Input.GetMouseButton(1) && !EventSystem.current.IsPointerOverGameObject()) { /*EraseTile(pos);*/ }
         
         // Save/Open
@@ -116,6 +121,39 @@ public class WB_LevelEditor : MonoBehaviour
         }
     }
     
+    private void Place()
+    {
+        // Are we placing a tile?
+        if (levelManager.GetTileFromMemory(hotbarTileID[currentHotbarIndex]))
+        {
+            TileBase tile = levelManager.GetTileFromMemory(hotbarTileID[currentHotbarIndex]);
+            Vector3Int position = new Vector3Int((int)MathF.Floor(cursorPos.x), (int)MathF.Floor(cursorPos.y), 0);
+            currentTilemap.SetTile(position, tile);
+        }
+
+        // Are we placing an asset?
+        else if (levelManager.GetAssetFromMemory(hotbarTileID[currentHotbarIndex]))
+        {
+            
+            // Destroy any asset already in the selected position
+            for (int i = 0; i < assetRoot.transform.childCount; i++)
+            {
+                if (assetRoot.transform.GetChild(i).transform.position == new Vector3(MathF.Round(cursorPos.x),
+                        MathF.Round(cursorPos.y), assetRoot.transform.GetChild(i).gameObject.transform.position.z+currentDepth))
+                {
+                    Destroy(assetRoot.transform.GetChild(i).gameObject);
+                }
+            }
+
+            // Place the current asset at the selected position
+            var asset = levelManager.GetAssetFromMemory(hotbarTileID[currentHotbarIndex]);
+            // We are using the current depth + the asset prefabs depth so that certain assets (like lights and entities) can use the z position as an offset
+            var assetRef = Instantiate(asset,
+                new Vector3(MathF.Round(cursorPos.x), MathF.Round(cursorPos.y), asset.transform.position.z+currentDepth), 
+                new Quaternion(0, 0, 0, 0), assetRoot.transform);
+        }
+    }
+    
     private void Undo()
     {
     }
@@ -134,6 +172,11 @@ public class WB_LevelEditor : MonoBehaviour
             {
                 hotbarPreview.enabled = true;
                 hotbarPreview.sprite = levelManager.GetTileFromMemory(hotbarTileID[i]).sprite;
+            }
+            else if (levelManager.GetAssetFromMemory(hotbarTileID[i]))
+            {
+                hotbarPreview.enabled = true;
+                hotbarPreview.sprite = levelManager.GetAssetFromMemory(hotbarTileID[i]).GetComponent<SpriteRenderer>().sprite;
             }
             else hotbarPreview.enabled = false;
             
@@ -172,4 +215,8 @@ public class WB_LevelEditor : MonoBehaviour
     //=-----------------=
     // External Functions
     //=-----------------=
+    public void SetCurrentHotbarTile(string tileID)
+    {
+        hotbarTileID[currentHotbarIndex] = tileID;
+    }
 }

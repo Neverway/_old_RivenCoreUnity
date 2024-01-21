@@ -28,7 +28,7 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
-    [SerializeField] private LevelData levelData;
+    private LevelData levelData;
 
 
     //=-----------------=
@@ -40,9 +40,6 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    private void Update()
-    {
-    }
 
 
     //=-----------------=
@@ -156,6 +153,19 @@ public class System_LevelManager : MonoBehaviour
             foreach (var tile in tileMemoryGroup.tiles)
             {
                 if (tile.name == tileID) return tile;
+            }
+        }
+
+        return null;
+    }
+
+    public GameObject GetAssetFromMemory(string assetID)
+    {
+        foreach (var assetMemoryGroup in assetMemory)
+        {
+            foreach (var asset in assetMemoryGroup.assets)
+            {
+                if (asset.name == assetID) return asset;
             }
         }
 

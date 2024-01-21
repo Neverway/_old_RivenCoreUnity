@@ -223,7 +223,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1300961308}
-  - {fileID: 1899977572}
   - {fileID: 262807499}
   m_Father: {fileID: 635772928}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -284,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262807499}
   m_Layer: 0
-  m_Name: '[Lighting]'
+  m_Name: '[Assets]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2060,37 +2059,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1899977571
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1899977572}
-  m_Layer: 0
-  m_Name: '[Triggers]'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1899977572
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899977571}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 71790822}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1908689925
 GameObject:
   m_ObjectHideFlags: 0
@@ -5291,7 +5259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &1561533422950958231
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5674,7 +5642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1791496053645779091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8976,7 +8944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3859153041197754732
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9346,21 +9314,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a56cbb57189c9ef9917300de1fdd6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTilemap: {fileID: 0}
-  currentHotbarIndex: 0
   hotbarTileID:
-  - Dev_0
-  - Dev_1
-  - Dev_2
-  - Dev_3
-  - Dev_4
-  - Dev_5
-  - Dev_6
-  - Dev_7
-  - Dev_8
-  - Dev_9
-  levelManager: {fileID: 0}
-  viewCamera: {fileID: 0}
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   topbarButtons:
   - {fileID: 6405831026490261796}
   - {fileID: 5831644939689576958}
@@ -9385,6 +9349,8 @@ MonoBehaviour:
   - {fileID: 5932580125388505247}
   - {fileID: 163251615857720674}
   inventory: {fileID: 1498727279238663716}
+  assetRoot: {fileID: 262807498}
+  testingGamemode: {fileID: 11400000, guid: e80d964a612af80ba99992319a963502, type: 2}
 --- !u!114 &4036483922411971731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13976,7 +13942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fbbfe3d44f5a6bb91b6e44fa3aa600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
   inventoryBrowserRoot: {fileID: 701700143904018990}
   inventoryTile: {fileID: 4705334752785909403, guid: cec991c0706be3f04a173d4a2c2542e8, type: 3}
   inventorySpacer: {fileID: 4512727484590003741, guid: 0855d9bb706c77d7ebc200c91222d362, type: 3}
