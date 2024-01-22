@@ -42,7 +42,6 @@ public class WB_LevelEditor : MonoBehaviour
     [SerializeField] private Button[] sidebarButtons;
     [SerializeField] private Button[] hotbarButtons;
     [SerializeField] private GameObject inventory;
-    [SerializeField] private GameObject assetRoot;
     [SerializeField] private Gamemode testingGamemode;
 
 
@@ -71,7 +70,8 @@ public class WB_LevelEditor : MonoBehaviour
     //=-----------------=
     private void InitializeButtons()
     {
-        topbarButtons[0].onClick.AddListener(() => { foreach (var tilemap in levelManager.tilemaps) tilemap.ClearAllTiles(); });
+        topbarButtons[0].onClick.AddListener(() => { foreach (var tilemap in levelManager.tilemaps) tilemap.ClearAllTiles();
+            for (int i = 0; i < levelManager.assetsRoot.transform.childCount; i++) { Destroy(levelManager.assetsRoot.transform.GetChild(i).gameObject); } });
         topbarButtons[1].onClick.AddListener(() => { levelManager.LevelFile("Load"); });
         topbarButtons[2].onClick.AddListener(() => { levelManager.LevelFile("Save"); });
         topbarButtons[3].onClick.AddListener(() => { StartTest(); });
@@ -136,12 +136,12 @@ public class WB_LevelEditor : MonoBehaviour
         {
             
             // Destroy any asset already in the selected position
-            for (int i = 0; i < assetRoot.transform.childCount; i++)
+            for (int i = 0; i < levelManager.assetsRoot.transform.childCount; i++)
             {
-                if (assetRoot.transform.GetChild(i).transform.position == new Vector3(MathF.Round(cursorPos.x),
-                        MathF.Round(cursorPos.y), assetRoot.transform.GetChild(i).gameObject.transform.position.z+currentDepth))
+                if (levelManager.assetsRoot.transform.GetChild(i).transform.position == new Vector3(MathF.Round(cursorPos.x),
+                        MathF.Round(cursorPos.y), levelManager.assetsRoot.transform.GetChild(i).gameObject.transform.position.z+currentDepth))
                 {
-                    Destroy(assetRoot.transform.GetChild(i).gameObject);
+                    Destroy(levelManager.assetsRoot.transform.GetChild(i).gameObject);
                 }
             }
 
@@ -150,7 +150,8 @@ public class WB_LevelEditor : MonoBehaviour
             // We are using the current depth + the asset prefabs depth so that certain assets (like lights and entities) can use the z position as an offset
             var assetRef = Instantiate(asset,
                 new Vector3(MathF.Round(cursorPos.x), MathF.Round(cursorPos.y), asset.transform.position.z+currentDepth), 
-                new Quaternion(0, 0, 0, 0), assetRoot.transform);
+                new Quaternion(0, 0, 0, 0), levelManager.assetsRoot.transform);
+            assetRef.name = assetRef.name.Replace("(Clone)","").Trim();
         }
     }
     

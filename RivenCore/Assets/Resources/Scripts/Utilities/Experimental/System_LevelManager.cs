@@ -5,6 +5,7 @@
 //
 //=============================================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -23,6 +24,7 @@ public class System_LevelManager : MonoBehaviour
     public List<tileMemoryGroup> tileMemory;
     [Tooltip("A list of all the objects and their categories used for the current project")]
     public List<AssetMemoryGroup> assetMemory;
+    public GameObject assetsRoot;
 
 
     //=-----------------=
@@ -40,6 +42,10 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
+    private void Update()
+    {
+        if (!assetsRoot) assetsRoot = GameObject.FindGameObjectWithTag("Map_Assets");
+    }
 
 
     //=-----------------=
@@ -108,9 +114,28 @@ public class System_LevelManager : MonoBehaviour
             }
         }
         // Save object data
-        //foreach (var tilemap in tilemaps)
-        //{
-        //}
+        for (int i = 0; i < assetsRoot.transform.childCount; i++)
+        {
+            GameObject tempAsset = null;
+            foreach (var group in assetMemory)
+            {
+                if (group.assets.Find(t => t.name == assetsRoot.transform.GetChild(i).gameObject.name))
+                {
+                    tempAsset = assetsRoot.transform.GetChild(i).gameObject;
+                    break;
+                }
+            }
+            
+            // Exit if we couldn't find the tile in the tileMemory
+            if (tempAsset == null) continue;
+            // Else add the tile data to the level data
+            SpotData newSpotData = new SpotData();
+            newSpotData.id = tempAsset.name;
+            newSpotData.unsnappedPosition = tempAsset.transform.position;
+            // NEED LAYER/DEPTH ASSIGNMENT HERE
+            //newSpotData.layer = tempAsset.layer;
+            levelData.assets.Add(newSpotData);
+        }
         
         var json = JsonUtility.ToJson(levelData, true);
         File.WriteAllText(levelFile, json);
@@ -122,22 +147,49 @@ public class System_LevelManager : MonoBehaviour
         var data = JsonUtility.FromJson<LevelData>(json);
         
         foreach (var tilemap in tilemaps) tilemap.ClearAllTiles();
+        for (int i = 0; i < assetsRoot.transform.childCount; i++)
+        {
+            Destroy(assetsRoot.transform.GetChild(i).gameObject);
+        }
+
 
         for (var i = 0; i < data.tiles.Count; i++)
         {
             TileBase tempTile = null;
 
-            foreach (var tileMemoryGroup in tileMemory)
+            foreach (var group in tileMemory)
             {
-                if (tileMemoryGroup.tiles.Find(t => t.name == data.tiles[i].id))
+                if (group.tiles.Find(t => t.name == data.tiles[i].id))
                 {
-                    tempTile = tileMemoryGroup.tiles.Find(t => t.name == data.tiles[i].id);
+                    tempTile = group.tiles.Find(t => t.name == data.tiles[i].id);
+                    break;
                 }
             }
             
             if (tempTile == null) continue;
             print(tempTile);
             tilemaps[data.tiles[i].layer].SetTile(data.tiles[i].position, tempTile);
+        }
+
+        for (int i = 0; i < data.assets.Count; i++)
+        {
+            GameObject tempAsset = null;
+            Vector3 tempPosition = new Vector3();
+
+            foreach (var group in assetMemory)
+            {
+                if (group.assets.Find(t => t.name == data.assets[i].id))
+                {
+                    tempAsset = group.assets.Find(t => t.name == data.assets[i].id);
+                    tempPosition = data.assets[i].unsnappedPosition;
+                    break;
+                }
+            }
+            
+            if (tempAsset == null) continue;
+            print(tempAsset);
+            var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
+            // NEED LAYER/DEPTH ASSIGNMENT HERE
         }
     }
 

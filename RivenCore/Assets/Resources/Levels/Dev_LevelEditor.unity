@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 262807499}
   m_Layer: 0
   m_Name: '[Assets]'
-  m_TagString: Untagged
+  m_TagString: Map_Assets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1756,7 +1756,7 @@ GameObject:
   - component: {fileID: 1300961308}
   m_Layer: 0
   m_Name: '[Tiles]'
-  m_TagString: Sys_Tilemap
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9349,7 +9349,6 @@ MonoBehaviour:
   - {fileID: 5932580125388505247}
   - {fileID: 163251615857720674}
   inventory: {fileID: 1498727279238663716}
-  assetRoot: {fileID: 262807498}
   testingGamemode: {fileID: 11400000, guid: e80d964a612af80ba99992319a963502, type: 2}
 --- !u!114 &4036483922411971731
 MonoBehaviour:
