@@ -189,6 +189,7 @@ public class System_LevelManager : MonoBehaviour
             if (tempAsset == null) continue;
             print(tempAsset);
             var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
+            assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
             // NEED LAYER/DEPTH ASSIGNMENT HERE
         }
     }

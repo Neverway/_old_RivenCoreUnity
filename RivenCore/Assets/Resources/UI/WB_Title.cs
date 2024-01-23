@@ -56,11 +56,11 @@ public class WB_Title : MonoBehaviour
                 break;
             case "Extras":
                 if (!gameInstance) gameInstance = FindObjectOfType<GameInstance>();
-                gameInstance.AddWidget(UI_Extras);
+                GameInstance.AddWidget(UI_Extras);
                 break;
             case "Ranking":
                 if (!gameInstance) gameInstance = FindObjectOfType<GameInstance>();
-                gameInstance.AddWidget(UI_Ranking);
+                GameInstance.AddWidget(UI_Ranking);
                 break;
             case "Settings":
                 if (!gameInstance) gameInstance = FindObjectOfType<GameInstance>();

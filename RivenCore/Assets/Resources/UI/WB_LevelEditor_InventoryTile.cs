@@ -51,6 +51,6 @@ public class WB_LevelEditor_InventoryTile : MonoBehaviour
     public void SendTileToHotbar()
     {
         var LevelEditorWidget = FindObjectOfType<WB_LevelEditor>();
-        LevelEditorWidget.SetCurrentHotbarTile(tileID);
+        LevelEditorWidget.SetCurrentHotBarTile(tileID);
     }
 }
