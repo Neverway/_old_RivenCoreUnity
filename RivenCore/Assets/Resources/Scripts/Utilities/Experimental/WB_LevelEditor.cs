@@ -33,7 +33,7 @@ public class WB_LevelEditor : MonoBehaviour
     private string currentTool = "paint";
     private int currentPaintMode = 3;
     private int currentLayer;
-    private int currentSublayer;
+    public int currentSublayer;
 
 
     //=-----------------=
@@ -291,29 +291,35 @@ public class WB_LevelEditor : MonoBehaviour
         
         // Show the menu if in the painting tool mode
         layerButtons[0].transform.parent.parent.gameObject.SetActive(true);
-        
-        if (currentPaintMode != 0) { sublayerToggleButton.transform.parent.gameObject.SetActive(false); }
-        else { sublayerToggleButton.transform.parent.gameObject.SetActive(true); }
+
 
         // Set the layer text colors
-        for (int i = 0; i < layerButtons.Length; i++)
+        foreach (var button in layerButtons)
         {
-            layerButtons[i].transform.GetChild(0).GetComponent<TMP_Text>().color = new Color(1, 1, 1, 0.15f);
+            button.transform.GetChild(0).GetComponent<TMP_Text>().color = new Color(1, 1, 1, 0.15f);
         }
         layerButtons[currentLayer].transform.GetChild(0).GetComponent<TMP_Text>().color = new Color(1, 1, 1, 1);
+        
+        // Set the sublayer text and active state
+        sublayerToggleButton.transform.parent.gameObject.SetActive(currentPaintMode == 0);
+        foreach (var button in sublayerButtons)
+        {
+            button.transform.GetChild(0).GetComponent<TMP_Text>().color = new Color(1, 1, 1, 0.15f);
+        }
+        sublayerButtons[currentSublayer].transform.GetChild(0).GetComponent<TMP_Text>().color = new Color(1, 1, 1, 1);
         
         // Set the paint mode
         switch (currentPaintMode)
         {
             case 0:
                 // Select the ground layer for each tile map
-                currentTilemap = levelManager.tilemaps[currentLayer*3];
-                break;
-            case 1:
+                print(currentTilemap.name);
+                currentTilemap = levelManager.tilemaps[currentLayer*5+currentSublayer];
                 break;
             case 2:
                 // Select the collision layer for each tile map
-                currentTilemap = levelManager.tilemaps[currentLayer*3+2];
+                print(currentTilemap.name);
+                currentTilemap = levelManager.tilemaps[currentLayer*5+4];
                 break;
         }
     }
