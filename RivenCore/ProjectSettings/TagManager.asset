@@ -56,3 +56,6 @@ TagManager:
   - name: Trigger
     uniqueID: 4007127635
     locked: 0
+  - name: NoDraw
+    uniqueID: 1329922431
+    locked: 0
