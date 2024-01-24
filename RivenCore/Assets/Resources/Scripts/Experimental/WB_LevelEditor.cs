@@ -330,7 +330,7 @@ public class WB_LevelEditor : MonoBehaviour
         editorPlayer.gameObject.SetActive(false);
         topBarButtons[3].gameObject.SetActive(false);
         topBarButtons[4].gameObject.SetActive(true);
-        FindObjectOfType<GameInstance>().CreateNewPlayerCharacter(testingGamemode, true, false);
+        FindObjectOfType<GameInstance>().CreateNewPlayerCharacter(testingGamemode, true, true);
     }
     private void StopTest()
     {
