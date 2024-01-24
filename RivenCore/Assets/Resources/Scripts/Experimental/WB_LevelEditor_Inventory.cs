@@ -65,6 +65,11 @@ public class WB_LevelEditor_Inventory : MonoBehaviour
         {
             for (int i = 0; i < tileMemory.tiles.Count; i++)
             {
+                if (tileMemory.tiles[i].sprite == null)
+                {
+                    Debug.LogWarning($"{tileMemory.tiles[i].name} is missing a sprite! Skipping tile...");
+                    continue;
+                }
                 var asset = Instantiate(inventoryTile, inventoryBrowserRoot.transform);
                 asset.GetComponent<WB_LevelEditor_InventoryTile>().tileID = tileMemory.tiles[i].name;
                 asset.GetComponent<WB_LevelEditor_InventoryTile>().tileSprite = tileMemory.tiles[i].sprite;
