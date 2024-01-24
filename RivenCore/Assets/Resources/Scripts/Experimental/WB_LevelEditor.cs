@@ -294,6 +294,9 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void UpdateLayerVisibility()
     {
+        print($"IsLayerVisible: {IsLayerVisible[0]} {IsLayerVisible[1]} {IsLayerVisible[2]}");
+        print($"layerGroups: {layerGroups[0].name} {layerGroups[1].name} {layerGroups[2].name}");
+        print($"currentLayer: {currentLayer}");
         for (int i = 0; i < IsLayerVisible.Length; i++)
         {
             switch (IsLayerVisible[i])
