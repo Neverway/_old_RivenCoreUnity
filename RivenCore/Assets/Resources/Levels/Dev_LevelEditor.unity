@@ -918,6 +918,14 @@ PrefabInstance:
       propertyPath: defaultLevelGamemode
       value: 
       objectReference: {fileID: 11400000, guid: 5a58129b98958e092906a4177685c58a, type: 2}
+    - target: {fileID: 8763165777081661157, guid: 28744b9d09f80e0f7b8ca2fde7d0e9f2, type: 3}
+      propertyPath: enableLevelDeathBarrier
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763165777081661157, guid: 28744b9d09f80e0f7b8ca2fde7d0e9f2, type: 3}
+      propertyPath: debugShowDeathBarrierRange
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

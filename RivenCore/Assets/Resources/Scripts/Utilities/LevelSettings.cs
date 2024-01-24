@@ -53,6 +53,7 @@ public class LevelSettings : MonoBehaviour
 
     private void Update()
     {
+        if (!enableLevelDeathBarrier) return;
         CheckForOutOfBoundsEntities();
     }
 
