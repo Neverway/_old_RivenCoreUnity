@@ -10,7 +10,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
 
 public class WB_LevelEditor : MonoBehaviour
 {
@@ -160,6 +162,10 @@ public class WB_LevelEditor : MonoBehaviour
         if (Input.GetMouseButton(1) && !EventSystem.current.IsPointerOverGameObject())
             if (currentTool == "paint" && IsLayerVisible[currentLayer])
                 Erase();
+        
+        if (Input.GetMouseButton(2) && !EventSystem.current.IsPointerOverGameObject())
+            if (currentTool == "paint" && IsLayerVisible[currentLayer])
+                Pick();
 
         // Save/Open
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S)) levelManager.LevelFile("Save");
@@ -402,6 +408,28 @@ public class WB_LevelEditor : MonoBehaviour
                 break;
             }
         }
+    }
+
+    private void Pick()
+    {
+        // Check for asset at cursor position
+        for (var i = 0; i < levelManager.assetsRoot.transform.childCount; i++)
+        {
+            var currentAsset = levelManager.assetsRoot.transform.GetChild(i);
+            if (currentAsset.transform.position == new Vector3(
+                    MathF.Round(cursorPos.x), 
+                    MathF.Round(cursorPos.y), 
+                    currentAsset.transform.position.z))
+            {
+                SetCurrentHotBarTile(currentAsset.name);
+                return;
+            }
+        }
+        
+        // Asset wasn't found so check for a tile at cursor position
+        var position = new Vector3Int((int)MathF.Floor(cursorPos.x), (int)MathF.Floor(cursorPos.y), 0);
+        if (!currentTilemap.GetTile(position)) return; // Exit if no tile was found
+        SetCurrentHotBarTile(currentTilemap.GetTile(position).name);
     }
     private static void Undo()
     {
