@@ -7679,7 +7679,7 @@ GameObject:
   - component: {fileID: 1480382031}
   - component: {fileID: 1480382032}
   m_Layer: 0
-  m_Name: Depth Layer 1_1
+  m_Name: Depth Layer 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7986,7 +7986,7 @@ GameObject:
   - component: {fileID: 1617150426}
   - component: {fileID: 1617150427}
   m_Layer: 0
-  m_Name: Depth Layer 1_2
+  m_Name: Depth Layer 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15723,9 +15723,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 34cf1dd094dca9fd6ac916d4d48ddfde, type: 3}
   - {fileID: 21300000, guid: 65d4f20118f769b7982bec90056cfa63, type: 3}
   layerGroups:
-  - {fileID: 1617150425}
-  - {fileID: 1480382030}
   - {fileID: 107536952}
+  - {fileID: 1480382030}
+  - {fileID: 1617150425}
   layerButtons:
   - {fileID: 778437764}
   - {fileID: 1710171624}
