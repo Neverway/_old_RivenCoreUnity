@@ -4,17 +4,16 @@
 // Notes:
 //
 //=============================================================================
-/*
-using UnityEngine;
-using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(fileName="Customtile", menuName="Neverway/LevelEditor/Tile")]
-public class CustomTile : ScriptableObject
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NewBehaviourScript : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public TileBase tile;
 
 
     //=-----------------=
@@ -30,8 +29,16 @@ public class CustomTile : ScriptableObject
     //=-----------------=
     // Mono Functions
     //=-----------------=
-
+    private void Start()
+    {
     
+    }
+
+    private void Update()
+    {
+    
+    }
+
     //=-----------------=
     // Internal Functions
     //=-----------------=
@@ -40,4 +47,4 @@ public class CustomTile : ScriptableObject
     //=-----------------=
     // External Functions
     //=-----------------=
-}*/
+}
