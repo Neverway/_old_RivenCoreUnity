@@ -71,7 +71,7 @@ public class GameInstance : MonoBehaviour
     public void CreateNewPlayerCharacter(Gamemode _gamemode, bool _isLocalPlayer, bool _usePlayerStart)
     {
         // NEED FUNCTION TO FIND VALID PLAYER START POINT
-        if (_usePlayerStart)
+        if (_usePlayerStart && FindObjectOfType<PlayerStart>())
         {
             var startpoint = GetPlayerStartPoint().transform;
             localPlayerCharacter = Instantiate(_gamemode.playerCharacter, startpoint.position, startpoint.rotation)
