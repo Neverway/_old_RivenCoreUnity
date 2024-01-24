@@ -144,6 +144,12 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void UserInput()
     {
+        if (!viewCamera)
+        {
+            Debug.LogError("The view camera could not be found! Attempting to re-assign view camera...");
+            viewCamera = FindObjectOfType<Camera>();
+        }
+        
         cursorPos = viewCamera.ScreenToWorldPoint(Input.mousePosition);
         
         // Place/Erase
