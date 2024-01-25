@@ -25,6 +25,7 @@ public class WB_LevelEditor : MonoBehaviour
     // Private Variables
     //=-----------------=
     private Vector2 viewZoomRange = new Vector2(2, 16);
+    private float cursorOffset;
     // File-bar
     private bool isTesting;
     private Entity editorPlayer;
@@ -51,7 +52,6 @@ public class WB_LevelEditor : MonoBehaviour
     private System_LevelManager levelManager;
     private Camera viewCamera;
     [SerializeField] private GameObject tileCursor;
-    [SerializeField] private int gridSize;
     // File-bar
     [SerializeField] private Gamemode testingGamemode;
     [SerializeField] private Button[] topBarButtons;
@@ -87,8 +87,6 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void Update()
     {
-        var cursorPosition =  viewCamera.ScreenToWorldPoint(Input.mousePosition);
-        tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPosition.x/1)*1+0.5f, (float)MathF.Floor(cursorPosition.y/1)*1+0.5f, 0);
 
         UserInput();
         UpdateHotBarImages();
@@ -320,12 +318,34 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void CheckPaintMode()
     {
-        if (levelManager.GetTileFromMemory(hotBarTileID[currentHotBarIndex]) &&
-            !hotBarTileID[currentHotBarIndex].Contains("Collision")) currentPaintMode = 0;
-        else if (levelManager.GetAssetFromMemory(hotBarTileID[currentHotBarIndex])) currentPaintMode = 1;
-        else if (levelManager.GetTileFromMemory(hotBarTileID[currentHotBarIndex]) &&
-                 hotBarTileID[currentHotBarIndex].Contains("Collision")) currentPaintMode = 2;
-        else currentPaintMode = 3; // This is the ID for a missing/null paint mode
+        if (levelManager.GetTileFromMemory(hotBarTileID[currentHotBarIndex]) && !hotBarTileID[currentHotBarIndex].Contains("Collision"))
+        {
+            currentPaintMode = 0;
+            tileCursor.GetComponent<SpriteRenderer>().color = new Color(0.17f, 0.65f ,0.27f, 1f);
+            tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPos.x/1)*1+cursorOffset, (float)MathF.Floor(cursorPos.y/1)*1+cursorOffset, 0);
+            cursorOffset = 0.5f;
+        }
+        else if (levelManager.GetAssetFromMemory(hotBarTileID[currentHotBarIndex]))
+        {
+            currentPaintMode = 1;
+            tileCursor.GetComponent<SpriteRenderer>().color = new Color(0.25f, 0.41f ,0.72f, 1f);
+            tileCursor.transform.position = new Vector3((float)MathF.Round(cursorPos.x/1)*1+cursorOffset, (float)MathF.Round(cursorPos.y/1)*1+cursorOffset, 0);
+            cursorOffset = 0f;
+        }
+        else if (levelManager.GetTileFromMemory(hotBarTileID[currentHotBarIndex]) && hotBarTileID[currentHotBarIndex].Contains("Collision"))
+        {
+            currentPaintMode = 2;
+            tileCursor.GetComponent<SpriteRenderer>().color = new Color(0.55f, 0.22f ,0.22f, 1f);
+            tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPos.x/1)*1+cursorOffset, (float)MathF.Floor(cursorPos.y/1)*1+cursorOffset, 0);
+            cursorOffset = 0.5f;
+        }
+        else 
+        {
+            currentPaintMode = 3; // This is the ID for a missing/null paint mode
+            tileCursor.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPos.x/1)*1+cursorOffset, (float)MathF.Floor(cursorPos.y/1)*1+cursorOffset, 0);
+            cursorOffset = 0.5f;
+        }
     }
 
     private void ToggleInventoryOpen()
