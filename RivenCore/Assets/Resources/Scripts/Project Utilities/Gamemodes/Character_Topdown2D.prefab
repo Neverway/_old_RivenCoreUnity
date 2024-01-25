@@ -163,6 +163,14 @@ PrefabInstance:
       value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 7183290310932379079, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183290310932379079, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183290310932379079, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -212,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9137317661361399833, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: orthographic size
-      value: 3.5
+      value: 2.85
       objectReference: {fileID: 0}
     - target: {fileID: 9137317661361399833, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: m_CullingMask.m_Bits
