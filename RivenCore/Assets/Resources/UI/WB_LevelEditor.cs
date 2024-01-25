@@ -159,8 +159,13 @@ public class WB_LevelEditor : MonoBehaviour
         
         // Place/Erase
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
-            if (currentTool == "paint" && IsLayerVisible[currentLayer])
-                Place();
+        {
+            if (currentTool == "paint" && IsLayerVisible[currentLayer]) Place();
+        }
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        {
+            if (currentTool == "inspect") Inspect();
+        }
 
         if (Input.GetMouseButton(1) && !EventSystem.current.IsPointerOverGameObject())
             if (currentTool == "paint" && IsLayerVisible[currentLayer])
@@ -249,6 +254,9 @@ public class WB_LevelEditor : MonoBehaviour
             case "inspect":
                 paintImage.color = new Color(1, 1, 1, 0.25f);
                 inspectImage.color = new Color(1, 1, 1, 1);
+                tileCursor.GetComponent<SpriteRenderer>().color = new Color(0.25f, 0.41f ,0.72f, 1f);
+                tileCursor.transform.position = new Vector3((float)MathF.Round(cursorPos.x/1)*1+cursorOffset, (float)MathF.Round(cursorPos.y/1)*1+cursorOffset, 0);
+                cursorOffset = 0f;
                 break;
         }
 
@@ -321,6 +329,7 @@ public class WB_LevelEditor : MonoBehaviour
         if (levelManager.GetTileFromMemory(hotBarTileID[currentHotBarIndex]) && !hotBarTileID[currentHotBarIndex].Contains("Collision"))
         {
             currentPaintMode = 0;
+            if (currentTool != "paint") return;
             tileCursor.GetComponent<SpriteRenderer>().color = new Color(0.17f, 0.65f ,0.27f, 1f);
             tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPos.x/1)*1+cursorOffset, (float)MathF.Floor(cursorPos.y/1)*1+cursorOffset, 0);
             cursorOffset = 0.5f;
@@ -328,6 +337,7 @@ public class WB_LevelEditor : MonoBehaviour
         else if (levelManager.GetAssetFromMemory(hotBarTileID[currentHotBarIndex]))
         {
             currentPaintMode = 1;
+            if (currentTool != "paint") return;
             tileCursor.GetComponent<SpriteRenderer>().color = new Color(0.25f, 0.41f ,0.72f, 1f);
             tileCursor.transform.position = new Vector3((float)MathF.Round(cursorPos.x/1)*1+cursorOffset, (float)MathF.Round(cursorPos.y/1)*1+cursorOffset, 0);
             cursorOffset = 0f;
@@ -335,6 +345,7 @@ public class WB_LevelEditor : MonoBehaviour
         else if (levelManager.GetTileFromMemory(hotBarTileID[currentHotBarIndex]) && hotBarTileID[currentHotBarIndex].Contains("Collision"))
         {
             currentPaintMode = 2;
+            if (currentTool != "paint") return;
             tileCursor.GetComponent<SpriteRenderer>().color = new Color(0.55f, 0.22f ,0.22f, 1f);
             tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPos.x/1)*1+cursorOffset, (float)MathF.Floor(cursorPos.y/1)*1+cursorOffset, 0);
             cursorOffset = 0.5f;
@@ -342,6 +353,7 @@ public class WB_LevelEditor : MonoBehaviour
         else 
         {
             currentPaintMode = 3; // This is the ID for a missing/null paint mode
+            if (currentTool != "paint") return;
             tileCursor.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
             tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPos.x/1)*1+cursorOffset, (float)MathF.Floor(cursorPos.y/1)*1+cursorOffset, 0);
             cursorOffset = 0.5f;
@@ -458,6 +470,24 @@ public class WB_LevelEditor : MonoBehaviour
         var position = new Vector3Int((int)MathF.Floor(cursorPos.x), (int)MathF.Floor(cursorPos.y), 0);
         if (!currentTilemap.GetTile(position)) return; // Exit if no tile was found
         SetCurrentHotBarTile(currentTilemap.GetTile(position).name);
+    }
+
+    private void Inspect()
+    {
+        // Check for asset at cursor position
+        for (var i = 0; i < levelManager.assetsRoot.transform.childCount; i++)
+        {
+            var currentAsset = levelManager.assetsRoot.transform.GetChild(i);
+            if (currentAsset.transform.position == new Vector3(
+                    MathF.Round(cursorPos.x), 
+                    MathF.Round(cursorPos.y), 
+                    currentAsset.transform.position.z))
+            {
+                var assetData = currentAsset.gameObject.GetComponent<RuntimeDataInspector>();
+                if (assetData) assetData.Inspect();
+                return;
+            }
+        }
     }
     private static void Undo()
     {

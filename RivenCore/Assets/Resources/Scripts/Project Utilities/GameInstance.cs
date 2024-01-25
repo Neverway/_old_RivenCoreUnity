@@ -8,6 +8,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
 using UnityEngine;
 
 public class GameInstance : MonoBehaviour
@@ -25,10 +26,8 @@ public class GameInstance : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    public Entity localPlayerCharacter;
-    [SerializeField] private GameObject WB_Title;
-    [SerializeField] private GameObject WB_Loading;
-    [SerializeField] private GameObject WB_Pause;
+    [ReadOnly] public Entity localPlayerCharacter;
+    [SerializeField] private List<GameObject> Widgets;
 
 
     //=-----------------=
@@ -124,13 +123,13 @@ public class GameInstance : MonoBehaviour
     //=-----------------=
     // User External Functions
     //=-----------------=
-    public void UI_ShowTitle() { AddWidget(WB_Title); }
+    public void UI_ShowTitle() { AddWidget(Widgets[0]); }
 
-    public void UI_ShowLoading() { AddWidget(WB_Loading); }
+    public void UI_ShowLoading() { AddWidget(Widgets[1]); }
 
     public void UI_ShowPause()
     {
-        if (GetWidget("WB_Pause") == null) { AddWidget(WB_Pause); SetAllEntitiesIsPaused(true); }
+        if (GetWidget("WB_Pause") == null) { AddWidget(Widgets[2]); SetAllEntitiesIsPaused(true); }
         else { Destroy(GetWidget("WB_Pause")); SetAllEntitiesIsPaused(false); }
     }
 }

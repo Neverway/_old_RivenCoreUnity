@@ -7,6 +7,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class Trigger_Damage : MonoBehaviour
@@ -28,7 +29,7 @@ public class Trigger_Damage : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    public List<Entity> entitiesInTrigger = new List<Entity>();
+    [ReadOnly] public List<Entity> entitiesInTrigger = new List<Entity>();
 
 
     //=-----------------=
