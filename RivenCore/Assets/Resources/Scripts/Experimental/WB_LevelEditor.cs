@@ -50,6 +50,8 @@ public class WB_LevelEditor : MonoBehaviour
     //=-----------------=
     private System_LevelManager levelManager;
     private Camera viewCamera;
+    [SerializeField] private GameObject tileCursor;
+    [SerializeField] private int gridSize;
     // File-bar
     [SerializeField] private Gamemode testingGamemode;
     [SerializeField] private Button[] topBarButtons;
@@ -85,6 +87,9 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void Update()
     {
+        var cursorPosition =  viewCamera.ScreenToWorldPoint(Input.mousePosition);
+        tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPosition.x/1)*1+0.5f, (float)MathF.Floor(cursorPosition.y/1)*1+0.5f, 0);
+
         UserInput();
         UpdateHotBarImages();
         UpdateToolImages();
