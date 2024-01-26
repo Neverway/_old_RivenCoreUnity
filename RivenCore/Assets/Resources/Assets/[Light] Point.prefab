@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5606732640614416811}
   - component: {fileID: 6033580085628821583}
   - component: {fileID: 7697157551955111083}
+  - component: {fileID: 6461402549390778562}
+  - component: {fileID: -8572795352901739137}
   m_Layer: 6
   m_Name: '[Light] Point'
   m_TagString: Untagged
@@ -147,3 +149,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6461402549390778562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366982673205350056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e458e1dba7708fbb295235ad42948cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0
+  range: 0
+  colorRed: 0
+  colorGreen: 0
+  colorBlue: 0
+  light: {fileID: 6033580085628821583}
+--- !u!114 &-8572795352901739137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366982673205350056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b31e295f9b3ad8a088de4f224ebfb61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScript: {fileID: 6461402549390778562}
+  exposedVariables:
+  - intensity
+  - range
+  - colorRed
+  - colorBlue
+  - colorGreen

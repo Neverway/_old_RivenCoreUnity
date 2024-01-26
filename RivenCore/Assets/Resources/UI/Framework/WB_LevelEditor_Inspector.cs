@@ -87,15 +87,19 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
             {
                 case "System.String":
                     field = Instantiate(stringField, fieldListRoot.transform);
+                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = targetAsset.variableData[i].value;
                     break;
                 case "System.Int32":
                     field = Instantiate(intField, fieldListRoot.transform);
+                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = targetAsset.variableData[i].value;
                     break;
                 case "System.Single":
                     field = Instantiate(floatField, fieldListRoot.transform);
+                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = targetAsset.variableData[i].value;
                     break;
                 case "System.Boolean":
                     field = Instantiate(boolField, fieldListRoot.transform);
+                    field.transform.GetChild(1).GetComponent<Toggle>().isOn = targetAsset.variableData[i].value == "True";
                     break;
             }
             

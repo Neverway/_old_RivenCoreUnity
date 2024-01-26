@@ -153,7 +153,7 @@ public class WB_LevelEditor : MonoBehaviour
     {
         if (!viewCamera)
         {
-            Debug.LogError("The view camera could not be found! Attempting to re-assign view camera...");
+            Debug.Log("The view camera could not be found! Attempting to re-assign view camera...");
             viewCamera = FindObjectOfType<Camera>();
         }
         

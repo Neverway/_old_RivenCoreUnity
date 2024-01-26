@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1361399437628517257}
   - component: {fileID: 3961610065379011478}
   - component: {fileID: 6492149436818344109}
+  - component: {fileID: 4268865614696884777}
   m_Layer: 6
   m_Name: '[Trigger] Damage'
   m_TagString: Untagged
@@ -144,5 +145,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
-  team: 
+  owningTeam: 
   entitiesInTrigger: []
+--- !u!114 &4268865614696884777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8129580590025789606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b31e295f9b3ad8a088de4f224ebfb61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScript: {fileID: 6492149436818344109}
+  exposedVariables:
+  - damageAmount
+  - owningTeam

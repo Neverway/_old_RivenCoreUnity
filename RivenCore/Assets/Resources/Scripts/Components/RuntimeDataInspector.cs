@@ -75,7 +75,7 @@ public class RuntimeDataInspector : MonoBehaviour
                 if (field != null)
                 {
                     // Convert the string back to the appropriate type
-                    print($"{field.FieldType} {_value}");
+                    //print($"{field.FieldType} {_value}");
                     if (variableData[i].type != "System.String" && _value == "") return;
                     object convertedValue = Convert.ChangeType(_value, field.FieldType);
                     
