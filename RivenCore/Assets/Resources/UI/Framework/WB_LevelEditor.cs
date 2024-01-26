@@ -108,8 +108,8 @@ public class WB_LevelEditor : MonoBehaviour
             for (var i = 0; i < levelManager.assetsRoot.transform.childCount; i++)
                 Destroy(levelManager.assetsRoot.transform.GetChild(i).gameObject);
         });
-        topBarButtons[1].onClick.AddListener(() => { levelManager.LevelFile("Load"); });
-        topBarButtons[2].onClick.AddListener(() => { levelManager.LevelFile("Save"); });
+        topBarButtons[1].onClick.AddListener(() => { levelManager.ModifyLevelFile("Load"); });
+        topBarButtons[2].onClick.AddListener(() => { levelManager.ModifyLevelFile("Save"); });
         topBarButtons[3].onClick.AddListener(StartTest);
         topBarButtons[4].onClick.AddListener(StopTest);
         
@@ -176,8 +176,8 @@ public class WB_LevelEditor : MonoBehaviour
                 Pick();
 
         // Save/Open
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S)) levelManager.LevelFile("Save");
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.O)) levelManager.LevelFile("Load");
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S)) levelManager.ModifyLevelFile("Save");
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.O)) levelManager.ModifyLevelFile("Load");
 
         // Undo/Redo
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Z)) Redo();

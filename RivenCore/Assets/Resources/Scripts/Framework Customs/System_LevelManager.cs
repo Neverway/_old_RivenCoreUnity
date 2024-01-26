@@ -12,6 +12,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using SimpleFileBrowser;
+using UnityEngine.SceneManagement;
 
 public class System_LevelManager : MonoBehaviour
 {
@@ -42,8 +43,24 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    private void Update()
+    private void Awake()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (tilemaps.Count == 0 && GameObject.FindWithTag("Map_Tilemaps"))
+        {
+            var tileMapGroups = GameObject.FindWithTag("Map_Tilemaps").transform;
+            for (int i = 0; i < tileMapGroups.childCount; i++)
+            {
+                for (int ii = 0; ii < tileMapGroups.GetChild(i).childCount; ii++)
+                {
+                    tilemaps.Add(tileMapGroups.GetChild(i).GetChild(ii).GetComponent<Tilemap>());
+                }
+            }
+        }
         if (!assetsRoot) assetsRoot = GameObject.FindGameObjectWithTag("Map_Assets");
     }
 
@@ -51,7 +68,7 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // Internal Functions
     //=-----------------=
-    public IEnumerator ShowFileDialogCoroutine(string mode)
+    private IEnumerator ShowFileDialogCoroutine(string mode)
     {
         FileBrowser.SetFilters(false, new FileBrowser.Filter("CT Maps", ".ctmap"));
         yield return mode switch
@@ -194,7 +211,7 @@ public class System_LevelManager : MonoBehaviour
         }
     }
 
-    public void LevelFile(string mode)
+    public void ModifyLevelFile(string mode)
     {
         StartCoroutine(ShowFileDialogCoroutine(mode));
     }
