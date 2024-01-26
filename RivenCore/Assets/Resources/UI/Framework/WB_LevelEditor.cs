@@ -292,12 +292,10 @@ public class WB_LevelEditor : MonoBehaviour
         {
             case 0:
                 // Select the ground layer for each tile map
-                print(currentTilemap.name);
                 currentTilemap = levelManager.tilemaps[currentLayer*5+currentSublayer];
                 break;
             case 2:
                 // Select the collision layer for each tile map
-                print(currentTilemap.name);
                 currentTilemap = levelManager.tilemaps[currentLayer*5+4];
                 break;
         }

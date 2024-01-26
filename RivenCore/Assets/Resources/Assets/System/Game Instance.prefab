@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackFadeDuration: 1
-  primaryTrackAudioSource: {fileID: 0}
-  secondaryTrackAudioSource: {fileID: 0}
+  primaryTrackAudioSource: {fileID: 5157185706031035985}
+  secondaryTrackAudioSource: {fileID: 5851227074243587169}
 --- !u!82 &5157185706031035985
 AudioSource:
   m_ObjectHideFlags: 0
@@ -301,22 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b5939f9aa53c861bcde0174441563d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemaps:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  tilemaps: []
   tileMemory:
   - name: Collision
     tiles:

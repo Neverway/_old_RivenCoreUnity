@@ -191,7 +191,6 @@ public class System_LevelManager : MonoBehaviour
             }
             
             if (tempTile == null) continue;
-            print(tempTile);
             tilemaps[data.tiles[i].layer].SetTile(data.tiles[i].position, tempTile);
         }
 
@@ -211,7 +210,6 @@ public class System_LevelManager : MonoBehaviour
             }
             
             if (tempAsset == null) continue;
-            print(tempAsset);
             var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
             assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
             // NEED LAYER/DEPTH ASSIGNMENT HERE
