@@ -27,7 +27,7 @@ public class GameInstance : MonoBehaviour
     // Reference Variables
     //=-----------------=
     [ReadOnly] public Entity localPlayerCharacter;
-    [SerializeField] private List<GameObject> Widgets;
+    [SerializeField] private List<GameObject> UserInterfaceWidgets;
 
 
     //=-----------------=
@@ -123,13 +123,13 @@ public class GameInstance : MonoBehaviour
     //=-----------------=
     // User External Functions
     //=-----------------=
-    public void UI_ShowTitle() { AddWidget(Widgets[0]); }
+    public void UI_ShowTitle() { AddWidget(UserInterfaceWidgets[0]); }
 
-    public void UI_ShowLoading() { AddWidget(Widgets[1]); }
+    public void UI_ShowLoading() { AddWidget(UserInterfaceWidgets[1]); }
 
     public void UI_ShowPause()
     {
-        if (GetWidget("WB_Pause") == null) { AddWidget(Widgets[2]); SetAllEntitiesIsPaused(true); }
+        if (GetWidget("WB_Pause") == null) { AddWidget(UserInterfaceWidgets[2]); SetAllEntitiesIsPaused(true); }
         else { Destroy(GetWidget("WB_Pause")); SetAllEntitiesIsPaused(false); }
     }
 }

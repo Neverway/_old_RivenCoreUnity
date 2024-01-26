@@ -40,7 +40,7 @@ public class Entity_Controller_Spectator3D : Entity_Controller
         spectatorActions.Enable();
     }
     
-    public override void Think(Entity entity)
+    public override void Update(Entity entity)
     {
         if (!entity.isPossessed) return;
         
@@ -55,7 +55,7 @@ public class Entity_Controller_Spectator3D : Entity_Controller
         if (spectatorActions.Descend.IsPressed()) entity.Move(new Vector3(0, -1, 0), "translate");
     }
     
-    public override void FixedRateThink(Entity entity)
+    public override void FixedUpdate(Entity entity)
     {
         if (!entity.isPossessed) return;
         if (entity.isPaused) return;

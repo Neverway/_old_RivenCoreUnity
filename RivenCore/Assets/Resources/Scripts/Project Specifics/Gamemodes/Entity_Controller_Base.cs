@@ -8,10 +8,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-[CreateAssetMenu(fileName="Entity_Controller_Spectator2D", menuName="Neverway/ScriptableObjects/Entity/Controller/Spectator2D")]
-public class Entity_Controller_Spectator2D : Entity_Controller
+[CreateAssetMenu(fileName="Entity_Controller_Base", menuName="Neverway/ScriptableObjects/Entity/Controller/Base")]
+public class Entity_Controller_Base : Entity_Controller
 {
     //=-----------------=
     // Public Variables
@@ -26,8 +25,6 @@ public class Entity_Controller_Spectator2D : Entity_Controller
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    private GameInstance gameInstance;
-    public InputActions.SpectatorActions spectatorActions;
     
 
     //=-----------------=
@@ -35,24 +32,15 @@ public class Entity_Controller_Spectator2D : Entity_Controller
     //=-----------------=
     public override void EntityAwake(Entity entity)
     {
-        gameInstance = FindObjectOfType<GameInstance>();
-        spectatorActions = new InputActions().Spectator;
-        spectatorActions.Enable();
     }
     
-    public override void Think(Entity entity)
+    public override void Update(Entity entity)
     {
         if (!entity.isPossessed) return;
-        
-        if (spectatorActions.Pause.WasPressedThisFrame()) gameInstance.UI_ShowPause();
-        
         if (entity.isPaused) return;
-        
-        var movement = spectatorActions.Move.ReadValue<Vector2>();
-        entity.Move(new Vector3(movement.x, movement.y, 0), "translate");
     }
     
-    public override void FixedRateThink(Entity entity)
+    public override void FixedUpdate(Entity entity)
     {
         if (!entity.isPossessed) return;
         if (entity.isPaused) return;

@@ -17,7 +17,7 @@ public class RuntimeDataInspector : MonoBehaviour
     //=-----------------=
     public MonoBehaviour targetScript;
     public List<string> exposedVariables;
-    public List<string> assetData;
+    public List<string> assetScriptData;
 
 
     //=-----------------=
@@ -60,7 +60,7 @@ public class RuntimeDataInspector : MonoBehaviour
     {
         if (targetScript != null)
         {
-            assetData = new List<string>();
+            assetScriptData = new List<string>();
             for (int i = 0; i < exposedVariables.Count; i++)
             {
                 Type scriptType = targetScript.GetType();
@@ -71,9 +71,9 @@ public class RuntimeDataInspector : MonoBehaviour
                     print($"{exposedVariables[i]} : {field.FieldType} : {field.GetValue(targetScript)}");
                     if (field.GetValue(targetScript) != null)
                     {
-                        assetData.Add(field.GetValue(targetScript).ToString());
+                        assetScriptData.Add(field.GetValue(targetScript).ToString());
                     }
-                    else assetData.Add("");
+                    else assetScriptData.Add("");
                 }
             }
         }

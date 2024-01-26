@@ -13,13 +13,12 @@ public class System_MusicManager : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
+    public float trackFadeDuration = 1f;
 
 
     //=-----------------=
     // Private Variables
     //=-----------------=
-    public float fadeDuration = 1f;
-
     private float initialVolume;
     private bool isFadingPrimary;
     private bool isFadingSecondary;
@@ -28,8 +27,8 @@ public class System_MusicManager : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    [SerializeField] private AudioSource primaryChannel;
-    [SerializeField] private AudioSource secondaryChannel;
+    [SerializeField] private AudioSource primaryTrackAudioSource;
+    [SerializeField] private AudioSource secondaryTrackAudioSource;
 
 
     //=-----------------=
@@ -37,18 +36,18 @@ public class System_MusicManager : MonoBehaviour
     //=-----------------=
     private void Start()
     {
-        primaryChannel.Play();
-        secondaryChannel.Play();
-        primaryChannel.volume=1;
-        secondaryChannel.volume=0;
+	    primaryTrackAudioSource.Play();
+	    secondaryTrackAudioSource.Play();
+	    primaryTrackAudioSource.volume=1;
+	    secondaryTrackAudioSource.volume=0;
     }
     
     private void Awake()
     {
-        primaryChannel.Play();
-        secondaryChannel.Play();
-        primaryChannel.volume=1;
-        secondaryChannel.volume=0;
+	    primaryTrackAudioSource.Play();
+	    secondaryTrackAudioSource.Play();
+        primaryTrackAudioSource.volume=1;
+        secondaryTrackAudioSource.volume=0;
     }
 
     //=-----------------=
@@ -56,8 +55,8 @@ public class System_MusicManager : MonoBehaviour
     //=-----------------=
     private void ResetVolume()
     {
-	    primaryChannel.volume=1;
-	    secondaryChannel.volume=0;
+	    primaryTrackAudioSource.volume=1;
+	    secondaryTrackAudioSource.volume=0;
     }
     
     private IEnumerator Fade1(float _targetVolume, int _track)
@@ -66,18 +65,18 @@ public class System_MusicManager : MonoBehaviour
 	    else if (_track == 1) isFadingSecondary = true;
 	    float timer = 0f;
 
-	    while (timer < fadeDuration)
+	    while (timer < trackFadeDuration)
 	    {
 		    timer += Time.deltaTime;
-		    float progress = timer / fadeDuration;
+		    float progress = timer / trackFadeDuration;
 
-		    if (_track == 0) primaryChannel.volume = Mathf.Lerp(initialVolume, _targetVolume, progress);
-		    else if (_track == 1) secondaryChannel.volume = Mathf.Lerp(initialVolume, _targetVolume, progress);
+		    if (_track == 0) primaryTrackAudioSource.volume = Mathf.Lerp(initialVolume, _targetVolume, progress);
+		    else if (_track == 1) secondaryTrackAudioSource.volume = Mathf.Lerp(initialVolume, _targetVolume, progress);
 		    yield return null;
 	    }
 
-	    if (_track == 0) primaryChannel.volume = _targetVolume;
-	    else if (_track == 1) secondaryChannel.volume = _targetVolume;
+	    if (_track == 0) primaryTrackAudioSource.volume = _targetVolume;
+	    else if (_track == 1) secondaryTrackAudioSource.volume = _targetVolume;
 	    if (_track == 0) isFadingPrimary = false;
 	    else if (_track == 1)
 	    {
@@ -85,7 +84,7 @@ public class System_MusicManager : MonoBehaviour
 		    // if this is true, we were fading in the secondary channel, so we should now make that our new primary channel
 		    if (_targetVolume == 1)
 		    {
-			    SetPrimaryChannel(secondaryChannel.clip);
+			    SetPrimaryChannel(secondaryTrackAudioSource.clip);
 			    SetSecondaryChannel(null);
 			    ResetChannels();
 			    ResetVolume();
@@ -98,18 +97,18 @@ public class System_MusicManager : MonoBehaviour
 	    else if (_track == 1) isFadingSecondary = true;
 	    float timer = 0f;
 
-	    while (timer < fadeDuration)
+	    while (timer < trackFadeDuration)
 	    {
 		    timer += Time.deltaTime;
-		    float progress = timer / fadeDuration;
+		    float progress = timer / trackFadeDuration;
 
-		    if (_track == 0) primaryChannel.volume = Mathf.Lerp(initialVolume, _targetVolume, progress);
-		    else if (_track == 1) secondaryChannel.volume = Mathf.Lerp(initialVolume, _targetVolume, progress);
+		    if (_track == 0) primaryTrackAudioSource.volume = Mathf.Lerp(initialVolume, _targetVolume, progress);
+		    else if (_track == 1) secondaryTrackAudioSource.volume = Mathf.Lerp(initialVolume, _targetVolume, progress);
 		    yield return null;
 	    }
 
-	    if (_track == 0) primaryChannel.volume = _targetVolume;
-	    else if (_track == 1) secondaryChannel.volume = _targetVolume;
+	    if (_track == 0) primaryTrackAudioSource.volume = _targetVolume;
+	    else if (_track == 1) secondaryTrackAudioSource.volume = _targetVolume;
 	    if (_track == 0) isFadingPrimary = false;
 	    else if (_track == 1)
 	    {
@@ -117,7 +116,7 @@ public class System_MusicManager : MonoBehaviour
 		    // if this is true, we were fading in the secondary channel, so we should now make that our new primary channel
 		    if (_targetVolume == 1)
 		    {
-			    SetPrimaryChannel(secondaryChannel.clip);
+			    SetPrimaryChannel(secondaryTrackAudioSource.clip);
 			    SetSecondaryChannel(null);
 			    ResetChannels();
 			    ResetVolume();
@@ -131,19 +130,19 @@ public class System_MusicManager : MonoBehaviour
     //=-----------------=
     public void SetPrimaryChannel(AudioClip _audioClip)
     {
-	    primaryChannel.clip = _audioClip;
+	    primaryTrackAudioSource.clip = _audioClip;
     }
     
     public void SetSecondaryChannel(AudioClip _audioClip)
     {
-	    secondaryChannel.clip = _audioClip;
+	    secondaryTrackAudioSource.clip = _audioClip;
     }
 
     public void FadeIn(int _track)
     {
 	    if (_track == 0 && isFadingPrimary || _track == 1 && isFadingSecondary) return;
 
-	    initialVolume = primaryChannel.volume;
+	    initialVolume = primaryTrackAudioSource.volume;
 	    StartCoroutine(Fade1(1, _track));
     }
 
@@ -152,7 +151,7 @@ public class System_MusicManager : MonoBehaviour
     {
 	    if (_track == 0 && isFadingPrimary || _track == 1 && isFadingSecondary) return;
 
-	    initialVolume = primaryChannel.volume;
+	    initialVolume = primaryTrackAudioSource.volume;
 	    StartCoroutine(Fade2(0, _track));
     }
 
@@ -167,7 +166,7 @@ public class System_MusicManager : MonoBehaviour
 
     public void ResetChannels()
     {
-	    primaryChannel.Play();
-	    secondaryChannel.Play();
+	    primaryTrackAudioSource.Play();
+	    secondaryTrackAudioSource.Play();
     }
 }

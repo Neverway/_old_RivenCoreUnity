@@ -50,16 +50,15 @@ public class Entity : MonoBehaviour
 
     [Tooltip("The current stats for this entity (Initialized at awake, modified during runtime)")]
     public Entity_Stats currentStats;
+    [Tooltip("The collision layers that will be checked when testing if the entity is grounded")]
+    [SerializeField] private LayerMask groundMask;
 
     public bool isPossessed;
     public bool isPaused;
 
-    public event Action EntityDeath;
-    public Vector2 movementDirection;
-    public Vector2 facingDirection;
-    public bool isGrounded;
-    [Tooltip("The collision layers that will be checked when testing if the entity is grounded")]
-    [SerializeField] private LayerMask groundMask;
+    public event Action OnEntityDeath;
+    //public Vector2 movementDirection;
+    //public Vector2 facingDirection;
 
 
     //=-----------------=
@@ -85,12 +84,12 @@ public class Entity : MonoBehaviour
     private void Update()
     {
         VerifyCurrentController();
-        currentController.Think(this);
+        currentController.Update(this);
     }
 
     private void FixedUpdate()
     {
-        currentController.FixedRateThink(this);
+        currentController.FixedUpdate(this);
     }
 
 
@@ -131,7 +130,7 @@ public class Entity : MonoBehaviour
         if (currentStats.health + _value <= 0)
         {
             GetComponent<AudioVarienceModulator>().PlaySound(currentStats.sounds.death);
-            if (EntityDeath != null) EntityDeath.Invoke();
+            if (OnEntityDeath != null) OnEntityDeath.Invoke();
         }
 
         currentStats.health += _value;

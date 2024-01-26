@@ -20,9 +20,9 @@ public class System_SceneLoader : MonoBehaviour
     // Public Variables
     //=-----------------=
     [SerializeField] private float delayBeforeSceneChange = 0.25f;
-    [SerializeField] private float minRequiredLoadTime = 1f;
-    [SerializeField] private string loadingScreenSceneID = "Loading";
-    public static event Action SceneLoaded;
+    [SerializeField] private float minimumRequiredLoadTime = 1f;
+    [SerializeField] private string loadingSceneID = "Loading";
+    public static event Action OnSceneLoaded;
 
 
     //=-----------------=
@@ -49,13 +49,13 @@ public class System_SceneLoader : MonoBehaviour
     private IEnumerator Load()
     {
 	    yield return new WaitForSeconds(delayBeforeSceneChange);
-	    SceneManager.LoadScene(loadingScreenSceneID);
+	    SceneManager.LoadScene(loadingSceneID);
 	    
 	    // The following should execute on the loading screen scene
 	    var loadingBarObject = GameObject.FindWithTag("Sys_LoadingBar");
 	    if (loadingBarObject) loadingBar = loadingBarObject.GetComponent<Image>();
 	    
-	    yield return new WaitForSeconds(minRequiredLoadTime);
+	    yield return new WaitForSeconds(minimumRequiredLoadTime);
 	    StartCoroutine(LoadAsyncOperation());
     }
     
@@ -77,9 +77,9 @@ public class System_SceneLoader : MonoBehaviour
 		    yield return new WaitForEndOfFrame();
 	    }
 	    // Scene has finished loading, trigger the SceneLoaded event
-	    if (SceneLoaded != null)
+	    if (OnSceneLoaded != null)
 	    {
-		    SceneLoaded.Invoke();
+		    OnSceneLoaded.Invoke();
 	    }
     }
     

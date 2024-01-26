@@ -23,9 +23,9 @@ public class LevelSettings : MonoBehaviour
     [Tooltip("Disable this if you always want to spawn the player at the world origin")]
     public bool usePlayerStart = true;
     [Tooltip("This will determine how far out a player character can travel before being killed")]
-    public int deathBarrierRange;
+    public int levelDeathBarrierRange;
     public bool enableLevelDeathBarrier;
-    public bool debugShowDeathBarrierRange;
+    public bool debugShowLevelDeathBarrierRange;
 
 
     //=-----------------=
@@ -59,9 +59,9 @@ public class LevelSettings : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (!debugShowDeathBarrierRange) return;
+        if (!debugShowLevelDeathBarrierRange) return;
         Gizmos.color = new Color(1, 0, 0, 0.5f);
-        Gizmos.DrawWireCube(transform.position, new Vector3(deathBarrierRange*2, deathBarrierRange*2, deathBarrierRange*2));
+        Gizmos.DrawWireCube(transform.position, new Vector3(levelDeathBarrierRange*2, levelDeathBarrierRange*2, levelDeathBarrierRange*2));
     }
 
     //=-----------------=
@@ -72,7 +72,7 @@ public class LevelSettings : MonoBehaviour
         foreach (var _entity in FindObjectsOfType<Entity>())
         {
             var distanceToEntity = Vector3.Distance(_entity.gameObject.transform.position,  new Vector3(0,0,0));
-            if (distanceToEntity >= deathBarrierRange || distanceToEntity <= (deathBarrierRange * -1))
+            if (distanceToEntity >= levelDeathBarrierRange || distanceToEntity <= (levelDeathBarrierRange * -1))
             {
                 Destroy(_entity.gameObject);
                 // Fail-Safe: If the local player character was the out of bounds entity, spawn the default character specified for the level

@@ -15,8 +15,8 @@ public abstract class Entity_Controller : ScriptableObject
     // Public Variables
     //=-----------------=
     public abstract void EntityAwake(Entity _entity);
-    public abstract void Think(Entity _entity);
-    public abstract void FixedRateThink(Entity _entity);
+    public abstract void Update(Entity _entity);
+    public abstract void FixedUpdate(Entity _entity);
 
 
     //=-----------------=

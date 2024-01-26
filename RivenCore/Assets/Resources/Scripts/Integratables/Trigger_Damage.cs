@@ -18,7 +18,7 @@ public class Trigger_Damage : MonoBehaviour
     [Tooltip("The amount of damage to deal to an entity within the trigger. (Value can be negative to heal)")]
     public float damageAmount;
     [Tooltip("The team that owns the trigger (for regular damage, they won't be hurt, for healing, other teams won't be healed. (Don't define a team for friendly fire))")]
-    public string team;
+    public string owningTeam;
 
 
     //=-----------------=
@@ -39,14 +39,14 @@ public class Trigger_Damage : MonoBehaviour
     {
         foreach (var entity in entitiesInTrigger)
         {
-            if (team == "")
+            if (owningTeam == "")
             {
                 entity.ModifyHealth(-damageAmount);
             }
             else
             {
-                if (entity.currentStats.team == team && damageAmount < 0) entity.ModifyHealth(-damageAmount);
-                else if (entity.currentStats.team != team && damageAmount > 0) entity.ModifyHealth(-damageAmount);
+                if (entity.currentStats.team == owningTeam && damageAmount < 0) entity.ModifyHealth(-damageAmount);
+                else if (entity.currentStats.team != owningTeam && damageAmount > 0) entity.ModifyHealth(-damageAmount);
             }
         }
     }

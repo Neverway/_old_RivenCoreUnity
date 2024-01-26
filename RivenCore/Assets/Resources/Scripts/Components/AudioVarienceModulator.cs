@@ -15,7 +15,7 @@ public class AudioVarienceModulator : MonoBehaviour
     // Public Variables
     //=-----------------=
     [SerializeField] private Vector2 pitchVariance = new Vector2(0.8f,1.2f);
-    [SerializeField] private bool delayedPlayOnAwake;
+    [SerializeField] private bool playOnAwake;
     [SerializeField] private float playOnAwakeDelay;
 
 
@@ -36,7 +36,7 @@ public class AudioVarienceModulator : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        if (delayedPlayOnAwake) StartCoroutine(PlaySound(playOnAwakeDelay));
+        if (playOnAwake) StartCoroutine(PlaySound(playOnAwakeDelay));
     }
 
     

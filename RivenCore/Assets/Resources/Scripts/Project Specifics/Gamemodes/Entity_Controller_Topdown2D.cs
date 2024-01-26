@@ -49,7 +49,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
         GetReferences(entity);
     }
     
-    public override void Think(Entity entity)
+    public override void Update(Entity entity)
     {
         if (!entity.isPossessed) return;
         if (topdown2DActions.Pause.WasPressedThisFrame()) gameInstance.UI_ShowPause();
@@ -58,7 +58,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
         movementDirection = topdown2DActions.Move.ReadValue<Vector2>();
     }
     
-    public override void FixedRateThink(Entity entity)
+    public override void FixedUpdate(Entity entity)
     {
         if (!entity.isPossessed) return;
         if (entity.isPaused) return;

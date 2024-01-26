@@ -15,7 +15,7 @@ public class Trigger_LayerChange : MonoBehaviour
     // Public Variables
     //=-----------------=
     [Tooltip("Which layer should the entity switch to when entering the trigger. P.S DON'T FORGET TO SWITCH THE TRIGGERS LAYER!!")]
-    [Range(0, 2)] public int targetLayer;
+    [Range(0, 2)] public int exitLayer;
 
 
     //=-----------------=
@@ -41,7 +41,7 @@ public class Trigger_LayerChange : MonoBehaviour
         if (!other.CompareTag("Entity")) return;
         var entity = other.transform.parent.GetComponent<Entity>();
         var entityPos = entity.transform.position;
-        switch (targetLayer)
+        switch (exitLayer)
         {
             case 0:
                 other.gameObject.layer = 6;
