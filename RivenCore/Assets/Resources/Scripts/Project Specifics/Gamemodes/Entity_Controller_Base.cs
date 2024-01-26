@@ -34,13 +34,13 @@ public class Entity_Controller_Base : Entity_Controller
     {
     }
     
-    public override void Update(Entity entity)
+    public override void EntityUpdate(Entity entity)
     {
         if (!entity.isPossessed) return;
         if (entity.isPaused) return;
     }
     
-    public override void FixedUpdate(Entity entity)
+    public override void EntityFixedUpdate(Entity entity)
     {
         if (!entity.isPossessed) return;
         if (entity.isPaused) return;

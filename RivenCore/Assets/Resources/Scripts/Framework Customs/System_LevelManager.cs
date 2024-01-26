@@ -60,6 +60,7 @@ public class System_LevelManager : MonoBehaviour
 
     private void InitializeSceneReferences()
     {
+        tilemaps.Clear();
         if (tilemaps.Count == 0 && GameObject.FindWithTag("Map_Tilemaps"))
         {
             var tileMapGroups = GameObject.FindWithTag("Map_Tilemaps").transform;

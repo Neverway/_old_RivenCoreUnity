@@ -84,12 +84,12 @@ public class Entity : MonoBehaviour
     private void Update()
     {
         VerifyCurrentController();
-        currentController.Update(this);
+        currentController.EntityUpdate(this);
     }
 
     private void FixedUpdate()
     {
-        currentController.FixedUpdate(this);
+        currentController.EntityFixedUpdate(this);
     }
 
 
