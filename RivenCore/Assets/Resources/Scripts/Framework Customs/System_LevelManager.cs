@@ -31,7 +31,7 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
-    private LevelData levelData;
+    //private LevelData levelData;
 
 
     //=-----------------=
@@ -45,10 +45,20 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     private void Awake()
     {
+        InitializeSceneReferences();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+
+    //=-----------------=
+    // Internal Functions
+    //=-----------------=
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        InitializeSceneReferences();
+    }
+
+    private void InitializeSceneReferences()
     {
         if (tilemaps.Count == 0 && GameObject.FindWithTag("Map_Tilemaps"))
         {
@@ -63,11 +73,7 @@ public class System_LevelManager : MonoBehaviour
         }
         if (!assetsRoot) assetsRoot = GameObject.FindGameObjectWithTag("Map_Assets");
     }
-
-
-    //=-----------------=
-    // Internal Functions
-    //=-----------------=
+    
     private IEnumerator ShowFileDialogCoroutine(string mode)
     {
         FileBrowser.SetFilters(false, new FileBrowser.Filter("CT Maps", ".ctmap"));
@@ -97,7 +103,7 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     private void SaveLevel(string levelFile)
     {
-        var levelData = new LevelData();
+        var data = new LevelData();
         // Save tile data
         foreach (var tilemap in tilemaps)
         {
@@ -126,7 +132,7 @@ public class System_LevelManager : MonoBehaviour
                     newSpotData.id = tempTile.name;
                     newSpotData.position = new Vector3Int(x, y, 0);
                     newSpotData.layer = tilemaps.IndexOf(tilemap);
-                    levelData.tiles.Add(newSpotData);
+                    data.tiles.Add(newSpotData);
                 }
             }
         }
@@ -151,10 +157,10 @@ public class System_LevelManager : MonoBehaviour
             newSpotData.unsnappedPosition = tempAsset.transform.position;
             // NEED LAYER/DEPTH ASSIGNMENT HERE
             //newSpotData.layer = tempAsset.layer;
-            levelData.assets.Add(newSpotData);
+            data.assets.Add(newSpotData);
         }
         
-        var json = JsonUtility.ToJson(levelData, true);
+        var json = JsonUtility.ToJson(data, true);
         File.WriteAllText(levelFile, json);
     }
     
