@@ -1,11 +1,11 @@
 What do these folders mean?
-Components – Scripts that can be imported into any project, and are intended to be attached to game objects in the current project
+General Terms
+Framework Dev - A developer working on the Framework
+Project Dev - A developer using the Framework to make a game
 
-Project – Scripts created for the current project with no real intention on being used elsewhere
-
-Project Utilities – Scripts that can be imported into any project, but may require a little bit of setup or code modification for use in the current project
-
-Utilities – Scripts that can be imported into any project, the code should not be modified only referenced, but the objects they are attached to may provide configuration options
-
-
-
+Asset Groups
+Components - Assets added to the scene or to objects by project devs
+Framework - Assets that provide core functionality to the framework
+Framework Customs - Framework assets that may need customizing by project devs to fit current project needs
+Integratables - Assets created by project devs that may be able to be added to the Framework
+Project Specifics - Assets created for the current project with no intention to be added to the Framework or used in other projects
