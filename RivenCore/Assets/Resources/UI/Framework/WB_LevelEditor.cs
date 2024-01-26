@@ -72,6 +72,8 @@ public class WB_LevelEditor : MonoBehaviour
     // Inventory
     [SerializeField] private Button inventoryToggleButton;
     [SerializeField] private GameObject inventory;
+    // Inspector
+    [SerializeField] private WB_LevelEditor_Inspector inspector;
 
 
     //=-----------------=
@@ -479,7 +481,7 @@ public class WB_LevelEditor : MonoBehaviour
                     currentAsset.transform.position.z))
             {
                 var assetData = currentAsset.gameObject.GetComponent<RuntimeDataInspector>();
-                if (assetData) assetData.Inspect();
+                if (assetData) inspector.InitializeInspector(assetData);
                 return;
             }
         }

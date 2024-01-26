@@ -17,7 +17,7 @@ public class RuntimeDataInspector : MonoBehaviour
     //=-----------------=
     public MonoBehaviour targetScript;
     public List<string> exposedVariables;
-    public List<string> assetScriptData;
+    public List<VariableData> variableData;
 
 
     //=-----------------=
@@ -33,21 +33,8 @@ public class RuntimeDataInspector : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    private void Start()
-    {
-    }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            var data = new List<string>();
-            data.Add("200");
-            data.Add("Howelfen");
-            Write(data);
-        }
-    }
-
+    
     //=-----------------=
     // Internal Functions
     //=-----------------=
@@ -58,32 +45,29 @@ public class RuntimeDataInspector : MonoBehaviour
     //=-----------------=
     public void Inspect()
     {
-        if (targetScript != null)
+        if (targetScript == null) return;
+        
+        variableData = new List<VariableData>();
+        for (int i = 0; i < exposedVariables.Count; i++)
         {
-            assetScriptData = new List<string>();
-            for (int i = 0; i < exposedVariables.Count; i++)
-            {
-                Type scriptType = targetScript.GetType();
-                FieldInfo field = scriptType.GetField(exposedVariables[i]); // Replace with the actual variable name
+            var data = new VariableData();
+            Type scriptType = targetScript.GetType();
+            FieldInfo field = scriptType.GetField(exposedVariables[i]); // Replace with the actual variable name
 
-                if (field != null)
-                {
-                    print($"{exposedVariables[i]} : {field.FieldType} : {field.GetValue(targetScript)}");
-                    if (field.GetValue(targetScript) != null)
-                    {
-                        assetScriptData.Add(field.GetValue(targetScript).ToString());
-                    }
-                    else assetScriptData.Add("");
-                }
-            }
+            if (field == null) continue;
+            //print($"{exposedVariables[i]} : {field.FieldType} : {field.GetValue(targetScript)}");
+            data.name = exposedVariables[i];
+            data.type = field.FieldType.ToString();
+            if (field.GetValue(targetScript) != null) data.value = field.GetValue(targetScript).ToString();
+            variableData.Add(data);
         }
     }
-
-    public void Write(List<string> _assetData)
+    
+    public void SetData(string _variableName, string _value)
     {
-        if (targetScript != null)
+        for (int i = 0; i < exposedVariables.Count; i++)
         {
-            for (int i = 0; i < exposedVariables.Count; i++)
+            if (exposedVariables[i] == _variableName)
             {
                 Type scriptType = targetScript.GetType();
                 FieldInfo field = scriptType.GetField(exposedVariables[i]); // Replace with the actual variable name
@@ -91,14 +75,23 @@ public class RuntimeDataInspector : MonoBehaviour
                 if (field != null)
                 {
                     // Convert the string back to the appropriate type
-                    object convertedValue = Convert.ChangeType(_assetData[i], field.FieldType);
-
+                    print($"{field.FieldType} {_value}");
+                    if (variableData[i].type != "System.String" && _value == "") return;
+                    object convertedValue = Convert.ChangeType(_value, field.FieldType);
+                    
                     // Set the value of the field in the targetScript
                     field.SetValue(targetScript, convertedValue);
-                    print($"{exposedVariables[i]} : {field.FieldType} : {field.GetValue(targetScript)}");
                 }
+                return;
             }
         }
     }
-    
+}
+
+[SerializeField]
+public class VariableData
+{
+    public string name;
+    public string type;
+    public string value;
 }
