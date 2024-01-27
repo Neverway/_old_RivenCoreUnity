@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 8827679789710251220}
   - component: {fileID: 1311118280544114163}
   - component: {fileID: -1108358607834655893}
+  - component: {fileID: 5089883545641765664}
   m_Layer: 0
   m_Name: Character_Base
   m_TagString: Untagged
@@ -148,20 +149,21 @@ MonoBehaviour:
     team: 
     health: 0
     movementSpeed: 0
+    walkSpeed: 0
+    sprintSpeed: 0
     animator: {fileID: 0}
     sounds:
       hurt: {fileID: 0}
       heal: {fileID: 0}
       death: {fileID: 0}
       alerted: {fileID: 0}
-  isPossessed: 0
-  isPaused: 0
-  movementDirection: {x: 0, y: 0}
-  facingDirection: {x: 0, y: 0}
-  isGrounded: 0
   groundMask:
     serializedVersion: 2
     m_Bits: 0
+  isPossessed: 0
+  isPaused: 0
+  isInvulnerable: 0
+  isDead: 0
 --- !u!82 &8827679789710251220
 AudioSource:
   m_ObjectHideFlags: 0
@@ -271,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pitchVariance: {x: 0, y: 0}
-  delayedPlayOnAwake: 0
+  playOnAwake: 0
   playOnAwakeDelay: 0
 --- !u!95 &-1108358607834655893
 Animator:
@@ -294,3 +296,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5089883545641765664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5542459799266477335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab37bd272e42a88aa0bace4cb5098ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

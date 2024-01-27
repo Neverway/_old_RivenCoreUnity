@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a8397c2045ae3c15a9d900961f40c803, type: 2}
     - target: {fileID: 5542459799266477335, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: m_Name
-      value: Spectator2D_Character
+      value: Character_Spectator2D
       objectReference: {fileID: 0}
     - target: {fileID: 5880410918590927608, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: m_LocalPosition.z
