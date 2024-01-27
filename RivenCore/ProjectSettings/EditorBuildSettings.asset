@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Levels/_Travel.unity
     guid: 9a2fd5b0fd2521f97aa790470a915104
-  - enabled: 1
+  - enabled: 0
     path: Assets/Resources/Levels/Dev_Test.unity
     guid: d485673c87e5812d486446dfb97f5b94
   m_configObjects:
