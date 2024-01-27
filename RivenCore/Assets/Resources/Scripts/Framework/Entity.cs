@@ -49,16 +49,20 @@ public class Entity : MonoBehaviour
     public Entity_CharacterStats characterStats;
 
     [Tooltip("The current stats for this entity (Initialized at awake, modified during runtime)")]
-    public Entity_Stats currentStats;
+    public Entity_Stats currentStats = new Entity_Stats();
     [Tooltip("The collision layers that will be checked when testing if the entity is grounded")]
     [SerializeField] private LayerMask groundMask;
 
     public bool isPossessed;
     public bool isPaused;
 
+    public event Action OnEntityHeal;
+    public event Action OnEntityHurt;
     public event Action OnEntityDeath;
     //public Vector2 movementDirection;
     //public Vector2 facingDirection;
+    public bool isInvulnerable;
+    public bool isDead;
 
 
     //=-----------------=
@@ -84,11 +88,13 @@ public class Entity : MonoBehaviour
     private void Update()
     {
         VerifyCurrentController();
+        if (isDead) return;
         currentController.EntityUpdate(this);
     }
 
     private void FixedUpdate()
     {
+        if (isDead) return;
         currentController.EntityFixedUpdate(this);
     }
 
@@ -108,7 +114,14 @@ public class Entity : MonoBehaviour
     private void GetCharacterStats()
     {
         GetComponent<Animator>().runtimeAnimatorController = characterStats.stats.animator;
-        currentStats = characterStats.stats;
+        currentStats = new Entity_Stats(characterStats.stats);
+    }
+
+    private IEnumerator InvulnerabilityCooldown()
+    {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(1);
+        isInvulnerable = false;
     }
 
 
@@ -117,23 +130,33 @@ public class Entity : MonoBehaviour
     //=-----------------=
     public void ModifyHealth(float _value)
     {
+        if (isInvulnerable) return;
+        StartCoroutine(InvulnerabilityCooldown());
         switch (_value)
         {
-            case > 0 when currentStats.sounds.heal:
-                GetComponent<AudioVarienceModulator>().PlaySound(currentStats.sounds.heal);
+            case > 0:
+                OnEntityHeal?.Invoke();
+                isDead = false;
+                if (currentStats.sounds.heal) GetComponent<AudioVarienceModulator>().PlaySound(currentStats.sounds.heal);
                 break;
-            case < 0 when currentStats.sounds.heal:
-                GetComponent<AudioVarienceModulator>().PlaySound(currentStats.sounds.hurt);
+            case < 0:
+                if (isDead) return;
+                OnEntityHurt?.Invoke();
+                if (currentStats.sounds.hurt) GetComponent<AudioVarienceModulator>().PlaySound(currentStats.sounds.hurt);
                 break;
         }
 
         if (currentStats.health + _value <= 0)
         {
+            if (isDead) return;
             GetComponent<AudioVarienceModulator>().PlaySound(currentStats.sounds.death);
-            if (OnEntityDeath != null) OnEntityDeath.Invoke();
+            OnEntityDeath?.Invoke();
+            isDead = true;
         }
 
-        currentStats.health += _value;
+        if (currentStats.health + _value > characterStats.stats.health) currentStats.health = characterStats.stats.health;
+        else if (currentStats.health + _value < 0) currentStats.health = 0;
+        else currentStats.health += _value;
     }
 
     public bool IsGrounded3D()

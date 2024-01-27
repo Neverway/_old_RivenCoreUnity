@@ -27,6 +27,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
     private static readonly int LastX = Animator.StringToHash("LastX");
     private static readonly int LastY = Animator.StringToHash("LastY");
     public Vector2 facingDirection;
+    public bool invulnerable;
     
     
     //=-----------------=
@@ -36,44 +37,49 @@ public class Entity_Controller_Topdown2D : Entity_Controller
     public InputActions.TopDown2DActions topdown2DActions;
     private Rigidbody2D entityRigidbody2D;
     private Animator animator;
+    private Entity entity;
     
 
     //=-----------------=
     // Internal Functions
     //=-----------------=
-    public override void EntityAwake(Entity entity)
+    public override void EntityAwake(Entity _entity)
     {
         gameInstance = FindObjectOfType<GameInstance>();
         topdown2DActions = new InputActions().TopDown2D;
         topdown2DActions.Enable();
-        GetReferences(entity);
+        GetReferences(_entity);
     }
     
-    public override void EntityUpdate(Entity entity)
+    public override void EntityUpdate(Entity _entity)
     {
-        if (!entity.isPossessed) return;
+        if (!_entity.isPossessed) return;
         if (topdown2DActions.Pause.WasPressedThisFrame()) gameInstance.UI_ShowPause();
-        if (entity.isPaused) return;
-        entity.currentStats.movementSpeed = topdown2DActions.Action.IsPressed() ? entity.currentStats.sprintSpeed : entity.currentStats.walkSpeed; 
+        if (_entity.isPaused) return;
+        _entity.currentStats.movementSpeed = topdown2DActions.Action.IsPressed() ? _entity.currentStats.sprintSpeed : _entity.currentStats.walkSpeed; 
         movementDirection = topdown2DActions.Move.ReadValue<Vector2>();
     }
     
-    public override void EntityFixedUpdate(Entity entity)
+    public override void EntityFixedUpdate(Entity _entity)
     {
-        if (!entity.isPossessed) return;
-        if (entity.isPaused) return;
-        UpdateMovement(entity);
-        UpdateAnimator(entity);
+        if (!_entity.isPossessed) return;
+        if (_entity.isPaused) return;
+        UpdateMovement();
+        UpdateAnimator();
     }
     
-    private void GetReferences(Entity entity)
+    private void GetReferences(Entity _entity)
     {
-        entityRigidbody2D = entity.GetComponent<Rigidbody2D>();
-        animator = entity.GetComponent<Animator>();
-        entity.currentStats = entity.characterStats.stats;
+        entityRigidbody2D = _entity.GetComponent<Rigidbody2D>();
+        animator = _entity.GetComponent<Animator>();
+        entity = _entity;
+        _entity.currentStats = _entity.characterStats.stats;
+        _entity.OnEntityHeal += OnEntityHeal;
+        _entity.OnEntityHurt += OnEntityHurt;
+        _entity.OnEntityDeath += OnEntityDeath;
     }
     
-    private void UpdateMovement(Entity entity)
+    private void UpdateMovement()
     {
         // Update object position
         var position = entity.transform.position;
@@ -86,7 +92,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
         }
     }
     
-    private void UpdateAnimator(Entity entity)
+    private void UpdateAnimator()
     {
         if (!animator || !animator.enabled) return;
         // Set Animator Moving Direction
@@ -96,6 +102,21 @@ public class Entity_Controller_Topdown2D : Entity_Controller
         if (movementDirection.x != 0 || movementDirection.y != 0) { facingDirection = movementDirection; }
         animator.SetFloat(LastX, facingDirection.x);
         animator.SetFloat(LastY, facingDirection.y);
+    }
+
+    private void OnEntityHeal()
+    {
+        animator.Play("Heal");
+    }
+
+    private void OnEntityHurt()
+    {
+        animator.Play("Hurt");
+    }
+
+    private void OnEntityDeath()
+    {
+        animator.Play("Knockout");
     }
 
 
