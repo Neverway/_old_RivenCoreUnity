@@ -62,6 +62,15 @@ public class RuntimeDataInspector : MonoBehaviour
             variableData.Add(data);
         }
     }
+
+    public void SendVariableDataToScript()
+    {
+        for (int i = 0; i < variableData.Count; i++)
+        {
+            SetData(variableData[i].name, variableData[i].value);
+        }
+    }
+    
     
     public void SetData(string _variableName, string _value)
     {
@@ -86,12 +95,4 @@ public class RuntimeDataInspector : MonoBehaviour
             }
         }
     }
-}
-
-[SerializeField]
-public class VariableData
-{
-    public string name;
-    public string type;
-    public string value;
 }

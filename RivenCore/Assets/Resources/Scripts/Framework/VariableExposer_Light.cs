@@ -37,11 +37,11 @@ public class VariableExposer_Light : MonoBehaviour
     private void Start()
     {
         targetLight = GetComponent<Light>();
-        intensity = targetLight.intensity;
-        range = targetLight.range;
-        colorRed = targetLight.color.r;
-        colorGreen = targetLight.color.g;
-        colorBlue = targetLight.color.b;
+        //intensity = targetLight.intensity;
+        //range = targetLight.range;
+        //colorRed = targetLight.color.r;
+        //colorGreen = targetLight.color.g;
+        //colorBlue = targetLight.color.b;
     }
 
     private void Update()

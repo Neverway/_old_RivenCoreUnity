@@ -150,12 +150,22 @@ public class System_LevelManager : MonoBehaviour
                 }
             }
             
-            // Exit if we couldn't find the tile in the tileMemory
+            // Exit if we couldn't find the asset in the assetMemory
             if (tempAsset == null) continue;
-            // Else add the tile data to the level data
+            // Else add the asset data to the level data
             SpotData newSpotData = new SpotData();
             newSpotData.id = tempAsset.name;
             newSpotData.unsnappedPosition = tempAsset.transform.position;
+            if (tempAsset.GetComponent<RuntimeDataInspector>())
+            {
+                tempAsset.GetComponent<RuntimeDataInspector>().Inspect();
+                newSpotData.assetData = tempAsset.GetComponent<RuntimeDataInspector>().variableData;
+            }
+            else
+            {
+                print(tempAsset.name + " did not seem to have asset data");
+                newSpotData.assetData = new List<VariableData>();
+            }
             // NEED LAYER/DEPTH ASSIGNMENT HERE
             //newSpotData.layer = tempAsset.layer;
             data.assets.Add(newSpotData);
@@ -176,7 +186,7 @@ public class System_LevelManager : MonoBehaviour
             Destroy(assetsRoot.transform.GetChild(i).gameObject);
         }
 
-
+        // Load tiles
         for (var i = 0; i < data.tiles.Count; i++)
         {
             TileBase tempTile = null;
@@ -193,11 +203,13 @@ public class System_LevelManager : MonoBehaviour
             if (tempTile == null) continue;
             tilemaps[data.tiles[i].layer].SetTile(data.tiles[i].position, tempTile);
         }
-
+        
+        // Load assets
         for (int i = 0; i < data.assets.Count; i++)
         {
             GameObject tempAsset = null;
             Vector3 tempPosition = new Vector3();
+            List<VariableData> tempData = new List<VariableData>();
 
             foreach (var group in assetMemory)
             {
@@ -205,6 +217,7 @@ public class System_LevelManager : MonoBehaviour
                 {
                     tempAsset = group.assets.Find(t => t.name == data.assets[i].id);
                     tempPosition = data.assets[i].unsnappedPosition;
+                    tempData = data.assets[i].assetData;
                     break;
                 }
             }
@@ -212,6 +225,12 @@ public class System_LevelManager : MonoBehaviour
             if (tempAsset == null) continue;
             var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
             assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
+            if (assetRef.GetComponent<RuntimeDataInspector>())
+            {
+                print(assetRef.name + " should have asset data, assigning now...");
+                assetRef.GetComponent<RuntimeDataInspector>().variableData = tempData;
+                assetRef.GetComponent<RuntimeDataInspector>().SendVariableDataToScript();
+            }
             // NEED LAYER/DEPTH ASSIGNMENT HERE
         }
     }
