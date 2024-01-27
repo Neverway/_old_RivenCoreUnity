@@ -71,6 +71,7 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
     {
         Clear();
         targetAsset = _assetData;
+        targetAsset.Inspect();
         
         // Loop through variable data and create fields accordingly
         for (int i = 0; i < targetAsset.variableData.Count; i++)

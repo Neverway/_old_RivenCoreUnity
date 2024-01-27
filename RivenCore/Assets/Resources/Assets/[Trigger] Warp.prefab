@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5726745309538710248}
   - component: {fileID: 3055124126937113}
   - component: {fileID: 21780552069674136}
-  - component: {fileID: 2528523315369391756}
+  - component: {fileID: -4747755895057888629}
   - component: {fileID: -1033464204112307733}
   m_Layer: 6
-  m_Name: '[Trigger] LayerChange'
+  m_Name: '[Trigger] Warp'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -287839661
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: efef466537f755a5fbaa8744b4c207c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f3a8d4f176bdf7a2b46e59755aecd59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2528523315369391756
+--- !u!114 &-4747755895057888629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,10 +141,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2529539590430068902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331cd213c6beffdc68e2b573decd4712, type: 3}
+  m_Script: {fileID: 11500000, guid: d909b95a5818c66aebc94a6c524452b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitLayer: 0
+  warpID: 
+  exitWarpID: 
+  exitOffsetX: 0
+  exitOffsetY: 0
 --- !u!114 &-1033464204112307733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b31e295f9b3ad8a088de4f224ebfb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScript: {fileID: 2528523315369391756}
+  targetScript: {fileID: -4747755895057888629}
   exposedVariables:
-  - exitLayer
+  - warpID
+  - exitWarpID
+  - exitOffsetX
+  - exitOffsetY
   variableData: []

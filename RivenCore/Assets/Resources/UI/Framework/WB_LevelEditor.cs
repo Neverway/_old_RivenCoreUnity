@@ -489,16 +489,17 @@ public class WB_LevelEditor : MonoBehaviour
         for (var i = 0; i < levelManager.assetsRoot.transform.childCount; i++)
         {
             var currentAsset = levelManager.assetsRoot.transform.GetChild(i);
-            if (currentAsset.transform.position == new Vector3(
-                    MathF.Round(cursorPos.x), 
-                    MathF.Round(cursorPos.y), 
-                    currentAsset.transform.position.z))
+            if (currentAsset.transform.position == new Vector3(MathF.Round(cursorPos.x), MathF.Round(cursorPos.y), currentAsset.transform.position.z))
             {
+                print($"Selected {currentAsset.name}");
                 InspectionIndicator.SetActive(true);
-                InspectionIndicator.transform.position = new Vector3(currentAsset.transform.position.x,
-                    currentAsset.transform.position.y);
+                InspectionIndicator.transform.position = new Vector3(currentAsset.transform.position.x, currentAsset.transform.position.y);
                 var assetData = currentAsset.gameObject.GetComponent<RuntimeDataInspector>();
-                if (assetData) inspector.InitializeInspector(assetData);
+                if (assetData)
+                {
+                    inspector.InitializeInspector(assetData);
+                    print($"{currentAsset.name} has inspection data");
+                }
                 return;
             }
         }
