@@ -159,6 +159,7 @@ public class WB_LevelEditor : MonoBehaviour
         }
         
         cursorPos = viewCamera.ScreenToWorldPoint(Input.mousePosition);
+        if (isTesting) return;
         
         // Place/Erase
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
@@ -268,6 +269,9 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void UpdateLayerSelection()
     {
+        if (currentTool == "inspect") { inspector.gameObject.SetActive(true); }
+        else { inspector.gameObject.SetActive(false); }
+        
         // Hide the menu if not in the painting tool mode
         if (currentTool != "paint") { layerButtons[0].transform.parent.parent.gameObject.SetActive(false); return; }
         
@@ -363,27 +367,33 @@ public class WB_LevelEditor : MonoBehaviour
         inventoryOpen = !inventoryOpen;
         inventory.SetActive(inventoryOpen);
     }
+    
     private void ToggleSublayerMenu()
     {
         var sublayerMenu = sublayerToggleButton.transform.parent.GetChild(1).gameObject;
         sublayerMenu.SetActive(!sublayerMenu.activeInHierarchy);
     }
+    
     private void StartTest()
     {
         if (!editorPlayer) editorPlayer = FindObjectOfType<GameInstance>().localPlayerCharacter;
+        isTesting = true;
         editorPlayer.gameObject.SetActive(false);
         topBarButtons[3].gameObject.SetActive(false);
         topBarButtons[4].gameObject.SetActive(true);
         FindObjectOfType<GameInstance>().CreateNewPlayerCharacter(testingGamemode, true, true);
     }
+    
     private void StopTest()
     {
+        isTesting = false;
         Destroy(FindObjectOfType<GameInstance>().localPlayerCharacter.gameObject);
         FindObjectOfType<GameInstance>().localPlayerCharacter = editorPlayer;
         editorPlayer.gameObject.SetActive(true);
         topBarButtons[3].gameObject.SetActive(true);
         topBarButtons[4].gameObject.SetActive(false);
     }
+    
     private void Place()
     {
         switch (currentPaintMode)
@@ -420,6 +430,7 @@ public class WB_LevelEditor : MonoBehaviour
             }
         }
     }
+    
     private void Erase()
     {
         switch (currentPaintMode)
@@ -472,6 +483,8 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void Inspect()
     {
+        inspector.Clear();
+        
         // Check for asset at cursor position
         for (var i = 0; i < levelManager.assetsRoot.transform.childCount; i++)
         {
@@ -490,12 +503,13 @@ public class WB_LevelEditor : MonoBehaviour
             }
         }
         
-        inspector.Clear();
         InspectionIndicator.SetActive(false);
     }
+    
     private static void Undo()
     {
     }
+    
     private static void Redo()
     {
     }
