@@ -69,13 +69,8 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
     //=-----------------=
     public void InitializeInspector(RuntimeDataInspector _assetData)
     {
+        Clear();
         targetAsset = _assetData;
-        targetAsset.Inspect();
-        fields = new List<GameObject>();
-        for (int i = 0; i < fieldListRoot.transform.childCount; i++)
-        {
-            Destroy(fieldListRoot.transform.GetChild(i).gameObject);
-        }
         
         // Loop through variable data and create fields accordingly
         for (int i = 0; i < targetAsset.variableData.Count; i++)
@@ -107,6 +102,16 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
             field.transform.GetChild(0).GetComponent<TMP_Text>().text = targetAsset.variableData[i].name;
             field.SetActive(true);
             fields.Add(field);
+        }
+    }
+
+    public void Clear()
+    {
+        targetAsset = null;
+        fields = new List<GameObject>();
+        for (int i = 0; i < fieldListRoot.transform.childCount; i++)
+        {
+            Destroy(fieldListRoot.transform.GetChild(i).gameObject);
         }
     }
 }

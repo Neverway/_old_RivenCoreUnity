@@ -52,6 +52,7 @@ public class WB_LevelEditor : MonoBehaviour
     private System_LevelManager levelManager;
     private Camera viewCamera;
     [SerializeField] private GameObject tileCursor;
+    [SerializeField] private GameObject InspectionIndicator;
     // File-bar
     [SerializeField] private Gamemode testingGamemode;
     [SerializeField] private Button[] topBarButtons;
@@ -480,11 +481,17 @@ public class WB_LevelEditor : MonoBehaviour
                     MathF.Round(cursorPos.y), 
                     currentAsset.transform.position.z))
             {
+                InspectionIndicator.SetActive(true);
+                InspectionIndicator.transform.position = new Vector3(currentAsset.transform.position.x,
+                    currentAsset.transform.position.y);
                 var assetData = currentAsset.gameObject.GetComponent<RuntimeDataInspector>();
                 if (assetData) inspector.InitializeInspector(assetData);
                 return;
             }
         }
+        
+        inspector.Clear();
+        InspectionIndicator.SetActive(false);
     }
     private static void Undo()
     {
