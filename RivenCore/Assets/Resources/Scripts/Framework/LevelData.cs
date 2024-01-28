@@ -21,6 +21,7 @@ public class LevelData
 public class SpotData
 {
     public int layer;
+    public string layerID; // WIP value to track actual layer name, instead of layer hierarchy position, to hopefully make level file corruption less common when changing what's stored in level files
     public string id;
     public Vector3Int position;
     public Vector3 unsnappedPosition;

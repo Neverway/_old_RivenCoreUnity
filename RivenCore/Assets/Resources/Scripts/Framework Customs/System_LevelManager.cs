@@ -26,6 +26,7 @@ public class System_LevelManager : MonoBehaviour
     [Tooltip("A list of all the objects and their categories used for the current project")]
     public List<AssetMemoryGroup> assetMemory;
     public GameObject assetsRoot;
+    public string filePath;
 
 
     //=-----------------=
@@ -86,7 +87,7 @@ public class System_LevelManager : MonoBehaviour
         };
 
         if (!FileBrowser.Success) yield break;
-        var filePath = FileBrowser.Result[0];
+        filePath = FileBrowser.Result[0];
         switch (mode)
         {
             case "Load":
@@ -102,7 +103,7 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // External Functions
     //=-----------------=
-    private void SaveLevel(string levelFile)
+    public void SaveLevel(string levelFile)
     {
         var data = new LevelData();
         // Save tile data
@@ -133,6 +134,7 @@ public class System_LevelManager : MonoBehaviour
                     newSpotData.id = tempTile.name;
                     newSpotData.position = new Vector3Int(x, y, 0);
                     newSpotData.layer = tilemaps.IndexOf(tilemap);
+                    newSpotData.layerID = tilemap.name;
                     data.tiles.Add(newSpotData);
                 }
             }
