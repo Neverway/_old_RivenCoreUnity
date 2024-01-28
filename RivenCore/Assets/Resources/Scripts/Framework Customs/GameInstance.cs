@@ -119,6 +119,11 @@ public class GameInstance : MonoBehaviour
         return null;
     }
 
+    public string GetCurrentGamemode()
+    {
+        return localPlayerCharacter.currentController.ToString();
+    }
+
 
     //=-----------------=
     // User External Functions

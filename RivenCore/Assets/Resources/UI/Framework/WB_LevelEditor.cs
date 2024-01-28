@@ -19,6 +19,7 @@ public class WB_LevelEditor : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
+    public int sublayerCount;
 
 
     //=-----------------=
@@ -299,11 +300,11 @@ public class WB_LevelEditor : MonoBehaviour
         {
             case 0:
                 // Select the ground layer for each tile map
-                currentTilemap = levelManager.tilemaps[currentLayer*5+currentSublayer];
+                currentTilemap = levelManager.tilemaps[currentLayer*sublayerCount+currentSublayer];
                 break;
             case 2:
                 // Select the collision layer for each tile map
-                currentTilemap = levelManager.tilemaps[currentLayer*5+4];
+                currentTilemap = levelManager.tilemaps[currentLayer*sublayerCount+(sublayerCount-1)];
                 break;
         }
     }

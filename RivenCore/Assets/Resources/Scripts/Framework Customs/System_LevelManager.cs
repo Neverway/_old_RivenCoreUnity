@@ -163,7 +163,6 @@ public class System_LevelManager : MonoBehaviour
             }
             else
             {
-                print(tempAsset.name + " did not seem to have asset data");
                 newSpotData.assetData = new List<VariableData>();
             }
             // NEED LAYER/DEPTH ASSIGNMENT HERE
@@ -227,7 +226,6 @@ public class System_LevelManager : MonoBehaviour
             assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
             if (assetRef.GetComponent<RuntimeDataInspector>())
             {
-                print(assetRef.name + " should have asset data, assigning now...");
                 assetRef.GetComponent<RuntimeDataInspector>().variableData = tempData;
                 assetRef.GetComponent<RuntimeDataInspector>().SendVariableDataToScript();
             }
