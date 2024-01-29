@@ -19,12 +19,13 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    [Tooltip("A list of all of the 'tile layers' used in the scene")]
-    public List<Tilemap> tilemaps;
     [Tooltip("A list of all the tiles and their categories used for the current project")]
     public List<tileMemoryGroup> tileMemory;
     [Tooltip("A list of all the objects and their categories used for the current project")]
     public List<AssetMemoryGroup> assetMemory;
+    [Header("READ-ONLY (Don't touch!)")]
+    [Tooltip("A list of all of the 'tile layers' used in the scene")]
+    public List<Tilemap> tilemaps;
     public GameObject assetsRoot;
     public string filePath;
 

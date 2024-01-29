@@ -6496,6 +6496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Instance
       objectReference: {fileID: 0}
+    - target: {fileID: 1579284705886236655, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2128968533710696330, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -27922,6 +27926,7 @@ MonoBehaviour:
   - 
   testingGamemode: {fileID: 11400000, guid: e80d964a612af80ba99992319a963502, type: 2}
   topbarTitle: {fileID: 1282910938}
+  sidebarTitle: {fileID: 157499912}
   fileButtons:
   - {fileID: 1641308172}
   - {fileID: 2056438914}

@@ -301,7 +301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b5939f9aa53c861bcde0174441563d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemaps: []
   tileMemory:
   - name: Collision
     tiles:
@@ -661,5 +660,7 @@ MonoBehaviour:
     - {fileID: 2529539590430068902, guid: 0d48d1ed9289c02b7ac0988dc105fc88, type: 3}
     - {fileID: 2529539590430068902, guid: ad56eb11e14303f429e43ca2f71fd559, type: 3}
     spacers: []
+  tilemaps: []
   assetsRoot: {fileID: 0}
+  filePath: 
   fileBrowserSkin: {fileID: 11400000, guid: 9d061b625bbc2954f8dd787984fe21be, type: 2}

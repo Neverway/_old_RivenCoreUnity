@@ -61,6 +61,7 @@ public class WB_LevelEditor : MonoBehaviour
     [SerializeField] private Gamemode testingGamemode;
     [Header("Read-Only (Don't touch!)")]
     [SerializeField] private TMP_Text topbarTitle;
+    [SerializeField] private TMP_Text sidebarTitle;
     [SerializeField] private Button[] fileButtons, viewButtons, helpButtons, filebarButtons, toolbarButtons, hotbarButtons, layerButtons, sublayerButtons, layerVisibilityButtons;
     [SerializeField] private Button clearHotbarButton, toggleInventoryButton;
     [SerializeField] private GameObject tileCursor, inspectionIndicator;
@@ -68,7 +69,6 @@ public class WB_LevelEditor : MonoBehaviour
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject[] layerGroups;
     
-
 
     //=-----------------=
     // Mono Functions
@@ -126,7 +126,7 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void Update()
     {
-        UpdateTopbarTitle();
+        UpdateBarTitles();
         UpdateToolImages();
         UpdateHotBarImages();
         UpdateLayerSelection();
@@ -174,7 +174,7 @@ public class WB_LevelEditor : MonoBehaviour
         filebarButtons[3].gameObject.SetActive(false);
     }
 
-    private void UpdateTopbarTitle()
+    private void UpdateBarTitles()
     {
         // Set the top-bar title
         if (levelManager.filePath != "")
@@ -187,6 +187,9 @@ public class WB_LevelEditor : MonoBehaviour
         {
             topbarTitle.text = $"*New Map - {Application.version}";
         }
+        // Set sidebar title
+        if (currentTool == "paint") sidebarTitle.text = "Layers";
+        else if (currentTool == "inspect") sidebarTitle.text = "Inspector";
     }
 
     private void UpdateToolImages()
@@ -448,14 +451,14 @@ public class WB_LevelEditor : MonoBehaviour
             var currentAsset = levelManager.assetsRoot.transform.GetChild(i);
             if (currentAsset.transform.position == new Vector3(MathF.Round(cursorPos.x), MathF.Round(cursorPos.y), currentAsset.transform.position.z))
             {
-                print($"Selected {currentAsset.name}");
+                //print($"Selected {currentAsset.name}");
                 inspectionIndicator.SetActive(true);
                 inspectionIndicator.transform.position = new Vector3(currentAsset.transform.position.x, currentAsset.transform.position.y);
                 var assetData = currentAsset.gameObject.GetComponent<RuntimeDataInspector>();
                 if (assetData)
                 {
                     inspector.InitializeInspector(assetData);
-                    print($"{currentAsset.name} has inspection data");
+                    //print($"{currentAsset.name} has inspection data");
                 }
                 return;
             }
