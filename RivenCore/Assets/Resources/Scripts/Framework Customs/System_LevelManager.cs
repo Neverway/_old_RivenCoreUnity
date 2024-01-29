@@ -33,7 +33,6 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
-    //private LevelData levelData;
 
 
     //=-----------------=

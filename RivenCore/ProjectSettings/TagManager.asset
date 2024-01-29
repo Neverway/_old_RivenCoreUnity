@@ -8,6 +8,7 @@ TagManager:
   - Entity
   - Map_Assets
   - Map_Tilemaps
+  - CRTG_Cursor
   layers:
   - Default
   - TransparentFX

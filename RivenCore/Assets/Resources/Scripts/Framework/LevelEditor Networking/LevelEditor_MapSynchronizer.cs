@@ -5,10 +5,12 @@
 //
 //=============================================================================
 
+using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class RpcTest : NetworkBehaviour
+public class LevelEditor_MapSynchronizer : NetworkBehaviour
 {
     //=-----------------=
     // Public Variables
@@ -28,27 +30,19 @@ public class RpcTest : NetworkBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    public override void OnNetworkSpawn()
-    {
-        // If we're not the owner of this object
-        if (!IsOwner)
-        {
-            // Set child object to active
-            transform.GetChild(0).gameObject.SetActive(true);
-        }        
-    }
-
-    public void Update()
-    {
-        // If we're the owner of this object
-        // Set this objects position to cursor position
-        if (IsOwner) transform.position = GameObject.FindGameObjectWithTag("CRTG_Cursor").transform.position;
-    }    
-
     
+    
+
     //=-----------------=
     // Internal Functions
     //=-----------------=
+    // SYNC MAP WHEN JOINING HOST
+    // Upon joining a server,
+    // get the host to save the map to a buffer json string
+    // get the host to send the json string to the new client
+    // get the client to save the map to a buffer file
+    // clear the map path to avoid saving over the buffer
+    // get the new client to load the json string as map data
 
 
     //=-----------------=
