@@ -38,7 +38,7 @@ public class WB_LevelEditor : MonoBehaviour
     private Vector2 viewZoomRange = new Vector2(2, 16);
     
     // Hotbar
-    [SerializeField] private string[] hotBarTileID = { "", "", "", "", "", "", "", "", "", "" };
+    private string[] hotBarTileID = { "", "", "", "", "", "", "", "", "", "" };
     private int currentHotBarIndex;
     
     // Layers
