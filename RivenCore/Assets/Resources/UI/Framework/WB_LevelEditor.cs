@@ -35,7 +35,7 @@ public class WB_LevelEditor : MonoBehaviour
     // Tool cursor
     private Vector3 cursorPos;
     private float cursorOffset;
-    private Vector2 viewZoomRange = new Vector2(2, 16);
+    private Vector2 viewZoomRange = new Vector2(2, 32);
     
     // Hotbar
     private string[] hotBarTileID = { "", "", "", "", "", "", "", "", "", "" };
@@ -122,6 +122,8 @@ public class WB_LevelEditor : MonoBehaviour
             var index = i;
             layerVisibilityButtons[i].onClick.AddListener(() => { IsLayerVisible[index] = !IsLayerVisible[index]; });
         }
+        
+        if (!editorPlayer) editorPlayer = FindObjectOfType<GameInstance>().localPlayerCharacter;
     }
 
     private void Update()
@@ -383,6 +385,7 @@ public class WB_LevelEditor : MonoBehaviour
             {
                 if (!(viewCamera.orthographicSize > viewZoomRange.x)) return;
                 viewCamera.orthographicSize--;
+                editorPlayer.currentStats.movementSpeed --;
             }
             else
             {
@@ -396,6 +399,7 @@ public class WB_LevelEditor : MonoBehaviour
             {
                 if (!(viewCamera.orthographicSize < viewZoomRange.y)) return;
                 viewCamera.orthographicSize++;
+                editorPlayer.currentStats.movementSpeed ++;
             }
             else
             {
