@@ -377,6 +377,22 @@ MonoBehaviour:
       spacerCount: 5
     - index: 37
       spacerCount: 5
+  - name: AutumnForestLeaves
+    tiles:
+    - {fileID: 11400000, guid: 82c141235c676c261a9ee3ddc14d0901, type: 2}
+    - {fileID: 11400000, guid: 28973bb9262765984837eaa3e571587f, type: 2}
+    - {fileID: 11400000, guid: 383012f161e338f7d8b55b2324924584, type: 2}
+    - {fileID: 11400000, guid: 36e14a49c7efe4d31a22b3dccdbc3340, type: 2}
+    - {fileID: 11400000, guid: ec357592ffb0ddb7f82d70197a2af050, type: 2}
+    - {fileID: 11400000, guid: 10af597d9c00abf2ca5d5607fdd88387, type: 2}
+    - {fileID: 11400000, guid: f841a1afc02701b5cb47e68a5424e48f, type: 2}
+    spacers:
+    - index: 0
+      spacerCount: 9
+    - index: 3
+      spacerCount: 7
+    - index: 6
+      spacerCount: 7
   - name: AutumnForest
     tiles:
     - {fileID: 11400000, guid: c37618dccd3a005a2b502defcaefb98a, type: 2}

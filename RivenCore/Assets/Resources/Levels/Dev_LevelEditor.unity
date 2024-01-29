@@ -19168,9 +19168,9 @@ RectTransform:
   m_Children:
   - {fileID: 192724984383840013}
   - {fileID: 334192183297226974}
-  - {fileID: 865861653}
   - {fileID: 1917073001}
   - {fileID: 412647415}
+  - {fileID: 865861653}
   - {fileID: 8558148414810032250}
   - {fileID: 6305183348800553847}
   - {fileID: 2010832292704324684}
@@ -27913,17 +27913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b843194f38a1d59f98c06dc85c15c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hotBarTileID:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   testingGamemode: {fileID: 11400000, guid: e80d964a612af80ba99992319a963502, type: 2}
   topbarTitle: {fileID: 1282910938}
   sidebarTitle: {fileID: 157499912}
