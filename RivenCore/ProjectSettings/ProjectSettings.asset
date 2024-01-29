@@ -136,8 +136,9 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: CTGR Beta 1.1.0
-  preloadedAssets: []
+  bundleVersion: CTGR Beta 2.0.0
+  preloadedAssets:
+  - {fileID: 11400000, guid: 0b92ec9cb407a7785aecd8c0e160ac1a, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
