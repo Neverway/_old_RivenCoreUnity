@@ -7732,6 +7732,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: tileMemory.Array.data[1].tiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d74649d1eb6fead388e03a1bbef62a1, type: 2}
     - target: {fileID: 2128968533710696330, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
