@@ -140,6 +140,11 @@ public class System_LevelManager : MonoBehaviour
             }
         }
         // Save object data
+        
+        // Find all objects with an asset_instanceID component
+        // For each one, see if we can find the root asset in assetMemory
+            // If not, skip it
+        // else, add the asset data for name, unique id, position, and any variable data
         for (int i = 0; i < assetsRoot.transform.childCount; i++)
         {
             GameObject tempAsset = null;
@@ -158,6 +163,10 @@ public class System_LevelManager : MonoBehaviour
             SpotData newSpotData = new SpotData();
             newSpotData.id = tempAsset.name;
             newSpotData.unsnappedPosition = tempAsset.transform.position;
+            if (tempAsset.GetComponent<Asset_UniqueInstanceId>())
+            {
+                newSpotData.uniqueId = tempAsset.GetComponent<Asset_UniqueInstanceId>().Id;
+            }
             if (tempAsset.GetComponent<RuntimeDataInspector>())
             {
                 tempAsset.GetComponent<RuntimeDataInspector>().Inspect();
@@ -210,6 +219,7 @@ public class System_LevelManager : MonoBehaviour
         {
             GameObject tempAsset = null;
             Vector3 tempPosition = new Vector3();
+            int tempUniqueId = 0;
             List<VariableData> tempData = new List<VariableData>();
 
             foreach (var group in assetMemory)
@@ -219,6 +229,7 @@ public class System_LevelManager : MonoBehaviour
                     tempAsset = group.assets.Find(t => t.name == data.assets[i].id);
                     tempPosition = data.assets[i].unsnappedPosition;
                     tempData = data.assets[i].assetData;
+                    tempUniqueId = data.assets[i].uniqueId;
                     break;
                 }
             }
@@ -226,6 +237,10 @@ public class System_LevelManager : MonoBehaviour
             if (tempAsset == null) continue;
             var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
             assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
+            if (assetRef.GetComponent<Asset_UniqueInstanceId>())
+            {
+                assetRef.GetComponent<Asset_UniqueInstanceId>().Id = tempUniqueId;
+            }
             if (assetRef.GetComponent<RuntimeDataInspector>())
             {
                 assetRef.GetComponent<RuntimeDataInspector>().variableData = tempData;

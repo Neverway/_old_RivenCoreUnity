@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 543343103552698866}
   - component: {fileID: 8472163225097272000}
   - component: {fileID: 4739293168289647108}
+  - component: {fileID: 4510408189837644068}
   m_Layer: 6
   m_Name: '[Light] Sun'
   m_TagString: Untagged
@@ -147,3 +148,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4510408189837644068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536351338039600458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218c7ad354627126e84d2b1a8f3f244c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 0

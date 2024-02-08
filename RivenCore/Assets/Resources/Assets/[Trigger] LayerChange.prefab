@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 21780552069674136}
   - component: {fileID: 2528523315369391756}
   - component: {fileID: -1033464204112307733}
+  - component: {fileID: -6840574695655123915}
   m_Layer: 6
   m_Name: '[Trigger] LayerChange'
   m_TagString: Untagged
@@ -161,3 +162,16 @@ MonoBehaviour:
   exposedVariables:
   - exitLayer
   variableData: []
+--- !u!114 &-6840574695655123915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2529539590430068902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218c7ad354627126e84d2b1a8f3f244c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 0

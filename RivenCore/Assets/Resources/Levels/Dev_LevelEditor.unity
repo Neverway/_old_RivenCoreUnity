@@ -5308,12 +5308,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449357844}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38bb6ac962ae88a1abb371feab6ed140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxAmount: {x: 0.01, y: 0.01}
+  parallaxAmount: {x: 0.05, y: 0.05}
 --- !u!1 &453810235
 GameObject:
   m_ObjectHideFlags: 0
@@ -7302,12 +7302,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645257083}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38bb6ac962ae88a1abb371feab6ed140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxAmount: {x: 0.03, y: 0.03}
+  parallaxAmount: {x: 0.15, y: 0.15}
 --- !u!1 &652299959
 GameObject:
   m_ObjectHideFlags: 0
@@ -14542,12 +14542,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428618401}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38bb6ac962ae88a1abb371feab6ed140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxAmount: {x: 0.03, y: 0.03}
+  parallaxAmount: {x: 0.15, y: 0.15}
 --- !u!1 &1430141316
 GameObject:
   m_ObjectHideFlags: 0
@@ -17220,12 +17220,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699503269}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38bb6ac962ae88a1abb371feab6ed140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxAmount: {x: 0.02, y: 0.02}
+  parallaxAmount: {x: 0.1, y: 0.1}
 --- !u!1001 &1705616000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18531,12 +18531,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798041515}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38bb6ac962ae88a1abb371feab6ed140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxAmount: {x: 0.02, y: 0.02}
+  parallaxAmount: {x: 0.1, y: 0.1}
 --- !u!1001 &1834232428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20261,12 +20261,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989083292}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38bb6ac962ae88a1abb371feab6ed140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxAmount: {x: 0.01, y: 0.01}
+  parallaxAmount: {x: 0.05, y: 0.05}
 --- !u!114 &1990865197 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6687339381952035692, guid: 35d0172b3f9dee67c97117d111d4012b, type: 3}

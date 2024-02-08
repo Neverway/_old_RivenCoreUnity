@@ -440,6 +440,7 @@ public class WB_LevelEditor : MonoBehaviour
                         asset.transform.position.z + -currentLayer),
                     new Quaternion(0, 0, 0, 0), levelManager.assetsRoot.transform);
                 assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
+                assetRef.GetComponent<Asset_UniqueInstanceId>().Id = GetNextAvailableId();
                 break;
             }
         }
@@ -535,6 +536,41 @@ public class WB_LevelEditor : MonoBehaviour
     {
         inventoryOpen = !inventoryOpen;
         inventory.SetActive(inventoryOpen);
+    }
+    
+    private int GetNextAvailableId()
+    {
+        // Get all objects with Asset_UniqueInstanceId component
+        Asset_UniqueInstanceId[] objectsWithId = FindObjectsOfType<Asset_UniqueInstanceId>();
+
+        // Create a list of all Ids excluding 0
+        List<int> idList = new List<int>();
+        foreach (Asset_UniqueInstanceId obj in objectsWithId)
+        {
+            if (obj.Id != 0)
+            {
+                idList.Add(obj.Id);
+            }
+        }
+
+        // Sort the list
+        idList.Sort();
+
+        // Find the next available Id
+        int nextAvailableId = 1;
+        foreach (int id in idList)
+        {
+            if (id == nextAvailableId)
+            {
+                nextAvailableId++;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        return nextAvailableId;
     }
 
 

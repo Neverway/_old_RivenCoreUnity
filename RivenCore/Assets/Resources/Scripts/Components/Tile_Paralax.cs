@@ -20,6 +20,7 @@ public class Tile_Paralax : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
+    private Vector3 originalPosition;
     private Vector3 originalScale;
     private Vector3 parallaxScale;
 
@@ -38,6 +39,7 @@ public class Tile_Paralax : MonoBehaviour
     {
         gameInstance = FindObjectOfType<GameInstance>();
         // Calculate the new local scale based on the parallax amount
+        originalPosition = transform.position;
         originalScale = transform.localScale;
         parallaxScale = new Vector3(originalScale.x + (parallaxAmount.x/2), originalScale.y + (parallaxAmount.y/2), originalScale.z);
     }
@@ -50,14 +52,14 @@ public class Tile_Paralax : MonoBehaviour
         transform.localScale = gameInstance.GetCurrentGamemode().Contains("Topdown2D") ? parallaxScale : originalScale;
         if (!gameInstance.GetCurrentGamemode().Contains("Topdown2D"))
         {
-            transform.position = new Vector3();
+            transform.position = originalPosition;
             return;
         }
         
         // Calculate the distance to move based on the parallax amount
         Vector3 position = currentCamera.transform.position;
         Vector2 distance = new Vector2(position.x * -parallaxAmount.x, position.y * -parallaxAmount.y);
-        Vector3 newPosition = new Vector3(distance.x, distance.y, transform.position.z);
+        Vector3 newPosition = new Vector3(distance.x, distance.y, originalPosition.z);
 
         // Set the new position
         transform.position = newPosition;
