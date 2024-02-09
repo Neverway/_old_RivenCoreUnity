@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e7fc6bdb03907778389ed7078a38c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 1
   damageAmount: 10
   owningTeam: 
   entitiesInTrigger: []
@@ -162,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetScript: {fileID: 6492149436818344109}
   exposedVariables:
+  - scaleX
+  - scaleY
   - damageAmount
   - owningTeam
   variableData: []

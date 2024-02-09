@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331cd213c6beffdc68e2b573decd4712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 1
   exitLayer: 0
 --- !u!114 &-1033464204112307733
 MonoBehaviour:
@@ -160,6 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetScript: {fileID: 2528523315369391756}
   exposedVariables:
+  - scaleX
+  - scaleY
   - exitLayer
   variableData: []
 --- !u!114 &-6840574695655123915
