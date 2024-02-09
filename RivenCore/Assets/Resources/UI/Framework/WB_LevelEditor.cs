@@ -84,7 +84,7 @@ public class WB_LevelEditor : MonoBehaviour
     [SerializeField] private TMP_Text sidebarTitle;
     [SerializeField] private Button[] fileButtons, viewButtons, helpButtons, filebarButtons, toolbarButtons, hotbarButtons, layerButtons, sublayerButtons, layerVisibilityButtons;
     [SerializeField] private Button clearHotbarButton, toggleInventoryButton;
-    [SerializeField] private GameObject tileCursor, inspectionIndicator;
+    [SerializeField] private GameObject tileCursor, inspectionIndicator, shapePainterIndicator, shapePainterIndicatorPrefab;
     [SerializeField] private Sprite[] paintToolSprites, visibilitySprites;
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject[] layerGroups;
@@ -586,6 +586,16 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void HandleShapePainting()
     {
+        if (Input.GetMouseButton(0))
+        {
+            // Update box indicator
+            UpdateBoxIndicator(placeStartPos, cursorPos, new Color(0f,1f,1f,0.25f));
+        }
+        if (Input.GetMouseButton(1))
+        {
+            // Update box indicator
+            UpdateBoxIndicator(eraseStartPos, cursorPos, new Color(1f,0.2f,0f,0.25f));
+        }
         if (Input.GetMouseButtonDown(0))
         {
             placeStartPos = cursorPos;
@@ -594,6 +604,7 @@ public class WB_LevelEditor : MonoBehaviour
         {
             placeEndPos = cursorPos;
             PaintShape(placeStartPos, placeEndPos);
+            HideBoxIndicator();
         }
         else if (Input.GetMouseButtonDown(1))
         {
@@ -603,9 +614,40 @@ public class WB_LevelEditor : MonoBehaviour
         {
             eraseEndPos = cursorPos;
             PaintShape(eraseStartPos, eraseEndPos, true);
+            HideBoxIndicator();
         }
         else if (Input.GetMouseButton(2))
             Pick();
+    }
+    private void UpdateBoxIndicator(Vector3 startPos, Vector3 endPos, Color boxColor)
+    {
+        // If box indicator doesn't exist, create one
+        if (shapePainterIndicator == null)
+        {
+            shapePainterIndicator = Instantiate(shapePainterIndicatorPrefab);
+        }
+
+        // Calculate the center position of the box
+        Vector3 center = (startPos + endPos) * 0.5f;
+
+        // Calculate the size of the box
+        float width = Mathf.Abs(endPos.x - startPos.x);
+        float height = Mathf.Abs(endPos.y - startPos.y);
+
+        // Set the position and size of the box indicator
+        shapePainterIndicator.transform.position = new Vector3(center.x, center.y, 0);
+        shapePainterIndicator.transform.localScale = new Vector3(width, height, 1f);
+        shapePainterIndicator.GetComponent<SpriteRenderer>().color = boxColor;
+    }
+
+// Call this method when shape painting ends to hide the box indicator
+    private void HideBoxIndicator()
+    {
+        if (shapePainterIndicator != null)
+        {
+            Destroy(shapePainterIndicator);
+            shapePainterIndicator = null;
+        }
     }
 
     /// <summary>

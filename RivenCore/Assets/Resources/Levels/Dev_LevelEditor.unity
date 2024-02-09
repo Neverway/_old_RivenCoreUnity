@@ -31906,6 +31906,8 @@ MonoBehaviour:
   toggleInventoryButton: {fileID: 2104467531}
   tileCursor: {fileID: 1780236159}
   inspectionIndicator: {fileID: 1607001298}
+  shapePainterIndicator: {fileID: 0}
+  shapePainterIndicatorPrefab: {fileID: 2614596716098168174, guid: 0714f6f66168a6e879b9ca1106e3e4b8, type: 3}
   paintToolSprites:
   - {fileID: 21300000, guid: 3c48ad4da6c1d481c8d2740492e674ae, type: 3}
   - {fileID: 21300000, guid: 7af4c2f8d1fb4960684b657ec87d244a, type: 3}
@@ -31916,9 +31918,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e8ab7b1a8bf813ffe8c2e4fbb6494006, type: 3}
   inventory: {fileID: 4902587314544903803}
   layerGroups:
-  - {fileID: 1617150425}
-  - {fileID: 1480382030}
   - {fileID: 107536952}
+  - {fileID: 1480382030}
+  - {fileID: 1617150425}
 --- !u!114 &7497859021625753482
 MonoBehaviour:
   m_ObjectHideFlags: 0
