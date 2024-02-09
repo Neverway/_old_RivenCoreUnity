@@ -210,6 +210,7 @@ public class WB_LevelEditor : MonoBehaviour
         UpdateBarTitles();
         UpdateToolImages();
         UpdateHotBarImages();
+        UpdateCurrentPaintMode();
         UpdateLayerSelection();
         UpdateLayerVisibility();
     }
@@ -361,7 +362,8 @@ public class WB_LevelEditor : MonoBehaviour
         var cursorOffset = GetCursorOffset();
 
         tileCursor.GetComponent<SpriteRenderer>().color = cursorColor;
-        tileCursor.transform.position = new Vector3((float)MathF.Round(cursorPos.x / 1) * 1 + cursorOffset, (float)MathF.Round(cursorPos.y / 1) * 1 + cursorOffset, 0);
+        if (GetCursorOffset() > 0) tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPos.x / 1) * 1 + cursorOffset, (float)MathF.Floor(cursorPos.y / 1) * 1 + cursorOffset, 0);
+        else tileCursor.transform.position = new Vector3((float)MathF.Round(cursorPos.x / 1) * 1 + cursorOffset, (float)MathF.Round(cursorPos.y / 1) * 1 + cursorOffset, 0);
     }
 
     /// <summary>
@@ -393,15 +395,9 @@ public class WB_LevelEditor : MonoBehaviour
     {
         if (currentTool == "paint")
         {
-            if (levelManager.GetTileFromMemory(hotBarTileID[currentHotBarIndex]) && !hotBarTileID[currentHotBarIndex].Contains("Collision"))
-                return 0.5f;
-            else
-                return 0f;
+            return levelManager.GetTileFromMemory(hotBarTileID[currentHotBarIndex]) ? 0.5f : 0f;
         }
-        else // currentTool == "inspect"
-        {
-            return 0f; // Default cursor offset for inspect tool
-        }
+        return 0f; // Default cursor offset
     }
 
 
@@ -434,7 +430,28 @@ public class WB_LevelEditor : MonoBehaviour
             hotBarSelection.SetActive(i == currentHotBarIndex);
         }
     }
-
+    
+    /// <summary>
+    /// Updates the current paint mode according to the currently selected hotbar item
+    /// </summary>
+    private void UpdateCurrentPaintMode()
+    {
+        if (levelManager.GetTileFromMemory(hotBarTileID[currentHotBarIndex]))
+        {
+            if (hotBarTileID[currentHotBarIndex].ToLower().Contains("collision")) currentPaintMode = 2;
+            else currentPaintMode = 0;
+        }
+        else if (levelManager.GetAssetFromMemory(hotBarTileID[currentHotBarIndex]))
+        {
+            currentPaintMode = 1;
+        }
+        else
+        {
+            currentPaintMode = 3;
+        }
+        
+    }
+    
     /// <summary>
     /// Updates the layer selection menu and visibility.
     /// </summary>
@@ -543,17 +560,20 @@ public class WB_LevelEditor : MonoBehaviour
     /// </summary>
     private void ProcessMouseActions()
     {
-        if (!Input.GetMouseButton(0) || EventSystem.current.IsPointerOverGameObject())
-            return;
-
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         if (currentTool == "paint" && IsLayerVisible[currentLayer])
-            Place();
-        else if (currentTool == "inspect")
-            Inspect();
-        else if (Input.GetMouseButton(1) && currentTool == "paint" && IsLayerVisible[currentLayer])
-            Erase();
-        else if (Input.GetMouseButton(2) && currentTool == "paint" && IsLayerVisible[currentLayer])
-            Pick();
+        {
+            if (Input.GetMouseButton(0))
+            {
+                Place();
+            }
+            else if (Input.GetMouseButton(1))
+                Erase();
+            else if (Input.GetMouseButton(2))
+                Pick();
+        }
+        else if (Input.GetMouseButton(0))
+                Inspect();
     }
 
     /// <summary>
