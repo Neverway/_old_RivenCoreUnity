@@ -45,7 +45,11 @@ public class WB_LevelEditor : MonoBehaviour
     // Tool mode
     private string currentTool = "paint";
     private int currentPaintMode = 3;
-    private bool isShapePainting;
+    public bool isShapePainting;
+    private Vector3 placeStartPos;
+    private Vector3 placeEndPos;
+    private Vector3 eraseStartPos;
+    private Vector3 eraseEndPos;
 
     // Tool cursor
     private Vector3 cursorPos;
@@ -560,20 +564,48 @@ public class WB_LevelEditor : MonoBehaviour
     /// </summary>
     private void ProcessMouseActions()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
-        if (currentTool == "paint" && IsLayerVisible[currentLayer])
+        if (EventSystem.current.IsPointerOverGameObject() || !IsLayerVisible[currentLayer])
+            return;
+
+        if (currentTool == "paint")
         {
-            if (Input.GetMouseButton(0))
+            if (!isShapePainting)
             {
-                Place();
+                if (Input.GetMouseButton(0))
+                    Place();
+                else if (Input.GetMouseButton(1))
+                    Erase();
+                else if (Input.GetMouseButton(2))
+                    Pick();
             }
-            else if (Input.GetMouseButton(1))
-                Erase();
-            else if (Input.GetMouseButton(2))
-                Pick();
+            else HandleShapePainting();
         }
         else if (Input.GetMouseButton(0))
-                Inspect();
+            Inspect();
+    }
+
+    private void HandleShapePainting()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            placeStartPos = cursorPos;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            placeEndPos = cursorPos;
+            PaintShape(placeStartPos, placeEndPos);
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            eraseStartPos = cursorPos;
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            eraseEndPos = cursorPos;
+            PaintShape(eraseStartPos, eraseEndPos, true);
+        }
+        else if (Input.GetMouseButton(2))
+            Pick();
     }
 
     /// <summary>
@@ -581,6 +613,8 @@ public class WB_LevelEditor : MonoBehaviour
     /// </summary>
     private void ProcessKeyboardActions()
     {
+        if (Input.GetKeyDown(KeyCode.LeftShift)) isShapePainting = true;
+        else if (Input.GetKeyUp(KeyCode.LeftShift)) isShapePainting = false;
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S))
             SaveCurrentMap();
         else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.O))
@@ -649,28 +683,84 @@ public class WB_LevelEditor : MonoBehaviour
                 PlaceAsset();
                 break;
         }
-    }
-
+    }  
+    
     /// <summary>
-    /// Places a tile at the cursor position.
+    /// Paints a shape between the given start and end positions.
     /// </summary>
-    private void PlaceTile()
+    /// <param name="start">The starting position of the shape.</param>
+    /// <param name="end">The ending position of the shape.</param>
+    private void PaintShape(Vector3 start, Vector3 end, bool erasing = false)
     {
+        // Determine the minimum and maximum positions to iterate over
+        int minX = Mathf.FloorToInt(Mathf.Min(start.x, end.x));
+        int maxX = Mathf.FloorToInt(Mathf.Max(start.x, end.x));
+        int minY = Mathf.FloorToInt(Mathf.Min(start.y, end.y));
+        int maxY = Mathf.FloorToInt(Mathf.Max(start.y, end.y));
+
+        // Paint each grid position within the shape
+        for (int x = minX; x <= maxX; x++)
+        {
+            for (int y = minY; y <= maxY; y++)
+            {
+                // Place tile or asset at the current grid position
+                Vector3Int position = new Vector3Int(x, y, 0);
+                if (currentTool == "paint" && IsLayerVisible[currentLayer])
+                    if (!erasing)
+                    {
+                        PlaceTileOrAsset(position);
+                    }
+                    else
+                    {
+                        EraseTileOrAsset(position);
+                    }
+                    
+            }
+        }
+    }
+    /// <summary>
+    /// Places a tile or asset at the given position.
+    /// </summary>
+    /// <param name="_position">The position to place the tile or asset.</param>
+    private void PlaceTileOrAsset(Vector3Int _position)
+    {
+        switch (currentPaintMode)
+        {
+            case 0:
+            case 2:
+                PlaceTile(_position);
+                break;
+            case 1:
+                PlaceAsset(_position);
+                break;
+        }
+    }
+    /// <summary>
+    /// Places a tile at the cursor position or a specified position.
+    /// </summary>
+    /// <param name="_position">Optional parameter: position to place the tile.</param>
+    private void PlaceTile(Vector3 _position = default)
+    {
+        Vector3 positionToUse = _position == default ? cursorPos : _position;
+
         TileBase tile = levelManager.GetTileFromMemory(hotBarTileID[currentHotBarIndex]);
-        Vector3Int position = new Vector3Int((int)MathF.Floor(cursorPos.x), (int)MathF.Floor(cursorPos.y), 0);
+        Vector3Int position = new Vector3Int((int)MathF.Floor(positionToUse.x), (int)MathF.Floor(positionToUse.y), 0);
         currentTilemap.SetTile(position, tile);
     }
 
     /// <summary>
-    /// Places an asset at the cursor position.
+    /// Places an asset at the cursor position or a specified position.
     /// </summary>
-    private void PlaceAsset()
+    /// <param name="_position">Optional parameter: position to place the asset.</param>
+    private void PlaceAsset(Vector3 _position = default)
     {
+        Vector3 positionToUse = _position == default ? cursorPos : _position;
+
         // Destroy any asset already in the selected position
         for (int i = 0; i < levelManager.assetsRoot.transform.childCount; i++)
         {
             Transform child = levelManager.assetsRoot.transform.GetChild(i);
-            if (child.position == new Vector3(MathF.Round(cursorPos.x), MathF.Round(cursorPos.y), child.position.z))
+            if (child.position == new Vector3(MathF.Round(positionToUse.x), MathF.Round(positionToUse.y), child.position.z))
             {
                 Destroy(child.gameObject);
                 break;
@@ -680,7 +770,7 @@ public class WB_LevelEditor : MonoBehaviour
         // Place the current asset at the selected position
         GameObject asset = levelManager.GetAssetFromMemory(hotBarTileID[currentHotBarIndex]);
         float assetZ = asset.transform.position.z + -currentLayer;
-        Vector3 assetPosition = new Vector3(MathF.Round(cursorPos.x), MathF.Round(cursorPos.y), assetZ);
+        Vector3 assetPosition = new Vector3(MathF.Round(positionToUse.x), MathF.Round(positionToUse.y), assetZ);
         GameObject assetRef = Instantiate(asset, assetPosition, Quaternion.identity, levelManager.assetsRoot.transform);
         assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
         assetRef.GetComponent<Asset_UniqueInstanceId>().Id = GetNextAvailableId();
@@ -737,6 +827,23 @@ public class WB_LevelEditor : MonoBehaviour
     }
 
     /// <summary>
+    /// Places a tile or asset at the given position.
+    /// </summary>
+    /// <param name="_position">The position to place the tile or asset.</param>
+    private void EraseTileOrAsset(Vector3Int _position)
+    {
+        switch (currentPaintMode)
+        {
+            case 0:
+            case 2:
+                EraseTile(_position);
+                break;
+            case 1:
+                EraseAsset(_position);
+                break;
+        }
+    }
+    /// <summary>
     /// Erases either a tile or an asset based on the current paint mode.
     /// </summary>
     private void Erase()
@@ -756,24 +863,30 @@ public class WB_LevelEditor : MonoBehaviour
     }
 
     /// <summary>
-    /// Erases a tile at the cursor position.
+    /// Erases a tile at the cursor position or a specified position.
     /// </summary>
-    private void EraseTile()
+    /// <param name="_position">Optional parameter: position to erase the tile.</param>
+    private void EraseTile(Vector3 _position = default)
     {
-        Vector3Int position = new Vector3Int((int)MathF.Floor(cursorPos.x), (int)MathF.Floor(cursorPos.y), 0);
+        Vector3 positionToUse = _position == default ? cursorPos : _position;
+
+        Vector3Int position = new Vector3Int((int)MathF.Floor(positionToUse.x), (int)MathF.Floor(positionToUse.y), 0);
         currentTilemap.SetTile(position, null);
     }
 
     /// <summary>
-    /// Erases an asset at the cursor position.
+    /// Erases an asset at the cursor position or a specified position.
     /// </summary>
-    private void EraseAsset()
+    /// <param name="_position">Optional parameter: position to erase the asset.</param>
+    private void EraseAsset(Vector3 _position = default)
     {
+        Vector3 positionToUse = _position == default ? cursorPos : _position;
+
         // Destroy any asset already in the selected position
         for (int i = 0; i < levelManager.assetsRoot.transform.childCount; i++)
         {
             Transform child = levelManager.assetsRoot.transform.GetChild(i);
-            if (child.position == new Vector3(MathF.Round(cursorPos.x), MathF.Round(cursorPos.y), child.position.z))
+            if (child.position == new Vector3(MathF.Round(positionToUse.x), MathF.Round(positionToUse.y), child.position.z))
             {
                 Destroy(child.gameObject);
                 break;
