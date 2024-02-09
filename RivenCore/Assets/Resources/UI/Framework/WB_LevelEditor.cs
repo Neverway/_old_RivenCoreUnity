@@ -589,12 +589,12 @@ public class WB_LevelEditor : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             // Update box indicator
-            UpdateBoxIndicator(placeStartPos, cursorPos, new Color(0f,1f,1f,0.25f));
+            UpdateBoxIndicator(placeStartPos, cursorPos, new Color(0f,1f,0.2f,0.15f));
         }
         if (Input.GetMouseButton(1))
         {
             // Update box indicator
-            UpdateBoxIndicator(eraseStartPos, cursorPos, new Color(1f,0.2f,0f,0.25f));
+            UpdateBoxIndicator(eraseStartPos, cursorPos, new Color(1f,0.2f,0f,0.15f));
         }
         if (Input.GetMouseButtonDown(0))
         {
