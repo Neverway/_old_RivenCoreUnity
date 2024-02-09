@@ -278,12 +278,14 @@ public class WB_LevelEditor : MonoBehaviour
         if (_start)
         {
             FindObjectOfType<GameInstance>().CreateNewPlayerCharacter(testingGamemode, true, true);
+            transform.GetChild(0).gameObject.SetActive(false);
         }
         else
         {
             Destroy(FindObjectOfType<GameInstance>().localPlayerCharacter.gameObject);
             FindObjectOfType<GameInstance>().localPlayerCharacter = editorPlayer;
             editorPlayer.gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 
@@ -586,16 +588,6 @@ public class WB_LevelEditor : MonoBehaviour
 
     private void HandleShapePainting()
     {
-        if (Input.GetMouseButton(0))
-        {
-            // Update box indicator
-            UpdateBoxIndicator(placeStartPos, cursorPos, new Color(0f,1f,0.2f,0.15f));
-        }
-        if (Input.GetMouseButton(1))
-        {
-            // Update box indicator
-            UpdateBoxIndicator(eraseStartPos, cursorPos, new Color(1f,0.2f,0f,0.15f));
-        }
         if (Input.GetMouseButtonDown(0))
         {
             placeStartPos = cursorPos;
@@ -618,6 +610,16 @@ public class WB_LevelEditor : MonoBehaviour
         }
         else if (Input.GetMouseButton(2))
             Pick();
+        if (Input.GetMouseButton(0))
+        {
+            // Update box indicator
+            UpdateBoxIndicator(placeStartPos, cursorPos, new Color(0f,1f,0.2f,0.15f));
+        }
+        if (Input.GetMouseButton(1))
+        {
+            // Update box indicator
+            UpdateBoxIndicator(eraseStartPos, cursorPos, new Color(1f,0.2f,0f,0.15f));
+        }
     }
     private void UpdateBoxIndicator(Vector3 startPos, Vector3 endPos, Color boxColor)
     {
@@ -640,7 +642,7 @@ public class WB_LevelEditor : MonoBehaviour
         shapePainterIndicator.GetComponent<SpriteRenderer>().color = boxColor;
     }
 
-// Call this method when shape painting ends to hide the box indicator
+    // Call this method when shape painting ends to hide the box indicator
     private void HideBoxIndicator()
     {
         if (shapePainterIndicator != null)
@@ -885,6 +887,7 @@ public class WB_LevelEditor : MonoBehaviour
                 break;
         }
     }
+    
     /// <summary>
     /// Erases either a tile or an asset based on the current paint mode.
     /// </summary>

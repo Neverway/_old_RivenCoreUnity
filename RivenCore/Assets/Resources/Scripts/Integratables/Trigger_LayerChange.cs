@@ -5,6 +5,7 @@
 //
 //=============================================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
+    public float scaleX = 1, scaleY = 1;
     [Tooltip("Which layer should the entity switch to when entering the trigger. P.S DON'T FORGET TO SWITCH THE TRIGGERS LAYER!!")]
     [Range(0, 2)] public int exitLayer;
 
@@ -31,7 +33,11 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    
+    private void Update()
+    {
+        transform.localScale = new Vector2(scaleX, scaleY);
+    }
+
 
     //=-----------------=
     // Internal Functions

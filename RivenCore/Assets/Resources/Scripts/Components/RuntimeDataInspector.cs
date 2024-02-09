@@ -87,7 +87,7 @@ public class RuntimeDataInspector : MonoBehaviour
                     //print($"{field.FieldType} {_value}");
                     if (variableData[i].type != "System.String" && _value == "") return;
                     object convertedValue = Convert.ChangeType(_value, field.FieldType);
-                    
+                
                     // Set the value of the field in the targetScript
                     field.SetValue(targetScript, convertedValue);
                 }

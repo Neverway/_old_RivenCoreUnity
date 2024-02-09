@@ -5,6 +5,7 @@
 //
 //=============================================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class Trigger_Warp : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
+    public float scaleX = 1, scaleY = 1;
     public string warpID;
     public string exitWarpID;
     public float exitOffsetX, exitOffsetY;
@@ -34,6 +36,11 @@ public class Trigger_Warp : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
+    private void Update()
+    {
+        transform.localScale = new Vector2(scaleX, scaleY);
+    }
+
     /*
     private void OnDrawGizmos()
     {

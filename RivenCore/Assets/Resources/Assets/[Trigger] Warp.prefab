@@ -163,6 +163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetScript: {fileID: -4747755895057888629}
   exposedVariables:
+  - scaleX
+  - scaleY
   - warpID
   - exitWarpID
   - exitOffsetX
