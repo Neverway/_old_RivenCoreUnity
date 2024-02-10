@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 8469330498619909665}
   - component: {fileID: 5046662710187567943}
   m_Layer: 0
-  m_Name: Character_Topdown2D
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

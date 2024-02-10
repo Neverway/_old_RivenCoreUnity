@@ -676,6 +676,33 @@ MonoBehaviour:
     - {fileID: 2529539590430068902, guid: 0d48d1ed9289c02b7ac0988dc105fc88, type: 3}
     - {fileID: 2529539590430068902, guid: ad56eb11e14303f429e43ca2f71fd559, type: 3}
     spacers: []
+  - name: General
+    assets:
+    - {fileID: 4003037813998541683, guid: 6a5090b9f891bdcb6a7a0b4e3d823b2c, type: 3}
+    - {fileID: 7437449818475601758, guid: c2a21c22b17df631184e08f6cf14b72c, type: 3}
+    - {fileID: 2389097151317419445, guid: b3eced7eb687e7fcaa018725ed5fc44e, type: 3}
+    - {fileID: 264750015670382126, guid: d823bd774b007b95793f6614832ecd60, type: 3}
+    - {fileID: 8153229797825839452, guid: 0c8fdb30f2a0672a987ee1e95e3012c2, type: 3}
+    - {fileID: 804519152972322562, guid: e88ee991930cf65568463432edce908f, type: 3}
+    - {fileID: 9944334677598341, guid: cda7b93935484d676bf6b9224a75e677, type: 3}
+    - {fileID: 1617431652032766147, guid: 7c90ca13e79f59d66be1bb0847550fe3, type: 3}
+    spacers: []
+  - name: Autumn Forest
+    assets:
+    - {fileID: 4291901077265551956, guid: 0212631ca034f55d096b5f4a2acc4b25, type: 3}
+    - {fileID: 6106147085935039305, guid: f9f94315bf9080f5da5ee85fec7d00aa, type: 3}
+    - {fileID: 2793937068080243148, guid: b98463baa7b3829fdbcb66b191e44474, type: 3}
+    - {fileID: 2169051669899643382, guid: d4f879056ce2e20d5a9233b53be37219, type: 3}
+    - {fileID: 694822118676668660, guid: 9a12e45ebdd8b8b5cbbfa5774a956faa, type: 3}
+    - {fileID: 1978861089482792553, guid: 797e9fa4d4b41eda185e3d8cc01058e6, type: 3}
+    - {fileID: 4892278822407894989, guid: 29e560c5e5f72475892801665c586116, type: 3}
+    - {fileID: 3038924394595448503, guid: afc303e4928afd194abfb147c9b7faa3, type: 3}
+    - {fileID: 3436431032717455876, guid: 1f4f691ccf2a1ea4fbae54db71331d3f, type: 3}
+    - {fileID: 7655988478799730202, guid: be745763c7de1dc3dbf719c0ef326bcb, type: 3}
+    - {fileID: 1076333829582307565, guid: 30e774badf5efe7b781da411a117efb6, type: 3}
+    - {fileID: 2938096359294844325, guid: ceae005dc95e3a86f9a8a84d02449efe, type: 3}
+    - {fileID: 1609320772591196146, guid: 2762ca7c38b8586939929df8299b640f, type: 3}
+    spacers: []
   tilemaps: []
   assetsRoot: {fileID: 0}
   filePath: 
