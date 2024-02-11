@@ -5,6 +5,7 @@
 //
 //=============================================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -41,7 +42,7 @@ public class WB_NetConnector : MonoBehaviour
         unityTransport = FindObjectOfType<UnityTransport>();
         networkManager = FindObjectOfType<NetworkManager>();
     }
-    
+
 
     //=-----------------=
     // Internal Functions

@@ -85,9 +85,10 @@ public class WB_LevelEditor : MonoBehaviour
     [SerializeField] private Button[] fileButtons, viewButtons, helpButtons, filebarButtons, toolbarButtons, hotbarButtons, layerButtons, sublayerButtons, layerVisibilityButtons;
     [SerializeField] private Button clearHotbarButton, toggleInventoryButton;
     [SerializeField] private GameObject tileCursor, inspectionIndicator, shapePainterIndicator, shapePainterIndicatorPrefab;
-    [SerializeField] private Sprite[] paintToolSprites, visibilitySprites;
+    [SerializeField] private Sprite[] paintToolSprites, visibilitySprites, lightIndicatorSprites;
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject[] layerGroups;
+    [SerializeField] private Image shapePainterLightIndicator, networkOnlineLightIndicator;
     
 
     //=-----------------=
@@ -217,6 +218,7 @@ public class WB_LevelEditor : MonoBehaviour
         UpdateCurrentPaintMode();
         UpdateLayerSelection();
         UpdateLayerVisibility();
+        UpdateLightIndicatorImages();
     }
     
     
@@ -339,6 +341,15 @@ public class WB_LevelEditor : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Updates the images of the little lightbulb indicators on the hotbar
+    /// </summary>
+    private void UpdateLightIndicatorImages()
+    {
+        if (isShapePainting) shapePainterLightIndicator.sprite = lightIndicatorSprites[1];
+        else shapePainterLightIndicator.sprite = lightIndicatorSprites[0];
+    }
+    
     /// <summary>
     /// Updates the images and properties of tools in the toolbar based on the current selected tool.
     /// </summary>
@@ -657,8 +668,7 @@ public class WB_LevelEditor : MonoBehaviour
     /// </summary>
     private void ProcessKeyboardActions()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift)) isShapePainting = true;
-        else if (Input.GetKeyUp(KeyCode.LeftShift)) isShapePainting = false;
+        if (Input.GetKeyDown(KeyCode.LeftShift)) isShapePainting = !isShapePainting;
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S))
             SaveCurrentMap();
         else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.O))
@@ -821,29 +831,53 @@ public class WB_LevelEditor : MonoBehaviour
     }
 
     /// <summary>
-    /// Clears the inspection panel and inspects the asset at the cursor position.
+    /// Clears the inspection panel and inspects the closest asset to the cursor position, considering nearby positions.
     /// </summary>
     private void Inspect()
     {
         inspector.Clear();
-        
-        // Check for asset at cursor position
+    
+        // Define a tolerance radius for nearby positions
+        float toleranceRadius = 0.9f;
+    
+        // Initialize variables to keep track of the closest asset
+        Transform closestAsset = null;
+        float closestDistance = float.MaxValue;
+
+        // Check for asset at cursor position or nearby positions
         foreach (Transform child in levelManager.assetsRoot.transform)
         {
-            if (child.position == new Vector3(MathF.Round(cursorPos.x), MathF.Round(cursorPos.y), child.position.z))
+            // Calculate the distance between the cursor position and the asset's position
+            float distance = Vector2.Distance(new Vector2(cursorPos.x, cursorPos.y), new Vector2(child.position.x, child.position.y));
+
+            // Check if the asset is within the tolerance radius
+            if (distance <= toleranceRadius)
             {
-                inspectionIndicator.SetActive(true);
-                inspectionIndicator.transform.position = child.position;
-                RuntimeDataInspector assetData = child.gameObject.GetComponent<RuntimeDataInspector>();
-                if (assetData != null)
+                // If the asset is closer than the current closest asset, update the closest asset
+                if (distance < closestDistance)
                 {
-                    inspector.InitializeInspector(assetData);
+                    closestAsset = child;
+                    closestDistance = distance;
                 }
-                return;
             }
         }
-        
-        inspectionIndicator.SetActive(false);
+    
+        // If a closest asset is found, inspect it
+        if (closestAsset != null)
+        {
+            inspectionIndicator.SetActive(true);
+            inspectionIndicator.transform.position = closestAsset.position;
+            RuntimeDataInspector assetData = closestAsset.gameObject.GetComponent<RuntimeDataInspector>();
+            if (assetData != null)
+            {
+                inspector.InitializeInspector(assetData);
+            }
+        }
+        else
+        {
+            // If no asset is found nearby, hide the inspection indicator
+            inspectionIndicator.SetActive(false);
+        }
     }
 
     /// <summary>
@@ -920,22 +954,44 @@ public class WB_LevelEditor : MonoBehaviour
     }
 
     /// <summary>
-    /// Erases an asset at the cursor position or a specified position.
+    /// Erases the closest asset to the cursor position or a specified position.
     /// </summary>
     /// <param name="_position">Optional parameter: position to erase the asset.</param>
     private void EraseAsset(Vector3 _position = default)
     {
         Vector3 positionToUse = _position == default ? cursorPos : _position;
+    
+        // Define a tolerance radius for nearby positions
+        float toleranceRadius = 0.9f;
+    
+        // Initialize variables to keep track of the closest asset
+        Transform closestAsset = null;
+        float closestDistance = float.MaxValue;
 
-        // Destroy any asset already in the selected position
+        // Find the closest asset to the specified position
         for (int i = 0; i < levelManager.assetsRoot.transform.childCount; i++)
         {
             Transform child = levelManager.assetsRoot.transform.GetChild(i);
-            if (child.position == new Vector3(MathF.Round(positionToUse.x), MathF.Round(positionToUse.y), child.position.z))
+        
+            // Calculate the distance between the specified position and the asset's position
+            float distance = Vector2.Distance(new Vector2(positionToUse.x, positionToUse.y), new Vector2(child.position.x, child.position.y));
+
+            // Check if the asset is within the tolerance radius
+            if (distance <= toleranceRadius)
             {
-                Destroy(child.gameObject);
-                break;
+                // If the asset is closer than the current closest asset, update the closest asset
+                if (distance < closestDistance)
+                {
+                    closestAsset = child;
+                    closestDistance = distance;
+                }
             }
+        }
+
+        // If a closest asset is found, erase it
+        if (closestAsset != null)
+        {
+            Destroy(closestAsset.gameObject);
         }
     }
 
