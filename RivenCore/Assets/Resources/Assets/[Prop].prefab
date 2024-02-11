@@ -316,8 +316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleX: 1
   scaleY: 1
-  positionX: 0
-  positionY: 0
+  positionOffsetX: 0
+  positionOffsetY: 0
 --- !u!114 &3715486313302003108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +334,6 @@ MonoBehaviour:
   exposedVariables:
   - scaleX
   - scaleY
-  - positionX
-  - positionY
+  - positionOffsetX
+  - positionOffsetY
   variableData: []
