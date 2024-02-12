@@ -1,16 +1,14 @@
 //===================== (Neverway 2024) Written by Liz M. =====================
 //
-// Purpose:
-// Notes:
+// Purpose: Exposes variables to control a Light component's properties.
+// Notes: This script requires a Light component attached to the same GameObject.
 //
 //=============================================================================
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Light))]
-public class VariableExposer_Light : MonoBehaviour
+public class Object_VariableExposer_Light : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
@@ -37,11 +35,6 @@ public class VariableExposer_Light : MonoBehaviour
     private void Start()
     {
         targetLight = GetComponent<Light>();
-        //intensity = targetLight.intensity;
-        //range = targetLight.range;
-        //colorRed = targetLight.color.r;
-        //colorGreen = targetLight.color.g;
-        //colorBlue = targetLight.color.b;
     }
 
     private void Update()
@@ -51,6 +44,7 @@ public class VariableExposer_Light : MonoBehaviour
         targetLight.color = new Color(colorRed, colorGreen, colorBlue);
     }
 
+    
     //=-----------------=
     // Internal Functions
     //=-----------------=

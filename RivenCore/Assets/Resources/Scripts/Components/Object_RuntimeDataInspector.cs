@@ -1,7 +1,8 @@
 //===================== (Neverway 2024) Written by Liz M. =====================
 //
-// Purpose:
-// Notes:
+// Purpose: Inspects and manipulates runtime data of a MonoBehaviour script.
+// Notes: This script allows dynamically setting and getting variables of
+// a specified MonoBehaviour. The VariableData class is located in 
 //
 //=============================================================================
 
@@ -10,7 +11,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-public class RuntimeDataInspector : MonoBehaviour
+public class Object_RuntimeDataInspector : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
@@ -43,6 +44,9 @@ public class RuntimeDataInspector : MonoBehaviour
     //=-----------------=
     // External Functions
     //=-----------------=
+    /// <summary>
+    /// Inspects the exposed variables of the target script and populates the variable data list.
+    /// </summary>
     public void Inspect()
     {
         if (targetScript == null) return;
@@ -52,10 +56,10 @@ public class RuntimeDataInspector : MonoBehaviour
         {
             var data = new VariableData();
             Type scriptType = targetScript.GetType();
-            FieldInfo field = scriptType.GetField(exposedVariables[i]); // Replace with the actual variable name
+            FieldInfo field = scriptType.GetField(exposedVariables[i]);
 
             if (field == null) continue;
-            //print($"{exposedVariables[i]} : {field.FieldType} : {field.GetValue(targetScript)}");
+
             data.name = exposedVariables[i];
             data.type = field.FieldType.ToString();
             if (field.GetValue(targetScript) != null) data.value = field.GetValue(targetScript).ToString();
@@ -63,6 +67,9 @@ public class RuntimeDataInspector : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sends the variable data back to the target script, updating its variables based on the stored values.
+    /// </summary>
     public void SendVariableDataToScript()
     {
         for (int i = 0; i < variableData.Count; i++)
@@ -71,28 +78,27 @@ public class RuntimeDataInspector : MonoBehaviour
         }
     }
     
-    
+    /// <summary>
+    /// Sets the value of a specific variable in the target script.
+    /// </summary>
+    /// <param name="_variableName">The name of the variable to set.</param>
+    /// <param name="_value">The value to assign to the variable.</param>
     public void SetData(string _variableName, string _value)
     {
         for (int i = 0; i < exposedVariables.Count; i++)
         {
-            if (exposedVariables[i] == _variableName)
-            {
-                Type scriptType = targetScript.GetType();
-                FieldInfo field = scriptType.GetField(exposedVariables[i]); // Replace with the actual variable name
+            if (exposedVariables[i] != _variableName) continue;
+            Type scriptType = targetScript.GetType();
+            FieldInfo field = scriptType.GetField(exposedVariables[i]); // Replace with the actual variable name
 
-                if (field != null)
-                {
-                    // Convert the string back to the appropriate type
-                    //print($"{field.FieldType} {_value}");
-                    if (variableData[i].type != "System.String" && _value == "") return;
-                    object convertedValue = Convert.ChangeType(_value, field.FieldType);
+            if (field == null) return;
+            // Convert the string back to the appropriate type
+            if (variableData[i].type != "System.String" && _value == "") return;
+            object convertedValue = Convert.ChangeType(_value, field.FieldType);
                 
-                    // Set the value of the field in the targetScript
-                    field.SetValue(targetScript, convertedValue);
-                }
-                return;
-            }
+            // Set the value of the field in the targetScript
+            field.SetValue(targetScript, convertedValue);
+            return;
         }
     }
 }

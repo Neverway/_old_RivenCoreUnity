@@ -22,7 +22,7 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
-    private RuntimeDataInspector targetAsset;
+    private Object_RuntimeDataInspector target;
     private List<GameObject> fields;
 
 
@@ -37,22 +37,22 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
     //=-----------------=
     private void Update()
     {
-        if (!targetAsset) return;
+        if (!target) return;
         for (int i = 0; i < fields.Count; i++)
         {
-            switch (targetAsset.variableData[i].type)
+            switch (target.variableData[i].type)
             {
                 case "System.String":
-                    targetAsset.SetData(targetAsset.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
+                    target.SetData(target.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
                     break;
                 case "System.Int32":
-                    targetAsset.SetData(targetAsset.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
+                    target.SetData(target.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
                     break;
                 case "System.Single":
-                    targetAsset.SetData(targetAsset.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
+                    target.SetData(target.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
                     break;
                 case "System.Boolean":
-                    targetAsset.SetData(targetAsset.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<Toggle>().isOn.ToString());
+                    target.SetData(target.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<Toggle>().isOn.ToString());
                     break;
             }
         }
@@ -67,40 +67,40 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
     //=-----------------=
     // External Functions
     //=-----------------=
-    public void InitializeInspector(RuntimeDataInspector _assetData)
+    public void InitializeInspector(Object_RuntimeDataInspector _data)
     {
         Clear();
-        targetAsset = _assetData;
-        targetAsset.Inspect();
+        target = _data;
+        target.Inspect();
         
         // Loop through variable data and create fields accordingly
-        for (int i = 0; i < targetAsset.variableData.Count; i++)
+        for (int i = 0; i < target.variableData.Count; i++)
         {
             
             GameObject field = null;
             
-            switch (targetAsset.variableData[i].type)
+            switch (target.variableData[i].type)
             {
                 case "System.String":
                     field = Instantiate(stringField, fieldListRoot.transform);
-                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = targetAsset.variableData[i].value;
+                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.variableData[i].value;
                     break;
                 case "System.Int32":
                     field = Instantiate(intField, fieldListRoot.transform);
-                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = targetAsset.variableData[i].value;
+                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.variableData[i].value;
                     break;
                 case "System.Single":
                     field = Instantiate(floatField, fieldListRoot.transform);
-                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = targetAsset.variableData[i].value;
+                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.variableData[i].value;
                     break;
                 case "System.Boolean":
                     field = Instantiate(boolField, fieldListRoot.transform);
-                    field.transform.GetChild(1).GetComponent<Toggle>().isOn = targetAsset.variableData[i].value == "True";
+                    field.transform.GetChild(1).GetComponent<Toggle>().isOn = target.variableData[i].value == "True";
                     break;
             }
             
             // Set the field name and make it visible
-            field.transform.GetChild(0).GetComponent<TMP_Text>().text = targetAsset.variableData[i].name;
+            field.transform.GetChild(0).GetComponent<TMP_Text>().text = target.variableData[i].name;
             field.SetActive(true);
             fields.Add(field);
         }
@@ -108,7 +108,7 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
 
     public void Clear()
     {
-        targetAsset = null;
+        target = null;
         fields = new List<GameObject>();
         for (int i = 0; i < fieldListRoot.transform.childCount; i++)
         {

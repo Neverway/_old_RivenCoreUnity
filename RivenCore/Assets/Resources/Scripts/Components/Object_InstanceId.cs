@@ -1,26 +1,28 @@
 //===================== (Neverway 2024) Written by Liz M. =====================
 //
-// Purpose:
-// Notes:
+// Purpose: Used for uniquely identifying objects in a level (that way we can do
+// things like setting the exit to a warp to another warp point in the scene by
+// getting the other warp's unique id)
+// Notes: The Id is normally assigned by the level editor tool when placing the
+// asset 
+//
+// This isn't being used? ~Liz M.
 //
 //=============================================================================
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class VariableExposer_Transform : MonoBehaviour
+public class Asset_UniqueInstanceId : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public float scaleX, scaleY, positionOffsetX, positionOffsetY;
+    public int Id;
 
 
     //=-----------------=
     // Private Variables
     //=-----------------=
-    private Vector2 positionOrigin;
 
 
     //=-----------------=
@@ -31,16 +33,7 @@ public class VariableExposer_Transform : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    private void Start()
-    {
-        positionOrigin = new Vector2(transform.position.x-positionOffsetX, transform.position.y-positionOffsetY);
-    }
-
-    private void Update()
-    {
-        transform.localScale = new Vector3(scaleX, scaleY, 1);
-        transform.position = new Vector2(positionOrigin.x+positionOffsetX, positionOrigin.y+positionOffsetY);
-    }
+    
 
     //=-----------------=
     // Internal Functions

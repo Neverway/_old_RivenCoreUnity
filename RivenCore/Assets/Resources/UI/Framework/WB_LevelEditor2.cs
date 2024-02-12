@@ -495,7 +495,7 @@ public class WB_LevelEditor2 : MonoBehaviour
                 print($"Selected {currentAsset.name}");
                 InspectionIndicator.SetActive(true);
                 InspectionIndicator.transform.position = new Vector3(currentAsset.transform.position.x, currentAsset.transform.position.y);
-                var assetData = currentAsset.gameObject.GetComponent<RuntimeDataInspector>();
+                var assetData = currentAsset.gameObject.GetComponent<Object_RuntimeDataInspector>();
                 if (assetData)
                 {
                     inspector.InitializeInspector(assetData);

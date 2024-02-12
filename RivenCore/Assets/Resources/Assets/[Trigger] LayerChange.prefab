@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2528523315369391756}
   - component: {fileID: -1033464204112307733}
   - component: {fileID: -6840574695655123915}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: '[Trigger] LayerChange'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,6 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleX: 1
   scaleY: 1
+  positionOffsetX: 0
+  positionOffsetY: 0
   exitLayer: 0
 --- !u!114 &-1033464204112307733
 MonoBehaviour:

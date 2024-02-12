@@ -1,28 +1,24 @@
 //===================== (Neverway 2024) Written by Liz M. =====================
 //
-// Purpose: Used for uniquely identifying objects in a level (that way we can do
-// things like setting the exit to a warp to another warp point in the scene by
-// getting the other warp's unique id)
-// Notes: The Id is normally assigned by the level editor tool when placing the
-// asset
+// Purpose: Exposes variables to control a GameObject's Transform properties.
+// Notes: This script allows manipulation of scale and position offsets.
 //
 //=============================================================================
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Asset_UniqueInstanceId : MonoBehaviour
+public class Object_VariableExposer_Transform : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public int Id;
+    public float scaleX, scaleY, positionOffsetX, positionOffsetY;
 
 
     //=-----------------=
     // Private Variables
     //=-----------------=
+    private Vector2 positionOrigin;
 
 
     //=-----------------=
@@ -35,14 +31,16 @@ public class Asset_UniqueInstanceId : MonoBehaviour
     //=-----------------=
     private void Start()
     {
-    
+        positionOrigin = new Vector2(transform.position.x-positionOffsetX, transform.position.y-positionOffsetY);
     }
 
     private void Update()
     {
-    
+        transform.localScale = new Vector3(scaleX, scaleY, 1);
+        transform.position = new Vector2(positionOrigin.x+positionOffsetX, positionOrigin.y+positionOffsetY);
     }
 
+    
     //=-----------------=
     // Internal Functions
     //=-----------------=

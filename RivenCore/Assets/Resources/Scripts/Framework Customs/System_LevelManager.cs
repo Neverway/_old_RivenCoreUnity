@@ -169,10 +169,10 @@ public class System_LevelManager : MonoBehaviour
             {
                 newSpotData.uniqueId = tempAsset.GetComponent<Asset_UniqueInstanceId>().Id;
             }
-            if (tempAsset.GetComponent<RuntimeDataInspector>())
+            if (tempAsset.GetComponent<Object_RuntimeDataInspector>())
             {
-                tempAsset.GetComponent<RuntimeDataInspector>().Inspect();
-                newSpotData.assetData = tempAsset.GetComponent<RuntimeDataInspector>().variableData;
+                tempAsset.GetComponent<Object_RuntimeDataInspector>().Inspect();
+                newSpotData.assetData = tempAsset.GetComponent<Object_RuntimeDataInspector>().variableData;
             }
             else
             {
@@ -243,10 +243,10 @@ public class System_LevelManager : MonoBehaviour
             {
                 assetRef.GetComponent<Asset_UniqueInstanceId>().Id = tempUniqueId;
             }
-            if (assetRef.GetComponent<RuntimeDataInspector>())
+            if (assetRef.GetComponent<Object_RuntimeDataInspector>())
             {
-                assetRef.GetComponent<RuntimeDataInspector>().variableData = tempData;
-                assetRef.GetComponent<RuntimeDataInspector>().SendVariableDataToScript();
+                assetRef.GetComponent<Object_RuntimeDataInspector>().variableData = tempData;
+                assetRef.GetComponent<Object_RuntimeDataInspector>().SendVariableDataToScript();
             }
             // NEED LAYER/DEPTH ASSIGNMENT HERE
         }
