@@ -166,6 +166,8 @@ MonoBehaviour:
   exposedVariables:
   - scaleX
   - scaleY
+  - positionOffsetX
+  - positionOffsetY
   - damageAmount
   - owningTeam
   variableData: []

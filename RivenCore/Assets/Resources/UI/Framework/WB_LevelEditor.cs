@@ -827,7 +827,48 @@ public class WB_LevelEditor : MonoBehaviour
         Vector3 assetPosition = new Vector3(MathF.Round(positionToUse.x), MathF.Round(positionToUse.y), assetZ);
         GameObject assetRef = Instantiate(asset, assetPosition, Quaternion.identity, levelManager.assetsRoot.transform);
         assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
-        assetRef.GetComponent<Asset_UniqueInstanceId>().Id = GetNextAvailableId();
+        if (assetRef.GetComponent<Asset_UniqueInstanceId>()) assetRef.GetComponent<Asset_UniqueInstanceId>().Id = GetNextAvailableId();
+        
+        // Don't change trigger previews off of the trigger and noDraw layers
+        var assetSortingLayer = assetRef.GetComponent<SpriteRenderer>().sortingLayerName;
+        if (assetSortingLayer == "Trigger" || assetSortingLayer == "NoDraw") return;
+        // Assign the object to the correct height layer
+        switch (currentLayer)
+        {
+            case 0:
+                // Set collision layer for all collider on object
+                for (int i = 0; i < assetRef.GetComponentsInChildren<Collider2D>().Length; i++)
+                {
+                    asset.GetComponentsInChildren<Collider2D>()[i].gameObject.layer = 6;
+                }
+                // Set draw layer
+                assetRef.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 1";
+                // Set Z depth for lighting
+                assetRef.transform.position = new Vector3(assetRef.transform.position.x, assetRef.transform.position.y, 0);
+                break;
+            case 1:
+                // Set collision layer for all collider on object
+                for (int i = 0; i < assetRef.GetComponentsInChildren<Collider2D>().Length; i++)
+                {
+                    asset.GetComponentsInChildren<Collider2D>()[i].gameObject.layer = 7;
+                }
+                // Set draw layer
+                assetRef.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 2";
+                // Set Z depth for lighting
+                assetRef.transform.position = new Vector3(assetRef.transform.position.x, assetRef.transform.position.y, -1);
+                break;
+            case 2:
+                // Set collision layer for all colliders on object
+                for (int i = 0; i < assetRef.GetComponentsInChildren<Collider2D>().Length; i++)
+                {
+                    asset.GetComponentsInChildren<Collider2D>()[i].gameObject.layer = 8;
+                }
+                // Set draw layer
+                assetRef.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 3";
+                // Set Z depth for lighting
+                assetRef.transform.position = new Vector3(assetRef.transform.position.x, assetRef.transform.position.y, -2);
+                break;
+        }
     }
 
     /// <summary>

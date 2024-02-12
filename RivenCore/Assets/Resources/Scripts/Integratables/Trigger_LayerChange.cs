@@ -15,7 +15,7 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public float scaleX = 1, scaleY = 1;
+    public float scaleX = 1, scaleY = 1, positionOffsetX, positionOffsetY;
     [Tooltip("Which layer should the entity switch to when entering the trigger. P.S DON'T FORGET TO SWITCH THE TRIGGERS LAYER!!")]
     [Range(0, 2)] public int exitLayer;
 
@@ -23,6 +23,7 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
+    private Vector2 positionOrigin;
 
 
     //=-----------------=
@@ -33,9 +34,14 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
+    private void Start()
+    {
+        positionOrigin = new Vector2(transform.position.x-positionOffsetX, transform.position.y-positionOffsetY);
+    }
     private void Update()
     {
-        transform.localScale = new Vector2(scaleX, scaleY);
+        transform.localScale = new Vector3(scaleX, scaleY, 1);
+        transform.position = new Vector2(positionOrigin.x+positionOffsetX, positionOrigin.y+positionOffsetY);
     }
 
 
@@ -50,18 +56,27 @@ public class Trigger_LayerChange : MonoBehaviour
         switch (exitLayer)
         {
             case 0:
+                // Set collision layer for all collider on object
                 other.gameObject.layer = 6;
+                // Set draw layer
                 entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 1";
+                // Set Z depth for lighting
                 entity.transform.position = new Vector3(entityPos.x, entityPos.y, 0);
                 break;
             case 1:
+                // Set collision layer for all collider on object
                 other.gameObject.layer = 7;
+                // Set draw layer
                 entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 2";
+                // Set Z depth for lighting
                 entity.transform.position = new Vector3(entityPos.x, entityPos.y, -1);
                 break;
             case 2:
+                // Set collision layer for all collider on object
                 other.gameObject.layer = 8;
+                // Set draw layer
                 entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 3";
+                // Set Z depth for lighting
                 entity.transform.position = new Vector3(entityPos.x, entityPos.y, -2);
                 break;
         }

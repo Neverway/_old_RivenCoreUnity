@@ -145,6 +145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d909b95a5818c66aebc94a6c524452b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 1
+  positionOffsetX: 0
+  positionOffsetY: 0
   warpID: 
   exitWarpID: 
   exitOffsetX: 0
@@ -165,6 +169,8 @@ MonoBehaviour:
   exposedVariables:
   - scaleX
   - scaleY
+  - positionOffsetX
+  - positionOffsetY
   - warpID
   - exitWarpID
   - exitOffsetX

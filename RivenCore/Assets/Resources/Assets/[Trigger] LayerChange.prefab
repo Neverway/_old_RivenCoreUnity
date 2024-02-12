@@ -164,6 +164,8 @@ MonoBehaviour:
   exposedVariables:
   - scaleX
   - scaleY
+  - positionOffsetX
+  - positionOffsetY
   - exitLayer
   variableData: []
 --- !u!114 &-6840574695655123915

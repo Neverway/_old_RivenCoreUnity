@@ -23,6 +23,8 @@ public class System_LevelManager : MonoBehaviour
     public List<tileMemoryGroup> tileMemory;
     [Tooltip("A list of all the objects and their categories used for the current project")]
     public List<AssetMemoryGroup> assetMemory;
+    [Tooltip("A list of all the sprites that can be used for decor props for the current project")]
+    public List<Sprite> spriteMemory;
     [Header("READ-ONLY (Don't touch!)")]
     [Tooltip("A list of all of the 'tile layers' used in the scene")]
     public List<Tilemap> tilemaps;

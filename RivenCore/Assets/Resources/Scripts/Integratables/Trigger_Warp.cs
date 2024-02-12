@@ -15,7 +15,7 @@ public class Trigger_Warp : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public float scaleX = 1, scaleY = 1;
+    public float scaleX = 1, scaleY = 1, positionOffsetX, positionOffsetY;
     public string warpID;
     public string exitWarpID;
     public float exitOffsetX, exitOffsetY;
@@ -26,6 +26,7 @@ public class Trigger_Warp : MonoBehaviour
     //=-----------------=
     private Transform exitTransform;
     private Vector3 exitOffset;
+    private Vector2 positionOrigin;
 
 
     //=-----------------=
@@ -36,9 +37,14 @@ public class Trigger_Warp : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
+    private void Start()
+    {
+        positionOrigin = new Vector2(transform.position.x-positionOffsetX, transform.position.y-positionOffsetY);
+    }
     private void Update()
     {
-        transform.localScale = new Vector2(scaleX, scaleY);
+        transform.localScale = new Vector3(scaleX, scaleY, 1);
+        transform.position = new Vector2(positionOrigin.x+positionOffsetX, positionOrigin.y+positionOffsetY);
     }
 
     /*

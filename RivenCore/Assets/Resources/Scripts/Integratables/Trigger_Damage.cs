@@ -15,7 +15,7 @@ public class Trigger_Damage : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public float scaleX = 1, scaleY = 1;
+    public float scaleX = 1, scaleY = 1, positionOffsetX, positionOffsetY;
     [Tooltip("The amount of damage to deal to an entity within the trigger. (Value can be negative to heal)")]
     public float damageAmount;
     [Tooltip("The team that owns the trigger (for regular damage, they won't be hurt, for healing, other teams won't be healed. (Don't define a team for friendly fire))")]
@@ -25,6 +25,7 @@ public class Trigger_Damage : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
+    private Vector2 positionOrigin;
 
 
     //=-----------------=
@@ -36,9 +37,14 @@ public class Trigger_Damage : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
+    private void Start()
+    {
+        positionOrigin = new Vector2(transform.position.x-positionOffsetX, transform.position.y-positionOffsetY);
+    }
     private void Update()
     {
-        transform.localScale = new Vector2(scaleX, scaleY);
+        transform.localScale = new Vector3(scaleX, scaleY, 1);
+        transform.position = new Vector2(positionOrigin.x+positionOffsetX, positionOrigin.y+positionOffsetY);
         foreach (var entity in entitiesInTrigger)
         {
             if (owningTeam == "")
