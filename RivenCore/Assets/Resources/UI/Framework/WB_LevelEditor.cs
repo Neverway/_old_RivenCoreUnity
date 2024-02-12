@@ -89,6 +89,7 @@ public class WB_LevelEditor : MonoBehaviour
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject[] layerGroups;
     [SerializeField] private Image shapePainterLightIndicator, networkOnlineLightIndicator;
+    [SerializeField] private Image[] layerLightIndicator;
     
 
     //=-----------------=
@@ -348,6 +349,13 @@ public class WB_LevelEditor : MonoBehaviour
     {
         if (isShapePainting) shapePainterLightIndicator.sprite = lightIndicatorSprites[1];
         else shapePainterLightIndicator.sprite = lightIndicatorSprites[0];
+
+        for (int i = 0; i < layerLightIndicator.Length; i++)
+        {
+            layerLightIndicator[i].sprite = lightIndicatorSprites[0];
+        }
+
+        layerLightIndicator[currentLayer].sprite = lightIndicatorSprites[1];
     }
     
     /// <summary>
@@ -829,9 +837,8 @@ public class WB_LevelEditor : MonoBehaviour
         assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
         if (assetRef.GetComponent<Asset_UniqueInstanceId>()) assetRef.GetComponent<Asset_UniqueInstanceId>().Id = GetNextAvailableId();
         
-        // Don't change trigger previews off of the trigger and noDraw layers
         var assetSortingLayer = assetRef.GetComponent<SpriteRenderer>().sortingLayerName;
-        if (assetSortingLayer == "Trigger" || assetSortingLayer == "NoDraw") return;
+        
         // Assign the object to the correct height layer
         switch (currentLayer)
         {
@@ -841,10 +848,11 @@ public class WB_LevelEditor : MonoBehaviour
                 {
                     asset.GetComponentsInChildren<Collider2D>()[i].gameObject.layer = 6;
                 }
-                // Set draw layer
-                assetRef.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 1";
                 // Set Z depth for lighting
                 assetRef.transform.position = new Vector3(assetRef.transform.position.x, assetRef.transform.position.y, 0);
+                // Set draw layer
+                if (assetSortingLayer == "Trigger" || assetSortingLayer == "NoDraw") break;
+                assetRef.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 1";
                 break;
             case 1:
                 // Set collision layer for all collider on object
@@ -852,10 +860,11 @@ public class WB_LevelEditor : MonoBehaviour
                 {
                     asset.GetComponentsInChildren<Collider2D>()[i].gameObject.layer = 7;
                 }
-                // Set draw layer
-                assetRef.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 2";
                 // Set Z depth for lighting
                 assetRef.transform.position = new Vector3(assetRef.transform.position.x, assetRef.transform.position.y, -1);
+                // Set draw layer
+                if (assetSortingLayer == "Trigger" || assetSortingLayer == "NoDraw") break;
+                assetRef.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 2";
                 break;
             case 2:
                 // Set collision layer for all colliders on object
@@ -863,10 +872,11 @@ public class WB_LevelEditor : MonoBehaviour
                 {
                     asset.GetComponentsInChildren<Collider2D>()[i].gameObject.layer = 8;
                 }
-                // Set draw layer
-                assetRef.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 3";
                 // Set Z depth for lighting
                 assetRef.transform.position = new Vector3(assetRef.transform.position.x, assetRef.transform.position.y, -2);
+                // Set draw layer
+                if (assetSortingLayer == "Trigger" || assetSortingLayer == "NoDraw") break;
+                assetRef.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 3";
                 break;
         }
     }
