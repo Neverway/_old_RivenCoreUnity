@@ -165,10 +165,10 @@ public class System_LevelManager : MonoBehaviour
             SpotData newSpotData = new SpotData();
             newSpotData.id = tempAsset.name;
             newSpotData.unsnappedPosition = tempAsset.transform.position;
-            if (tempAsset.GetComponent<Asset_UniqueInstanceId>())
+            /*if (tempAsset.GetComponent<Asset_UniqueInstanceId>())
             {
                 newSpotData.uniqueId = tempAsset.GetComponent<Asset_UniqueInstanceId>().Id;
-            }
+            }*/
             if (tempAsset.GetComponent<Object_RuntimeDataInspector>())
             {
                 tempAsset.GetComponent<Object_RuntimeDataInspector>().Inspect();
@@ -239,10 +239,10 @@ public class System_LevelManager : MonoBehaviour
             if (tempAsset == null) continue;
             var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
             assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
-            if (assetRef.GetComponent<Asset_UniqueInstanceId>())
+            /*if (assetRef.GetComponent<Asset_UniqueInstanceId>())
             {
                 assetRef.GetComponent<Asset_UniqueInstanceId>().Id = tempUniqueId;
-            }
+            }*/
             if (assetRef.GetComponent<Object_RuntimeDataInspector>())
             {
                 assetRef.GetComponent<Object_RuntimeDataInspector>().variableData = tempData;

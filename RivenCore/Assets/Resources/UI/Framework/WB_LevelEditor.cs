@@ -835,7 +835,7 @@ public class WB_LevelEditor : MonoBehaviour
         Vector3 assetPosition = new Vector3(MathF.Round(positionToUse.x), MathF.Round(positionToUse.y), assetZ);
         GameObject assetRef = Instantiate(asset, assetPosition, Quaternion.identity, levelManager.assetsRoot.transform);
         assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
-        if (assetRef.GetComponent<Asset_UniqueInstanceId>()) assetRef.GetComponent<Asset_UniqueInstanceId>().Id = GetNextAvailableId();
+        //if (assetRef.GetComponent<Asset_UniqueInstanceId>()) assetRef.GetComponent<Asset_UniqueInstanceId>().Id = GetNextAvailableId();
         
         var assetSortingLayer = assetRef.GetComponent<SpriteRenderer>().sortingLayerName;
         
