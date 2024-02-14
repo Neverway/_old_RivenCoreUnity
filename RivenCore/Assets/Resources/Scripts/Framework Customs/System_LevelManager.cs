@@ -81,6 +81,9 @@ public class System_LevelManager : MonoBehaviour
     private IEnumerator ShowFileDialogCoroutine(string mode)
     {
         FileBrowser.SetFilters(false, new FileBrowser.Filter("CT Maps", ".ctmap"));
+        FileBrowser.AddQuickLink("Data Path", Application.persistentDataPath);
+        FileBrowser.AddQuickLink("Application Path", Application.dataPath);
+        FileBrowser.AddQuickLink("Editor Level Path", Application.dataPath + "/Resources/Levels/");
         yield return mode switch
         {
             "Load" => FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.FilesAndFolders, false, Application.persistentDataPath, null, "Load Cartographer Map File", "Load"),
@@ -221,7 +224,7 @@ public class System_LevelManager : MonoBehaviour
         {
             GameObject tempAsset = null;
             Vector3 tempPosition = new Vector3();
-            int tempUniqueId = 0;
+            //int tempUniqueId = 0;
             List<VariableData> tempData = new List<VariableData>();
 
             foreach (var group in assetMemory)
@@ -231,7 +234,7 @@ public class System_LevelManager : MonoBehaviour
                     tempAsset = group.assets.Find(t => t.name == data.assets[i].id);
                     tempPosition = data.assets[i].unsnappedPosition;
                     tempData = data.assets[i].assetData;
-                    tempUniqueId = data.assets[i].uniqueId;
+                    //tempUniqueId = data.assets[i].uniqueId;
                     break;
                 }
             }
