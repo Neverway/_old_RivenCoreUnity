@@ -168,18 +168,21 @@ public class System_LevelManager : MonoBehaviour
             SpotData newSpotData = new SpotData();
             newSpotData.id = tempAsset.name;
             newSpotData.unsnappedPosition = tempAsset.transform.position;
-            /*if (tempAsset.GetComponent<Asset_UniqueInstanceId>())
-            {
-                newSpotData.uniqueId = tempAsset.GetComponent<Asset_UniqueInstanceId>().Id;
-            }*/
+            
             if (tempAsset.GetComponent<Object_RuntimeDataInspector>())
             {
                 tempAsset.GetComponent<Object_RuntimeDataInspector>().Inspect();
-                newSpotData.assetData = tempAsset.GetComponent<Object_RuntimeDataInspector>().variableData;
+                for (int j = 0; j < tempAsset.GetComponent<Object_RuntimeDataInspector>().monoDataList.Count; j++)
+                {
+                    var newObjectData = new ObjectData();
+                    newObjectData.scriptIndex = i;
+                    newObjectData.assetData = tempAsset.GetComponent<Object_RuntimeDataInspector>().monoDataList[i].variableData;
+                    newSpotData.objectData.Add(new ObjectData());
+                }
             }
             else
             {
-                newSpotData.assetData = new List<VariableData>();
+                newSpotData.objectData = new List<ObjectData>();
             }
             // NEED LAYER/DEPTH ASSIGNMENT HERE
             //newSpotData.layer = tempAsset.layer;
@@ -225,7 +228,7 @@ public class System_LevelManager : MonoBehaviour
             GameObject tempAsset = null;
             Vector3 tempPosition = new Vector3();
             //int tempUniqueId = 0;
-            List<VariableData> tempData = new List<VariableData>();
+            List<ObjectData> tempData = new List<ObjectData>();
 
             foreach (var group in assetMemory)
             {
@@ -233,8 +236,7 @@ public class System_LevelManager : MonoBehaviour
                 {
                     tempAsset = group.assets.Find(t => t.name == data.assets[i].id);
                     tempPosition = data.assets[i].unsnappedPosition;
-                    tempData = data.assets[i].assetData;
-                    //tempUniqueId = data.assets[i].uniqueId;
+                    tempData = data.assets[i].objectData;
                     break;
                 }
             }
@@ -242,13 +244,13 @@ public class System_LevelManager : MonoBehaviour
             if (tempAsset == null) continue;
             var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
             assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
-            /*if (assetRef.GetComponent<Asset_UniqueInstanceId>())
-            {
-                assetRef.GetComponent<Asset_UniqueInstanceId>().Id = tempUniqueId;
-            }*/
+            
             if (assetRef.GetComponent<Object_RuntimeDataInspector>())
             {
-                assetRef.GetComponent<Object_RuntimeDataInspector>().variableData = tempData;
+                for (int j = 0; j < tempData.Count; j++)
+                {
+                    assetRef.GetComponent<Object_RuntimeDataInspector>().monoDataList[i].variableData = tempData[i].assetData;
+                }
                 assetRef.GetComponent<Object_RuntimeDataInspector>().SendVariableDataToScript();
             }
             // NEED LAYER/DEPTH ASSIGNMENT HERE

@@ -1,11 +1,3 @@
-//===================== (Neverway 2024) Written by Liz M. =====================
-//
-// Purpose: Inspects and manipulates runtime data of a MonoBehaviour script.
-// Notes: This script allows dynamically setting and getting variables of
-// a specified MonoBehaviour. The VariableData class is located in 
-//
-//=============================================================================
-
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -13,92 +5,91 @@ using UnityEngine;
 
 public class Object_RuntimeDataInspector : MonoBehaviour
 {
-    //=-----------------=
-    // Public Variables
-    //=-----------------=
-    public MonoBehaviour targetScript;
-    public List<string> exposedVariables;
-    public List<VariableData> variableData;
-
-
-    //=-----------------=
-    // Private Variables
-    //=-----------------=
-
-
-    //=-----------------=
-    // Reference Variables
-    //=-----------------=
-
+    public List<MonoData> monoDataList;
 
     //=-----------------=
     // Mono Functions
     //=-----------------=
 
-    
     //=-----------------=
     // Internal Functions
     //=-----------------=
-
 
     //=-----------------=
     // External Functions
     //=-----------------=
     /// <summary>
-    /// Inspects the exposed variables of the target script and populates the variable data list.
+    /// Inspects the exposed variables of the target scripts and populates the variable data list.
     /// </summary>
     public void Inspect()
     {
-        if (targetScript == null) return;
+        if (monoDataList == null) return;
         
-        variableData = new List<VariableData>();
-        for (int i = 0; i < exposedVariables.Count; i++)
+        foreach (var monoData in monoDataList)
         {
-            var data = new VariableData();
-            Type scriptType = targetScript.GetType();
-            FieldInfo field = scriptType.GetField(exposedVariables[i]);
+            if (monoData.targetScript == null || monoData.exposedVariables == null) continue;
 
-            if (field == null) continue;
+            monoData.variableData = new List<VariableData>(); // Initialize variableData here
 
-            data.name = exposedVariables[i];
-            data.type = field.FieldType.ToString();
-            if (field.GetValue(targetScript) != null) data.value = field.GetValue(targetScript).ToString();
-            variableData.Add(data);
+            foreach (var variableName in monoData.exposedVariables)
+            {
+                var data = new VariableData();
+                Type scriptType = monoData.targetScript.GetType();
+                FieldInfo field = scriptType.GetField(variableName);
+
+                if (field == null) continue;
+
+                data.name = variableName;
+                data.type = field.FieldType.ToString();
+                if (field.GetValue(monoData.targetScript) != null) data.value = field.GetValue(monoData.targetScript).ToString();
+                monoData.variableData.Add(data);
+            }
         }
     }
 
     /// <summary>
-    /// Sends the variable data back to the target script, updating its variables based on the stored values.
+    /// Sends the variable data back to the target scripts, updating their variables based on the stored values.
     /// </summary>
     public void SendVariableDataToScript()
     {
-        for (int i = 0; i < variableData.Count; i++)
+        if (monoDataList == null) return;
+
+        foreach (var monoData in monoDataList)
         {
-            SetData(variableData[i].name, variableData[i].value);
+            if (monoData.targetScript == null || monoData.variableData == null) continue;
+
+            foreach (var variableData in monoData.variableData)
+            {
+                SetData(monoData.targetScript, variableData.name, variableData.value);
+            }
         }
     }
-    
+
     /// <summary>
     /// Sets the value of a specific variable in the target script.
     /// </summary>
-    /// <param name="_variableName">The name of the variable to set.</param>
-    /// <param name="_value">The value to assign to the variable.</param>
-    public void SetData(string _variableName, string _value)
+    /// <param name="targetScript">The MonoBehaviour instance containing the variable to set.</param>
+    /// <param name="variableName">The name of the variable to set.</param>
+    /// <param name="value">The value to assign to the variable.</param>
+    public void SetData(MonoBehaviour targetScript, string variableName, string value)
     {
-        for (int i = 0; i < exposedVariables.Count; i++)
-        {
-            if (exposedVariables[i] != _variableName) continue;
-            Type scriptType = targetScript.GetType();
-            FieldInfo field = scriptType.GetField(exposedVariables[i]); // Replace with the actual variable name
+        if (targetScript == null) return;
 
-            if (field == null) return;
-            // Convert the string back to the appropriate type
-            if (variableData[i].type != "System.String" && _value == "") return;
-            object convertedValue = Convert.ChangeType(_value, field.FieldType);
+        Type scriptType = targetScript.GetType();
+        FieldInfo field = scriptType.GetField(variableName);
+
+        if (field == null) return;
+        if (value == "" && field.FieldType != typeof(string)) return;
+
+        object convertedValue = Convert.ChangeType(value, field.FieldType);
                 
-            // Set the value of the field in the targetScript
-            field.SetValue(targetScript, convertedValue);
-            return;
-        }
+        field.SetValue(targetScript, convertedValue);
     }
+}
+
+public class MonoData
+{
+    public MonoBehaviour targetScript;
+    public List<string> exposedVariables;
+    public List<VariableData> variableData;
 }

@@ -17,7 +17,7 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-
+/*
 
     //=-----------------=
     // Private Variables
@@ -114,5 +114,5 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
         {
             Destroy(fieldListRoot.transform.GetChild(i).gameObject);
         }
-    }
+    }*/
 }

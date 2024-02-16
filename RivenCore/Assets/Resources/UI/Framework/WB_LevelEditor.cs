@@ -886,7 +886,7 @@ public class WB_LevelEditor : MonoBehaviour
     /// </summary>
     private void Inspect()
     {
-        inspector.Clear();
+        //inspector.Clear();
     
         // Define a tolerance radius for nearby positions
         float toleranceRadius = 0.9f;
@@ -921,7 +921,7 @@ public class WB_LevelEditor : MonoBehaviour
             Object_RuntimeDataInspector data = closestAsset.gameObject.GetComponent<Object_RuntimeDataInspector>();
             if (data != null)
             {
-                inspector.InitializeInspector(data);
+                //inspector.InitializeInspector(data);
             }
         }
         else

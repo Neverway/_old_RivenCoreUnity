@@ -16,8 +16,12 @@ public class Trigger_Interactable : MonoBehaviour
     // Public Variables
     //=-----------------=
     public float scaleX = 1, scaleY = 1, positionOffsetX, positionOffsetY;
-    public string onToggled, onActivated, onDeactivated;
-    private bool isActive;
+    
+    public string onInteractChannel; // Channel for when the object is interacted with
+    public string onActivatedChannel; // Channel for when the object is activated
+    public string onDeactivatedChannel; // Channel for when the object is deactivated
+    
+    public bool isActive; // Flag indicating if the object is currently active
 
 
     //=-----------------=
@@ -29,7 +33,6 @@ public class Trigger_Interactable : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    [ReadOnly] public List<Entity> entitiesInTrigger = new List<Entity>();
 
 
     //=-----------------=
@@ -46,9 +49,9 @@ public class Trigger_Interactable : MonoBehaviour
         transform.position = new Vector2(positionOrigin.x+positionOffsetX, positionOrigin.y+positionOffsetY);
     }
     
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D _other)
     {
-        var interaction = other.GetComponent<Trigger_Interaction>();
+        var interaction = _other.GetComponent<Trigger_Interaction>();
         if (!interaction) return;
         Interact();
     }
@@ -56,23 +59,20 @@ public class Trigger_Interactable : MonoBehaviour
     //=-----------------=
     // Internal Functions
     //=-----------------=
-    
-    
+
+
     //=-----------------=
     // External Functions
     //=-----------------=
     private void Interact()
     {
-        //OnInteract.Invoke();
-        isActive = !isActive;
-        switch (isActive)
+        // On Toggle
+        foreach (var interactable in FindObjectsOfType<Interactable>())
         {
-            case true:
-                //OnToggled.Invoke();
-                break;
-            case false:
-                //OnUntoggled.Invoke();
-                break;
+            if (interactable.onInteractChannel == onInteractChannel) interactable.OnInteract.Invoke();
+            if (interactable.onActivatedChannel == onActivatedChannel && isActive) interactable.OnActivated.Invoke();
+            if (interactable.onDeactivatedChannel == onDeactivatedChannel && !isActive) interactable.OnDeactivated.Invoke();
         }
+        isActive = !isActive;
     }
 }
