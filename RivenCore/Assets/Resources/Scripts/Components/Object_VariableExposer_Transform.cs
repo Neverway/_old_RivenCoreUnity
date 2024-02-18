@@ -12,7 +12,7 @@ public class Object_VariableExposer_Transform : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public float scaleX, scaleY, positionOffsetX, positionOffsetY;
+    public float scaleX=1, scaleY=1, positionOffsetX, positionOffsetY;
 
 
     //=-----------------=

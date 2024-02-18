@@ -17,7 +17,7 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-/*
+
 
     //=-----------------=
     // Private Variables
@@ -40,19 +40,19 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
         if (!target) return;
         for (int i = 0; i < fields.Count; i++)
         {
-            switch (target.variableData[i].type)
+            switch (target.storedVariableData[i].type)
             {
                 case "System.String":
-                    target.SetData(target.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
+                    target.SetVariableValue(null, target.storedVariableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
                     break;
                 case "System.Int32":
-                    target.SetData(target.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
+                    target.SetVariableValue(null, target.storedVariableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
                     break;
                 case "System.Single":
-                    target.SetData(target.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
+                    target.SetVariableValue(null, target.storedVariableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
                     break;
                 case "System.Boolean":
-                    target.SetData(target.variableData[i].name, fields[i].transform.GetChild(1).GetComponent<Toggle>().isOn.ToString());
+                    target.SetVariableValue(null, target.storedVariableData[i].name, fields[i].transform.GetChild(1).GetComponent<Toggle>().isOn.ToString());
                     break;
             }
         }
@@ -74,33 +74,33 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
         target.Inspect();
         
         // Loop through variable data and create fields accordingly
-        for (int i = 0; i < target.variableData.Count; i++)
+        for (int i = 0; i < target.storedVariableData.Count; i++)
         {
             
             GameObject field = null;
             
-            switch (target.variableData[i].type)
+            switch (target.storedVariableData[i].type)
             {
                 case "System.String":
                     field = Instantiate(stringField, fieldListRoot.transform);
-                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.variableData[i].value;
+                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.storedVariableData[i].value;
                     break;
                 case "System.Int32":
                     field = Instantiate(intField, fieldListRoot.transform);
-                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.variableData[i].value;
+                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.storedVariableData[i].value;
                     break;
                 case "System.Single":
                     field = Instantiate(floatField, fieldListRoot.transform);
-                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.variableData[i].value;
+                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.storedVariableData[i].value;
                     break;
                 case "System.Boolean":
                     field = Instantiate(boolField, fieldListRoot.transform);
-                    field.transform.GetChild(1).GetComponent<Toggle>().isOn = target.variableData[i].value == "True";
+                    field.transform.GetChild(1).GetComponent<Toggle>().isOn = target.storedVariableData[i].value == "True";
                     break;
             }
             
             // Set the field name and make it visible
-            field.transform.GetChild(0).GetComponent<TMP_Text>().text = target.variableData[i].name;
+            field.transform.GetChild(0).GetComponent<TMP_Text>().text = target.storedVariableData[i].name;
             field.SetActive(true);
             fields.Add(field);
         }
@@ -114,5 +114,5 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
         {
             Destroy(fieldListRoot.transform.GetChild(i).gameObject);
         }
-    }*/
+    }
 }

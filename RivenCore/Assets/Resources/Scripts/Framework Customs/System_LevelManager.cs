@@ -108,23 +108,31 @@ public class System_LevelManager : MonoBehaviour
     //=-----------------=
     // External Functions
     //=-----------------=
+    /// <summary>
+    /// Saves the current state of the level to a file.
+    /// </summary>
+    /// <param name="levelFile">The file path to save the level data to.</param>
     public void SaveLevel(string levelFile)
-    {
+    { 
+        // Create a new LevelData instance to store the level information.
         var data = new LevelData();
+
         // Save tile data
         foreach (var tilemap in tilemaps)
         {
             // Get the size of the tilemap
             var bounds = tilemap.cellBounds;
-            // Iterate through each tile in the tile map
+        
+            // Iterate through each tile in the tilemap
             for (var x = bounds.min.x; x < bounds.max.x; x++)
             {
                 for (var y = bounds.min.y; y < bounds.max.y; y++)
                 {
-                    // Check in each tileMemory group
+                    // Check each tileMemory group to see if the tile exists
                     TileBase tempTile = null;
                     foreach (var group in tileMemory)
                     {
+                        // If the tile exists in tileMemory, save its data
                         if (group.tiles.Find(t => t == tilemap.GetTile(new Vector3Int(x, y, 0))))
                         {
                             tempTile = group.tiles.Find(t => t == tilemap.GetTile(new Vector3Int(x, y, 0)));
@@ -132,23 +140,24 @@ public class System_LevelManager : MonoBehaviour
                         }
                     }
 
-                    // Exit if we couldn't find the tile in the tileMemory
+                    // If the tile is not found, skip it
                     if (tempTile == null) continue;
-                    // Else add the tile data to the level data
+                
+                    // Add the tile data to the level data
                     SpotData newSpotData = new SpotData();
-                    newSpotData.id = tempTile.name;
-                    newSpotData.position = new Vector3Int(x, y, 0);
-                    newSpotData.layer = tilemaps.IndexOf(tilemap);
-                    newSpotData.layerID = tilemap.name;
-                    data.tiles.Add(newSpotData);
+                    newSpotData.id = tempTile.name; // Tile name
+                    newSpotData.position = new Vector3Int(x, y, 0); // Tile position
+                    newSpotData.layer = tilemaps.IndexOf(tilemap); // Tilemap layer
+                    newSpotData.layerID = tilemap.name; // Tilemap name
+                    data.tiles.Add(newSpotData); // Add tile data to the level data
                 }
             }
         }
-        // Save object data
         
+        // Save object data
         // Find all objects with an asset_instanceID component
         // For each one, see if we can find the root asset in assetMemory
-            // If not, skip it
+        // If not, skip it
         // else, add the asset data for name, unique id, position, and any variable data
         for (int i = 0; i < assetsRoot.transform.childCount; i++)
         {
@@ -157,43 +166,52 @@ public class System_LevelManager : MonoBehaviour
             {
                 if (group.assets.Find(t => t.name == assetsRoot.transform.GetChild(i).gameObject.name))
                 {
+                    // If the asset is found in assetMemory, set it as tempAsset
                     tempAsset = assetsRoot.transform.GetChild(i).gameObject;
                     break;
                 }
             }
             
-            // Exit if we couldn't find the asset in the assetMemory
+            // If the asset is not found in assetMemory, skip it
             if (tempAsset == null) continue;
-            // Else add the asset data to the level data
-            SpotData newSpotData = new SpotData();
-            newSpotData.id = tempAsset.name;
-            newSpotData.unsnappedPosition = tempAsset.transform.position;
             
+            // Create a new SpotData instance to store the asset data
+            SpotData newSpotData = new SpotData();
+            newSpotData.id = tempAsset.name; // Asset name
+            newSpotData.unsnappedPosition = tempAsset.transform.position; // Asset position
+            
+            // If the asset has an Object_RuntimeDataInspector component, inspect it for variable data
             if (tempAsset.GetComponent<Object_RuntimeDataInspector>())
             {
                 tempAsset.GetComponent<Object_RuntimeDataInspector>().Inspect();
-                for (int j = 0; j < tempAsset.GetComponent<Object_RuntimeDataInspector>().monoDataList.Count; j++)
-                {
-                    var newObjectData = new ObjectData();
-                    newObjectData.scriptIndex = i;
-                    newObjectData.assetData = tempAsset.GetComponent<Object_RuntimeDataInspector>().monoDataList[i].variableData;
-                    newSpotData.objectData.Add(new ObjectData());
-                }
+                newSpotData.assetData = tempAsset.GetComponent<Object_RuntimeDataInspector>().storedVariableData;
             }
             else
             {
-                newSpotData.objectData = new List<ObjectData>();
+                newSpotData.assetData = new List<VariableData>();
             }
+            
             // NEED LAYER/DEPTH ASSIGNMENT HERE
-            //newSpotData.layer = tempAsset.layer;
+            // newSpotData.layer = tempAsset.layer; // Assign layer information
+            
+            // Add the asset data to the level data
             data.assets.Add(newSpotData);
         }
         
+        // Convert the level data to JSON format
         var json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(levelFile, json);
+        
+        // Write the JSON data to the specified file
+        File.WriteAllText(levelFile, json); // Save JSON data to file
     }
     
-    private void LoadLevel(string levelFile)
+    
+    
+    /// <summary>
+    /// Loads a level from a file.
+    /// </summary>
+    /// <param name="_levelFile">The file path to load the level data from.</param>
+     private void LoadLevel(string levelFile)
     {
         var json = File.ReadAllText(levelFile);
         var data = JsonUtility.FromJson<LevelData>(json);
@@ -228,7 +246,7 @@ public class System_LevelManager : MonoBehaviour
             GameObject tempAsset = null;
             Vector3 tempPosition = new Vector3();
             //int tempUniqueId = 0;
-            List<ObjectData> tempData = new List<ObjectData>();
+            List<VariableData> tempData = new List<VariableData>();
 
             foreach (var group in assetMemory)
             {
@@ -236,7 +254,8 @@ public class System_LevelManager : MonoBehaviour
                 {
                     tempAsset = group.assets.Find(t => t.name == data.assets[i].id);
                     tempPosition = data.assets[i].unsnappedPosition;
-                    tempData = data.assets[i].objectData;
+                    tempData = data.assets[i].assetData;
+                    //tempUniqueId = data.assets[i].uniqueId;
                     break;
                 }
             }
@@ -244,19 +263,22 @@ public class System_LevelManager : MonoBehaviour
             if (tempAsset == null) continue;
             var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
             assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
-            
+            /*if (assetRef.GetComponent<Asset_UniqueInstanceId>())
+            {
+                assetRef.GetComponent<Asset_UniqueInstanceId>().Id = tempUniqueId;
+            }*/
             if (assetRef.GetComponent<Object_RuntimeDataInspector>())
             {
-                for (int j = 0; j < tempData.Count; j++)
-                {
-                    assetRef.GetComponent<Object_RuntimeDataInspector>().monoDataList[i].variableData = tempData[i].assetData;
-                }
-                assetRef.GetComponent<Object_RuntimeDataInspector>().SendVariableDataToScript();
+                assetRef.GetComponent<Object_RuntimeDataInspector>().storedVariableData = tempData;
+                assetRef.GetComponent<Object_RuntimeDataInspector>().SendVariableDataToScripts();
             }
             // NEED LAYER/DEPTH ASSIGNMENT HERE
         }
     }
 
+
+    
+    
     public void ModifyLevelFile(string mode)
     {
         StartCoroutine(ShowFileDialogCoroutine(mode));

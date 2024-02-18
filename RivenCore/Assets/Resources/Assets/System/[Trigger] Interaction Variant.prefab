@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8238068512875176730
+--- !u!1001 &4528276068914146112
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,7 +11,15 @@ PrefabInstance:
     - target: {fileID: 1361399437628517257, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e2ec29f32f051814f94be4a4cbea5ea2, type: 3}
+      objectReference: {fileID: 21300000, guid: c1e29805694b9a53ca9f0483d170b981, type: 3}
+    - target: {fileID: 3438934205063838824, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438934205063838824, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3438934205063838824, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52,63 +60,85 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.size
+    - target: {fileID: 3961610065379011478, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: m_Size.y
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].targetScript
-      value: 
-      objectReference: {fileID: 8966008350612948807}
-    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.size
+    - target: {fileID: 3961610065379011478, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3961610065379011478, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3961610065379011478, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3961610065379011478, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[0]
-      value: damageAmount
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[1]
-      value: owningTeam
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[2]
-      value: positionOffsetY
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[3]
-      value: positionOffsetY
       objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_Name
-      value: '[Trigger] Damage Variant'
+      value: '[Trigger] Interaction Variant'
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+    - {fileID: -272060017141874270, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8966008350612948807}
+      addedObject: {fileID: -2599972915189019525}
+    - targetCorrespondingSourceObject: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9190976176733728827}
   m_SourcePrefab: {fileID: 100100000, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
---- !u!1 &180546214018986940 stripped
+--- !u!1 &5622103594856774630 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-  m_PrefabInstance: {fileID: 8238068512875176730}
+  m_PrefabInstance: {fileID: 4528276068914146112}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8966008350612948807
+--- !u!114 &-2599972915189019525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180546214018986940}
+  m_GameObject: {fileID: 5622103594856774630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04e7fc6bdb03907778389ed7078a38c1, type: 3}
+  m_Script: {fileID: 11500000, guid: a18c107bffa4d2d4696b04381dd84703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 0
-  owningTeam: 
-  entitiesInTrigger: []
+  targetEntity: {fileID: 0}
+--- !u!50 &9190976176733728827
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5622103594856774630}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

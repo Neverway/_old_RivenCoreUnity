@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleX: 1
   scaleY: 1
-  positionX: 0
-  positionY: 0
+  positionOffsetX: 0
+  positionOffsetY: 0
 --- !u!114 &3715486313302003108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,10 +114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b31e295f9b3ad8a088de4f224ebfb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScript: {fileID: 4786988212645953397}
-  exposedVariables:
-  - scaleX
-  - scaleY
-  - positionX
-  - positionY
-  variableData: []
+  scriptDataList:
+  - targetScript: {fileID: 4786988212645953397}
+    exposedVariables:
+    - scaleX
+    - scaleY
+    - positionOffsetX
+    - positionOffsetY
+  storedVariableData: []

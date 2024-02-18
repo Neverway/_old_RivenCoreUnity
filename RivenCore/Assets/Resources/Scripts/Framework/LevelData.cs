@@ -26,7 +26,7 @@ public class SpotData
     public int uniqueId;
     public Vector3Int position;
     public Vector3 unsnappedPosition;
-    public List<ObjectData> objectData = new List<ObjectData>();
+    public List<VariableData> assetData = new List<VariableData>();
 }
 
 [Serializable]
@@ -54,17 +54,3 @@ public class Spacer
     public int spacerCount;
 }
 
-[Serializable]
-public class ObjectData
-{
-    public int scriptIndex;
-    public List<VariableData> assetData = new List<VariableData>();
-}
-
-[Serializable]
-public class VariableData
-{
-    public string name;
-    public string type;
-    public string value;
-}

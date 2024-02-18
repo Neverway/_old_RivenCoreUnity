@@ -15,3 +15,5 @@ MonoBehaviour:
   movementDirection: {x: 0, y: 0}
   movementMultiplier: 1
   facingDirection: {x: 0, y: 0}
+  invulnerable: 0
+  interactionPrefab: {fileID: 5622103594856774630, guid: 361cfbb4e360368aaab9ceb0013d3c41, type: 3}

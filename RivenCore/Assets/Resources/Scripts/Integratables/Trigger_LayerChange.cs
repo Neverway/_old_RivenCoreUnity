@@ -15,7 +15,6 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public float scaleX = 1, scaleY = 1, positionOffsetX, positionOffsetY;
     [Tooltip("Which layer should the entity switch to when entering the trigger. P.S DON'T FORGET TO SWITCH THE TRIGGERS LAYER!!")]
     [Range(0, 2)] public int exitLayer;
 
@@ -23,7 +22,6 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
-    private Vector2 positionOrigin;
 
 
     //=-----------------=
@@ -34,15 +32,6 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    private void Start()
-    {
-        positionOrigin = new Vector2(transform.position.x-positionOffsetX, transform.position.y-positionOffsetY);
-    }
-    private void Update()
-    {
-        transform.localScale = new Vector3(scaleX, scaleY, 1);
-        transform.position = new Vector2(positionOrigin.x+positionOffsetX, positionOrigin.y+positionOffsetY);
-    }
 
 
     //=-----------------=

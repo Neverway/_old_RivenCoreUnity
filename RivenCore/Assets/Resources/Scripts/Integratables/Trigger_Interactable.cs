@@ -15,8 +15,6 @@ public class Trigger_Interactable : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public float scaleX = 1, scaleY = 1, positionOffsetX, positionOffsetY;
-    
     public string onInteractChannel; // Channel for when the object is interacted with
     public string onActivatedChannel; // Channel for when the object is activated
     public string onDeactivatedChannel; // Channel for when the object is deactivated
@@ -27,7 +25,6 @@ public class Trigger_Interactable : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
-    private Vector2 positionOrigin;
 
 
     //=-----------------=
@@ -38,17 +35,6 @@ public class Trigger_Interactable : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    private void Start()
-    {
-        positionOrigin = new Vector2(transform.position.x-positionOffsetX, transform.position.y-positionOffsetY);
-    }
-    
-    private void Update()
-    {
-        transform.localScale = new Vector3(scaleX, scaleY, 1);
-        transform.position = new Vector2(positionOrigin.x+positionOffsetX, positionOrigin.y+positionOffsetY);
-    }
-    
     private void OnTriggerEnter2D(Collider2D _other)
     {
         var interaction = _other.GetComponent<Trigger_Interaction>();
@@ -69,9 +55,9 @@ public class Trigger_Interactable : MonoBehaviour
         // On Toggle
         foreach (var interactable in FindObjectsOfType<Interactable>())
         {
-            if (interactable.onInteractChannel == onInteractChannel) interactable.OnInteract.Invoke();
-            if (interactable.onActivatedChannel == onActivatedChannel && isActive) interactable.OnActivated.Invoke();
-            if (interactable.onDeactivatedChannel == onDeactivatedChannel && !isActive) interactable.OnDeactivated.Invoke();
+            if (interactable.onInteractChannel == onInteractChannel && onInteractChannel != "") interactable.OnInteract.Invoke();
+            if (interactable.onActivatedChannel == onActivatedChannel && isActive && onActivatedChannel != "") interactable.OnActivated.Invoke();
+            if (interactable.onDeactivatedChannel == onDeactivatedChannel && !isActive && onDeactivatedChannel != "") interactable.OnDeactivated.Invoke();
         }
         isActive = !isActive;
     }

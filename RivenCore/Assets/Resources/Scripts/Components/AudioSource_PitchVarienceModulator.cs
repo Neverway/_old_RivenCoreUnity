@@ -10,7 +10,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(AudioSource))]
-public class Audio_PitchVarienceModulator : MonoBehaviour
+public class AudioSource_PitchVarienceModulator : MonoBehaviour
 {
     //=-----------------=
     // Public Variables

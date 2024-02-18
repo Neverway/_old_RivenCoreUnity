@@ -38,6 +38,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
     private Rigidbody2D entityRigidbody2D;
     private Animator animator;
     private Entity entity;
+    [SerializeField] private GameObject interactionPrefab;
     
 
     //=-----------------=
@@ -55,6 +56,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
     {
         if (!_entity.isPossessed) return;
         if (topdown2DActions.Pause.WasPressedThisFrame()) gameInstance.UI_ShowPause();
+        if (topdown2DActions.Interact.WasPressedThisFrame()) Interact();
         if (_entity.isPaused) return;
         _entity.currentStats.movementSpeed = topdown2DActions.Action.IsPressed() ? _entity.currentStats.sprintSpeed : _entity.currentStats.walkSpeed; 
         movementDirection = topdown2DActions.Move.ReadValue<Vector2>();
@@ -117,6 +119,27 @@ public class Entity_Controller_Topdown2D : Entity_Controller
     private void OnEntityDeath()
     {
         animator.Play("Knockout");
+    }
+
+    private void Interact()
+    {
+        // Get interaction direction
+        var directionalRotation = facingDirection.y switch
+        {
+            1 => 0,
+            -1 => 180,
+            _ => facingDirection.x switch
+            {
+                1 => -90,
+                -1 => 90,
+                _ => 0
+            }
+        };
+    
+        // Create interaction trigger
+        var interactionTrigger = Instantiate(interactionPrefab, entity.transform.position, Quaternion.Euler(0, 0, directionalRotation));
+        interactionTrigger.GetComponent<Trigger_Interaction>().targetEntity = entity;
+        Destroy(interactionTrigger, 0.15f);
     }
 
 

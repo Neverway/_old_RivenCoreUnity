@@ -137,19 +137,19 @@ public class Entity : MonoBehaviour
             case > 0:
                 OnEntityHeal?.Invoke();
                 isDead = false;
-                if (currentStats.sounds.heal) GetComponent<Audio_PitchVarienceModulator>().PlaySound(currentStats.sounds.heal);
+                if (currentStats.sounds.heal) GetComponent<AudioSource_PitchVarienceModulator>().PlaySound(currentStats.sounds.heal);
                 break;
             case < 0:
                 if (isDead) return;
                 OnEntityHurt?.Invoke();
-                if (currentStats.sounds.hurt) GetComponent<Audio_PitchVarienceModulator>().PlaySound(currentStats.sounds.hurt);
+                if (currentStats.sounds.hurt) GetComponent<AudioSource_PitchVarienceModulator>().PlaySound(currentStats.sounds.hurt);
                 break;
         }
 
         if (currentStats.health + _value <= 0)
         {
             if (isDead) return;
-            GetComponent<Audio_PitchVarienceModulator>().PlaySound(currentStats.sounds.death);
+            GetComponent<AudioSource_PitchVarienceModulator>().PlaySound(currentStats.sounds.death);
             OnEntityDeath?.Invoke();
             isDead = true;
         }

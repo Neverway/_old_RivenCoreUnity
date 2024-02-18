@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8238068512875176730
+--- !u!1001 &6754270491969288731
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 1361399437628517257, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e2ec29f32f051814f94be4a4cbea5ea2, type: 3}
+      objectReference: {fileID: 21300000, guid: 70b1af8c23f5eca02a1bd48aa2a09d02, type: 3}
     - target: {fileID: 3438934205063838824, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -59,30 +59,30 @@ PrefabInstance:
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[1].targetScript
       value: 
-      objectReference: {fileID: 8966008350612948807}
+      objectReference: {fileID: 5883713168549478546}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[0]
-      value: damageAmount
+      value: onInteractChannel
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[1]
-      value: owningTeam
+      value: onActivatedChannel
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[2]
-      value: positionOffsetY
+      value: onDeactivatedChannel
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[3]
-      value: positionOffsetY
+      value: isActive
       objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_Name
-      value: '[Trigger] Damage Variant'
+      value: '[Trigger] Interactable'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90,25 +90,26 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8966008350612948807}
+      addedObject: {fileID: 5883713168549478546}
   m_SourcePrefab: {fileID: 100100000, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
---- !u!1 &180546214018986940 stripped
+--- !u!1 &3272409677045869245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-  m_PrefabInstance: {fileID: 8238068512875176730}
+  m_PrefabInstance: {fileID: 6754270491969288731}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8966008350612948807
+--- !u!114 &5883713168549478546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180546214018986940}
+  m_GameObject: {fileID: 3272409677045869245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04e7fc6bdb03907778389ed7078a38c1, type: 3}
+  m_Script: {fileID: 11500000, guid: c9e1b43392ae469f9cd1ddced6c99b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 0
-  owningTeam: 
-  entitiesInTrigger: []
+  onInteractChannel: 
+  onActivatedChannel: 
+  onDeactivatedChannel: 
+  isActive: 0

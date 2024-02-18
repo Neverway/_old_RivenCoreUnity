@@ -53,12 +53,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8856e02ce92ec4e27bbe3568b81b9c3a, type: 3}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: exposedVariables.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: exposedVariables.Array.data[4]
       value: positionOffsetY
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[1].targetScript
+      value: 
+      objectReference: {fileID: 3128347614724129785}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[0]
+      value: onInteractChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[1]
+      value: onActivatedChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[2]
+      value: onDeactivatedChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[3]
+      value: isActive
       objectReference: {fileID: 0}
     - target: {fileID: 4371502556531117253, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_LocalScale.y

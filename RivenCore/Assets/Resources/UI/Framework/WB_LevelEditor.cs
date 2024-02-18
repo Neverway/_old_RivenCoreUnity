@@ -921,7 +921,7 @@ public class WB_LevelEditor : MonoBehaviour
             Object_RuntimeDataInspector data = closestAsset.gameObject.GetComponent<Object_RuntimeDataInspector>();
             if (data != null)
             {
-                //inspector.InitializeInspector(data);
+                inspector.InitializeInspector(data);
             }
         }
         else
@@ -1054,45 +1054,6 @@ public class WB_LevelEditor : MonoBehaviour
     {
         inventoryOpen = !inventoryOpen;
         inventory.SetActive(inventoryOpen);
-    }
-
-    /// <summary>
-    /// Gets the next available unique ID for assets.
-    /// </summary>
-    /// <returns>The next available unique ID.</returns>
-    private int GetNextAvailableId()
-    {
-        // Get all objects with Asset_UniqueInstanceId component
-        Asset_UniqueInstanceId[] objectsWithId = FindObjectsOfType<Asset_UniqueInstanceId>();
-
-        // Create a list of all IDs excluding 0
-        List<int> idList = new List<int>();
-        foreach (Asset_UniqueInstanceId obj in objectsWithId)
-        {
-            if (obj.Id != 0)
-            {
-                idList.Add(obj.Id);
-            }
-        }
-
-        // Sort the list
-        idList.Sort();
-
-        // Find the next available ID
-        int nextAvailableId = 1;
-        foreach (int id in idList)
-        {
-            if (id == nextAvailableId)
-            {
-                nextAvailableId++;
-            }
-            else
-            {
-                break;
-            }
-        }
-
-        return nextAvailableId;
     }
     
 
