@@ -56,8 +56,8 @@ public class Trigger_Interactable : MonoBehaviour
         foreach (var interactable in FindObjectsOfType<Interactable>())
         {
             if (interactable.onInteractChannel == onInteractChannel && onInteractChannel != "") interactable.OnInteract.Invoke();
-            if (interactable.onActivatedChannel == onActivatedChannel && isActive && onActivatedChannel != "") interactable.OnActivated.Invoke();
-            if (interactable.onDeactivatedChannel == onDeactivatedChannel && !isActive && onDeactivatedChannel != "") interactable.OnDeactivated.Invoke();
+            if (interactable.onActivatedChannel == onActivatedChannel && !isActive && onActivatedChannel != "") interactable.OnActivated.Invoke();
+            if (interactable.onDeactivatedChannel == onDeactivatedChannel && isActive && onDeactivatedChannel != "") interactable.OnDeactivated.Invoke();
         }
         isActive = !isActive;
     }
