@@ -928,6 +928,7 @@ public class WB_LevelEditor : MonoBehaviour
         {
             // If no asset is found nearby, hide the inspection indicator
             inspectionIndicator.SetActive(false);
+            inspector.Clear();
         }
     }
 
@@ -936,22 +937,46 @@ public class WB_LevelEditor : MonoBehaviour
     /// </summary>
     private void Pick()
     {
-        // Check for asset at cursor position
+        // Define a tolerance radius for nearby positions
+        float toleranceRadius = 0.9f;
+    
+        // Initialize variables to keep track of the closest asset
+        Transform closestAsset = null;
+        float closestDistance = float.MaxValue;
+
+        // Check for asset at cursor position or nearby positions
         foreach (Transform child in levelManager.assetsRoot.transform)
         {
-            if (child.position == new Vector3(MathF.Round(cursorPos.x), MathF.Round(cursorPos.y), child.position.z))
+            // Calculate the distance between the cursor position and the asset's position
+            float distance = Vector2.Distance(new Vector2(cursorPos.x, cursorPos.y), new Vector2(child.position.x, child.position.y));
+
+            // Check if the asset is within the tolerance radius
+            if (distance <= toleranceRadius)
             {
-                SetCurrentHotBarTile(child.name);
-                return;
+                // If the asset is closer than the current closest asset, update the closest asset
+                if (distance < closestDistance)
+                {
+                    closestAsset = child;
+                    closestDistance = distance;
+                }
             }
         }
-        
-        // Check for tile at cursor position
-        Vector3Int position = new Vector3Int((int)MathF.Floor(cursorPos.x), (int)MathF.Floor(cursorPos.y), 0);
-        TileBase tile = currentTilemap.GetTile(position);
-        if (tile != null)
+    
+        // If a closest asset is found, inspect it
+        if (closestAsset != null)
         {
-            SetCurrentHotBarTile(tile.name);
+            SetCurrentHotBarTile(closestAsset.name);
+        }
+        else
+        {
+            // If no asset is found nearby, 
+            // Check for tile at cursor position
+            Vector3Int position = new Vector3Int((int)MathF.Floor(cursorPos.x), (int)MathF.Floor(cursorPos.y), 0);
+            TileBase tile = currentTilemap.GetTile(position);
+            if (tile != null)
+            {
+                SetCurrentHotBarTile(tile.name);
+            }
         }
     }
 
