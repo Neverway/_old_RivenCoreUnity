@@ -372,6 +372,9 @@ public class WB_LevelEditor : MonoBehaviour
 
         // Update paint image sprite based on the current paint mode
         paintImage.sprite = paintToolSprites[currentPaintMode];
+        
+        // Hide the inspection indicator when not in inspect mode
+        if (currentTool != "inspect") inspectionIndicator.SetActive(false);
     }
 
     /// <summary>
@@ -676,17 +679,14 @@ public class WB_LevelEditor : MonoBehaviour
     /// </summary>
     private void ProcessKeyboardActions()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift)) isShapePainting = !isShapePainting;
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S))
-            SaveCurrentMap();
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.O))
-            levelManager.ModifyLevelFile("Load");
+        if (Input.GetKeyDown(KeyCode.LeftShift) && currentTool == "paint") isShapePainting = !isShapePainting;
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S)) SaveCurrentMap();
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.O)) levelManager.ModifyLevelFile("Load");
         /*else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Z))
             Redo();
         else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Z))
             Undo();*/
-        if (Input.GetKeyDown(KeyCode.Tab))
-            ToggleInventory();
+        if (Input.GetKeyDown(KeyCode.Tab) && currentTool == "paint") ToggleInventory();
     }
 
     /// <summary>
