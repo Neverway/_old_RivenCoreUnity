@@ -8065,6 +8065,66 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].name
+      value: Logic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[0]
+      value: 
+      objectReference: {fileID: 4291901077265551956, guid: 0212631ca034f55d096b5f4a2acc4b25, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[1]
+      value: 
+      objectReference: {fileID: 6106147085935039305, guid: f9f94315bf9080f5da5ee85fec7d00aa, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[2]
+      value: 
+      objectReference: {fileID: 2793937068080243148, guid: b98463baa7b3829fdbcb66b191e44474, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[3]
+      value: 
+      objectReference: {fileID: 2169051669899643382, guid: d4f879056ce2e20d5a9233b53be37219, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[4]
+      value: 
+      objectReference: {fileID: 694822118676668660, guid: 9a12e45ebdd8b8b5cbbfa5774a956faa, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[5]
+      value: 
+      objectReference: {fileID: 1978861089482792553, guid: 797e9fa4d4b41eda185e3d8cc01058e6, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[6]
+      value: 
+      objectReference: {fileID: 4892278822407894989, guid: 29e560c5e5f72475892801665c586116, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[7]
+      value: 
+      objectReference: {fileID: 3038924394595448503, guid: afc303e4928afd194abfb147c9b7faa3, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[8]
+      value: 
+      objectReference: {fileID: 3436431032717455876, guid: 1f4f691ccf2a1ea4fbae54db71331d3f, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[9]
+      value: 
+      objectReference: {fileID: 7655988478799730202, guid: be745763c7de1dc3dbf719c0ef326bcb, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[10]
+      value: 
+      objectReference: {fileID: 1076333829582307565, guid: 30e774badf5efe7b781da411a117efb6, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[11]
+      value: 
+      objectReference: {fileID: 2938096359294844325, guid: ceae005dc95e3a86f9a8a84d02449efe, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[12]
+      value: 
+      objectReference: {fileID: 1609320772591196146, guid: 2762ca7c38b8586939929df8299b640f, type: 3}
     - target: {fileID: 2128968533710696330, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

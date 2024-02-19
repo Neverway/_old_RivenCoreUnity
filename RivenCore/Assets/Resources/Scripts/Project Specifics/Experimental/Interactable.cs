@@ -12,18 +12,20 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour
 {
     // Channels for interacting with the object
-    public string onInteractChannel; // Channel for when the object is interacted with
-    public string onActivatedChannel; // Channel for when the object is activated
-    public string onDeactivatedChannel; // Channel for when the object is deactivated
+    public string signalChannel; // Channel to listen for an activation or deactivation signal on
+    //public string onInteractChannel; // Channel for when the object is interacted with
+    //public string onActivatedChannel; // Channel for when the object is activated
+    //public string onDeactivatedChannel; // Channel for when the object is deactivated
     
-    public bool isActive; // Flag indicating if the object is currently active
+    public bool isPowered; // Flag indicating if the object is currently active
 
     public UnityEvent OnInteract, OnActivated, OnDeactivated;
 
-    private void Start()
+    public void Update()
     {
+        if (signalChannel == "") OnDeactivated.Invoke();
         // Initialize current active state
-        if (isActive) OnActivated.Invoke();
+        if (isPowered) OnActivated.Invoke();
         else OnDeactivated.Invoke();
     }
 }

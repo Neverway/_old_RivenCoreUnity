@@ -70,19 +70,19 @@ PrefabInstance:
       objectReference: {fileID: 3128347614724129785}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[0]
-      value: onInteractChannel
+      value: signalChannel
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[1]
-      value: onActivatedChannel
+      value: isActive
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[2]
-      value: onDeactivatedChannel
+      value: isActive
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[3]
@@ -98,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6774513649075670125, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7874037791496066305, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_Name
@@ -129,10 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef6a4924124f9f7d882e89819fc0d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onInteractChannel: 
-  onActivatedChannel: 
-  onDeactivatedChannel: 
-  isActive: 0
+  signalChannel: 
+  isPowered: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []

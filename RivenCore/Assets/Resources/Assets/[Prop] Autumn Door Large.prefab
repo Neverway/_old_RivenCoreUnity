@@ -62,19 +62,19 @@ PrefabInstance:
       objectReference: {fileID: 685900858180936780}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[0]
-      value: onInteractChannel
+      value: signalChannel
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[1]
-      value: onActivatedChannel
+      value: onDeactivatedChannel
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[2]
-      value: onDeactivatedChannel
+      value: isActive
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[3]
@@ -87,6 +87,10 @@ PrefabInstance:
     - target: {fileID: 6574562457401378547, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774513649075670125, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7874037791496066305, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_Name
@@ -117,10 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef6a4924124f9f7d882e89819fc0d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onInteractChannel: 
-  onActivatedChannel: 
-  onDeactivatedChannel: 
-  isActive: 0
+  signalChannel: 
+  isPowered: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -132,7 +134,7 @@ MonoBehaviour:
         m_MethodName: set_sprite
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: cf4e687d49d7648408b542a459d824f0, type: 3}
+          m_ObjectArgument: {fileID: 21300000, guid: c1f03781e9409ad0e900e81d2971be66, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
