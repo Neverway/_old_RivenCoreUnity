@@ -41,7 +41,7 @@ public class Logic_Processor : MonoBehaviour
     //=-----------------=
     public void UpdateState(string _targetSignalChannel, bool _isPowered)
     {
-        foreach (var interactable in FindObjectsOfType<Interactable>())
+        foreach (var interactable in FindObjectsOfType<Logic_Interactable>())
         {
             // Send activation state signal to all listeners on same channel
             if (interactable.signalChannel == _targetSignalChannel) interactable.isPowered = _isPowered;
