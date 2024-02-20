@@ -122,6 +122,7 @@ MonoBehaviour:
   resetsAfterUse: 1
   wasActivated: 0
   entitiesInTrigger: []
+  propsInTrigger: []
 --- !u!114 &5835219696925867299
 MonoBehaviour:
   m_ObjectHideFlags: 0

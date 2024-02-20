@@ -8066,9 +8066,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
       propertyPath: assetMemory.Array.data[4].assets.Array.data[4]
       value: 
-      objectReference: {fileID: 694822118676668660, guid: 9a12e45ebdd8b8b5cbbfa5774a956faa, type: 3}
+      objectReference: {fileID: 4428499950028505700, guid: f210299b2c14c57319618ff3d3866707, type: 3}
     - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
       propertyPath: assetMemory.Array.data[4].assets.Array.data[5]
       value: 

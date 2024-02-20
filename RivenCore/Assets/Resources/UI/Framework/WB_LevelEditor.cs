@@ -600,11 +600,15 @@ public class WB_LevelEditor : MonoBehaviour
         {
             if (!isShapePainting)
             {
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0) && currentPaintMode != 1)
                     Place();
-                else if (Input.GetMouseButton(1))
+                else if (Input.GetMouseButton(1) && currentPaintMode != 1)
                     Erase();
-                else if (Input.GetMouseButton(2))
+                if (Input.GetMouseButtonDown(0) && currentPaintMode == 1)
+                    Place();
+                else if (Input.GetMouseButtonDown(1) && currentPaintMode == 1)
+                    Erase();
+                else if (Input.GetMouseButtonDown(2))
                     Pick();
             }
             else HandleShapePainting();
