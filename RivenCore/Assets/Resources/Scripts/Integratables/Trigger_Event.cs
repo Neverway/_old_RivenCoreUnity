@@ -84,18 +84,20 @@ public class Trigger_Event : MonoBehaviour
     //=-----------------=
     private void Interact()
     {
+        
+        print(entitiesInTrigger.Count);
         // Is an entity in the trigger?
-        if (entitiesInTrigger.Capacity > 0)
+        if (entitiesInTrigger.Count > 0)
         {
-            logicProcessor.UpdateState(onOccupiedSignal, true);
-            logicProcessor.UpdateState(onUnoccupiedSignal, false);
+            if (onOccupiedSignal != "") logicProcessor.UpdateState(onOccupiedSignal, true);
+            if (onUnoccupiedSignal != "") logicProcessor.UpdateState(onUnoccupiedSignal, false);
         }
         // Have all entities left the trigger?
-        if (entitiesInTrigger.Capacity == 0)
+        if (entitiesInTrigger.Count == 0)
         {
-            logicProcessor.UpdateState(onOccupiedSignal, false);
-            logicProcessor.UpdateState(onUnoccupiedSignal, true);
-            wasActivated = true;
+            if (onOccupiedSignal != "") logicProcessor.UpdateState(onOccupiedSignal, false);
+            if (onUnoccupiedSignal != "") logicProcessor.UpdateState(onUnoccupiedSignal, true);
+            if (onOccupiedSignal != "" || onUnoccupiedSignal != "") wasActivated = true;
         }
     }
 }
