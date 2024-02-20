@@ -280,11 +280,16 @@ public class WB_LevelEditor : MonoBehaviour
         // Create or destroy player character based on testing state
         if (_start)
         {
+            SaveCurrentMap();
             FindObjectOfType<GameInstance>().CreateNewPlayerCharacter(testingGamemode, true, true);
             transform.GetChild(0).gameObject.SetActive(false);
         }
         else
         {
+            if (!string.IsNullOrEmpty(levelManager.filePath))
+            {
+                levelManager.LoadLevel(levelManager.filePath);
+            }
             Destroy(FindObjectOfType<GameInstance>().localPlayerCharacter.gameObject);
             FindObjectOfType<GameInstance>().localPlayerCharacter = editorPlayer;
             editorPlayer.gameObject.SetActive(true);

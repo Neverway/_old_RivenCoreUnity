@@ -211,7 +211,7 @@ public class System_LevelManager : MonoBehaviour
     /// Loads a level from a file.
     /// </summary>
     /// <param name="_levelFile">The file path to load the level data from.</param>
-     private void LoadLevel(string levelFile)
+     public void LoadLevel(string levelFile)
     {
         var json = File.ReadAllText(levelFile);
         var data = JsonUtility.FromJson<LevelData>(json);
