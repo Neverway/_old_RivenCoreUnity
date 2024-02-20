@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000218840996401441, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1566786936114327553, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_Sprite
@@ -260,11 +260,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6767489508301889394, guid: e2d81fe5643ccb6708e58e8111dbf501, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6767489508301889394, guid: e2d81fe5643ccb6708e58e8111dbf501, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6767489508301889394, guid: e2d81fe5643ccb6708e58e8111dbf501, type: 3}
       propertyPath: m_LocalPosition.x
