@@ -17,14 +17,19 @@ public class Trigger_Interactable : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public string targetSignalChannel; // Channel to send an activation or deactivation signal on
+    [Tooltip("")]
+    public string onSwitchedSignal;
+    public string resetSignal;
+    public bool resetsAfterUse=true;
     
-    public bool isPowered; // Flag indicating if the object is currently active
+    public bool isPowered;
+    public bool wasActivated;
 
 
     //=-----------------=
     // Private Variables
     //=-----------------=
+    public bool previousIsPoweredState;
 
 
     //=-----------------=
@@ -47,7 +52,14 @@ public class Trigger_Interactable : MonoBehaviour
         if (!interaction) return;
         Interact();
     }
-    
+
+    private void Update()
+    {
+        // Check for any overrides that have modified the switch state
+        if (previousIsPoweredState != isPowered) logicProcessor.UpdateState(onSwitchedSignal, isPowered);
+        previousIsPoweredState = isPowered;
+    }
+
     //=-----------------=
     // Internal Functions
     //=-----------------=
@@ -58,12 +70,14 @@ public class Trigger_Interactable : MonoBehaviour
     //=-----------------=
     private void Interact()
     {
-        if (targetSignalChannel == "") return;
+        if (onSwitchedSignal == "" || wasActivated && !resetsAfterUse) return;
         
         // Flip the current activation state
         isPowered = !isPowered;
+        previousIsPoweredState = isPowered;
         
         // Update connected devices
-        logicProcessor.UpdateState(targetSignalChannel, isPowered);
+        logicProcessor.UpdateState(onSwitchedSignal, isPowered);
+        wasActivated = true;
     }
 }

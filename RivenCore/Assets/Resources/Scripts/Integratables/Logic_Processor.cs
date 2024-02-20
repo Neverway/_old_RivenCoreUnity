@@ -66,5 +66,17 @@ public class Logic_Processor : MonoBehaviour
             if (logicGate.inputSignalA == _targetSignalChannel) logicGate.isAPowered = _isPowered;
             if (logicGate.inputSignalB == _targetSignalChannel) logicGate.isBPowered = _isPowered;
         }
+
+        foreach (var trigger in FindObjectsOfType<Trigger_Interactable>())
+        {
+            // Send activation state signal to all listeners on same channel
+            if (trigger.resetSignal == _targetSignalChannel) trigger.wasActivated = false;
+        }
+
+        foreach (var trigger in FindObjectsOfType<Trigger_Event>())
+        {
+            // Send activation state signal to all listeners on same channel
+            if (trigger.resetSignal == _targetSignalChannel) trigger.wasActivated = false;
+        }
     }
 }
