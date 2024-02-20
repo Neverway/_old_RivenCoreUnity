@@ -9,6 +9,7 @@ TagManager:
   - Map_Assets
   - Map_Tilemaps
   - CRTG_Cursor
+  - PhysProp
   layers:
   - Default
   - TransparentFX

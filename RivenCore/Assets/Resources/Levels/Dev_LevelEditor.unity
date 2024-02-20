@@ -8066,30 +8066,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].name
-      value: Logic
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[0]
-      value: 
-      objectReference: {fileID: 4291901077265551956, guid: 0212631ca034f55d096b5f4a2acc4b25, type: 3}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[1]
-      value: 
-      objectReference: {fileID: 6106147085935039305, guid: f9f94315bf9080f5da5ee85fec7d00aa, type: 3}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[2]
-      value: 
-      objectReference: {fileID: 2793937068080243148, guid: b98463baa7b3829fdbcb66b191e44474, type: 3}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[3]
-      value: 
-      objectReference: {fileID: 2169051669899643382, guid: d4f879056ce2e20d5a9233b53be37219, type: 3}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
       propertyPath: assetMemory.Array.data[4].assets.Array.data[4]
       value: 
       objectReference: {fileID: 694822118676668660, guid: 9a12e45ebdd8b8b5cbbfa5774a956faa, type: 3}
@@ -8125,6 +8101,10 @@ PrefabInstance:
       propertyPath: assetMemory.Array.data[4].assets.Array.data[12]
       value: 
       objectReference: {fileID: 1609320772591196146, guid: 2762ca7c38b8586939929df8299b640f, type: 3}
+    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
+      propertyPath: assetMemory.Array.data[4].assets.Array.data[13]
+      value: 
+      objectReference: {fileID: 3436431032717455876, guid: ceb178b7bccd9bcb5ab62b2d4ad9388f, type: 3}
     - target: {fileID: 2128968533710696330, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -23833,7 +23813,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 350, y: 399}
+  m_SizeDelta: {x: 420, y: 399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &334192183297226974
 RectTransform:
