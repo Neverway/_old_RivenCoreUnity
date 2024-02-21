@@ -8094,64 +8094,6 @@
         {
             "layer": 0,
             "layerID": "",
-            "id": "[Light] Point",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 16.0,
-                "y": 8.0,
-                "z": -1.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "1"
-                },
-                {
-                    "name": "intensity",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "range",
-                    "type": "System.Single",
-                    "value": "15"
-                },
-                {
-                    "name": "colorRed",
-                    "type": "System.Single",
-                    "value": "0"
-                },
-                {
-                    "name": "colorGreen",
-                    "type": "System.Single",
-                    "value": "0.7"
-                },
-                {
-                    "name": "colorBlue",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "lamp2"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "True"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
             "id": "[Logic] NOT",
             "uniqueId": 0,
             "position": {
@@ -8466,6 +8408,64 @@
                 "z": 0.0
             },
             "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Light] Point",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 18.0,
+                "y": 8.0,
+                "z": -1.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "intensity",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "range",
+                    "type": "System.Single",
+                    "value": "15"
+                },
+                {
+                    "name": "colorRed",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "colorGreen",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorBlue",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "lamp2"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "True"
+                }
+            ]
         }
     ]
 }

@@ -61,10 +61,10 @@ public class Trigger_Warp : MonoBehaviour
         return null;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D _other)
     {
-        if (!other.CompareTag("Entity")) return;
-        var targetEnt = other.gameObject.transform.parent;
+        if (!_other.CompareTag("Entity") && !_other.CompareTag("PhysProp") ) return;
+        var targetEnt = _other.gameObject.transform.parent;
         if (GetExitWarp()) targetEnt.transform.position = GetExitWarp().position+exitOffset;
     }
 

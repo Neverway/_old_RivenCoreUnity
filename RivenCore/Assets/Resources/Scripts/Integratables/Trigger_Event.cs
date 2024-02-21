@@ -52,7 +52,6 @@ public class Trigger_Event : MonoBehaviour
         // get the target entity/prop
         var targetEnt = _other.gameObject.transform.parent.GetComponent<Entity>();
         var targetProp = _other.gameObject.transform.parent.GetComponent<Rigidbody2D>();
-        if (targetProp) print("Target Prop found");
         // Exit if not able to get entity/prop component
         if (!targetEnt && !targetProp) return;
         // Add the entity/prop to the list if it's not already
