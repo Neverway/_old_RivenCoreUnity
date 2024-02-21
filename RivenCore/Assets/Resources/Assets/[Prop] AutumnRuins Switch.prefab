@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[Trigger] Interactable'
       objectReference: {fileID: 0}
+    - target: {fileID: 6325020148407325708, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8215253235007374963, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -86,6 +90,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8215253235007374963, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
   m_PrefabInstance: {fileID: 1928979168419336435}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &8179827964771238270 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7728610612195643789, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
+  m_PrefabInstance: {fileID: 1928979168419336435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4825207285810685701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,6 +103,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7747857236983328831, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: targetedColliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 8179827964771238270}
+    - target: {fileID: -7747857236983328831, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: targetedSpriteRenderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7747857236983328831, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: targetedSpriteRenderers.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 54729835334439409, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

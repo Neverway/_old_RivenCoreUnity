@@ -846,6 +846,11 @@ public class WB_LevelEditor : MonoBehaviour
         assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
         //if (assetRef.GetComponent<Asset_UniqueInstanceId>()) assetRef.GetComponent<Asset_UniqueInstanceId>().Id = GetNextAvailableId();
         
+        if(!assetRef.GetComponent<Object_DepthAssigner>()) return;
+
+        assetRef.GetComponent<Object_DepthAssigner>().depthLayer = currentLayer;
+
+/* OLD DEPTH ASSIGNMENT
         var assetSortingLayer = assetRef.GetComponent<SpriteRenderer>().sortingLayerName;
         
         // Assign the object to the correct height layer
@@ -887,7 +892,7 @@ public class WB_LevelEditor : MonoBehaviour
                 if (assetSortingLayer == "Trigger" || assetSortingLayer == "NoDraw") break;
                 assetRef.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 3";
                 break;
-        }
+        }*/
     }
 
     /// <summary>

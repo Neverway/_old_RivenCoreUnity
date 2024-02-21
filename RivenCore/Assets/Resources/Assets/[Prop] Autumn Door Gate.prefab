@@ -54,31 +54,23 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: cc371dfb5e12123b582d040bbc2b27cb, type: 3}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].targetScript
+      propertyPath: scriptDataList.Array.data[2].targetScript
       value: 
       objectReference: {fileID: 4835348952142717465}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.size
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[0]
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
       value: signalChannel
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[1]
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[1]
       value: isPowered
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[2]
-      value: isActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[3]
-      value: isActive
       objectReference: {fileID: 0}
     - target: {fileID: 4371502556531117253, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_LocalScale.x

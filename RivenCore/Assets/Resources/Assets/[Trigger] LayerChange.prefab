@@ -70,35 +70,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].targetScript
+      propertyPath: scriptDataList.Array.data[2].targetScript
       value: 
       objectReference: {fileID: 8908938269373447442}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.size
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[0]
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
       value: exitLayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[1]
-      value: positionOffsetX
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[2]
-      value: positionOffsetY
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[3]
-      value: positionOffsetY
       objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_Name
-      value: '[Trigger] LayerChange Variant'
+      value: '[Trigger] LayerChange'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

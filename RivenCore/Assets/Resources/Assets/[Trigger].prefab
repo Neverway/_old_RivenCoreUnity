@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3438934205063838824}
   - component: {fileID: 1361399437628517257}
   - component: {fileID: 3961610065379011478}
+  - component: {fileID: 755761868483243543}
   - component: {fileID: -272060017141874270}
   - component: {fileID: 4268865614696884777}
   m_Layer: 6
@@ -132,6 +133,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &755761868483243543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8129580590025789606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cbf1ec37a7a78f997fcfff3fa288a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depthLayer: 0
+  assignZDepthToRoot: 1
+  targetedColliders:
+  - {fileID: 3961610065379011478}
+  targetedSpriteRenderers: []
 --- !u!114 &-272060017141874270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +179,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptDataList:
+  - targetScript: {fileID: 755761868483243543}
+    exposedVariables:
+    - depthLayer
   - targetScript: {fileID: -272060017141874270}
     exposedVariables:
     - scaleX

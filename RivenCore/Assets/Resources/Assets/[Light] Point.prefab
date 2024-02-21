@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6461402549390778562}
   - component: {fileID: -8572795352901739137}
   - component: {fileID: -3514021473006265091}
+  - component: {fileID: 6965304438980778751}
   m_Layer: 6
   m_Name: '[Light] Point'
   m_TagString: Untagged
@@ -180,6 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptDataList:
+  - targetScript: {fileID: 6965304438980778751}
+    exposedVariables:
+    - depthLayer
   - targetScript: {fileID: 6461402549390778562}
     exposedVariables:
     - intensity
@@ -239,3 +243,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &6965304438980778751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366982673205350056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cbf1ec37a7a78f997fcfff3fa288a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depthLayer: 0
+  assignZDepthToRoot: 1
+  targetedColliders: []
+  targetedSpriteRenderers: []

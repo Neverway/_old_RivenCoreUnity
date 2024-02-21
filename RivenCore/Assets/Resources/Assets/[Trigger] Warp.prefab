@@ -54,30 +54,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].targetScript
+      propertyPath: scriptDataList.Array.data[2].targetScript
       value: 
       objectReference: {fileID: 8571232815991230138}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.size
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[0]
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
       value: warpID
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[1]
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[1]
       value: exitWarpID
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[2]
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[2]
       value: exitOffsetX
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[3]
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[3]
       value: exitOffsetY
       objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}

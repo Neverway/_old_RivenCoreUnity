@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1361399437628517257, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9de971c1a30b9cff49f6b9ef8cc80f65, type: 3}
     - target: {fileID: 3438934205063838824, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_Name
-      value: '[Trigger] Force Variant'
+      value: '[Trigger] Force'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

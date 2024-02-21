@@ -224,6 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 54729835334439409}
   - component: {fileID: 1566786936114327553}
+  - component: {fileID: -7747857236983328831}
   - component: {fileID: 4786988212645953397}
   - component: {fileID: 3715486313302003108}
   m_Layer: 0
@@ -302,6 +303,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &-7747857236983328831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7874037791496066305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cbf1ec37a7a78f997fcfff3fa288a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depthLayer: 0
+  assignZDepthToRoot: 1
+  targetedColliders:
+  - {fileID: 1000218840996401441}
+  targetedSpriteRenderers:
+  - {fileID: 1566786936114327553}
+  - {fileID: 7814615334561551808}
 --- !u!114 &4786988212645953397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +351,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptDataList:
+  - targetScript: {fileID: -7747857236983328831}
+    exposedVariables:
+    - depthLayer
   - targetScript: {fileID: 4786988212645953397}
     exposedVariables:
     - scaleX
