@@ -24,6 +24,8 @@ public class Object_DepthAssigner : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
+    public float fallTime;
+    public bool isFalling;
 
 
     //=-----------------=
@@ -110,9 +112,49 @@ public class Object_DepthAssigner : MonoBehaviour
             }
         }
     }
+    private IEnumerator FallForSeconds()
+    {
+        // Exit if already falling
+        if (isFalling) yield break;
+        isFalling = true;
+        
+        // Freeze entity movement while falling
+        if (gameObject.GetComponent<Entity>()) { gameObject.GetComponent<Entity>().isPaused = true; }
+        
+        // Set temporary mass for consistent falls
+        var previousMass = gameObject.GetComponent<Rigidbody2D>().mass;
+        gameObject.GetComponent<Rigidbody2D>().mass = 1;
+        
+        // Set gravity scale
+        gameObject.GetComponent<Rigidbody2D>().gravityScale = 10;
+        
+        // Disable colliders on falling object
+        foreach (var collider in targetedColliders) { collider.enabled = false; }
+        
+        // Wait until finished falling
+        yield return new WaitForSeconds(fallTime);
+        
+        // Reset mass for consistent falls
+        gameObject.GetComponent<Rigidbody2D>().mass = previousMass;
+        
+        // Reset gravity scale
+        gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+        
+        // Reset colliders
+        foreach (var collider in targetedColliders) { collider.enabled = true; }
+        
+        // Unfreeze entity movement
+        if (gameObject.GetComponent<Entity>()) { gameObject.GetComponent<Entity>().isPaused = false; }
+        
+        isFalling = false;
+    }
 
 
     //=-----------------=
     // External Functions
     //=-----------------=
+    public void Fall()
+    {
+        StartCoroutine(FallForSeconds());
+    }
 }

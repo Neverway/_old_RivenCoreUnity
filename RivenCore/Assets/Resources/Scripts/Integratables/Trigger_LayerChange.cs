@@ -18,6 +18,8 @@ public class Trigger_LayerChange : MonoBehaviour
     [Tooltip("Which layer should the entity switch to when entering the trigger. P.S DON'T FORGET TO SWITCH THE TRIGGERS LAYER!!")]
     [Range(0, 2)] public int exitLayer;
 
+    public float fallTime;
+
 
     //=-----------------=
     // Private Variables
@@ -39,36 +41,12 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Entity")) return;
-        var entity = other.transform.parent.GetComponent<Entity>();
-        var entityPos = entity.transform.position;
-        switch (exitLayer)
-        {
-            case 0:
-                // Set collision layer for all collider on object
-                other.gameObject.layer = 6;
-                // Set draw layer
-                entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 1";
-                // Set Z depth for lighting
-                entity.transform.position = new Vector3(entityPos.x, entityPos.y, 0);
-                break;
-            case 1:
-                // Set collision layer for all collider on object
-                other.gameObject.layer = 7;
-                // Set draw layer
-                entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 2";
-                // Set Z depth for lighting
-                entity.transform.position = new Vector3(entityPos.x, entityPos.y, -1);
-                break;
-            case 2:
-                // Set collision layer for all collider on object
-                other.gameObject.layer = 8;
-                // Set draw layer
-                entity.GetComponent<SpriteRenderer>().sortingLayerName = "Depth Layer 3";
-                // Set Z depth for lighting
-                entity.transform.position = new Vector3(entityPos.x, entityPos.y, -2);
-                break;
-        }
+        if (!other.CompareTag("Entity") && !other.CompareTag("PhysProp")) return;
+        var entity = other.transform.parent.GetComponent<Object_DepthAssigner>();
+        entity.depthLayer = exitLayer;
+        if (fallTime <= 0) return;
+        entity.fallTime = fallTime;
+        entity.Fall();
     }
 
 

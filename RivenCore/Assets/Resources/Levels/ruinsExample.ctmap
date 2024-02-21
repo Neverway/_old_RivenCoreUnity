@@ -2434,40 +2434,6 @@
         {
             "layer": 2,
             "layerID": "L1 Wall 1",
-            "id": "AutumnCastle_22",
-            "uniqueId": 0,
-            "position": {
-                "x": 16,
-                "y": -1,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            },
-            "assetData": []
-        },
-        {
-            "layer": 2,
-            "layerID": "L1 Wall 1",
-            "id": "AutumnCastle_17",
-            "uniqueId": 0,
-            "position": {
-                "x": 16,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            },
-            "assetData": []
-        },
-        {
-            "layer": 2,
-            "layerID": "L1 Wall 1",
             "id": "AutumnCastle_21",
             "uniqueId": 0,
             "position": {
@@ -7243,67 +7209,29 @@
                     "value": "0"
                 },
                 {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "switchy"
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
                 },
                 {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
                 },
                 {
-                    "name": "onSwitchedSignal",
-                    "type": "System.String",
-                    "value": "switchy"
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
                 },
                 {
-                    "name": "resetSignal",
-                    "type": "System.String",
-                    "value": ""
-                },
-                {
-                    "name": "resetsAfterUse",
-                    "type": "System.Boolean",
-                    "value": "True"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
-                },
-                {
-                    "name": "wasActivated",
-                    "type": "System.Boolean",
-                    "value": "False"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Prop] AutumnRuins Switch",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 15.5,
-                "y": 0.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
                     "value": "0"
                 },
                 {
                     "name": "signalChannel",
                     "type": "System.String",
-                    "value": "ledgy"
+                    "value": "switchy"
                 },
                 {
                     "name": "isPowered",
@@ -7313,7 +7241,7 @@
                 {
                     "name": "onSwitchedSignal",
                     "type": "System.String",
-                    "value": "ledgy"
+                    "value": "switchy"
                 },
                 {
                     "name": "resetSignal",
@@ -7440,6 +7368,11 @@
                     "name": "exitLayer",
                     "type": "System.Int32",
                     "value": "0"
+                },
+                {
+                    "name": "fallTime",
+                    "type": "System.Single",
+                    "value": "0"
                 }
             ]
         },
@@ -7488,6 +7421,11 @@
                     "name": "exitLayer",
                     "type": "System.Int32",
                     "value": "1"
+                },
+                {
+                    "name": "fallTime",
+                    "type": "System.Single",
+                    "value": "0"
                 }
             ]
         },
@@ -7602,376 +7540,11 @@
                 "y": 0.0,
                 "z": 0.0
             },
-            "assetData": []
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Prop] AutumnRuins Bridge Horizontal",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 14.5,
-                "y": 4.0,
-                "z": 0.0
-            },
             "assetData": [
                 {
                     "name": "depthLayer",
                     "type": "System.Int32",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleX",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleY",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "positionOffsetX",
-                    "type": "System.Single",
-                    "value": "0.5"
-                },
-                {
-                    "name": "positionOffsetY",
-                    "type": "System.Single",
                     "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "ledgy"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Prop] AutumnRuins Bridge Horizontal",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 14.5,
-                "y": 5.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleX",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleY",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "positionOffsetX",
-                    "type": "System.Single",
-                    "value": "0.5"
-                },
-                {
-                    "name": "positionOffsetY",
-                    "type": "System.Single",
-                    "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "ledgy"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Prop] AutumnRuins Bridge Horizontal",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 14.5,
-                "y": 6.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleX",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleY",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "positionOffsetX",
-                    "type": "System.Single",
-                    "value": "0.5"
-                },
-                {
-                    "name": "positionOffsetY",
-                    "type": "System.Single",
-                    "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "ledgy"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Prop] AutumnRuins Bridge Horizontal",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 14.5,
-                "y": 7.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleX",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleY",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "positionOffsetX",
-                    "type": "System.Single",
-                    "value": "0.5"
-                },
-                {
-                    "name": "positionOffsetY",
-                    "type": "System.Single",
-                    "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "ledgy"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Prop] AutumnRuins Bridge Horizontal",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 14.5,
-                "y": 8.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleX",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleY",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "positionOffsetX",
-                    "type": "System.Single",
-                    "value": "0.5"
-                },
-                {
-                    "name": "positionOffsetY",
-                    "type": "System.Single",
-                    "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "ledgy"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Prop] Autumn Door Gate",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 14.5,
-                "y": 9.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleX",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleY",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "positionOffsetX",
-                    "type": "System.Single",
-                    "value": "0.5"
-                },
-                {
-                    "name": "positionOffsetY",
-                    "type": "System.Single",
-                    "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "door2"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Prop] AutumnRuins Bridge Horizontal",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 14.5,
-                "y": 9.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleX",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleY",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "positionOffsetX",
-                    "type": "System.Single",
-                    "value": "1.5"
-                },
-                {
-                    "name": "positionOffsetY",
-                    "type": "System.Single",
-                    "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "ledgy"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
                 }
             ]
         },
@@ -8395,23 +7968,6 @@
         {
             "layer": 0,
             "layerID": "",
-            "id": "[Prop] AutumnRuins Pushbox",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 19.0,
-                "y": 1.0,
-                "z": 0.0
-            },
-            "assetData": []
-        },
-        {
-            "layer": 0,
-            "layerID": "",
             "id": "[Light] Point",
             "uniqueId": 0,
             "position": {
@@ -8464,6 +8020,538 @@
                     "name": "isPowered",
                     "type": "System.Boolean",
                     "value": "True"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Bridge Vertical",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 14.5,
+                "y": 4.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "ledgy"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "exitLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "fallTime",
+                    "type": "System.Single",
+                    "value": "0.1"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Bridge Vertical",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 14.5,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "ledgy"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "exitLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "fallTime",
+                    "type": "System.Single",
+                    "value": "0.1"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Bridge Vertical",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 14.5,
+                "y": 6.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "ledgy"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "exitLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "fallTime",
+                    "type": "System.Single",
+                    "value": "0.1"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Bridge Vertical",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 14.5,
+                "y": 7.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "ledgy"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "exitLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "fallTime",
+                    "type": "System.Single",
+                    "value": "0.1"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Bridge Vertical",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 14.5,
+                "y": 8.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "ledgy"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "exitLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "fallTime",
+                    "type": "System.Single",
+                    "value": "0.1"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Bridge Vertical",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 14.5,
+                "y": 9.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "ledgy"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "exitLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "fallTime",
+                    "type": "System.Single",
+                    "value": "0.1"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Switch",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 15.5,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "-0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "ledgy"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "onSwitchedSignal",
+                    "type": "System.String",
+                    "value": "ledgy"
+                },
+                {
+                    "name": "resetSignal",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "resetsAfterUse",
+                    "type": "System.Boolean",
+                    "value": "True"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "wasActivated",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Pushbox",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 19.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] Autumn Door Gate",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 14.5,
+                "y": 9.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "door2"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
                 }
             ]
         }

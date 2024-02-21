@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 22132374e5b05c066915b378e48f7599, type: 3}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: exposedVariables.Array.size
@@ -172,44 +172,28 @@ PrefabInstance:
       value: positionOffsetY
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].targetScript
+      propertyPath: scriptDataList.Array.data[2].targetScript
       value: 
       objectReference: {fileID: 3128347614724129785}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[2].targetScript
+      propertyPath: scriptDataList.Array.data[3].targetScript
       value: 
       objectReference: {fileID: 5431967466285518945}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.size
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
+      propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.size
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[0]
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
       value: signalChannel
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[1]
-      value: isPowered
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[2]
-      value: isActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.data[3]
-      value: isActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
-      value: onSwitchedSignal
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[1]
-      value: resetSignal
+      value: isPowered
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[2]
@@ -221,6 +205,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[4]
+      value: wasActivated
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[0]
+      value: onSwitchedSignal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[1]
+      value: resetSignal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[2]
+      value: resetsAfterUse
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[3]
+      value: isPowered
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[4]
       value: wasActivated
       objectReference: {fileID: 0}
     - target: {fileID: 4371502556531117253, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
