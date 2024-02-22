@@ -38,6 +38,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
     private Rigidbody2D entityRigidbody2D;
     private Animator animator;
     private Entity entity;
+    private Entity_Inventory entityInventory;
     [SerializeField] private GameObject interactionPrefab;
     
 
@@ -60,6 +61,17 @@ public class Entity_Controller_Topdown2D : Entity_Controller
         if (topdown2DActions.Interact.WasPressedThisFrame()) Interact();
         if (_entity.isPaused) return;
         _entity.currentStats.movementSpeed = topdown2DActions.Action.IsPressed() ? _entity.currentStats.sprintSpeed : _entity.currentStats.walkSpeed; 
+        
+        // Cycle Actions
+        if (entityInventory)
+        {
+            if (topdown2DActions.L1.WasPressedThisFrame())
+                entityInventory.CycleAction(-1);
+            else if (topdown2DActions.R1.WasPressedThisFrame())
+                entityInventory.CycleAction(1);
+            if (topdown2DActions.Interact.WasPressedThisFrame())
+                entityInventory.UseItem();
+        }
         movementDirection = topdown2DActions.Move.ReadValue<Vector2>();
     }
     
@@ -76,6 +88,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
         entityRigidbody2D = _entity.GetComponent<Rigidbody2D>();
         animator = _entity.GetComponent<Animator>();
         entity = _entity;
+        entityInventory = _entity.GetComponent<Entity_Inventory>();
         _entity.currentStats = _entity.characterStats.stats;
         _entity.OnEntityHeal += OnEntityHeal;
         _entity.OnEntityHurt += OnEntityHurt;
@@ -93,6 +106,8 @@ public class Entity_Controller_Topdown2D : Entity_Controller
                 movementDirection.y, 
                 position.z) * (entity.currentStats.movementSpeed * movementMultiplier * Time.fixedDeltaTime));
         }
+
+        entity.faceDirection = GetFaceDirection(-90);
     }
     
     private void UpdateAnimator()
@@ -149,4 +164,25 @@ public class Entity_Controller_Topdown2D : Entity_Controller
     //=-----------------=
     // External Functions
     //=-----------------=
+    public Quaternion GetFaceDirection()
+    {
+        // Calculate the angle based on the facingDirection vector
+        float angle = Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg;
+    
+        // Create a Quaternion representing the rotation
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+        return rotation;
+    }
+
+    public Quaternion GetFaceDirection(int zRotationOffset)
+    {
+        // Calculate the angle based on the facingDirection vector
+        float angle = Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg;
+    
+        // Create a Quaternion representing the rotation
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle+zRotationOffset));
+
+        return rotation;
+    }
 }

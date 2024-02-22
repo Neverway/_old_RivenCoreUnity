@@ -410,6 +410,24 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""L1"",
+                    ""type"": ""Button"",
+                    ""id"": ""3c6a5b41-d834-4a7c-bdc1-42e4176f0197"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""R1"",
+                    ""type"": ""Button"",
+                    ""id"": ""9eac0ad3-39ed-4a4b-a041-e56d803e73b2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -610,6 +628,50 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c6692ad0-1c36-41fd-b326-35aef1dd3994"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""L1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37460073-d0b4-4514-bd07-d3f29658fa5b"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""L1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c243054a-411d-447e-9af7-5efaa85a7648"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""R1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f4b2cb7-b5b7-4d2d-be6b-2b1e7b72808c"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""R1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -658,6 +720,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_TopDown2D_Interact = m_TopDown2D.FindAction("Interact", throwIfNotFound: true);
         m_TopDown2D_Action = m_TopDown2D.FindAction("Action", throwIfNotFound: true);
         m_TopDown2D_Menu = m_TopDown2D.FindAction("Menu", throwIfNotFound: true);
+        m_TopDown2D_L1 = m_TopDown2D.FindAction("L1", throwIfNotFound: true);
+        m_TopDown2D_R1 = m_TopDown2D.FindAction("R1", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -802,6 +866,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_TopDown2D_Interact;
     private readonly InputAction m_TopDown2D_Action;
     private readonly InputAction m_TopDown2D_Menu;
+    private readonly InputAction m_TopDown2D_L1;
+    private readonly InputAction m_TopDown2D_R1;
     public struct TopDown2DActions
     {
         private @InputActions m_Wrapper;
@@ -811,6 +877,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_TopDown2D_Interact;
         public InputAction @Action => m_Wrapper.m_TopDown2D_Action;
         public InputAction @Menu => m_Wrapper.m_TopDown2D_Menu;
+        public InputAction @L1 => m_Wrapper.m_TopDown2D_L1;
+        public InputAction @R1 => m_Wrapper.m_TopDown2D_R1;
         public InputActionMap Get() { return m_Wrapper.m_TopDown2D; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -835,6 +903,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Menu.started += instance.OnMenu;
             @Menu.performed += instance.OnMenu;
             @Menu.canceled += instance.OnMenu;
+            @L1.started += instance.OnL1;
+            @L1.performed += instance.OnL1;
+            @L1.canceled += instance.OnL1;
+            @R1.started += instance.OnR1;
+            @R1.performed += instance.OnR1;
+            @R1.canceled += instance.OnR1;
         }
 
         private void UnregisterCallbacks(ITopDown2DActions instance)
@@ -854,6 +928,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Menu.started -= instance.OnMenu;
             @Menu.performed -= instance.OnMenu;
             @Menu.canceled -= instance.OnMenu;
+            @L1.started -= instance.OnL1;
+            @L1.performed -= instance.OnL1;
+            @L1.canceled -= instance.OnL1;
+            @R1.started -= instance.OnR1;
+            @R1.performed -= instance.OnR1;
+            @R1.canceled -= instance.OnR1;
         }
 
         public void RemoveCallbacks(ITopDown2DActions instance)
@@ -904,5 +984,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnAction(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
+        void OnL1(InputAction.CallbackContext context);
+        void OnR1(InputAction.CallbackContext context);
     }
 }

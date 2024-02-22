@@ -333,6 +333,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5542459799266477335, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1707230762087613381}
+    - targetCorrespondingSourceObject: {fileID: 5542459799266477335, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6174776570103369289}
   m_SourcePrefab: {fileID: 100100000, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
 --- !u!1 &1073307765151760636 stripped
 GameObject:
@@ -437,6 +440,40 @@ MonoBehaviour:
   targetedSpriteRenderers:
   - {fileID: 7438000889185125425}
   - {fileID: 5046662710187567943}
+  fallTime: 0
+  isFalling: 0
+--- !u!114 &-6174776570103369289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073307765151760636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13585c61d79d2c5883664e5bf959990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAction: 1
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  equippedItems:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  drops: []
+  bladedWeaponPrefab: {fileID: 6010782263961690142, guid: 177747e0882bed6a7856011456582798, type: 3}
+  throwableUtilityPrefab: {fileID: 6010782263961690142, guid: e5177e5c8e117c16fab3bc273841713b, type: 3}
 --- !u!4 &2431888896548827180 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7183290310932379079, guid: 7875267240746e17cbf682c2d52513ec, type: 3}

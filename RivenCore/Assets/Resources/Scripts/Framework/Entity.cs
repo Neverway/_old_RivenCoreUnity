@@ -73,6 +73,7 @@ public class Entity : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
+    public Quaternion faceDirection;
 
 
     //=-----------------=

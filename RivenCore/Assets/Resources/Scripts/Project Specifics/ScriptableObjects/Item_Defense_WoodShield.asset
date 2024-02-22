@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e736c77cc918de0ce9a1bf4e90ec9fce, type: 3}
+  m_Name: Item_Defense_WoodShield
+  m_EditorClassIdentifier: 
+  itemName: Wood Shield
+  description: Simple wooden shield used to block attacks and defend yourself. Will
+    get you out of a tight spot but won't help too much otherwise.
+  isDiscardable: 1
+  inventoryIcon: {fileID: 21300000, guid: 15dbbbe5bc3df807392b60fa542d38e2, type: 3}
+  category: 3
+  baseDefense: 5
+  resistantMultiplier: 1.5
+  criticalMultiplier: 0.5
+  resistantTypes:
+  - Poison
+  criticalTypes:
+  - Fire
