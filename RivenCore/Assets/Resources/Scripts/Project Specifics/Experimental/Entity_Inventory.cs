@@ -109,6 +109,8 @@ public class Entity_Inventory : MonoBehaviour
         {
             // spawn a generic bladed weapon,
             var liveItem = Instantiate(bladedWeaponPrefab, this.transform.position, entity.faceDirection, this.transform);
+            // set the depth layer
+            liveItem.GetComponent<Object_DepthAssigner>().depthLayer = GetComponent<Object_DepthAssigner>().depthLayer;
             // set the graphic,
             liveItem.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = equippedItems[currentAction].inventoryIcon;
             // set the damage team,
@@ -147,6 +149,8 @@ public class Entity_Inventory : MonoBehaviour
         {
             // spawn a generic bladed weapon,
             var liveItem = Instantiate(throwableUtilityPrefab, this.transform.position, entity.faceDirection);
+            // set the depth layer
+            liveItem.GetComponent<Object_DepthAssigner>().depthLayer = GetComponent<Object_DepthAssigner>().depthLayer;
             // set the graphic,
             liveItem.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = equippedItems[currentAction].inventoryIcon;
             // set the damage team,

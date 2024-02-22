@@ -467,9 +467,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   equippedItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 29ebb396d9e5a61239f962f669a1a2c6, type: 2}
+  - {fileID: 11400000, guid: 6fe466fd2a5595d7a90a366bcafdda43, type: 2}
+  - {fileID: 11400000, guid: 0af54f640c4f84a828667dcee6ed9ae9, type: 2}
   - {fileID: 0}
   drops: []
   bladedWeaponPrefab: {fileID: 6010782263961690142, guid: 177747e0882bed6a7856011456582798, type: 3}

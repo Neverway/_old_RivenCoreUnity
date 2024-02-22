@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5423494589699740140}
   - component: {fileID: 1936269038594254110}
+  - component: {fileID: 5155334639567308564}
   m_Layer: 0
   m_Name: '[Item] Weapon Bladed'
   m_TagString: Untagged
@@ -140,6 +141,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5155334639567308564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6010782263961690142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cbf1ec37a7a78f997fcfff3fa288a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depthLayer: 0
+  assignZDepthToRoot: 1
+  targetedColliders:
+  - {fileID: 2259658733098393862}
+  - {fileID: 6336017334208058760}
+  targetedSpriteRenderers:
+  - {fileID: 8212289795444173650}
+  fallTime: 0
+  isFalling: 0
 --- !u!1001 &695003451701680682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -264,6 +286,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5118570681007282268, guid: 7017ff9daec705f28aad6b744513faaa, type: 3}
   m_PrefabInstance: {fileID: 695003451701680682}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &6336017334208058760 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6794572597060767650, guid: 7017ff9daec705f28aad6b744513faaa, type: 3}
+  m_PrefabInstance: {fileID: 695003451701680682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6625607945276500362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -351,5 +378,10 @@ PrefabInstance:
 --- !u!4 &439119141525419768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6767489508301889394, guid: e2d81fe5643ccb6708e58e8111dbf501, type: 3}
+  m_PrefabInstance: {fileID: 6625607945276500362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &2259658733098393862 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4947495523612772492, guid: e2d81fe5643ccb6708e58e8111dbf501, type: 3}
   m_PrefabInstance: {fileID: 6625607945276500362}
   m_PrefabAsset: {fileID: 0}
