@@ -89,8 +89,6 @@ public class Trigger_Event : MonoBehaviour
     //=-----------------=
     private void Interact()
     {
-        
-        print(entitiesInTrigger.Count);
         // Is an entity in the trigger?
         if (entitiesInTrigger.Count > 0 || propsInTrigger.Count > 0)
         {

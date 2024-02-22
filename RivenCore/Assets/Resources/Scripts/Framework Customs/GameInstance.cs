@@ -101,15 +101,15 @@ public class GameInstance : MonoBehaviour
 
     public static void AddWidget(GameObject _widgetBlueprint)
     {
-        var canvas = FindObjectOfType<Canvas>();
+        var canvas = GameObject.FindWithTag("UserInterface");
         var newWidget = Instantiate(_widgetBlueprint, canvas.transform, false);
         newWidget.transform.localScale = new Vector3(1, 1, 1);
         newWidget.name = newWidget.name.Replace("(Clone)", "").Trim();
     }
 
-    private static GameObject GetWidget(string _widgetName)
+    public static GameObject GetWidget(string _widgetName)
     {
-        var canvas = FindObjectOfType<Canvas>();
+        var canvas = GameObject.FindWithTag("UserInterface");
         for (var i = 0; i < canvas.transform.childCount; i++)
         {
             var widget = canvas.transform.GetChild(i).gameObject;
@@ -136,5 +136,12 @@ public class GameInstance : MonoBehaviour
     {
         if (GetWidget("WB_Pause") == null) { AddWidget(UserInterfaceWidgets[2]); SetAllEntitiesIsPaused(true); }
         else { Destroy(GetWidget("WB_Pause")); SetAllEntitiesIsPaused(false); }
+    }
+
+    // This function requires a check for the existing menu due to it being re-created in the testing mode in the level editor scene
+    public void UI_ShowHUD()
+    {
+        if (GetWidget("WB_HUD") == null) { AddWidget(UserInterfaceWidgets[3]); }
+        else { Destroy(GetWidget("WB_HUD")); }
     }
 }

@@ -10,6 +10,7 @@ TagManager:
   - Map_Tilemaps
   - CRTG_Cursor
   - PhysProp
+  - UserInterface
   layers:
   - Default
   - TransparentFX

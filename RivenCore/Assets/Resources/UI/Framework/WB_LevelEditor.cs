@@ -108,6 +108,9 @@ public class WB_LevelEditor : MonoBehaviour
 
         // Initialize editor player if not already set
         InitializeEditorPlayer();
+        
+        // Destroy the initial HUD that's created by the Level Blueprint
+        Destroy(GameInstance.GetWidget("WB_HUD"));
     }
 
     /// <summary>
@@ -283,6 +286,7 @@ public class WB_LevelEditor : MonoBehaviour
             SaveCurrentMap();
             FindObjectOfType<GameInstance>().CreateNewPlayerCharacter(testingGamemode, true, true);
             transform.GetChild(0).gameObject.SetActive(false);
+            FindObjectOfType<GameInstance>().UI_ShowHUD();
         }
         else
         {
@@ -294,6 +298,7 @@ public class WB_LevelEditor : MonoBehaviour
             FindObjectOfType<GameInstance>().localPlayerCharacter = editorPlayer;
             editorPlayer.gameObject.SetActive(true);
             transform.GetChild(0).gameObject.SetActive(true);
+            Destroy(GameInstance.GetWidget("WB_HUD"));
         }
     }
 
