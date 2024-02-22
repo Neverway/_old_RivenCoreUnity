@@ -144,4 +144,10 @@ public class GameInstance : MonoBehaviour
         if (GetWidget("WB_HUD") == null) { AddWidget(UserInterfaceWidgets[3]); }
         else { Destroy(GetWidget("WB_HUD")); }
     }
+
+    public void UI_ShowInventory()
+    {
+        if (GetWidget("WB_Inventory") == null) { AddWidget(UserInterfaceWidgets[4]); SetAllEntitiesIsPaused(true); }
+        else { Destroy(GetWidget("WB_Inventory")); SetAllEntitiesIsPaused(false); }
+    }
 }

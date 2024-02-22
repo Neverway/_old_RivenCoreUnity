@@ -401,6 +401,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""518b36da-ad6e-43fc-bec8-de2164ba39c6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -579,6 +588,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a3e7850-4afd-458b-a0bd-00bc38536bfb"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9269a4af-0e03-49e6-961d-d77dad54e2ac"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -626,6 +657,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_TopDown2D_Pause = m_TopDown2D.FindAction("Pause", throwIfNotFound: true);
         m_TopDown2D_Interact = m_TopDown2D.FindAction("Interact", throwIfNotFound: true);
         m_TopDown2D_Action = m_TopDown2D.FindAction("Action", throwIfNotFound: true);
+        m_TopDown2D_Menu = m_TopDown2D.FindAction("Menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -769,6 +801,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_TopDown2D_Pause;
     private readonly InputAction m_TopDown2D_Interact;
     private readonly InputAction m_TopDown2D_Action;
+    private readonly InputAction m_TopDown2D_Menu;
     public struct TopDown2DActions
     {
         private @InputActions m_Wrapper;
@@ -777,6 +810,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_TopDown2D_Pause;
         public InputAction @Interact => m_Wrapper.m_TopDown2D_Interact;
         public InputAction @Action => m_Wrapper.m_TopDown2D_Action;
+        public InputAction @Menu => m_Wrapper.m_TopDown2D_Menu;
         public InputActionMap Get() { return m_Wrapper.m_TopDown2D; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -798,6 +832,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Action.started += instance.OnAction;
             @Action.performed += instance.OnAction;
             @Action.canceled += instance.OnAction;
+            @Menu.started += instance.OnMenu;
+            @Menu.performed += instance.OnMenu;
+            @Menu.canceled += instance.OnMenu;
         }
 
         private void UnregisterCallbacks(ITopDown2DActions instance)
@@ -814,6 +851,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Action.started -= instance.OnAction;
             @Action.performed -= instance.OnAction;
             @Action.canceled -= instance.OnAction;
+            @Menu.started -= instance.OnMenu;
+            @Menu.performed -= instance.OnMenu;
+            @Menu.canceled -= instance.OnMenu;
         }
 
         public void RemoveCallbacks(ITopDown2DActions instance)
@@ -863,5 +903,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnAction(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
     }
 }
