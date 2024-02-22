@@ -42,7 +42,7 @@ public class UI_Image_EntityHealth : MonoBehaviour
         }
         if (targetEntity)
         {
-            GetComponent<Image>().fillAmount = (targetEntity.currentStats.health/targetEntity.characterStats.stats.health)*100;
+            GetComponent<Image>().fillAmount = (targetEntity.currentStats.health/targetEntity.characterStats.stats.health)*100*0.01f;
         }
         else
         {
