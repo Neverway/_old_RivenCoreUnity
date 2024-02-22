@@ -32,6 +32,7 @@ public class Trigger_Force : MonoBehaviour
     // Reference Variables
     //=-----------------=
     public List<Entity> entitiesInTrigger = new List<Entity>();
+    public List<Rigidbody2D> propsInTrigger = new List<Rigidbody2D>();
 
 
     //=-----------------=
@@ -45,33 +46,62 @@ public class Trigger_Force : MonoBehaviour
 		    if (entity) entity.GetComponent<Rigidbody2D>().AddForce(transform.right*forceStrength.x, ForceMode2D.Force);
 		    if (entity) entity.GetComponent<Rigidbody2D>().AddForce(transform.up*forceStrength.y, ForceMode2D.Force);
 	    }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-	    if (!other.CompareTag("Entity")) return;
-	    var targetEnt = other.gameObject.transform.parent.GetComponent<Entity>();
-	    if(!entitiesInTrigger.Contains(targetEnt) && owningTeam != targetEnt.currentStats.team)
+	    foreach (var prop in propsInTrigger)
 	    {
-		    entitiesInTrigger.Add(targetEnt);
+		    if (prop) prop.AddForce(transform.right*forceStrength.x, ForceMode2D.Force);
+		    if (prop) prop.AddForce(transform.up*forceStrength.y, ForceMode2D.Force);
 	    }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D _other)
     {
-	    if (!other.CompareTag("Entity")) return;
-	    var targetEnt = other.gameObject.transform.parent.GetComponent<Entity>();
-	    if (!entitiesInTrigger.Contains(targetEnt)) return;
-	    if (gameObject.activeInHierarchy) StartCoroutine(RemoveEntity(targetEnt));
+	    // Exit if not a target, or activated & one time use
+	    if (!_other.CompareTag("Entity") && !_other.CompareTag("PhysProp")) return;
+	    // get the target entity
+	    var targetEnt = _other.gameObject.transform.parent.GetComponent<Entity>();
+	    var targetProp = _other.gameObject.transform.parent.GetComponent<Rigidbody2D>();
+
+	    if (targetEnt)
+	    {
+		    if (!entitiesInTrigger.Contains(targetEnt) && owningTeam != targetEnt.currentStats.team)
+		    {
+			    entitiesInTrigger.Add(targetEnt);
+		    }
+	    }
+
+	    if(!propsInTrigger.Contains(targetProp))
+	    {
+		    propsInTrigger.Add(targetProp);
+	    }
+    }
+
+    private void OnTriggerExit2D(Collider2D _other)
+    {
+	    // Exit if not a target, or activated & one time use
+	    if (!_other.CompareTag("Entity") && !_other.CompareTag("PhysProp")) return;
+	    // get the target entity
+	    var targetEnt = _other.gameObject.transform.parent.GetComponent<Entity>();
+	    var targetProp = _other.gameObject.transform.parent.GetComponent<Rigidbody2D>();
+	    
+	    // Exit if not able to get entity/prop component
+	    if (!targetEnt && !targetProp) return;
+	    // Remove the entity from the list if it's not already
+	    if (targetEnt) if (entitiesInTrigger.Contains(targetEnt)) if (gameObject.activeInHierarchy) StartCoroutine(RemoveEntity(targetEnt));
+	    if (targetProp) if (propsInTrigger.Contains(targetProp)) if (gameObject.activeInHierarchy) StartCoroutine(RemoveProp(targetProp));
     }
 
     //=-----------------=
     // Internal Functions
     //=-----------------=
-    private IEnumerator RemoveEntity(Entity targetEnt)
+    private IEnumerator RemoveEntity(Entity _targetEnt)
     {
 	    yield return new WaitForSeconds(removeEffectDelay);
-	    entitiesInTrigger.Remove(targetEnt);
+	    entitiesInTrigger.Remove(_targetEnt);
+    }
+    private IEnumerator RemoveProp(Rigidbody2D _targetProp)
+    {
+	    yield return new WaitForSeconds(removeEffectDelay);
+	    propsInTrigger.Remove(_targetProp);
     }
 
 
