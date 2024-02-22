@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultLevelGamemode: {fileID: 11400000, guid: a1c53e093676e8025b7b27b26b2e535f, type: 2}
-  deathBarrierRange: 50
+  usePlayerStart: 1
+  levelDeathBarrierRange: 100
   enableLevelDeathBarrier: 1
-  debugShowDeathBarrierRange: 1
+  debugShowLevelDeathBarrierRange: 0

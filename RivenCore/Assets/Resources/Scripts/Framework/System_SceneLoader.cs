@@ -21,7 +21,7 @@ public class System_SceneLoader : MonoBehaviour
     //=-----------------=
     [SerializeField] private float delayBeforeSceneChange = 0.25f;
     [SerializeField] private float minimumRequiredLoadTime = 1f;
-    [SerializeField] private string loadingSceneID = "Loading";
+    [SerializeField] private string loadingSceneID = "_Travel";
     public static event Action OnSceneLoaded;
 
 
@@ -93,7 +93,8 @@ public class System_SceneLoader : MonoBehaviour
 	    if (!DoesSceneExist(_targetSceneID))
 	    {
 		    Debug.LogWarning(_targetSceneID + " Is not a valid level! Loading fallback scene...");
-		    targetSceneID = "Error";
+		    targetSceneID = "_Error";
+		    Destroy(GameInstance.GetWidget("WB_Loading"));
 	    }
 	    StartCoroutine(Load());
     }
@@ -104,7 +105,8 @@ public class System_SceneLoader : MonoBehaviour
 	    if (!DoesSceneExist(_targetSceneID))
 	    {
 		    Debug.LogWarning(_targetSceneID + " Is not a valid level! Loading fallback scene...");
-		    targetSceneID = "Error";
+		    targetSceneID = "_Error";
+		    Destroy(GameInstance.GetWidget("WB_Loading"));
 	    }
 	    StartCoroutine(ForceLoad(delay));
     }

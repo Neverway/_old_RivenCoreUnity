@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayBeforeSceneChange: 0.25
   minimumRequiredLoadTime: 1
-  loadingSceneID: Loading
+  loadingSceneID: _Travel
 --- !u!114 &2929944446092088672
 MonoBehaviour:
   m_ObjectHideFlags: 0
