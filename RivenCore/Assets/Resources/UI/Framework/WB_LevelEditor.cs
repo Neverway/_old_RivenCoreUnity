@@ -148,7 +148,7 @@ public class WB_LevelEditor : MonoBehaviour
         fileButtons[1].onClick.AddListener(() => { levelManager.ModifyLevelFile("Load"); });
         fileButtons[2].onClick.AddListener(SaveCurrentMap);
         fileButtons[3].onClick.AddListener(() => { levelManager.ModifyLevelFile("Save"); });
-        fileButtons[4].onClick.AddListener(Application.Quit);
+        fileButtons[6].onClick.AddListener(Application.Quit);
 
         // Help buttons
         foreach (var helpButton in helpButtons)
