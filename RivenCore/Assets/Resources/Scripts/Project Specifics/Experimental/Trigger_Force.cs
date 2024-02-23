@@ -52,6 +52,7 @@ public class Trigger_Force : Trigger
     }
     private void OnTriggerExit2D(Collider2D _other)
     {
+	    base.OnTriggerExit2D(_other); // Call the base class method
 	    if (targetEnt)
 	    {
 		    if (gameObject.activeInHierarchy) StartCoroutine(RemoveEntity(targetEnt));

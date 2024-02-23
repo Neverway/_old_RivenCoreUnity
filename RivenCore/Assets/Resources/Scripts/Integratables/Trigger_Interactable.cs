@@ -47,6 +47,8 @@ public class Trigger_Interactable : Trigger
 
     private void OnTriggerEnter2D(Collider2D _other)
     {
+        base.OnTriggerEnter2D(_other); // Call the base class method
+        print("Class-Enter");
         // Check for interaction
         var interaction = _other.GetComponent<Trigger_Interaction>();
         if (interaction) Interact();
@@ -54,6 +56,8 @@ public class Trigger_Interactable : Trigger
 
     private void OnTriggerExit2D(Collider2D _other)
     {
+        base.OnTriggerExit2D(_other); // Call the base class method
+        print("Class-Exit");
         // Check for interaction
         var interaction = _other.GetComponent<Trigger_Interaction>();
         if (interaction) Interact();

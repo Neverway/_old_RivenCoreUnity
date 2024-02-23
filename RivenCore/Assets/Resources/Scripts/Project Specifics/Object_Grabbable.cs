@@ -70,7 +70,6 @@ public class Object_Grabbable : MonoBehaviour
                 lastFaceDirection = new Vector3(-0.5f, 0, 0);
                 return lastFaceDirection;
         }
-        print("reached endpoint");
         return lastFaceDirection;
     }
 

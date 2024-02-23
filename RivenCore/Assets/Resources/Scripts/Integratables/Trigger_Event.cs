@@ -45,6 +45,7 @@ public class Trigger_Event : Trigger
 
     private void OnTriggerEnter2D(Collider2D _other)
     {
+        base.OnTriggerEnter2D(_other); // Call the base class method
         if (!resetsAutomatically && hasBeenTriggered) return;
         if (checksOnlyForPlayer && targetEnt)
         {
@@ -64,6 +65,7 @@ public class Trigger_Event : Trigger
 
     private void OnTriggerExit2D(Collider2D _other)
     {
+        base.OnTriggerExit2D(_other); // Call the base class method
         if (checksOnlyForPlayer && targetEnt)
         {
             if (!targetEnt.isPossessed) return;
