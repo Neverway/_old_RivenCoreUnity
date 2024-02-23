@@ -3474,6 +3474,57 @@
             "id": "Collision_4",
             "uniqueId": 0,
             "position": {
+                "x": 13,
+                "y": 7,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": 13,
+                "y": 8,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": 13,
+                "y": 9,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
                 "x": 14,
                 "y": -4,
                 "z": 0
@@ -3510,6 +3561,40 @@
             "position": {
                 "x": 14,
                 "y": 7,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": 14,
+                "y": 8,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": 14,
+                "y": 9,
                 "z": 0
             },
             "unsnappedPosition": {
@@ -3610,6 +3695,40 @@
             "id": "Collision_4",
             "uniqueId": 0,
             "position": {
+                "x": 15,
+                "y": 8,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": 15,
+                "y": 9,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
                 "x": 16,
                 "y": -4,
                 "z": 0
@@ -3629,6 +3748,40 @@
             "position": {
                 "x": 16,
                 "y": 7,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": 16,
+                "y": 8,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": 16,
+                "y": 9,
                 "z": 0
             },
             "unsnappedPosition": {
@@ -8552,6 +8705,59 @@
                     "name": "isPowered",
                     "type": "System.Boolean",
                     "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Trigger] LayerChange",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 17.0,
+                "y": 8.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "4"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "3.8"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "exitLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "fallTime",
+                    "type": "System.Single",
+                    "value": "0.2"
                 }
             ]
         }

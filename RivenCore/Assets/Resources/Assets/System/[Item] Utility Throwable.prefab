@@ -423,6 +423,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5883665491689437398, guid: 7017ff9daec705f28aad6b744513faaa, type: 3}
+      propertyPath: forceStrengthY
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 7119168396412095011, guid: 7017ff9daec705f28aad6b744513faaa, type: 3}
       propertyPath: m_Enabled
       value: 0

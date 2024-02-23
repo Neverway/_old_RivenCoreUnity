@@ -18,6 +18,8 @@ public class Trigger_Force : MonoBehaviour
     // Public Variables
     //=-----------------=
     public Vector2 forceStrength;
+    public float forceStrengthX;
+    public float forceStrengthY;
     public float removeEffectDelay;
     public string owningTeam;
 
