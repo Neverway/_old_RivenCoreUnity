@@ -5,9 +5,8 @@
 //
 //=============================================================================
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Logic_Processor))]
 public class Trigger_Event : Trigger
@@ -18,16 +17,16 @@ public class Trigger_Event : Trigger
     public string onOccupiedSignal;
     public string onUnoccupiedSignal;
     public string resetSignal;
-    public bool resetsAfterUse=true;
-    //public bool detectsPlayersOnly;
-    
-    //public bool isPowered;
-    public bool wasActivated;
+    public bool resetsAutomatically = true;
+    public bool checksOnlyForPlayer = true;
+    public UnityEvent onOccupied;
+    public UnityEvent onUnoccupied;
 
 
     //=-----------------=
     // Private Variables
     //=-----------------=
+    [HideInInspector] public bool hasBeenTriggered;
 
 
     //=-----------------=
@@ -43,39 +42,42 @@ public class Trigger_Event : Trigger
     {
         logicProcessor = GetComponent<Logic_Processor>();
     }
-    /*
+
     private void OnTriggerEnter2D(Collider2D _other)
     {
-        // Exit if not a target, or activated & one time use
-        if (!_other.CompareTag("Entity") && !_other.CompareTag("PhysProp") || wasActivated && !resetsAfterUse) return;
-        // get the target entity/prop
-        var targetEnt = _other.gameObject.transform.parent.GetComponent<Entity>();
-        var targetProp = _other.gameObject.transform.parent.GetComponent<Rigidbody2D>();
-        // Exit if not able to get entity/prop component
-        if (!targetEnt && !targetProp) return;
-        // Add the entity/prop to the list if it's not already
-        if (targetEnt) if (!entitiesInTrigger.Contains(targetEnt)) entitiesInTrigger.Add(targetEnt);
-        if (targetProp) if (!propsInTrigger.Contains(targetProp)) propsInTrigger.Add(targetProp);
-        
-        // Update the trigger state
-        Interact();
+        if (!resetsAutomatically && hasBeenTriggered) return;
+        if (checksOnlyForPlayer && targetEnt)
+        {
+            if (!targetEnt.isPossessed) return;
+            logicProcessor.UpdateState(onOccupiedSignal, true);
+            logicProcessor.UpdateState(onUnoccupiedSignal, false);
+            onOccupied.Invoke();
+        }
+        else if (targetEnt || targetProp)
+        {
+            logicProcessor.UpdateState(onOccupiedSignal, true);
+            logicProcessor.UpdateState(onUnoccupiedSignal, false);
+            onOccupied.Invoke();
+        }
+        hasBeenTriggered = true;
     }
-    
+
     private void OnTriggerExit2D(Collider2D _other)
     {
-        // Exit if not a target, or activated & one time use
-        if (!_other.CompareTag("Entity") && !_other.CompareTag("PhysProp") || wasActivated && !resetsAfterUse) return;
-        // get the target entity
-        var targetEnt = _other.gameObject.transform.parent.GetComponent<Entity>();
-        var targetProp = _other.gameObject.transform.parent.GetComponent<Rigidbody2D>();
-        // Exit if not able to get entity/prop component
-        if (!targetEnt && !targetProp) return;
-        // Remove the entity from the list if it's not already
-        if (targetEnt) if (entitiesInTrigger.Contains(targetEnt)) entitiesInTrigger.Remove(targetEnt);
-        if (targetProp) if (propsInTrigger.Contains(targetProp)) propsInTrigger.Remove(targetProp);
-        
-        // Update the trigger state
-        Interact();
+        if (checksOnlyForPlayer && targetEnt)
+        {
+            if (!targetEnt.isPossessed) return;
+            logicProcessor.UpdateState(onOccupiedSignal, false);
+            logicProcessor.UpdateState(onUnoccupiedSignal, true);
+            onUnoccupied.Invoke();
+        }
+        else if (entitiesInTrigger.Count == 0 && propsInTrigger.Count == 0)
+        {
+            logicProcessor.UpdateState(onOccupiedSignal, false);
+            logicProcessor.UpdateState(onUnoccupiedSignal, true);
+            onUnoccupied.Invoke();
+        }
+        if (resetsAutomatically) hasBeenTriggered = false;
     }
     
     //=-----------------=
@@ -86,20 +88,4 @@ public class Trigger_Event : Trigger
     //=-----------------=
     // External Functions
     //=-----------------=
-    private void Interact()
-    {
-        // Is an entity in the trigger?
-        if (entitiesInTrigger.Count > 0 || propsInTrigger.Count > 0)
-        {
-            if (onOccupiedSignal != "") logicProcessor.UpdateState(onOccupiedSignal, true);
-            if (onUnoccupiedSignal != "") logicProcessor.UpdateState(onUnoccupiedSignal, false);
-        }
-        // Have all entities left the trigger?
-        if (entitiesInTrigger.Count == 0 && propsInTrigger.Count == 0)
-        {
-            if (onOccupiedSignal != "") logicProcessor.UpdateState(onOccupiedSignal, false);
-            if (onUnoccupiedSignal != "") logicProcessor.UpdateState(onUnoccupiedSignal, true);
-            if (onOccupiedSignal != "" || onUnoccupiedSignal != "") wasActivated = true;
-        }
-    }*/
 }

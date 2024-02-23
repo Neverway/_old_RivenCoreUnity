@@ -10,34 +10,31 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Logic_Processor))]
-public class Trigger_Interactable : MonoBehaviour
+public class Trigger_Interactable : Trigger
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
-    [Tooltip("")]
-    public string onSwitchedSignal;
-    public string resetSignal;
-    public bool resetsAfterUse=true;
-    
+    public string onInteractSignal;
     public bool isPowered;
-    public bool wasActivated;
-    public bool useTalkIndicator;
+    public string resetSignal;
+    public bool resetsAutomatically = true;
     public bool hideIndicator;
-    public UnityEvent OnInteract;
+    public bool useTalkIndicator;
+    public UnityEvent onInteract;
 
 
     //=-----------------=
     // Private Variables
     //=-----------------=
-    private bool previousIsPoweredState;
+    [HideInInspector] public bool hasBeenTriggered;
+    private bool previousIsPoweredState; // Used to check for any overrides to the initial isPowered state in the level editor
     
     
     //=-----------------=
     // Reference Variables
     //=-----------------=
     private Logic_Processor logicProcessor;
-    public List<Entity> entitiesInTrigger = new List<Entity>();
     [SerializeField] private GameObject interactionIndicator;
 
 
@@ -51,43 +48,44 @@ public class Trigger_Interactable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D _other)
     {
+        // Check for interaction
         var interaction = _other.GetComponent<Trigger_Interaction>();
-        if (interaction) { Interact(); return; }
-        
-        // Show indicator for player
-        if (!_other.CompareTag("Entity")) return;
-        var entity = _other.transform.parent.GetComponent<Entity>();
-        if (entity.isPossessed && !hideIndicator)
-        {
-            entity.isNearInteractable = true;
-            interactionIndicator.SetActive(true);
-            interactionIndicator.GetComponent<Animator>().Play(useTalkIndicator ? "talk" : "use");
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D _other)
-    {
-        // Hide indicator for player
-        if (!_other.CompareTag("Entity")) return;
-        var entity = _other.transform.parent.GetComponent<Entity>();
-        if (entity.isPossessed && !hideIndicator)
-        {
-            entity.isNearInteractable = false;
-            interactionIndicator.SetActive(false);
-        }
+        if (interaction) Interact();
     }
 
     private void Update()
     {
-        if (hideIndicator) interactionIndicator.SetActive(false);
-        // Check for any overrides that have modified the switch state
-        if (previousIsPoweredState != isPowered) logicProcessor.UpdateState(onSwitchedSignal, isPowered);
-        previousIsPoweredState = isPowered;
+        CheckForPoweredStateOverrides();
+        SetIndicatorVisibility();
     }
 
     //=-----------------=
     // Internal Functions
     //=-----------------=
+    private void CheckForPoweredStateOverrides()
+    {
+        // Check for any overrides that have modified the switch state
+        if (previousIsPoweredState != isPowered) logicProcessor.UpdateState(onInteractSignal, isPowered);
+        previousIsPoweredState = isPowered;
+    }
+
+    private void SetIndicatorVisibility()
+    {
+        if (!interactionIndicator || hideIndicator) return;
+        
+        interactionIndicator.GetComponent<Animator>().Play(useTalkIndicator ? "talk" : "use");
+        
+        if (GetPlayerInTrigger())
+        {
+            GetPlayerInTrigger().isNearInteractable = true;
+            interactionIndicator.SetActive(true);
+        }
+        else
+        {
+            GetPlayerInTrigger().isNearInteractable = false;
+            interactionIndicator.SetActive(false);
+        }
+    }
 
 
     //=-----------------=
@@ -95,15 +93,15 @@ public class Trigger_Interactable : MonoBehaviour
     //=-----------------=
     private void Interact()
     {
-        if (onSwitchedSignal == "" || wasActivated && !resetsAfterUse) return;
-        OnInteract.Invoke();
+        if (onInteractSignal == "" || hasBeenTriggered && !resetsAutomatically) return;
+        onInteract.Invoke();
         
         // Flip the current activation state
         isPowered = !isPowered;
         previousIsPoweredState = isPowered;
         
         // Update connected devices
-        logicProcessor.UpdateState(onSwitchedSignal, isPowered);
-        wasActivated = true;
+        logicProcessor.UpdateState(onInteractSignal, isPowered);
+        hasBeenTriggered = true;
     }
 }

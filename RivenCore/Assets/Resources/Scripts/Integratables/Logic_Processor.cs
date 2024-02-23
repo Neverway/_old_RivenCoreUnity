@@ -34,6 +34,46 @@ public class Logic_Processor : MonoBehaviour
     //=-----------------=
     // Internal Functions
     //=-----------------=
+    private void UpdateLogicInteractables(string _targetSignalChannel, bool _isPowered)
+    {
+        foreach (var interactable in FindObjectsOfType<Logic_Interactable>())
+        {
+            if (interactable.signalChannel == _targetSignalChannel) interactable.isPowered = _isPowered;
+        }
+    }
+    
+    private void UpdateLogicGates(string _targetSignalChannel, bool _isPowered)
+    {
+        foreach (var logicGate in FindObjectsOfType<LogicGate_And>())
+        {
+            if (logicGate.inputSignalA == _targetSignalChannel) logicGate.isAPowered = _isPowered;
+            if (logicGate.inputSignalB == _targetSignalChannel) logicGate.isBPowered = _isPowered;
+        }
+
+        foreach (var logicGate in FindObjectsOfType<LogicGate_Not>())
+        {
+            if (logicGate.inputSignal == _targetSignalChannel) logicGate.isInputPowered = _isPowered;
+        }
+
+        foreach (var logicGate in FindObjectsOfType<LogicGate_Or>())
+        {
+            if (logicGate.inputSignalA == _targetSignalChannel) logicGate.isAPowered = _isPowered;
+            if (logicGate.inputSignalB == _targetSignalChannel) logicGate.isBPowered = _isPowered;
+        }
+    }
+    
+    private void ResetTriggers(string _targetSignalChannel)
+    {
+        foreach (var trigger in FindObjectsOfType<Trigger_Interactable>())
+        {
+            if (trigger.resetSignal == _targetSignalChannel) trigger.hasBeenTriggered = false;
+        }
+        
+        foreach (var trigger in FindObjectsOfType<Trigger_Event>())
+        {
+            if (trigger.resetSignal == _targetSignalChannel) trigger.hasBeenTriggered = false;
+        }
+    }
 
 
     //=-----------------=
@@ -41,42 +81,12 @@ public class Logic_Processor : MonoBehaviour
     //=-----------------=
     public void UpdateState(string _targetSignalChannel, bool _isPowered)
     {
-        foreach (var interactable in FindObjectsOfType<Logic_Interactable>())
-        {
-            // Send activation state signal to all listeners on same channel
-            if (interactable.signalChannel == _targetSignalChannel) interactable.isPowered = _isPowered;
-        }
-
-        foreach (var logicGate in FindObjectsOfType<LogicGate_And>())
-        {
-            // Send activation state signal to all listeners on same channel
-            if (logicGate.inputSignalA == _targetSignalChannel) logicGate.isAPowered = _isPowered;
-            if (logicGate.inputSignalB == _targetSignalChannel) logicGate.isBPowered = _isPowered;
-        }
-
-        foreach (var logicGate in FindObjectsOfType<LogicGate_Not>())
-        {
-            // Send activation state signal to all listeners on same channel
-            if (logicGate.inputSignal == _targetSignalChannel) logicGate.isInputPowered = _isPowered;
-        }
-
-        foreach (var logicGate in FindObjectsOfType<LogicGate_Or>())
-        {
-            // Send activation state signal to all listeners on same channel
-            if (logicGate.inputSignalA == _targetSignalChannel) logicGate.isAPowered = _isPowered;
-            if (logicGate.inputSignalB == _targetSignalChannel) logicGate.isBPowered = _isPowered;
-        }
-
-        foreach (var trigger in FindObjectsOfType<Trigger_Interactable>())
-        {
-            // Send activation state signal to all listeners on same channel
-            if (trigger.resetSignal == _targetSignalChannel) trigger.wasActivated = false;
-        }
-
-        foreach (var trigger in FindObjectsOfType<Trigger_Event>())
-        {
-            // Send activation state signal to all listeners on same channel
-            if (trigger.resetSignal == _targetSignalChannel) trigger.wasActivated = false;
-        }
+        // Check if the target signal channel is not empty
+        if (string.IsNullOrEmpty(_targetSignalChannel)) return;
+        
+        // Update all logic objects
+        UpdateLogicInteractables(_targetSignalChannel, _isPowered);
+        UpdateLogicGates(_targetSignalChannel, _isPowered);
+        ResetTriggers(_targetSignalChannel);
     }
 }

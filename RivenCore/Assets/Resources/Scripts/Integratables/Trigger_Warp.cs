@@ -38,6 +38,8 @@ public class Trigger_Warp : Trigger
         if (targetEnt)
         {
             targetEnt.transform.position = GetExitWarp().position+exitOffset;
+            if (targetEnt.isPossessed) { // TODO Add player screen fade here
+            }
         }
         if (targetProp)
         {

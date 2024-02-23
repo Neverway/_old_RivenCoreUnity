@@ -110,4 +110,12 @@ public class Trigger : MonoBehaviour
     //=-----------------=
     // External Functions
     //=-----------------=
+    protected Entity GetPlayerInTrigger()
+    {
+        foreach (var entity in entitiesInTrigger)
+        {
+            if (entity.isPossessed) return entity;
+        }
+        return null;
+    }
 }
