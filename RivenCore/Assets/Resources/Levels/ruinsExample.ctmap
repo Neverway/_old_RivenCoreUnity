@@ -6761,16 +6761,6 @@
                     "name": "resetSignal",
                     "type": "System.String",
                     "value": ""
-                },
-                {
-                    "name": "resetsAfterUse",
-                    "type": "System.Boolean",
-                    "value": "True"
-                },
-                {
-                    "name": "wasActivated",
-                    "type": "System.Boolean",
-                    "value": "False"
                 }
             ]
         },
@@ -6902,14 +6892,19 @@
                     "value": "0"
                 },
                 {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
                     "name": "onOccupiedSignal",
                     "type": "System.String",
                     "value": "inspikes"
-                },
-                {
-                    "name": "onUnoccupiedSignal",
-                    "type": "System.String",
-                    "value": ""
                 },
                 {
                     "name": "resetSignal",
@@ -6917,12 +6912,12 @@
                     "value": ""
                 },
                 {
-                    "name": "resetsAfterUse",
+                    "name": "resetsAutomatically",
                     "type": "System.Boolean",
                     "value": "True"
                 },
                 {
-                    "name": "wasActivated",
+                    "name": "checksOnlyForPlayer",
                     "type": "System.Boolean",
                     "value": "False"
                 }
@@ -7256,6 +7251,16 @@
                     "value": "0"
                 },
                 {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
                     "name": "warpID",
                     "type": "System.String",
                     "value": "room1"
@@ -7317,6 +7322,16 @@
                     "name": "positionOffsetY",
                     "type": "System.Single",
                     "value": "0"
+                },
+                {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
                 },
                 {
                     "name": "warpID",
@@ -7392,7 +7407,17 @@
                     "value": "False"
                 },
                 {
-                    "name": "onSwitchedSignal",
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "onInteractSignal",
                     "type": "System.String",
                     "value": "switchy"
                 },
@@ -7402,17 +7427,22 @@
                     "value": ""
                 },
                 {
-                    "name": "resetsAfterUse",
-                    "type": "System.Boolean",
-                    "value": "True"
-                },
-                {
                     "name": "isPowered",
                     "type": "System.Boolean",
                     "value": "False"
                 },
                 {
-                    "name": "wasActivated",
+                    "name": "resetsAutomatically",
+                    "type": "System.Boolean",
+                    "value": "True"
+                },
+                {
+                    "name": "hideIndicator",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "useTalkIndicator",
                     "type": "System.Boolean",
                     "value": "False"
                 }
@@ -7500,7 +7530,7 @@
                 {
                     "name": "scaleX",
                     "type": "System.Single",
-                    "value": "1"
+                    "value": "0.75"
                 },
                 {
                     "name": "scaleY",
@@ -7516,6 +7546,16 @@
                     "name": "positionOffsetY",
                     "type": "System.Single",
                     "value": "0"
+                },
+                {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
                 },
                 {
                     "name": "exitLayer",
@@ -7553,7 +7593,7 @@
                 {
                     "name": "scaleX",
                     "type": "System.Single",
-                    "value": "1"
+                    "value": "0.75"
                 },
                 {
                     "name": "scaleY",
@@ -7569,6 +7609,16 @@
                     "name": "positionOffsetY",
                     "type": "System.Single",
                     "value": "0"
+                },
+                {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
                 },
                 {
                     "name": "exitLayer",
@@ -8105,16 +8155,6 @@
                     "name": "resetSignal",
                     "type": "System.String",
                     "value": ""
-                },
-                {
-                    "name": "resetsAfterUse",
-                    "type": "System.Boolean",
-                    "value": "True"
-                },
-                {
-                    "name": "wasActivated",
-                    "type": "System.Boolean",
-                    "value": "False"
                 }
             ]
         },
@@ -8606,7 +8646,17 @@
                     "value": "False"
                 },
                 {
-                    "name": "onSwitchedSignal",
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "onInteractSignal",
                     "type": "System.String",
                     "value": "ledgy"
                 },
@@ -8616,17 +8666,22 @@
                     "value": ""
                 },
                 {
-                    "name": "resetsAfterUse",
-                    "type": "System.Boolean",
-                    "value": "True"
-                },
-                {
                     "name": "isPowered",
                     "type": "System.Boolean",
                     "value": "False"
                 },
                 {
-                    "name": "wasActivated",
+                    "name": "resetsAutomatically",
+                    "type": "System.Boolean",
+                    "value": "True"
+                },
+                {
+                    "name": "hideIndicator",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "useTalkIndicator",
                     "type": "System.Boolean",
                     "value": "False"
                 }
@@ -8748,6 +8803,16 @@
                     "name": "positionOffsetY",
                     "type": "System.Single",
                     "value": "0"
+                },
+                {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
                 },
                 {
                     "name": "exitLayer",

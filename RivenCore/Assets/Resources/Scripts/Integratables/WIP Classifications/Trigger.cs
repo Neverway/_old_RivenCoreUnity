@@ -53,6 +53,8 @@ public class Trigger : MonoBehaviour
         // A physics prop has entered the trigger
         if (_other.CompareTag("PhysProp"))
         {
+            // Don't register held objects
+            if (_other.gameObject.transform.parent.GetComponent<Object_Grabbable>()) { if (_other.gameObject.transform.parent.GetComponent<Object_Grabbable>().isHeld) { return; } }
             // Get a reference to the entity component
             targetProp = _other.gameObject.transform.parent.GetComponent<Prop>();
             // Add the entity to the list if they are not already present

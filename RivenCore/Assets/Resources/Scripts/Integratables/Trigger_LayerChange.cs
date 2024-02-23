@@ -35,10 +35,13 @@ public class Trigger_LayerChange : Trigger
         base.OnTriggerEnter2D(_other); // Call the base class method
         if (targetEnt)
         {
+            print("player");
             SetTargetDepth(targetEnt.GetComponent<Object_DepthAssigner>());
         }
         if (targetProp)
         {
+            if (targetProp.GetComponent<Object_Grabbable>().isHeld) return;
+            print("prop");
             SetTargetDepth(targetProp.GetComponent<Object_DepthAssigner>());
         }
     }

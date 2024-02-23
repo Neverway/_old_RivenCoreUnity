@@ -16723,12 +16723,42 @@
                     "value": "False"
                 },
                 {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "onInteractSignal",
+                    "type": "System.String",
+                    "value": "ruinswitch"
+                },
+                {
                     "name": "resetSignal",
                     "type": "System.String",
                     "value": ""
                 },
                 {
                     "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "resetsAutomatically",
+                    "type": "System.Boolean",
+                    "value": "True"
+                },
+                {
+                    "name": "hideIndicator",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "useTalkIndicator",
                     "type": "System.Boolean",
                     "value": "False"
                 }
