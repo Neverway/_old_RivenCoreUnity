@@ -62,27 +62,35 @@ PrefabInstance:
       objectReference: {fileID: 4219515637366422897}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
-      value: onOccupiedSignal
+      value: owningTeam
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[1]
-      value: onUnoccupiedSignal
+      value: affectsOwnTeam
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[2]
-      value: resetSignal
+      value: onOccupiedSignal
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[3]
-      value: resetsAfterUse
+      value: onUnoccupideSignal
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[4]
-      value: wasActivated
+      value: resetSignal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[5]
+      value: resetsAutomatically
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[6]
+      value: checksOnlyForPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_Name
@@ -116,13 +124,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3dc5959783a0887f92314f4150f60a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owningTeam: 
+  affectsOwnTeam: 0
+  entitiesInTrigger: []
+  propsInTrigger: []
+  targetEnt: {fileID: 0}
+  targetProp: {fileID: 0}
   onOccupiedSignal: 
   onUnoccupiedSignal: 
   resetSignal: 
-  resetsAfterUse: 1
-  wasActivated: 0
-  entitiesInTrigger: []
-  propsInTrigger: []
+  resetsAutomatically: 1
+  checksOnlyForPlayer: 0
+  onOccupied:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnoccupied:
+    m_PersistentCalls:
+      m_Calls: []
+  hasBeenTriggered: 0
 --- !u!114 &5835219696925867299
 MonoBehaviour:
   m_ObjectHideFlags: 0

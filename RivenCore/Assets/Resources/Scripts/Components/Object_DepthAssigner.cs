@@ -24,8 +24,8 @@ public class Object_DepthAssigner : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
-    public float fallTime;
-    public bool isFalling;
+    [HideInInspector] public float fallTime;
+    [HideInInspector] public bool isFalling;
 
 
     //=-----------------=

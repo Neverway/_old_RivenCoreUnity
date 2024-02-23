@@ -16,7 +16,7 @@ public class Object_RuntimeDataInspector : MonoBehaviour
     // Public Variables
     //=-----------------=
     public List<ScriptData> scriptDataList; // MonoData class stores the target script, the variables we want to expose, 
-    public List<VariableData> storedVariableData; // The variable's name, type, and value that we are storing in the runtime data inspector
+    [HideInInspector] public List<VariableData> storedVariableData; // The variable's name, type, and value that we are storing in the runtime data inspector
 
 
     //=-----------------=
