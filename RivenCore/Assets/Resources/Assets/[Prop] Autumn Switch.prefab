@@ -70,6 +70,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7387578575170850866, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
+    - {fileID: 2414650547125058489, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
+    - {fileID: 6325020148407325708, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -185,7 +187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.size
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
@@ -209,23 +211,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[0]
-      value: onSwitchedSignal
+      value: owningTeam
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[1]
-      value: resetSignal
+      value: affectsOwnTeam
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[2]
-      value: resetsAfterUse
+      value: onInteractSignal
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[3]
-      value: isPowered
+      value: resetSignal
       objectReference: {fileID: 0}
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[4]
-      value: wasActivated
+      value: isPowered
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[5]
+      value: resetsAutomatically
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[6]
+      value: hideIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
+      propertyPath: scriptDataList.Array.data[3].exposedVariables.Array.data[7]
+      value: useTalkIndicator
       objectReference: {fileID: 0}
     - target: {fileID: 4371502556531117253, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_LocalScale.y

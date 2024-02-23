@@ -43,7 +43,7 @@ public class Trigger_Event : Trigger
         logicProcessor = GetComponent<Logic_Processor>();
     }
 
-    private void OnTriggerEnter2D(Collider2D _other)
+    private new void OnTriggerEnter2D(Collider2D _other)
     {
         base.OnTriggerEnter2D(_other); // Call the base class method
         if (!resetsAutomatically && hasBeenTriggered) return;
@@ -63,7 +63,7 @@ public class Trigger_Event : Trigger
         hasBeenTriggered = true;
     }
 
-    private void OnTriggerExit2D(Collider2D _other)
+    private new void OnTriggerExit2D(Collider2D _other)
     {
         base.OnTriggerExit2D(_other); // Call the base class method
         if (checksOnlyForPlayer && targetEnt)

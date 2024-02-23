@@ -45,29 +45,27 @@ public class Trigger_Interactable : Trigger
         logicProcessor = GetComponent<Logic_Processor>();
     }
 
-    private void OnTriggerEnter2D(Collider2D _other)
+    private new void OnTriggerEnter2D(Collider2D _other)
     {
         base.OnTriggerEnter2D(_other); // Call the base class method
-        print("Class-Enter");
         // Check for interaction
         var interaction = _other.GetComponent<Trigger_Interaction>();
         if (interaction) Interact();
+        SetInteractionState();
     }
 
-    private void OnTriggerExit2D(Collider2D _other)
+    private new void OnTriggerExit2D(Collider2D _other)
     {
         base.OnTriggerExit2D(_other); // Call the base class method
-        print("Class-Exit");
-        // Check for interaction
-        var interaction = _other.GetComponent<Trigger_Interaction>();
-        if (interaction) Interact();
-        if (GetPlayerInTrigger()) GetPlayerInTrigger().isNearInteractable = false;
+        if (targetEnt) if (targetEnt.isPossessed) targetEnt.isNearInteractable = false;
+        SetInteractionState();
     }
 
     private void Update()
     {
-        CheckForPoweredStateOverrides();
-        SetIndicatorVisibility();
+        //CheckForPoweredStateOverrides();
+        if (GetPlayerInTrigger()) GetPlayerInTrigger().isNearInteractable = true;
+        SetInteractionState();
     }
 
     //=-----------------=
@@ -80,16 +78,13 @@ public class Trigger_Interactable : Trigger
         previousIsPoweredState = isPowered;
     }
 
-    private void SetIndicatorVisibility()
+    private void SetInteractionState()
     {
-        if (!interactionIndicator || hideIndicator) return;
-        
         if (interactionIndicator.activeInHierarchy) interactionIndicator.GetComponent<Animator>().Play(useTalkIndicator ? "talk" : "use");
         
         if (GetPlayerInTrigger())
         {
-            GetPlayerInTrigger().isNearInteractable = true;
-            interactionIndicator.SetActive(true);
+            if (!hideIndicator) interactionIndicator.SetActive(true);
         }
         else
         {

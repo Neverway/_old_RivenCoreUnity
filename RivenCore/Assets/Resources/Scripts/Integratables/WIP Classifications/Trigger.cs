@@ -39,15 +39,12 @@ public class Trigger : MonoBehaviour
     //=-----------------=
     protected void OnTriggerEnter2D(Collider2D _other)
     {
-        print("Parent-Enter");
         // An Entity has entered the trigger
         if (_other.CompareTag("Entity"))
         {
-            print("Parent-Entity");
             // Get a reference to the entity component
             targetEnt = _other.gameObject.transform.parent.GetComponent<Entity>();
             // Exit if they are not on the effected team
-            print(IsOnAffectedTeam(targetEnt));
             if (!IsOnAffectedTeam(targetEnt)) return;
             // Add the entity to the list if they are not already present
             if(!entitiesInTrigger.Contains(targetEnt)) { entitiesInTrigger.Add(targetEnt); }
@@ -56,7 +53,6 @@ public class Trigger : MonoBehaviour
         // A physics prop has entered the trigger
         if (_other.CompareTag("PhysProp"))
         {
-            print("Parent-Prop");
             // Get a reference to the entity component
             targetProp = _other.gameObject.transform.parent.GetComponent<Prop>();
             // Add the entity to the list if they are not already present
@@ -66,7 +62,6 @@ public class Trigger : MonoBehaviour
 
     protected void OnTriggerExit2D(Collider2D _other)
     {
-        print("Parent-Exit");
         // An Entity has exited the trigger
         if (_other.CompareTag("Entity"))
         {

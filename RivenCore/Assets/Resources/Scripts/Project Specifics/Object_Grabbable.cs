@@ -50,7 +50,6 @@ public class Object_Grabbable : MonoBehaviour
     private Vector3 GetTargetEntityOffset()
     {
         var facingDirection = GetFaceDirectionFromQuaternion(targetEntity.faceDirection, -90);
-        print(facingDirection);
         switch (facingDirection.y)
         {
             case (1):

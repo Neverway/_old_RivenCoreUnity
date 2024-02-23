@@ -50,7 +50,7 @@ public class Trigger_Force : Trigger
 		    if (prop) prop.GetComponent<Rigidbody2D>().AddForce(transform.up*forceStrengthY, ForceMode2D.Force);
 	    }
     }
-    private void OnTriggerExit2D(Collider2D _other)
+    private new void OnTriggerExit2D(Collider2D _other)
     {
 	    base.OnTriggerExit2D(_other); // Call the base class method
 	    if (targetEnt)

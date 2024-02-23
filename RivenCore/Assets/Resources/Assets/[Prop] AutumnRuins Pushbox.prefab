@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215253235007374963, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: 8215253235007374963, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHeld: 0
   targetEntity: {fileID: 0}
+  lastFaceDirection: {x: 0, y: 0, z: 0}
 --- !u!61 &7458362342415545031 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 7728610612195643789, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
@@ -183,10 +184,6 @@ PrefabInstance:
     - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: scriptDataList.Array.data[1].targetScript
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715486313302003108, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
-      propertyPath: scriptDataList.Array.data[1].exposedVariables.Array.size
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4786988212645953397, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_Enabled

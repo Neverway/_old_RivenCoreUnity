@@ -32,7 +32,7 @@ public class Trigger_Warp : Trigger
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    private void OnTriggerEnter2D(Collider2D _other)
+    private new void OnTriggerEnter2D(Collider2D _other)
     {
         base.OnTriggerEnter2D(_other); // Call the base class method
         if (!GetExitWarp()) return; 
