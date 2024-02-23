@@ -62,23 +62,27 @@ PrefabInstance:
       objectReference: {fileID: 5883665491689437398}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
-      value: forceStrength.x
+      value: owningTeam
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[1]
-      value: forceStrength.y
+      value: affectsOwnTeam
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[2]
-      value: removeEffectDelay
+      value: forceStrengthX
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[3]
-      value: owningTeam
+      value: forceStrengthY
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[4]
+      value: removeEffectDelay
       objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_Name
@@ -109,10 +113,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77589257923a392d6b90b116453677d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owningTeam: 
+  affectsOwnTeam: 0
+  entitiesInTrigger: []
+  propsInTrigger: []
+  targetEnt: {fileID: 0}
+  targetProp: {fileID: 0}
   forceStrength: {x: 0, y: 500}
   forceStrengthX: 0
   forceStrengthY: 500
   removeEffectDelay: 0
-  owningTeam: 
-  entitiesInTrigger: []
-  propsInTrigger: []

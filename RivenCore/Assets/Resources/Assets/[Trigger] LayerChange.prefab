@@ -78,14 +78,22 @@ PrefabInstance:
       objectReference: {fileID: 8908938269373447442}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
-      value: exitLayer
+      value: owningTeam
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[1]
+      value: affectsOwnTeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[2]
+      value: exitLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[3]
       value: fallTime
       objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
@@ -117,5 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331cd213c6beffdc68e2b573decd4712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owningTeam: 
+  affectsOwnTeam: 0
+  entitiesInTrigger: []
+  propsInTrigger: []
+  targetEnt: {fileID: 0}
+  targetProp: {fileID: 0}
   exitLayer: 0
   fallTime: 0

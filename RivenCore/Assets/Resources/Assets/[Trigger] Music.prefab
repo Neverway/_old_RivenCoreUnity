@@ -52,12 +52,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].targetScript
+      value: 
+      objectReference: {fileID: 4698788682137809378}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
+      value: owningTeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[1]
+      value: affectsOwnTeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[2]
+      value: trackID
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[3]
+      value: isActivatedOnLevelStart
+      objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_Name
-      value: '[Trigger] Music Variant'
+      value: '[Trigger] Music'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+--- !u!114 &4698788682137809378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -272060017141874270, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+  m_PrefabInstance: {fileID: 4398892801557737536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a0729c4a856b73090eccb52f2d389f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

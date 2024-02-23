@@ -62,22 +62,30 @@ PrefabInstance:
       objectReference: {fileID: 8571232815991230138}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
-      value: warpID
+      value: owningTeam
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[1]
-      value: exitWarpID
+      value: affectsOwnTeam
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[2]
-      value: exitOffsetX
+      value: warpID
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[3]
+      value: exitWarpID
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[4]
+      value: exitOffsetX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[5]
       value: exitOffsetY
       objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
@@ -109,6 +117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d909b95a5818c66aebc94a6c524452b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owningTeam: 
+  affectsOwnTeam: 0
+  entitiesInTrigger: []
+  propsInTrigger: []
+  targetEnt: {fileID: 0}
+  targetProp: {fileID: 0}
   warpID: 
   exitWarpID: 
   exitOffsetX: 0
