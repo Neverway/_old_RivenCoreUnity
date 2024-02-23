@@ -5,10 +5,6 @@
 //
 //=============================================================================
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -26,6 +22,7 @@ public class Trigger_Interactable : MonoBehaviour
     public bool isPowered;
     public bool wasActivated;
     public bool useTalkIndicator;
+    public bool hideIndicator;
     public UnityEvent OnInteract;
 
 
@@ -33,6 +30,7 @@ public class Trigger_Interactable : MonoBehaviour
     // Private Variables
     //=-----------------=
     private bool previousIsPoweredState;
+    
 
 
     //=-----------------=
@@ -58,7 +56,7 @@ public class Trigger_Interactable : MonoBehaviour
         // Show indicator for player
         if (!_other.CompareTag("Entity")) return;
         var entity = _other.transform.parent.GetComponent<Entity>();
-        if (entity.isPossessed)
+        if (entity.isPossessed && !hideIndicator)
         {
             entity.isNearInteractable = true;
             interactionIndicator.SetActive(true);
@@ -71,7 +69,7 @@ public class Trigger_Interactable : MonoBehaviour
         // Hide indicator for player
         if (!_other.CompareTag("Entity")) return;
         var entity = _other.transform.parent.GetComponent<Entity>();
-        if (entity.isPossessed)
+        if (entity.isPossessed && !hideIndicator)
         {
             entity.isNearInteractable = false;
             interactionIndicator.SetActive(false);
@@ -80,6 +78,7 @@ public class Trigger_Interactable : MonoBehaviour
 
     private void Update()
     {
+        if (hideIndicator) interactionIndicator.SetActive(false);
         // Check for any overrides that have modified the switch state
         if (previousIsPoweredState != isPowered) logicProcessor.UpdateState(onSwitchedSignal, isPowered);
         previousIsPoweredState = isPowered;

@@ -74,8 +74,30 @@ PrefabInstance:
     - {fileID: 6325020148407325708, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3272409677045869245, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3448127652431205516}
   m_SourcePrefab: {fileID: 100100000, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
+--- !u!1 &2425478862830225911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3272409677045869245, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
+  m_PrefabInstance: {fileID: 918988790778323786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3448127652431205516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2425478862830225911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367cf4c15f22858f483045613783edcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHeld: 0
+  targetEntity: {fileID: 0}
 --- !u!61 &7458362342415545031 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 7728610612195643789, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}

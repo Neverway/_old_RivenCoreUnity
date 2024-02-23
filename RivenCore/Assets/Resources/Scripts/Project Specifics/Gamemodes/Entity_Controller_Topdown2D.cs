@@ -155,8 +155,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
         // Create interaction trigger
         var interactionTrigger = Instantiate(interactionPrefab, entity.transform.position, Quaternion.Euler(0, 0, directionalRotation));
         interactionTrigger.GetComponent<Trigger_Interaction>().targetEntity = entity;
-        interactionTrigger.GetComponent<Object_DepthAssigner>().depthLayer =
-            entity.GetComponent<Object_DepthAssigner>().depthLayer;
+        interactionTrigger.GetComponent<Object_DepthAssigner>().depthLayer = entity.GetComponent<Object_DepthAssigner>().depthLayer;
         Destroy(interactionTrigger, 0.15f);
     }
 
