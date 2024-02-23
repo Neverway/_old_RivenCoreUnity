@@ -17,7 +17,7 @@ public class Entity_Inventory : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    [Header("0-Util, 1-Weapon, 2-Magic")]
+    [Header("0-Util, 1-Weapon, 2-Magic, 3-Disabled")]
     [Range(0,2)] public int currentAction = 1;
     public List<Item> items = new List<Item>(10);
     public List<Item> equippedItems = new List<Item>(4);
@@ -103,6 +103,7 @@ public class Entity_Inventory : MonoBehaviour
         if (equippedItems[currentAction] == null || currentlyUsingItem) return;
 
         var entity = gameObject.GetComponent<Entity>();
+        if (entity.isNearInteractable) return;
 
         // For a bladed weapon,
         if (equippedItems[currentAction] is Item_Weapon itemWeapon)

@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Logic_Processor))]
 public class Trigger_Interactable : MonoBehaviour
@@ -24,18 +25,21 @@ public class Trigger_Interactable : MonoBehaviour
     
     public bool isPowered;
     public bool wasActivated;
+    public bool useTalkIndicator;
+    public UnityEvent OnInteract;
 
 
     //=-----------------=
     // Private Variables
     //=-----------------=
-    public bool previousIsPoweredState;
+    private bool previousIsPoweredState;
 
 
     //=-----------------=
     // Reference Variables
     //=-----------------=
     private Logic_Processor logicProcessor;
+    [SerializeField] private GameObject interactionIndicator;
 
 
     //=-----------------=
@@ -49,8 +53,29 @@ public class Trigger_Interactable : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D _other)
     {
         var interaction = _other.GetComponent<Trigger_Interaction>();
-        if (!interaction) return;
-        Interact();
+        if (interaction) { Interact(); return; }
+        
+        // Show indicator for player
+        if (!_other.CompareTag("Entity")) return;
+        var entity = _other.transform.parent.GetComponent<Entity>();
+        if (entity.isPossessed)
+        {
+            entity.isNearInteractable = true;
+            interactionIndicator.SetActive(true);
+            interactionIndicator.GetComponent<Animator>().Play(useTalkIndicator ? "talk" : "use");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D _other)
+    {
+        // Hide indicator for player
+        if (!_other.CompareTag("Entity")) return;
+        var entity = _other.transform.parent.GetComponent<Entity>();
+        if (entity.isPossessed)
+        {
+            entity.isNearInteractable = false;
+            interactionIndicator.SetActive(false);
+        }
     }
 
     private void Update()
@@ -71,6 +96,7 @@ public class Trigger_Interactable : MonoBehaviour
     private void Interact()
     {
         if (onSwitchedSignal == "" || wasActivated && !resetsAfterUse) return;
+        OnInteract.Invoke();
         
         // Flip the current activation state
         isPowered = !isPowered;

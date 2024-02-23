@@ -58,7 +58,7 @@ public class Entity_Controller_Topdown2D : Entity_Controller
         if (!_entity.isPossessed) return;
         if (topdown2DActions.Pause.WasPressedThisFrame()) gameInstance.UI_ShowPause();
         if (topdown2DActions.Menu.WasPressedThisFrame()) gameInstance.UI_ShowInventory();
-        if (topdown2DActions.Interact.WasPressedThisFrame()) Interact();
+        if (topdown2DActions.Interact.WasPressedThisFrame() && entity.isNearInteractable) Interact();
         if (_entity.isPaused) return;
         _entity.currentStats.movementSpeed = topdown2DActions.Action.IsPressed() ? _entity.currentStats.sprintSpeed : _entity.currentStats.walkSpeed; 
         

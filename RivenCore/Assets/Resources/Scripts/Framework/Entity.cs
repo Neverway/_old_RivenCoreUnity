@@ -63,6 +63,7 @@ public class Entity : MonoBehaviour
     //public Vector2 facingDirection;
     public bool isInvulnerable;
     public bool isDead;
+    public bool isNearInteractable;
 
 
     //=-----------------=

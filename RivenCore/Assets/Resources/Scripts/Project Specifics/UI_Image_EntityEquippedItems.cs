@@ -82,6 +82,22 @@ public class UI_Image_EntityEquippedItems : MonoBehaviour
         {
             int currentAction = targetEntity.GetComponent<Entity_Inventory>().currentAction;
 
+            if (targetEntity.isNearInteractable)
+            {
+                foreach (var image in imageTargets)
+                {
+                    image.color = new Color(0.1f,0.1f,0.1f, 0.5f);
+                }
+                imageTargets[1].color = new Color(0.25f,0.25f,0.25f, 0.5f);
+            }
+            else
+            {
+                foreach (var image in imageTargets)
+                {
+                    image.color = new Color(0.25f,0.25f,0.25f, 1f);
+                }
+                imageTargets[1].color = Color.white;
+            }
             switch (currentAction)
             {
                 case 0:
