@@ -5,6 +5,7 @@
 //
 //=============================================================================
 
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -31,12 +32,12 @@ public class Trigger_Interactable : MonoBehaviour
     //=-----------------=
     private bool previousIsPoweredState;
     
-
-
+    
     //=-----------------=
     // Reference Variables
     //=-----------------=
     private Logic_Processor logicProcessor;
+    public List<Entity> entitiesInTrigger = new List<Entity>();
     [SerializeField] private GameObject interactionIndicator;
 
 
