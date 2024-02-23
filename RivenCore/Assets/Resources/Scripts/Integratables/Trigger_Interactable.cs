@@ -52,6 +52,14 @@ public class Trigger_Interactable : Trigger
         if (interaction) Interact();
     }
 
+    private void OnTriggerExit2D(Collider2D _other)
+    {
+        // Check for interaction
+        var interaction = _other.GetComponent<Trigger_Interaction>();
+        if (interaction) Interact();
+        if (GetPlayerInTrigger()) GetPlayerInTrigger().isNearInteractable = false;
+    }
+
     private void Update()
     {
         CheckForPoweredStateOverrides();
@@ -81,7 +89,6 @@ public class Trigger_Interactable : Trigger
         }
         else
         {
-            GetPlayerInTrigger().isNearInteractable = false;
             interactionIndicator.SetActive(false);
         }
     }
