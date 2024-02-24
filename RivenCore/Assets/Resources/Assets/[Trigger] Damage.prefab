@@ -62,15 +62,19 @@ PrefabInstance:
       objectReference: {fileID: 8966008350612948807}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[0]
-      value: damageAmount
+      value: owningTeam
       objectReference: {fileID: 0}
     - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[1]
-      value: owningTeam
+      value: affectsOwnTeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268865614696884777, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
+      propertyPath: scriptDataList.Array.data[2].exposedVariables.Array.data[2]
+      value: damageAmount
       objectReference: {fileID: 0}
     - target: {fileID: 8129580590025789606, guid: 2a8261c3dc183d6888c0c06ee988e778, type: 3}
       propertyPath: m_Name
@@ -101,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e7fc6bdb03907778389ed7078a38c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 25
   owningTeam: 
+  affectsOwnTeam: 0
   entitiesInTrigger: []
+  propsInTrigger: []
+  damageAmount: 25
