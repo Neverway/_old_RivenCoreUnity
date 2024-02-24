@@ -150,6 +150,8 @@ MonoBehaviour:
   targetedColliders:
   - {fileID: 3961610065379011478}
   targetedSpriteRenderers: []
+  fallTime: 0
+  isFalling: 0
 --- !u!114 &-272060017141874270
 MonoBehaviour:
   m_ObjectHideFlags: 0

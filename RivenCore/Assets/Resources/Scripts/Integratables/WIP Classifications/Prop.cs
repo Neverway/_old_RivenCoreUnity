@@ -5,15 +5,15 @@
 //
 //=============================================================================
 
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger_Damage : Trigger
+public class Prop : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
-    [Tooltip("The amount of damage to deal to an entity within the trigger. (Value can be negative to heal)")]
-    public float damageAmount;
 
 
     //=-----------------=
@@ -29,20 +29,14 @@ public class Trigger_Damage : Trigger
     //=-----------------=
     // Mono Functions
     //=-----------------=
+    private void Start()
+    {
+    
+    }
+
     private void Update()
     {
-        foreach (var entity in entitiesInTrigger)
-        {
-            if (owningTeam == "")
-            {
-                entity.ModifyHealth(-damageAmount);
-            }
-            else
-            {
-                if (entity.currentStats.team == owningTeam && damageAmount < 0) entity.ModifyHealth(-damageAmount);
-                else if (entity.currentStats.team != owningTeam && damageAmount > 0) entity.ModifyHealth(-damageAmount);
-            }
-        }
+    
     }
 
     //=-----------------=
