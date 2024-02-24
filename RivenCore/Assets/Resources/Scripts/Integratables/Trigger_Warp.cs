@@ -36,14 +36,21 @@ public class Trigger_Warp : Trigger
     {
         base.OnTriggerEnter2D(_other); // Call the base class method
         if (!GetExitWarp()) return; 
-        if (targetEnt)
+        if (_other.CompareTag("Entity"))
         {
             targetEnt.transform.position = GetExitWarp().position+exitOffset;
             if (targetEnt.isPossessed) { // TODO Add player screen fade here
             }
         }
-        if (targetProp)
+        if (_other.CompareTag("PhysProp") && targetProp)
         {
+            if (targetProp.GetComponent<Object_Grabbable>())
+            {
+                if (targetProp.GetComponent<Object_Grabbable>().isHeld)
+                {
+                    return;
+                }
+            }
             targetProp.transform.position = GetExitWarp().position+exitOffset;
         }
     }

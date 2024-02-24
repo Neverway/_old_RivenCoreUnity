@@ -33,15 +33,19 @@ public class Trigger_LayerChange : Trigger
     private new void OnTriggerEnter2D(Collider2D _other)
     {
         base.OnTriggerEnter2D(_other); // Call the base class method
-        if (targetEnt)
+        if (_other.CompareTag("Entity"))
         {
-            print("player");
             SetTargetDepth(targetEnt.GetComponent<Object_DepthAssigner>());
         }
-        if (targetProp)
+        if (_other.CompareTag("PhysProp") && targetProp)
         {
-            if (targetProp.GetComponent<Object_Grabbable>().isHeld) return;
-            print("prop");
+            if (targetProp.GetComponent<Object_Grabbable>())
+            {
+                if (targetProp.GetComponent<Object_Grabbable>().isHeld)
+                {
+                    return;
+                }
+            }
             SetTargetDepth(targetProp.GetComponent<Object_DepthAssigner>());
         }
     }

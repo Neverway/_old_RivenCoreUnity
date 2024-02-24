@@ -57,7 +57,7 @@ public class Trigger_Interactable : Trigger
     private new void OnTriggerExit2D(Collider2D _other)
     {
         base.OnTriggerExit2D(_other); // Call the base class method
-        if (targetEnt) if (targetEnt.isPossessed) targetEnt.isNearInteractable = false;
+        if (_other.CompareTag("Entity")) if (targetEnt.isPossessed) targetEnt.isNearInteractable = false;
         SetInteractionState();
     }
 

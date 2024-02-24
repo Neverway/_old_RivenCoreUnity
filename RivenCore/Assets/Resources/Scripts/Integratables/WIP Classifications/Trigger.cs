@@ -47,7 +47,11 @@ public class Trigger : MonoBehaviour
             // Exit if they are not on the effected team
             if (!IsOnAffectedTeam(targetEnt)) return;
             // Add the entity to the list if they are not already present
-            if(!entitiesInTrigger.Contains(targetEnt)) { entitiesInTrigger.Add(targetEnt); }
+            if (!entitiesInTrigger.Contains(targetEnt))
+            {
+                print("Added Ent");
+                entitiesInTrigger.Add(targetEnt);
+            }
         }
         
         // A physics prop has entered the trigger
@@ -58,7 +62,11 @@ public class Trigger : MonoBehaviour
             // Get a reference to the entity component
             targetProp = _other.gameObject.transform.parent.GetComponent<Prop>();
             // Add the entity to the list if they are not already present
-            if(!propsInTrigger.Contains(targetProp)) { propsInTrigger.Add(targetProp); }
+            if (!propsInTrigger.Contains(targetProp))
+            {
+                print("Added Prop");
+                propsInTrigger.Add(targetProp);
+            }
         }
     }
 

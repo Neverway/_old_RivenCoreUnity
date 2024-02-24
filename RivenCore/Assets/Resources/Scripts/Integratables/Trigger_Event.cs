@@ -47,14 +47,14 @@ public class Trigger_Event : Trigger
     {
         base.OnTriggerEnter2D(_other); // Call the base class method
         if (!resetsAutomatically && hasBeenTriggered) return;
-        if (checksOnlyForPlayer && targetEnt)
+        if (checksOnlyForPlayer && _other.CompareTag("Entity"))
         {
             if (!targetEnt.isPossessed) return;
             logicProcessor.UpdateState(onOccupiedSignal, true);
             logicProcessor.UpdateState(onUnoccupiedSignal, false);
             onOccupied.Invoke();
         }
-        else if (targetEnt || targetProp)
+        else if (entitiesInTrigger.Count != 0 || propsInTrigger.Count != 0)
         {
             logicProcessor.UpdateState(onOccupiedSignal, true);
             logicProcessor.UpdateState(onUnoccupiedSignal, false);
@@ -66,7 +66,7 @@ public class Trigger_Event : Trigger
     private new void OnTriggerExit2D(Collider2D _other)
     {
         base.OnTriggerExit2D(_other); // Call the base class method
-        if (checksOnlyForPlayer && targetEnt)
+        if (checksOnlyForPlayer && _other.CompareTag("Entity"))
         {
             if (!targetEnt.isPossessed) return;
             logicProcessor.UpdateState(onOccupiedSignal, false);

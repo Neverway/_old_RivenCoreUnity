@@ -36,10 +36,10 @@ public class Object_Grabbable : MonoBehaviour
     {
         if (!isHeld || !targetEntity)
         {
-            GetComponent<Trigger_Interactable>().hideIndicator=false;
+            //GetComponent<Trigger_Interactable>().hideIndicator=false;
             return;
         }
-        GetComponent<Trigger_Interactable>().hideIndicator=true;
+       // GetComponent<Trigger_Interactable>().hideIndicator=true;
         transform.parent.position = targetEntity.transform.position + GetTargetEntityOffset();
         transform.parent.GetComponent<Object_DepthAssigner>().depthLayer = targetEntity.GetComponent<Object_DepthAssigner>().depthLayer;
     }
@@ -53,7 +53,7 @@ public class Object_Grabbable : MonoBehaviour
         switch (facingDirection.y)
         {
             case (1):
-                lastFaceDirection = new Vector3(0, 0.3f, 0);
+                lastFaceDirection = new Vector3(0, 0.25f, 0);
                 return lastFaceDirection;
             case (-1):
                 lastFaceDirection = new Vector3(0, -0.3f, 0);
