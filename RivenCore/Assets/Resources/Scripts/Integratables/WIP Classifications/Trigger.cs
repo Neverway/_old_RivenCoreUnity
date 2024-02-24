@@ -30,6 +30,8 @@ public class Trigger : MonoBehaviour
     //=-----------------=
     [HideInInspector] public List<Entity> entitiesInTrigger = new List<Entity>();
     [HideInInspector] public List<Prop> propsInTrigger = new List<Prop>();
+    [HideInInspector] public Entity targetEnt;
+    [HideInInspector] public Prop targetProp;
 
 
     //=-----------------=
@@ -41,7 +43,7 @@ public class Trigger : MonoBehaviour
         if (_other.CompareTag("Entity"))
         {
             // Get a reference to the entity component
-            var targetEnt = _other.gameObject.transform.parent.GetComponent<Entity>();
+            targetEnt = _other.gameObject.transform.parent.GetComponent<Entity>();
             // Exit if they are not on the effected team
             print(IsOnAffectedTeam(targetEnt));
             if (!IsOnAffectedTeam(targetEnt)) return;
@@ -53,7 +55,7 @@ public class Trigger : MonoBehaviour
         if (_other.CompareTag("PhysProp"))
         {
             // Get a reference to the entity component
-            var targetProp = _other.gameObject.transform.parent.GetComponent<Prop>();
+            targetProp = _other.gameObject.transform.parent.GetComponent<Prop>();
             // Add the entity to the list if they are not already present
             if(!propsInTrigger.Contains(targetProp)) { propsInTrigger.Add(targetProp); }
         }
@@ -65,7 +67,7 @@ public class Trigger : MonoBehaviour
         if (_other.CompareTag("Entity"))
         {
             // Get a reference to the entity component
-            var targetEnt = _other.gameObject.transform.parent.GetComponent<Entity>();
+            targetEnt = _other.gameObject.transform.parent.GetComponent<Entity>();
             // Remove the entity to the list if they are not already absent
             if(entitiesInTrigger.Contains(targetEnt)) { entitiesInTrigger.Remove(targetEnt); }
         }
@@ -74,7 +76,7 @@ public class Trigger : MonoBehaviour
         if (_other.CompareTag("PhysProp"))
         {
             // Get a reference to the entity component
-            var targetProp = _other.gameObject.transform.parent.GetComponent<Prop>();
+            targetProp = _other.gameObject.transform.parent.GetComponent<Prop>();
             // Add the entity to the list if they are not already present
             if(propsInTrigger.Contains(targetProp)) { propsInTrigger.Remove(targetProp); }
         }

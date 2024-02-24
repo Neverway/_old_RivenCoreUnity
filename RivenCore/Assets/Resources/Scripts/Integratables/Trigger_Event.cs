@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Logic_Processor))]
-public class Trigger_Event : MonoBehaviour
+public class Trigger_Event : Trigger
 {
     //=-----------------=
     // Public Variables
@@ -34,8 +34,6 @@ public class Trigger_Event : MonoBehaviour
     // Reference Variables
     //=-----------------=
     private Logic_Processor logicProcessor;
-    public List<Entity> entitiesInTrigger = new List<Entity>();
-    public List<Rigidbody2D> propsInTrigger = new List<Rigidbody2D>();
 
 
     //=-----------------=
@@ -45,6 +43,7 @@ public class Trigger_Event : MonoBehaviour
     {
         logicProcessor = GetComponent<Logic_Processor>();
     }
+    /*
     private void OnTriggerEnter2D(Collider2D _other)
     {
         // Exit if not a target, or activated & one time use
@@ -102,5 +101,5 @@ public class Trigger_Event : MonoBehaviour
             if (onUnoccupiedSignal != "") logicProcessor.UpdateState(onUnoccupiedSignal, true);
             if (onOccupiedSignal != "" || onUnoccupiedSignal != "") wasActivated = true;
         }
-    }
+    }*/
 }

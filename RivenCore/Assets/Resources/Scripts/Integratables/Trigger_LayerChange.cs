@@ -5,19 +5,15 @@
 //
 //=============================================================================
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger_LayerChange : MonoBehaviour
+public class Trigger_LayerChange : Trigger
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
     [Tooltip("Which layer should the entity switch to when entering the trigger. P.S DON'T FORGET TO SWITCH THE TRIGGERS LAYER!!")]
     [Range(0, 2)] public int exitLayer;
-
     public float fallTime;
 
 
@@ -41,16 +37,23 @@ public class Trigger_LayerChange : MonoBehaviour
     //=-----------------=
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Entity") && !other.CompareTag("PhysProp")) return;
-        var entity = other.transform.parent.GetComponent<Object_DepthAssigner>();
-        entity.depthLayer = exitLayer;
+        var target = targetEnt.GetComponent<Object_DepthAssigner>();
+        if (target) SetTargetDepth(target);
+        target = targetProp.GetComponent<Object_DepthAssigner>();
+        if (target) SetTargetDepth(target);
+    }
+
+    private void SetTargetDepth(Object_DepthAssigner _targetObject)
+    {
+        _targetObject.depthLayer = exitLayer;
         if (fallTime <= 0) return;
-        entity.fallTime = fallTime;
-        entity.Fall();
+        _targetObject.fallTime = fallTime;
+        _targetObject.Fall();
     }
 
 
     //=-----------------=
     // External Functions
     //=-----------------=
+    
 }
