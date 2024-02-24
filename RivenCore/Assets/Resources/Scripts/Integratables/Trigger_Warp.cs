@@ -5,12 +5,9 @@
 //
 //=============================================================================
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger_Warp : MonoBehaviour
+public class Trigger_Warp : Trigger
 {
     //=-----------------=
     // Public Variables
@@ -35,15 +32,23 @@ public class Trigger_Warp : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-
-    /*
-    private void OnDrawGizmos()
+    private void OnTriggerEnter2D(Collider2D _other)
     {
-        if (!exitPosition) return;
-        Gizmos.color = new Color(0.4f,0.4f,0.4f, 0.2f);
-        Gizmos.DrawLine(transform.position, exitPosition.position+exitOffset);
-        Gizmos.DrawIcon(exitPosition.position+exitOffset, "trigger_warp_exit.png",false);
-    }*/
+        if (!GetExitWarp()) return; 
+        if (targetEnt)
+        {
+            targetEnt.transform.position = GetExitWarp().position+exitOffset;
+        }
+        if (targetProp)
+        {
+            targetProp.transform.position = GetExitWarp().position+exitOffset;
+        }
+    }
+
+
+    //=-----------------=
+    // Internal Functions
+    //=-----------------=
     private Transform GetExitWarp()
     {
         exitOffset = new Vector3(exitOffsetX, exitOffsetY);
@@ -60,18 +65,6 @@ public class Trigger_Warp : MonoBehaviour
 
         return null;
     }
-
-    private void OnTriggerEnter2D(Collider2D _other)
-    {
-        if (!_other.CompareTag("Entity") && !_other.CompareTag("PhysProp") ) return;
-        var targetEnt = _other.gameObject.transform.parent;
-        if (GetExitWarp()) targetEnt.transform.position = GetExitWarp().position+exitOffset;
-    }
-
-
-    //=-----------------=
-    // Internal Functions
-    //=-----------------=
 
 
     //=-----------------=

@@ -30,19 +30,22 @@ public class Trigger_LayerChange : Trigger
     //=-----------------=
     // Mono Functions
     //=-----------------=
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (targetEnt)
+        {
+            SetTargetDepth(targetEnt.GetComponent<Object_DepthAssigner>());
+        }
+        if (targetProp)
+        {
+            SetTargetDepth(targetProp.GetComponent<Object_DepthAssigner>());
+        }
+    }
 
 
     //=-----------------=
     // Internal Functions
     //=-----------------=
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        var target = targetEnt.GetComponent<Object_DepthAssigner>();
-        if (target) SetTargetDepth(target);
-        target = targetProp.GetComponent<Object_DepthAssigner>();
-        if (target) SetTargetDepth(target);
-    }
-
     private void SetTargetDepth(Object_DepthAssigner _targetObject)
     {
         _targetObject.depthLayer = exitLayer;
