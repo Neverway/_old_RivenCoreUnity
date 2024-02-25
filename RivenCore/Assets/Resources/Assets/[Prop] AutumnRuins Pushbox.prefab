@@ -8,17 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4704137438444636732}
     m_Modifications:
+    - target: {fileID: 444605181582422960, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13333324
+      objectReference: {fileID: 0}
+    - target: {fileID: 776190853733162328, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3272409677045869245, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
       propertyPath: m_Name
       value: '[Trigger] Interactable'
       objectReference: {fileID: 0}
     - target: {fileID: 8215253235007374963, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8215253235007374963, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8215253235007374963, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63,6 +71,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7387578575170850866, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
     - {fileID: 2414650547125058489, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
+    - {fileID: 6325020148407325708, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

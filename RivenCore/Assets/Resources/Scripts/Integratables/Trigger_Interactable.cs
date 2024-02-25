@@ -82,9 +82,9 @@ public class Trigger_Interactable : Trigger
     {
         if (interactionIndicator.activeInHierarchy) interactionIndicator.GetComponent<Animator>().Play(useTalkIndicator ? "talk" : "use");
         
-        if (GetPlayerInTrigger())
+        if (GetPlayerInTrigger() && !hideIndicator)
         {
-            if (!hideIndicator) interactionIndicator.SetActive(true);
+            interactionIndicator.SetActive(true);
         }
         else
         {
