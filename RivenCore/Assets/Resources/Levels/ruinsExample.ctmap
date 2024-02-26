@@ -9924,29 +9924,6 @@
         {
             "layer": 0,
             "layerID": "",
-            "id": "[Prop] AutumnRuins Pushbox",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 2.0,
-                "y": 0.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "0"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
             "id": "[Light] Point",
             "uniqueId": 0,
             "position": {
@@ -10883,29 +10860,6 @@
         {
             "layer": 0,
             "layerID": "",
-            "id": "[Prop] AutumnRuins Pushbox",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 19.0,
-                "y": 2.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "0"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
             "id": "[Prop] Autumn Door Gate",
             "uniqueId": 0,
             "position": {
@@ -11016,6 +10970,138 @@
                     "name": "fallTime",
                     "type": "System.Single",
                     "value": "0.2"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Trigger] Water",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -2.5,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "3"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Missing Object]",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Push Box",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Push Box",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 18.0,
+                "y": 4.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
                 }
             ]
         }

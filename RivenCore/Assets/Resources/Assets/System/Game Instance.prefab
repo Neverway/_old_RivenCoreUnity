@@ -681,6 +681,7 @@ MonoBehaviour:
     - {fileID: 1123480946392113149, guid: 86329e4bcfa0131fd8198c7c125a57f5, type: 3}
     - {fileID: 5610943949167059174, guid: 07110998b1df447c8a28af1e7297e3ef, type: 3}
     - {fileID: 7827312515734789983, guid: 06b4c9fb2e9463baca0fedb54f605837, type: 3}
+    - {fileID: 9003606718857789944, guid: 8b6945543f24ca990ae30833279613af, type: 3}
     - {fileID: 3601029168914885687, guid: 9ea99651ab07af3c685b598d5845478c, type: 3}
     - {fileID: 2332245345589349154, guid: 72b8f84df1e78ee4daa2d22fb1423db8, type: 3}
     - {fileID: 7922057297963016001, guid: b5cde969c3a7060f6b3a3a6914596ff4, type: 3}
@@ -719,6 +720,9 @@ MonoBehaviour:
     - {fileID: 3436431032717455876, guid: 9a1dd749687615c73bbfffe44e11d795, type: 3}
     - {fileID: 5221929607545191465, guid: 029d1b95b8c7b78148925ec8c5af8622, type: 3}
     - {fileID: 3228016374961770188, guid: 0b437ed569a0e0f5e9c5ffbfa2f0117c, type: 3}
+    - {fileID: 4428499950028505700, guid: f210299b2c14c57319618ff3d3866707, type: 3}
+    - {fileID: 7998485063175629665, guid: 24076062b64cce2d8b9984a7a5ab5ac2, type: 3}
+    - {fileID: 7998485063175629665, guid: 32d782ec4bab8ce1b88b5b4ed9dfac92, type: 3}
     spacers: []
   spriteMemory:
   - {fileID: 21300000, guid: ed0983fc685fa38efbe80bc3275475b7, type: 3}
@@ -767,6 +771,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f56dea1a40937e64dbe109d38f2c3a87, type: 3}
   - {fileID: 21300000, guid: d9ff86fad6cd830d1a752ed672ce03b0, type: 3}
   - {fileID: 21300000, guid: 7ac43652afadf5168b3afabac8cde6ce, type: 3}
+  missingTileFallback: {fileID: 0}
+  missingObjectFallback: {fileID: 9087686607799845790, guid: 31452f0abba9596b58fe9eb2241face5, type: 3}
+  missingSpriteFallback: {fileID: 0}
   tilemaps: []
   assetsRoot: {fileID: 0}
   filePath: 

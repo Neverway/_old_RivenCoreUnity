@@ -25,6 +25,9 @@ public class System_LevelManager : MonoBehaviour
     public List<AssetMemoryGroup> assetMemory;
     [Tooltip("A list of all the sprites that can be used for decor props for the current project")]
     public List<Sprite> spriteMemory;
+    public Tile missingTileFallback;
+    public GameObject missingObjectFallback;
+    public Tile missingSpriteFallback;
     [Header("READ-ONLY (Don't touch!)")]
     [Tooltip("A list of all of the 'tile layers' used in the scene")]
     public List<Tilemap> tilemaps;
@@ -173,7 +176,7 @@ public class System_LevelManager : MonoBehaviour
             }
             
             // If the asset is not found in assetMemory, skip it
-            if (tempAsset == null) continue;
+            if (tempAsset == null) tempAsset = missingObjectFallback;
             
             // Create a new SpotData instance to store the asset data
             SpotData newSpotData = new SpotData();
@@ -260,7 +263,7 @@ public class System_LevelManager : MonoBehaviour
                 }
             }
             
-            if (tempAsset == null) continue;
+            if (tempAsset == null) tempAsset = missingObjectFallback;
             var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
             assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
             /*if (assetRef.GetComponent<Asset_UniqueInstanceId>())
