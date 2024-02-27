@@ -2096,64 +2096,6 @@
                 "z": 0
             },
             "unsnappedPosition": {
-                "x": 0.0,
-                "y": -3.0,
-                "z": -1.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "1"
-                },
-                {
-                    "name": "intensity",
-                    "type": "System.Single",
-                    "value": "2.5"
-                },
-                {
-                    "name": "range",
-                    "type": "System.Single",
-                    "value": "15"
-                },
-                {
-                    "name": "colorRed",
-                    "type": "System.Single",
-                    "value": "0.7"
-                },
-                {
-                    "name": "colorGreen",
-                    "type": "System.Single",
-                    "value": "0.7"
-                },
-                {
-                    "name": "colorBlue",
-                    "type": "System.Single",
-                    "value": "0.7"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": ""
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Light] Point",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
                 "x": -15.0,
                 "y": 8.0,
                 "z": -1.0
@@ -2262,23 +2204,6 @@
         {
             "layer": 0,
             "layerID": "",
-            "id": "Player Start",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 0.0,
-                "y": -2.0,
-                "z": -2.0
-            },
-            "assetData": []
-        },
-        {
-            "layer": 0,
-            "layerID": "",
             "id": "[Trigger] Warp",
             "uniqueId": 0,
             "position": {
@@ -2348,6 +2273,139 @@
                     "value": "0"
                 }
             ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Light] Point",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": -4.0,
+                "z": -1.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "intensity",
+                    "type": "System.Single",
+                    "value": "2.5"
+                },
+                {
+                    "name": "range",
+                    "type": "System.Single",
+                    "value": "15"
+                },
+                {
+                    "name": "colorRed",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorGreen",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorBlue",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Trigger] Load Map",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": -3.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "2"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "levelID",
+                    "type": "System.String",
+                    "value": "ow_c1s1_howelfen"
+                },
+                {
+                    "name": "exitOffsetX",
+                    "type": "System.Single",
+                    "value": "120.5"
+                },
+                {
+                    "name": "exitOffsetY",
+                    "type": "System.Single",
+                    "value": "4.5"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "Player Start",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "assetData": []
         }
     ]
 }

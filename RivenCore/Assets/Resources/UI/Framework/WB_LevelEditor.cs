@@ -90,6 +90,7 @@ public class WB_LevelEditor : MonoBehaviour
     [SerializeField] private GameObject[] layerGroups;
     [SerializeField] private Image shapePainterLightIndicator, networkOnlineLightIndicator;
     [SerializeField] private Image[] layerLightIndicator;
+    [SerializeField] private TMP_Text[] coordinateIndicators;
     
 
     //=-----------------=
@@ -400,8 +401,18 @@ public class WB_LevelEditor : MonoBehaviour
         var cursorOffset = GetCursorOffset();
 
         tileCursor.GetComponent<SpriteRenderer>().color = cursorColor;
-        if (GetCursorOffset() > 0) tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPos.x / 1) * 1 + cursorOffset, (float)MathF.Floor(cursorPos.y / 1) * 1 + cursorOffset, 0);
-        else tileCursor.transform.position = new Vector3((float)MathF.Round(cursorPos.x / 1) * 1 + cursorOffset, (float)MathF.Round(cursorPos.y / 1) * 1 + cursorOffset, 0);
+        if (GetCursorOffset() > 0)
+        {
+            tileCursor.transform.position = new Vector3((float)MathF.Floor(cursorPos.x / 1) * 1 + cursorOffset, (float)MathF.Floor(cursorPos.y / 1) * 1 + cursorOffset, 0);
+        }
+        else
+        {
+            tileCursor.transform.position = new Vector3((float)MathF.Round(cursorPos.x / 1) * 1 + cursorOffset, (float)MathF.Round(cursorPos.y / 1) * 1 + cursorOffset, 0);
+        }
+
+        coordinateIndicators[0].text = $"X: {tileCursor.transform.position.x}";
+        coordinateIndicators[1].text = $"Y: {tileCursor.transform.position.y}";
+        coordinateIndicators[2].text = $"Z: {tileCursor.transform.position.z}";
     }
 
     /// <summary>

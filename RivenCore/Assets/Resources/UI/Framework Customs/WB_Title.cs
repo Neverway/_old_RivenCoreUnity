@@ -55,7 +55,7 @@ public class WB_Title : MonoBehaviour
             case "MainGame":
                 if (!sceneLoader) sceneLoader = FindObjectOfType<System_SceneLoader>();
                 sceneLoader.LoadScene("Overworld");
-                levelManager.LoadLevelFromMemory("ow_c1s1_howelfen");
+                levelManager.LoadLevelFromMemory("ow_c1s1_howelfen", true);
                 break;
             case "Extras":
                 if (!gameInstance) gameInstance = FindObjectOfType<GameInstance>();

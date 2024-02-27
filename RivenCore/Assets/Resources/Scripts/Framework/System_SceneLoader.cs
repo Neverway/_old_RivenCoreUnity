@@ -19,10 +19,11 @@ public class System_SceneLoader : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    [SerializeField] private float delayBeforeSceneChange = 0.25f;
-    [SerializeField] private float minimumRequiredLoadTime = 1f;
+    [SerializeField] public float delayBeforeSceneChange = 0.25f;
+    [SerializeField] public float minimumRequiredLoadTime = 1f;
     [SerializeField] private string loadingSceneID = "_Travel";
     public static event Action OnSceneLoaded;
+    public bool isLoading;
 
 
     //=-----------------=
@@ -48,6 +49,7 @@ public class System_SceneLoader : MonoBehaviour
     //=-----------------=
     private IEnumerator Load()
     {
+	    isLoading = true;
 	    yield return new WaitForSeconds(delayBeforeSceneChange);
 	    SceneManager.LoadScene(loadingSceneID);
 	    
@@ -76,6 +78,8 @@ public class System_SceneLoader : MonoBehaviour
 		    if (loadingBar) loadingBar.fillAmount = targetLevel.progress;
 		    yield return new WaitForEndOfFrame();
 	    }
+
+	    isLoading = false;
 	    // Scene has finished loading, trigger the SceneLoaded event
 	    if (OnSceneLoaded != null)
 	    {

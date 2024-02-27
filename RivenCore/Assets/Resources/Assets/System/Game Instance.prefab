@@ -84,6 +84,7 @@ MonoBehaviour:
   delayBeforeSceneChange: 0.25
   minimumRequiredLoadTime: 1
   loadingSceneID: _Travel
+  isLoading: 0
 --- !u!114 &2929944446092088672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +681,7 @@ MonoBehaviour:
     - {fileID: 3272409677045869245, guid: 72fa6ac4fc3f1eddb8a3c23c6ceb30c4, type: 3}
     - {fileID: 1123480946392113149, guid: 86329e4bcfa0131fd8198c7c125a57f5, type: 3}
     - {fileID: 5610943949167059174, guid: 07110998b1df447c8a28af1e7297e3ef, type: 3}
+    - {fileID: 7827312515734789983, guid: 86129b8a83516689aab0422a78b65789, type: 3}
     - {fileID: 7827312515734789983, guid: 06b4c9fb2e9463baca0fedb54f605837, type: 3}
     - {fileID: 9003606718857789944, guid: 8b6945543f24ca990ae30833279613af, type: 3}
     - {fileID: 3601029168914885687, guid: 9ea99651ab07af3c685b598d5845478c, type: 3}

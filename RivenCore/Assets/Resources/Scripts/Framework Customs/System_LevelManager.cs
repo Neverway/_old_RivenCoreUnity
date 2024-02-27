@@ -85,12 +85,26 @@ public class System_LevelManager : MonoBehaviour
     {
         FileBrowser.SetFilters(false, new FileBrowser.Filter("CT Maps", ".ctmap"));
         FileBrowser.AddQuickLink("Data Path", Application.persistentDataPath);
-        FileBrowser.AddQuickLink("Application Path", Application.dataPath);
-        FileBrowser.AddQuickLink("Editor Level Path", Application.dataPath + "/Resources/Levels/");
+        FileBrowser.AddQuickLink("Application Path", Application.dataPath + "/Maps/");
+        FileBrowser.AddQuickLink("Editor Level Path", Application.dataPath + "/Resources/Maps/");
+        
+        // Set the path to open the dialog to
+        var startingPath = Application.persistentDataPath;
+        // Load maps while in the Unity editor
+        if (Directory.Exists($"{Application.dataPath}/Resources/Maps"))
+        {
+            startingPath = Application.dataPath + "/Resources/Maps/";
+        }
+        // Load maps while in the a built application
+        if (Directory.Exists($"{Application.dataPath}/Maps"))
+        {
+            startingPath = Application.dataPath + "/Maps/";
+        }
+
         yield return mode switch
         {
-            "Load" => FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.FilesAndFolders, false, Application.persistentDataPath, null, "Load Cartographer Map File", "Load"),
-            "Save" => FileBrowser.WaitForSaveDialog(FileBrowser.PickMode.FilesAndFolders, false, Application.persistentDataPath, null, "Save Cartographer Map File", "Save"),
+            "Load" => FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.FilesAndFolders, false, startingPath, null, "Load Cartographer Map File", "Load"),
+            "Save" => FileBrowser.WaitForSaveDialog(FileBrowser.PickMode.FilesAndFolders, false, startingPath, null, "Save Cartographer Map File", "Save"),
             _ => null
         };
 
@@ -314,13 +328,30 @@ public class System_LevelManager : MonoBehaviour
         LoadAssets(data);
     }
 
-    public void LoadLevelFromMemory(string _levelID)
+    public void LoadLevelFromMemory(string _levelID, bool _waitForSceneLoad=false)
     {
-        print (Application.dataPath);
-        if (Application.dataPath.Contains("map"))
+        StartCoroutine(WaitForSceneLoad(_levelID, _waitForSceneLoad));
+    }
+
+    private IEnumerator WaitForSceneLoad(string _levelID, bool _waitForSceneLoad)
+    {
+        while (FindObjectOfType<System_SceneLoader>().isLoading)
         {
-            
+            yield return new WaitForEndOfFrame();
         }
+        
+        //yield return new WaitForSeconds(0.2f);
+        // Load maps while in the Unity editor
+        if (Directory.Exists($"{Application.dataPath}/Resources/Maps"))
+        {
+            LoadLevel($"{Application.dataPath}/Resources/Maps/{_levelID}.ctmap");
+        }
+        // Load maps while in the a built application
+        if (Directory.Exists($"{Application.dataPath}/Maps"))
+        {
+            LoadLevel($"{Application.dataPath}/Maps/{_levelID}.ctmap");
+        }
+        
     }
     
     
