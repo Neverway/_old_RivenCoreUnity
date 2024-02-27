@@ -107,19 +107,8 @@ public class System_LevelManager : MonoBehaviour
         }
     }
 
-
-    //=-----------------=
-    // External Functions
-    //=-----------------=
-    /// <summary>
-    /// Saves the current state of the level to a file.
-    /// </summary>
-    /// <param name="levelFile">The file path to save the level data to.</param>
-    public void SaveLevel(string levelFile)
-    { 
-        // Create a new LevelData instance to store the level information.
-        var data = new LevelData();
-
+    private void SaveTiles(LevelData _data)
+    {
         // Save tile data
         foreach (var tilemap in tilemaps)
         {
@@ -147,16 +136,21 @@ public class System_LevelManager : MonoBehaviour
                     if (tempTile == null) continue;
                 
                     // Add the tile data to the level data
-                    SpotData newSpotData = new SpotData();
-                    newSpotData.id = tempTile.name; // Tile name
-                    newSpotData.position = new Vector3Int(x, y, 0); // Tile position
-                    newSpotData.layer = tilemaps.IndexOf(tilemap); // Tilemap layer
-                    newSpotData.layerID = tilemap.name; // Tilemap name
-                    data.tiles.Add(newSpotData); // Add tile data to the level data
+                    var newSpotData = new SpotData
+                    {
+                        id = tempTile.name, // Tile name
+                        position = new Vector3Int(x,y,0), // Tile position
+                        layer = tilemaps.IndexOf(tilemap), // Tilemap layer
+                        layerID = tilemap.name // Tilemap name
+                    };
+                    _data.tiles.Add(newSpotData); // Add tile data to the level data
                 }
             }
         }
-        
+    }
+
+    private void SaveAssets(LevelData _data)
+    {
         // Save object data
         // Find all objects with an asset_instanceID component
         // For each one, see if we can find the root asset in assetMemory
@@ -198,67 +192,45 @@ public class System_LevelManager : MonoBehaviour
             // newSpotData.layer = tempAsset.layer; // Assign layer information
             
             // Add the asset data to the level data
-            data.assets.Add(newSpotData);
+            _data.assets.Add(newSpotData);
         }
-        
-        // Convert the level data to JSON format
-        var json = JsonUtility.ToJson(data, true);
-        
-        // Write the JSON data to the specified file
-        File.WriteAllText(levelFile, json); // Save JSON data to file
     }
-    
-    
-    
-    /// <summary>
-    /// Loads a level from a file.
-    /// </summary>
-    /// <param name="_levelFile">The file path to load the level data from.</param>
-     public void LoadLevel(string levelFile)
-    {
-        var json = File.ReadAllText(levelFile);
-        var data = JsonUtility.FromJson<LevelData>(json);
-        
-        foreach (var tilemap in tilemaps) tilemap.ClearAllTiles();
-        for (int i = 0; i < assetsRoot.transform.childCount; i++)
-        {
-            Destroy(assetsRoot.transform.GetChild(i).gameObject);
-        }
 
-        // Load tiles
-        for (var i = 0; i < data.tiles.Count; i++)
+    private void LoadTiles(LevelData _data)
+    {
+        for (var i = 0; i < _data.tiles.Count; i++)
         {
             TileBase tempTile = null;
 
             foreach (var group in tileMemory)
             {
-                if (group.tiles.Find(t => t.name == data.tiles[i].id))
+                if (group.tiles.Find(t => t.name == _data.tiles[i].id))
                 {
-                    tempTile = group.tiles.Find(t => t.name == data.tiles[i].id);
+                    tempTile = group.tiles.Find(t => t.name == _data.tiles[i].id);
                     break;
                 }
             }
             
             if (tempTile == null) continue;
-            tilemaps[data.tiles[i].layer].SetTile(data.tiles[i].position, tempTile);
+            tilemaps[_data.tiles[i].layer].SetTile(_data.tiles[i].position, tempTile);
         }
-        
-        // Load assets
-        for (int i = 0; i < data.assets.Count; i++)
+    }
+
+    private void LoadAssets(LevelData _data)
+    {
+        foreach (var spotdata in _data.assets)
         {
             GameObject tempAsset = null;
             Vector3 tempPosition = new Vector3();
-            //int tempUniqueId = 0;
             List<VariableData> tempData = new List<VariableData>();
 
             foreach (var group in assetMemory)
             {
-                if (group.assets.Find(t => t.name == data.assets[i].id))
+                if (group.assets.Find(t => t.name == spotdata.id))
                 {
-                    tempAsset = group.assets.Find(t => t.name == data.assets[i].id);
-                    tempPosition = data.assets[i].unsnappedPosition;
-                    tempData = data.assets[i].assetData;
-                    //tempUniqueId = data.assets[i].uniqueId;
+                    tempAsset = group.assets.Find(t => t.name == spotdata.id);
+                    tempPosition = spotdata.unsnappedPosition;
+                    tempData = spotdata.assetData;
                     break;
                 }
             }
@@ -266,83 +238,33 @@ public class System_LevelManager : MonoBehaviour
             if (tempAsset == null) tempAsset = missingObjectFallback;
             var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
             assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
-            /*if (assetRef.GetComponent<Asset_UniqueInstanceId>())
-            {
-                assetRef.GetComponent<Asset_UniqueInstanceId>().Id = tempUniqueId;
-            }*/
-            if (assetRef.GetComponent<Object_RuntimeDataInspector>())
-            {
-                assetRef.GetComponent<Object_RuntimeDataInspector>().storedVariableData = tempData;
-                assetRef.GetComponent<Object_RuntimeDataInspector>().SendVariableDataToScripts();
-            }
+            if (!assetRef.GetComponent<Object_RuntimeDataInspector>()) continue;
+            assetRef.GetComponent<Object_RuntimeDataInspector>().storedVariableData = tempData;
+            assetRef.GetComponent<Object_RuntimeDataInspector>().SendVariableDataToScripts();
         }
     }
-    
+
+
+    //=-----------------=
+    // External Functions
+    //=-----------------=
     /// <summary>
-    /// Loads a level from a string
+    /// Saves the current state of the level to a file.
     /// </summary>
-    /// <param name="_levelFile">The file path to load the level data from.</param>
-     public void LoadRawLevel(string rawleveldata)
-    {
-        var data = JsonUtility.FromJson<LevelData>(rawleveldata);
+    /// <param name="_filePath">The file path to save the level data to.</param>
+    public void SaveLevel(string _filePath)
+    { 
+        // Create a new LevelData instance to store the level information.
+        var data = new LevelData();
         
-        foreach (var tilemap in tilemaps) tilemap.ClearAllTiles();
-        for (int i = 0; i < assetsRoot.transform.childCount; i++)
-        {
-            Destroy(assetsRoot.transform.GetChild(i).gameObject);
-        }
-
-        // Load tiles
-        for (var i = 0; i < data.tiles.Count; i++)
-        {
-            TileBase tempTile = null;
-
-            foreach (var group in tileMemory)
-            {
-                if (group.tiles.Find(t => t.name == data.tiles[i].id))
-                {
-                    tempTile = group.tiles.Find(t => t.name == data.tiles[i].id);
-                    break;
-                }
-            }
-            
-            if (tempTile == null) continue;
-            tilemaps[data.tiles[i].layer].SetTile(data.tiles[i].position, tempTile);
-        }
+        SaveTiles(data);
+        SaveAssets(data);
         
-        // Load assets
-        for (int i = 0; i < data.assets.Count; i++)
-        {
-            GameObject tempAsset = null;
-            Vector3 tempPosition = new Vector3();
-            //int tempUniqueId = 0;
-            List<VariableData> tempData = new List<VariableData>();
-
-            foreach (var group in assetMemory)
-            {
-                if (group.assets.Find(t => t.name == data.assets[i].id))
-                {
-                    tempAsset = group.assets.Find(t => t.name == data.assets[i].id);
-                    tempPosition = data.assets[i].unsnappedPosition;
-                    tempData = data.assets[i].assetData;
-                    //tempUniqueId = data.assets[i].uniqueId;
-                    break;
-                }
-            }
-            
-            if (tempAsset == null) continue;
-            var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
-            assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
-            /*if (assetRef.GetComponent<Asset_UniqueInstanceId>())
-            {
-                assetRef.GetComponent<Asset_UniqueInstanceId>().Id = tempUniqueId;
-            }*/
-            if (assetRef.GetComponent<Object_RuntimeDataInspector>())
-            {
-                assetRef.GetComponent<Object_RuntimeDataInspector>().storedVariableData = tempData;
-                assetRef.GetComponent<Object_RuntimeDataInspector>().SendVariableDataToScripts();
-            }
-        }
+        // Convert the level data to JSON format
+        var json = JsonUtility.ToJson(data, true);
+        
+        // Write the JSON data to the specified file
+        File.WriteAllText(_filePath, json); // Save JSON data to file
     }
     
     /// <summary>
@@ -353,87 +275,9 @@ public class System_LevelManager : MonoBehaviour
     { 
         // Create a new LevelData instance to store the level information.
         var data = new LevelData();
-
-        // Save tile data
-        foreach (var tilemap in tilemaps)
-        {
-            // Get the size of the tilemap
-            var bounds = tilemap.cellBounds;
         
-            // Iterate through each tile in the tilemap
-            for (var x = bounds.min.x; x < bounds.max.x; x++)
-            {
-                for (var y = bounds.min.y; y < bounds.max.y; y++)
-                {
-                    // Check each tileMemory group to see if the tile exists
-                    TileBase tempTile = null;
-                    foreach (var group in tileMemory)
-                    {
-                        // If the tile exists in tileMemory, save its data
-                        if (group.tiles.Find(t => t == tilemap.GetTile(new Vector3Int(x, y, 0))))
-                        {
-                            tempTile = group.tiles.Find(t => t == tilemap.GetTile(new Vector3Int(x, y, 0)));
-                            break;
-                        }
-                    }
-
-                    // If the tile is not found, skip it
-                    if (tempTile == null) continue;
-                
-                    // Add the tile data to the level data
-                    SpotData newSpotData = new SpotData();
-                    newSpotData.id = tempTile.name; // Tile name
-                    newSpotData.position = new Vector3Int(x, y, 0); // Tile position
-                    newSpotData.layer = tilemaps.IndexOf(tilemap); // Tilemap layer
-                    newSpotData.layerID = tilemap.name; // Tilemap name
-                    data.tiles.Add(newSpotData); // Add tile data to the level data
-                }
-            }
-        }
-        
-        // Save object data
-        // Find all objects with an asset_instanceID component
-        // For each one, see if we can find the root asset in assetMemory
-        // If not, skip it
-        // else, add the asset data for name, unique id, position, and any variable data
-        for (int i = 0; i < assetsRoot.transform.childCount; i++)
-        {
-            GameObject tempAsset = null;
-            foreach (var group in assetMemory)
-            {
-                if (group.assets.Find(t => t.name == assetsRoot.transform.GetChild(i).gameObject.name))
-                {
-                    // If the asset is found in assetMemory, set it as tempAsset
-                    tempAsset = assetsRoot.transform.GetChild(i).gameObject;
-                    break;
-                }
-            }
-            
-            // If the asset is not found in assetMemory, skip it
-            if (tempAsset == null) continue;
-            
-            // Create a new SpotData instance to store the asset data
-            SpotData newSpotData = new SpotData();
-            newSpotData.id = tempAsset.name; // Asset name
-            newSpotData.unsnappedPosition = tempAsset.transform.position; // Asset position
-            
-            // If the asset has an Object_RuntimeDataInspector component, inspect it for variable data
-            if (tempAsset.GetComponent<Object_RuntimeDataInspector>())
-            {
-                tempAsset.GetComponent<Object_RuntimeDataInspector>().Inspect();
-                newSpotData.assetData = tempAsset.GetComponent<Object_RuntimeDataInspector>().storedVariableData;
-            }
-            else
-            {
-                newSpotData.assetData = new List<VariableData>();
-            }
-            
-            // NEED LAYER/DEPTH ASSIGNMENT HERE
-            // newSpotData.layer = tempAsset.layer; // Assign layer information
-            
-            // Add the asset data to the level data
-            data.assets.Add(newSpotData);
-        }
+        SaveTiles(data);
+        SaveAssets(data);
         
         // Convert the level data to JSON format
         var json = JsonUtility.ToJson(data, true);
@@ -442,7 +286,42 @@ public class System_LevelManager : MonoBehaviour
         return json;
     }
 
+    /// <summary>
+    /// Loads a level from a file.
+    /// </summary>
+    /// <param name="_levelFile">The file path to load the level data from.</param>
+     public void LoadLevel(string _levelFile)
+    {
+        var json = File.ReadAllText(_levelFile);
+        LoadRawLevel(json);
+    }
+    
+    /// <summary>
+    /// Loads a level from a string
+    /// </summary>
+    /// <param name="_jsonleveldata">The file path to load the level data from.</param>
+     public void LoadRawLevel(string _jsonleveldata)
+    {
+        var data = JsonUtility.FromJson<LevelData>(_jsonleveldata);
+        
+        foreach (var tilemap in tilemaps) tilemap.ClearAllTiles();
+        for (int i = 0; i < assetsRoot.transform.childCount; i++)
+        {
+            Destroy(assetsRoot.transform.GetChild(i).gameObject);
+        }
 
+        LoadTiles(data);
+        LoadAssets(data);
+    }
+
+    public void LoadLevelFromMemory(string _levelID)
+    {
+        print (Application.dataPath);
+        if (Application.dataPath.Contains("map"))
+        {
+            
+        }
+    }
     
     
     public void ModifyLevelFile(string mode)

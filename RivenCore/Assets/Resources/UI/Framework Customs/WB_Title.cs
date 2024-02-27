@@ -25,6 +25,7 @@ public class WB_Title : MonoBehaviour
     //=-----------------=
     private GameInstance gameInstance;
     private System_SceneLoader sceneLoader;
+    private System_LevelManager levelManager; // Added for loading the overworld levels from Cartographer
     [SerializeField] private Button Bttn_MainGame, Bttn_Extras, Bttn_Ranking, Bttn_Settings, Bttn_Quit;
     [SerializeField] private GameObject UI_Extras, UI_Ranking, UI_Settings;
 
@@ -35,6 +36,7 @@ public class WB_Title : MonoBehaviour
     {
         gameInstance = FindObjectOfType<GameInstance>();
         sceneLoader = FindObjectOfType<System_SceneLoader>();
+        levelManager = FindObjectOfType<System_LevelManager>();
         Bttn_MainGame.onClick.AddListener(delegate { OnClick("MainGame"); });
         Bttn_Extras.onClick.AddListener(delegate { OnClick("Extras"); });
         Bttn_Ranking.onClick.AddListener(delegate { OnClick("Ranking"); });
@@ -52,7 +54,8 @@ public class WB_Title : MonoBehaviour
         {
             case "MainGame":
                 if (!sceneLoader) sceneLoader = FindObjectOfType<System_SceneLoader>();
-                sceneLoader.LoadScene("Dev_Test");
+                sceneLoader.LoadScene("Overworld");
+                levelManager.LoadLevelFromMemory("ow_c1s1_howelfen");
                 break;
             case "Extras":
                 if (!gameInstance) gameInstance = FindObjectOfType<GameInstance>();

@@ -46,6 +46,7 @@ public class Tile_Paralax : MonoBehaviour
     private void Update()
     {
         currentCamera = FindObjectOfType<Camera>(false);
+        if (!currentCamera) return;
         
         // Only set the scale to the parallax scale if the correct gamemode is active
         transform.localScale = gameInstance.GetCurrentGamemode().Contains("Topdown2D") ? parallaxScale : originalScale;

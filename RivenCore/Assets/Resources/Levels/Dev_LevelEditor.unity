@@ -9215,34 +9215,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[7]
-      value: 
-      objectReference: {fileID: 3038924394595448503, guid: afc303e4928afd194abfb147c9b7faa3, type: 3}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[8]
-      value: 
-      objectReference: {fileID: 3436431032717455876, guid: 1f4f691ccf2a1ea4fbae54db71331d3f, type: 3}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[9]
-      value: 
-      objectReference: {fileID: 7655988478799730202, guid: be745763c7de1dc3dbf719c0ef326bcb, type: 3}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[10]
-      value: 
-      objectReference: {fileID: 1076333829582307565, guid: 30e774badf5efe7b781da411a117efb6, type: 3}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[11]
-      value: 
-      objectReference: {fileID: 2938096359294844325, guid: ceae005dc95e3a86f9a8a84d02449efe, type: 3}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[12]
-      value: 
-      objectReference: {fileID: 1609320772591196146, guid: 2762ca7c38b8586939929df8299b640f, type: 3}
-    - target: {fileID: 1918434230396971622, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
-      propertyPath: assetMemory.Array.data[4].assets.Array.data[13]
-      value: 
-      objectReference: {fileID: 3436431032717455876, guid: ceb178b7bccd9bcb5ab62b2d4ad9388f, type: 3}
     - target: {fileID: 2128968533710696330, guid: 73e9be62fd8f682cb8229f328646c94a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -16784,7 +16756,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1986051530}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.9999197
+  m_Size: 0.9999903
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -25739,7 +25711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00026129757, y: 0}
+  m_AnchoredPosition: {x: -0.000029287869, y: 0}
   m_SizeDelta: {x: -0.9939847, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2038735927
