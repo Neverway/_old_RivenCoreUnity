@@ -772,7 +772,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d9ff86fad6cd830d1a752ed672ce03b0, type: 3}
   - {fileID: 21300000, guid: 7ac43652afadf5168b3afabac8cde6ce, type: 3}
   missingTileFallback: {fileID: 0}
-  missingObjectFallback: {fileID: 9087686607799845790, guid: 31452f0abba9596b58fe9eb2241face5, type: 3}
+  missingObjectFallback: {fileID: 6965910688571006578, guid: 0d2f9a2fc0684444e948d48d2309d85f, type: 3}
   missingSpriteFallback: {fileID: 0}
   tilemaps: []
   assetsRoot: {fileID: 0}
