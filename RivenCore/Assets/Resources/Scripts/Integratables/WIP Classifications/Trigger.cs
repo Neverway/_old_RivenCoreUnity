@@ -49,7 +49,6 @@ public class Trigger : MonoBehaviour
             // Add the entity to the list if they are not already present
             if (!entitiesInTrigger.Contains(targetEnt))
             {
-                print("Added Ent");
                 entitiesInTrigger.Add(targetEnt);
             }
         }
@@ -64,7 +63,6 @@ public class Trigger : MonoBehaviour
             // Add the entity to the list if they are not already present
             if (!propsInTrigger.Contains(targetProp))
             {
-                print("Added Prop");
                 propsInTrigger.Add(targetProp);
             }
         }
