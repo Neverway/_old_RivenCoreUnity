@@ -16815,7 +16815,7 @@
         {
             "layer": 0,
             "layerID": "",
-            "id": "[Prop] AutumnRuins Pushbox",
+            "id": "[Prop] Missing Object",
             "uniqueId": 0,
             "position": {
                 "x": 0,
@@ -16823,14 +16823,34 @@
                 "z": 0
             },
             "unsnappedPosition": {
-                "x": -5.057000160217285,
-                "y": -3.562999963760376,
+                "x": 0.0,
+                "y": 0.0,
                 "z": 0.0
             },
             "assetData": [
                 {
                     "name": "depthLayer",
                     "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
                     "value": "0"
                 }
             ]
@@ -17110,7 +17130,7 @@
         {
             "layer": 0,
             "layerID": "",
-            "id": "[Prop] AutumnRuins Button",
+            "id": "[Prop] AutumnRuins Switch",
             "uniqueId": 0,
             "position": {
                 "x": 0,
@@ -17129,9 +17149,29 @@
                     "value": "0"
                 },
                 {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
                     "name": "signalChannel",
                     "type": "System.String",
-                    "value": "button"
+                    "value": "3"
                 },
                 {
                     "name": "isPowered",
@@ -17139,19 +17179,464 @@
                     "value": "False"
                 },
                 {
-                    "name": "onOccupiedSignal",
-                    "type": "System.String",
-                    "value": "button"
-                },
-                {
-                    "name": "onUnoccupiedSignal",
+                    "name": "owningTeam",
                     "type": "System.String",
                     "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "onInteractSignal",
+                    "type": "System.String",
+                    "value": "3"
                 },
                 {
                     "name": "resetSignal",
                     "type": "System.String",
                     "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "resetsAutomatically",
+                    "type": "System.Boolean",
+                    "value": "True"
+                },
+                {
+                    "name": "hideIndicator",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "useTalkIndicator",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Switch",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -7.0,
+                "y": -3.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "2"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "onInteractSignal",
+                    "type": "System.String",
+                    "value": "2"
+                },
+                {
+                    "name": "resetSignal",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "resetsAutomatically",
+                    "type": "System.Boolean",
+                    "value": "True"
+                },
+                {
+                    "name": "hideIndicator",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "useTalkIndicator",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Switch",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -8.0,
+                "y": -3.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "1"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "onInteractSignal",
+                    "type": "System.String",
+                    "value": "1"
+                },
+                {
+                    "name": "resetSignal",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "resetsAutomatically",
+                    "type": "System.Boolean",
+                    "value": "True"
+                },
+                {
+                    "name": "hideIndicator",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "useTalkIndicator",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] Autumn Lamp",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -8.0,
+                "y": -2.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "1"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "intensity",
+                    "type": "System.Single",
+                    "value": "2"
+                },
+                {
+                    "name": "range",
+                    "type": "System.Single",
+                    "value": "15"
+                },
+                {
+                    "name": "colorRed",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "colorGreen",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorBlue",
+                    "type": "System.Single",
+                    "value": "0.31"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] Autumn Lamp",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -7.0,
+                "y": -2.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "2"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "intensity",
+                    "type": "System.Single",
+                    "value": "2"
+                },
+                {
+                    "name": "range",
+                    "type": "System.Single",
+                    "value": "15"
+                },
+                {
+                    "name": "colorRed",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "colorGreen",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorBlue",
+                    "type": "System.Single",
+                    "value": "0.31"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] Autumn Lamp",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -6.0,
+                "y": -2.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "3"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "intensity",
+                    "type": "System.Single",
+                    "value": "2"
+                },
+                {
+                    "name": "range",
+                    "type": "System.Single",
+                    "value": "15"
+                },
+                {
+                    "name": "colorRed",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "colorGreen",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorBlue",
+                    "type": "System.Single",
+                    "value": "0.31"
                 }
             ]
         }
