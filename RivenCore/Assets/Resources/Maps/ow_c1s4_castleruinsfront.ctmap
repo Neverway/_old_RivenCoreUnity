@@ -91055,6 +91055,23 @@
         {
             "layer": 8,
             "layerID": "L1 Collision",
+            "id": "Collision_5",
+            "uniqueId": 0,
+            "position": {
+                "x": 39,
+                "y": 21,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
             "id": "Collision_7",
             "uniqueId": 0,
             "position": {
@@ -91258,34 +91275,6 @@
         }
     ],
     "assets": [
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Light] Sun",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": -21.0,
-                "y": -25.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": ""
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
-                }
-            ]
-        },
         {
             "layer": 0,
             "layerID": "",
@@ -91516,6 +91505,257 @@
                     "type": "System.Single",
                     "value": "-0.01"
                 },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Trigger] Load Map",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 39.0,
+                "y": 21.5,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "0.25"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "levelID",
+                    "type": "System.String",
+                    "value": "ow_c1s5_castleruinsinside"
+                },
+                {
+                    "name": "exitOffsetX",
+                    "type": "System.Single",
+                    "value": "-92.5"
+                },
+                {
+                    "name": "exitOffsetY",
+                    "type": "System.Single",
+                    "value": "-38"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[FX] Leaves",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 4.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "50"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "0.1"
+                },
+                {
+                    "name": "scaleZ",
+                    "type": "System.Single",
+                    "value": "5"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[FX] Leaves",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 20.0,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "50"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "0.1"
+                },
+                {
+                    "name": "scaleZ",
+                    "type": "System.Single",
+                    "value": "5"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[FX] Leaves",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 7.0,
+                "y": 26.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "50"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "0.1"
+                },
+                {
+                    "name": "scaleZ",
+                    "type": "System.Single",
+                    "value": "5"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[FX] Leaves",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 26.0,
+                "y": 25.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "50"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "0.1"
+                },
+                {
+                    "name": "scaleZ",
+                    "type": "System.Single",
+                    "value": "5"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[FX] Leaves",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 9.0,
+                "y": 14.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "50"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "0.1"
+                },
+                {
+                    "name": "scaleZ",
+                    "type": "System.Single",
+                    "value": "5"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Light] Sun",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 9.0,
+                "y": 6.0,
+                "z": 0.0
+            },
+            "assetData": [
                 {
                     "name": "signalChannel",
                     "type": "System.String",

@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7874037791496066305, guid: 93020eb81033f5e3aa94d73b51021bae, type: 3}
       propertyPath: m_Name
-      value: '[Prop] Missing Object Variant'
+      value: '[Prop] Missing Object'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

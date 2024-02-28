@@ -3,6 +3,1213 @@
         {
             "layer": 0,
             "layerID": "L1 Ground",
+            "id": "AutumnCastle_24",
+            "uniqueId": 0,
+            "position": {
+                "x": -55,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -55,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
+            "id": "AutumnCastle_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "L1 Ground",
             "id": "AutumnCastle_25",
             "uniqueId": 0,
             "position": {
@@ -4183,6 +5390,958 @@
             "assetData": []
         },
         {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnCastle_19",
+            "uniqueId": 0,
+            "position": {
+                "x": -55,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnIndoors_9",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnIndoors_18",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnIndoors_9",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnIndoors_18",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnIndoors_19",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnIndoors_18",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnIndoors_26",
+            "uniqueId": 0,
+            "position": {
+                "x": -3,
+                "y": -21,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnIndoors_9",
+            "uniqueId": 0,
+            "position": {
+                "x": -2,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnIndoors_25",
+            "uniqueId": 0,
+            "position": {
+                "x": -1,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 1,
+            "layerID": "L1 Path",
+            "id": "AutumnIndoors_9",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -55,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_16",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
             "layer": 2,
             "layerID": "L1 Wall 1",
             "id": "AutumnCastle_21",
@@ -5328,6 +7487,210 @@
             "uniqueId": 0,
             "position": {
                 "x": 16,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_8",
+            "uniqueId": 0,
+            "position": {
+                "x": -55,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_7",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_7",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_8",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_7",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_8",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_7",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_7",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_8",
+            "uniqueId": 0,
+            "position": {
+                "x": -4,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_7",
+            "uniqueId": 0,
+            "position": {
+                "x": 1,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_17",
+            "uniqueId": 0,
+            "position": {
+                "x": 14,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 3,
+            "layerID": "L1 Wall 2",
+            "id": "AutumnIndoors_7",
+            "uniqueId": 0,
+            "position": {
+                "x": 15,
                 "y": -13,
                 "z": 0
             },
@@ -5533,6 +7896,788 @@
             "position": {
                 "x": 10,
                 "y": 3,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -56,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -56,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -56,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -55,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -55,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -15,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -39,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -39,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -39,
+                "y": -17,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -39,
+                "y": -16,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 8,
+            "layerID": "L1 Collision",
+            "id": "Collision_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -39,
+                "y": -15,
                 "z": 0
             },
             "unsnappedPosition": {
@@ -8355,6 +11500,397 @@
             "position": {
                 "x": 17,
                 "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -55,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_10",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_5",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_3",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -18,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_5",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -14,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_5",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -13,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_0",
+            "uniqueId": 0,
+            "position": {
+                "x": -54,
+                "y": -12,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -53,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -52,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -51,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -50,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -49,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -48,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -47,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -46,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -45,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -44,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -43,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -42,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_1",
+            "uniqueId": 0,
+            "position": {
+                "x": -41,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_12",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -20,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_4",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -19,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 11,
+            "layerID": "L2 Wall 1",
+            "id": "AutumnCastle_2",
+            "uniqueId": 0,
+            "position": {
+                "x": -40,
+                "y": -12,
                 "z": 0
             },
             "unsnappedPosition": {
@@ -9821,16 +13357,6 @@
                     "name": "positionOffsetY",
                     "type": "System.Single",
                     "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": ""
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
                 }
             ]
         },
@@ -10786,16 +14312,6 @@
                     "name": "positionOffsetY",
                     "type": "System.Single",
                     "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "door1"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
                 }
             ]
         },
@@ -11000,23 +14516,6 @@
                     "value": "False"
                 }
             ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "Player Start",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": -23.0,
-                "y": -21.0,
-                "z": 0.0
-            },
-            "assetData": []
         },
         {
             "layer": 0,
@@ -11779,6 +15278,732 @@
                     "value": "bigdoor1"
                 }
             ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Light] Point",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -40.0,
+                "y": -12.0,
+                "z": -1.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "intensity",
+                    "type": "System.Single",
+                    "value": "2"
+                },
+                {
+                    "name": "range",
+                    "type": "System.Single",
+                    "value": "15"
+                },
+                {
+                    "name": "colorRed",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "colorGreen",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorBlue",
+                    "type": "System.Single",
+                    "value": "0.31"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Light] Point",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -53.0,
+                "y": -12.0,
+                "z": -1.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "intensity",
+                    "type": "System.Single",
+                    "value": "2"
+                },
+                {
+                    "name": "range",
+                    "type": "System.Single",
+                    "value": "15"
+                },
+                {
+                    "name": "colorRed",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "colorGreen",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorBlue",
+                    "type": "System.Single",
+                    "value": "0.31"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Pillar",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -51.0,
+                "y": -15.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Pillar",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -48.0,
+                "y": -15.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Pillar",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -45.0,
+                "y": -15.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Pillar",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -42.0,
+                "y": -15.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Pillar",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -51.0,
+                "y": -19.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Pillar",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -48.0,
+                "y": -19.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Pillar",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -45.0,
+                "y": -19.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Pillar",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -42.0,
+                "y": -19.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Light] Point",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -40.0,
+                "y": -18.0,
+                "z": -1.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "intensity",
+                    "type": "System.Single",
+                    "value": "2"
+                },
+                {
+                    "name": "range",
+                    "type": "System.Single",
+                    "value": "15"
+                },
+                {
+                    "name": "colorRed",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "colorGreen",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorBlue",
+                    "type": "System.Single",
+                    "value": "0.31"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Light] Point",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -53.0,
+                "y": -18.0,
+                "z": -1.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "1"
+                },
+                {
+                    "name": "intensity",
+                    "type": "System.Single",
+                    "value": "2"
+                },
+                {
+                    "name": "range",
+                    "type": "System.Single",
+                    "value": "15"
+                },
+                {
+                    "name": "colorRed",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "colorGreen",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorBlue",
+                    "type": "System.Single",
+                    "value": "0.31"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Light] Point",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -46.0,
+                "y": -24.0,
+                "z": -2.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "2"
+                },
+                {
+                    "name": "intensity",
+                    "type": "System.Single",
+                    "value": "2"
+                },
+                {
+                    "name": "range",
+                    "type": "System.Single",
+                    "value": "15"
+                },
+                {
+                    "name": "colorRed",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "colorGreen",
+                    "type": "System.Single",
+                    "value": "0.7"
+                },
+                {
+                    "name": "colorBlue",
+                    "type": "System.Single",
+                    "value": "0.31"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Trigger] Load Map",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -54.75,
+                "y": -16.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "2"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.25"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "levelID",
+                    "type": "System.String",
+                    "value": "ow_c1s4_castleruinsfront"
+                },
+                {
+                    "name": "exitOffsetX",
+                    "type": "System.Single",
+                    "value": "92.5"
+                },
+                {
+                    "name": "exitOffsetY",
+                    "type": "System.Single",
+                    "value": "38"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[FX] Fog",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -14.0,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "Player Start",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -52.0,
+                "y": -16.0,
+                "z": 0.0
+            },
+            "assetData": []
         }
     ]
 }

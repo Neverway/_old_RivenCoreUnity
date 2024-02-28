@@ -184,7 +184,12 @@ public class System_LevelManager : MonoBehaviour
             }
             
             // If the asset is not found in assetMemory, skip it
-            if (tempAsset == null) tempAsset = missingObjectFallback;
+            if (tempAsset == null)
+            {
+                tempAsset = assetsRoot.transform.GetChild(i).gameObject;
+                
+                print($"Object {assetsRoot.transform.GetChild(i).gameObject.name} not found! Saving placeholder object.");
+            }
             
             // Create a new SpotData instance to store the asset data
             SpotData newSpotData = new SpotData();
@@ -248,8 +253,15 @@ public class System_LevelManager : MonoBehaviour
                     break;
                 }
             }
-            
-            if (tempAsset == null) tempAsset = missingObjectFallback;
+
+            if (tempAsset == null)
+            {
+                tempAsset = missingObjectFallback;
+                tempAsset.name = spotdata.id;
+                tempPosition = spotdata.unsnappedPosition;
+                tempData = spotdata.assetData;
+                print($"Object {spotdata.id} not found! Placing fallback object.");
+            }
             var assetRef = Instantiate(tempAsset, tempPosition, new Quaternion(0, 0, 0, 0), assetsRoot.transform);
             assetRef.name = assetRef.name.Replace("(Clone)", "").Trim();
             if (!assetRef.GetComponent<Object_RuntimeDataInspector>()) continue;
