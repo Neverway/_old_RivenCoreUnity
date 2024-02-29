@@ -27,7 +27,7 @@ public class UI_Text_EntityItems : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    [SerializeField] private TMP_Text[] textTargets;
+    public TMP_Text[] textTargets;
 
 
     //=-----------------=
@@ -143,4 +143,5 @@ public class UI_Text_EntityItems : MonoBehaviour
         textTargets[_highlightedIndex].color = new Color(1, 1, 1, 1);
         textTargets[_highlightedIndex].fontStyle |= FontStyles.Underline; // Enable text underline
     }
+    
 }

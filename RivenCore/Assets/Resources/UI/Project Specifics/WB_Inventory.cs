@@ -16,6 +16,7 @@ public class WB_Inventory : MonoBehaviour
     // Public Variables
     //=-----------------=
     [Range(0,9)] public int currentInventoryIndex;
+    public bool isAllowingNavigation;
 
 
     //=-----------------=
@@ -28,6 +29,7 @@ public class WB_Inventory : MonoBehaviour
     //=-----------------=
     private InputActions.TopDown2DActions topdown2DActions;
     [SerializeField] private UI_Text_EntityItems entityItemsText;
+    [SerializeField] private WB_Inventory_Actions inventoryActions;
 
 
     //=-----------------=
@@ -56,6 +58,7 @@ public class WB_Inventory : MonoBehaviour
     private void ProcessUserInput()
     {
         // Navigate inventory
+        if (!isAllowingNavigation) return;
         if (topdown2DActions.Move.WasPressedThisFrame())
         {
             var moveDirection = topdown2DActions.Move.ReadValue<Vector2>();
@@ -63,6 +66,12 @@ public class WB_Inventory : MonoBehaviour
             else if (moveDirection.y == -1) NavigateInventory("Down");
             if (moveDirection.x == -1) NavigateInventory("Left");
             else if (moveDirection.x == 1) NavigateInventory("Right");
+        }
+        if (topdown2DActions.Interact.WasPressedThisFrame())
+        {
+            if (entityItemsText.textTargets[currentInventoryIndex].text == "---") return;
+            inventoryActions.ShowActionMenu(currentInventoryIndex);
+            isAllowingNavigation = false;
         }
     }
 
@@ -89,8 +98,32 @@ public class WB_Inventory : MonoBehaviour
         }
     }
 
+    private IEnumerator WaitForKeypressDelay()
+    {
+        yield return new WaitForEndOfFrame();
+        isAllowingNavigation = true;
+    }
+
 
     //=-----------------=
     // External Functions
     //=-----------------=
+    public void EnableNavigation()
+    {
+        StartCoroutine(WaitForKeypressDelay());
+    }
+
+    public void EquipItem()
+    {
+        if (!entityItemsText.targetEntity) return;
+        if (!entityItemsText.targetEntity.GetComponent<Entity_Inventory>()) return;
+        entityItemsText.targetEntity.GetComponent<Entity_Inventory>().EquipItem(currentInventoryIndex);
+    }
+
+    public void DiscardItem()
+    {
+        if (!entityItemsText.targetEntity) return;
+        if (!entityItemsText.targetEntity.GetComponent<Entity_Inventory>()) return;
+        entityItemsText.targetEntity.GetComponent<Entity_Inventory>().DiscardItem(currentInventoryIndex);
+    }
 }

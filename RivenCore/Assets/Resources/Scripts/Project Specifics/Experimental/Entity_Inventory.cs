@@ -98,6 +98,42 @@ public class Entity_Inventory : MonoBehaviour
         }
     }
 
+    public void EquipItem(int _inventorySlot)
+    {
+        Item previouslyEquippedItem = null;
+        switch (items[_inventorySlot].category)
+        {
+            case (0):
+                previouslyEquippedItem = equippedItems[0];
+                equippedItems[0] = items[_inventorySlot];
+                items[_inventorySlot] = previouslyEquippedItem;
+                break;
+            case (1):
+                previouslyEquippedItem = equippedItems[1];
+                equippedItems[1] = items[_inventorySlot];
+                items[_inventorySlot] = previouslyEquippedItem;
+                break;
+            case (2):
+                previouslyEquippedItem = equippedItems[2];
+                equippedItems[2] = items[_inventorySlot];
+                items[_inventorySlot] = previouslyEquippedItem;
+                break;
+            case (3):
+                previouslyEquippedItem = equippedItems[3];
+                equippedItems[3] = items[_inventorySlot];
+                items[_inventorySlot] = previouslyEquippedItem;
+                break;
+        }
+    }
+
+    public void DiscardItem(int _inventorySlot)
+    {
+        if (items[_inventorySlot].isDiscardable)
+        {
+            items[_inventorySlot] = null;
+        }
+    }
+
     public void UseItem()
     {
         if (equippedItems[currentAction] == null || currentlyUsingItem) return;
