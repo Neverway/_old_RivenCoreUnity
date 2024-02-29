@@ -702,6 +702,8 @@ MonoBehaviour:
     - {fileID: 804519152972322562, guid: e88ee991930cf65568463432edce908f, type: 3}
     - {fileID: 9944334677598341, guid: cda7b93935484d676bf6b9224a75e677, type: 3}
     - {fileID: 1617431652032766147, guid: 7c90ca13e79f59d66be1bb0847550fe3, type: 3}
+    - {fileID: 1718535796786174242, guid: 88e4c54b81bd307679639d750586cc24, type: 3}
+    - {fileID: 1660725665730264201, guid: dd4619b007e34381ea5a525e1892a203, type: 3}
     spacers: []
   - name: Autumn Forest
     assets:
