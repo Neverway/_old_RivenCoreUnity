@@ -25,6 +25,7 @@ public class System_LevelManager : MonoBehaviour
     public List<AssetMemoryGroup> assetMemory;
     [Tooltip("A list of all the sprites that can be used for decor props for the current project")]
     public List<Sprite> spriteMemory;
+    public List<Item> itemMemory;
     public Tile missingTileFallback;
     public GameObject missingObjectFallback;
     public Tile missingSpriteFallback;
@@ -393,6 +394,16 @@ public class System_LevelManager : MonoBehaviour
             {
                 if (asset.name == assetID) return asset;
             }
+        }
+
+        return null;
+    }
+
+    public Item GetItemFromMemory(string _itemID)
+    {
+        foreach (var item in itemMemory)
+        {
+                if (item.itemName == _itemID) return item;
         }
 
         return null;

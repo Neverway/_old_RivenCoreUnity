@@ -684,6 +684,7 @@ MonoBehaviour:
     - {fileID: 1123480946392113149, guid: 86329e4bcfa0131fd8198c7c125a57f5, type: 3}
     - {fileID: 7827312515734789983, guid: 86129b8a83516689aab0422a78b65789, type: 3}
     - {fileID: 5610943949167059174, guid: 07110998b1df447c8a28af1e7297e3ef, type: 3}
+    - {fileID: 2264676129448382336, guid: 101230000bf457edd97017c4b356948f, type: 3}
     - {fileID: 7827312515734789983, guid: 06b4c9fb2e9463baca0fedb54f605837, type: 3}
     - {fileID: 9003606718857789944, guid: 8b6945543f24ca990ae30833279613af, type: 3}
     - {fileID: 1326625101790582152, guid: eff0b4b88d8a9d909a4c4c22c3a38f05, type: 3}
@@ -782,6 +783,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f56dea1a40937e64dbe109d38f2c3a87, type: 3}
   - {fileID: 21300000, guid: d9ff86fad6cd830d1a752ed672ce03b0, type: 3}
   - {fileID: 21300000, guid: 7ac43652afadf5168b3afabac8cde6ce, type: 3}
+  itemMemory:
+  - {fileID: 11400000, guid: b25e38c9519c51e1582feec15c391e6a, type: 2}
+  - {fileID: 11400000, guid: 0af54f640c4f84a828667dcee6ed9ae9, type: 2}
+  - {fileID: 11400000, guid: 1603cd94937a3d905855f24a738bfe05, type: 2}
+  - {fileID: 11400000, guid: 29ebb396d9e5a61239f962f669a1a2c6, type: 2}
+  - {fileID: 11400000, guid: 23cd701cfec2d3f5da37901c43baaf36, type: 2}
+  - {fileID: 11400000, guid: 43663065add0bc6caae4490ca694c668, type: 2}
+  - {fileID: 11400000, guid: 5ba61b39dd95e088295e54174d44ac87, type: 2}
+  - {fileID: 11400000, guid: cda9f0dcbeee69b1ba1088c8a40f0ef7, type: 2}
+  - {fileID: 11400000, guid: 0fa86be89f0ccee03a6b8e8f0fd98fb4, type: 2}
+  - {fileID: 11400000, guid: 6fe466fd2a5595d7a90a366bcafdda43, type: 2}
+  - {fileID: 11400000, guid: 1077b2f4a4c20915bb3cbe03a3e4b0f2, type: 2}
+  - {fileID: 11400000, guid: ed611ee8c163f90dcb517a70d79f6160, type: 2}
+  - {fileID: 11400000, guid: 7e417adde7c96a383b330a8dc1e5d5d2, type: 2}
   missingTileFallback: {fileID: 0}
   missingObjectFallback: {fileID: 6965910688571006578, guid: 0d2f9a2fc0684444e948d48d2309d85f, type: 3}
   missingSpriteFallback: {fileID: 0}

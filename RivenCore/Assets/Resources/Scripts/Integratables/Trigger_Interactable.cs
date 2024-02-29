@@ -98,8 +98,8 @@ public class Trigger_Interactable : Trigger
     //=-----------------=
     private void Interact()
     {
-        if (onInteractSignal == "" || hasBeenTriggered && !resetsAutomatically) return;
-        onInteract.Invoke();
+        if (onInteractSignal == "" || hasBeenTriggered && !resetsAutomatically){ return;}
+        onInteract.Invoke(); // Dear future me, please keep in mind that this will not be called unless the onInteractSignal is set. I don't know if I intended for it to work that way. (P.S. I am using "-" for empty activations) ~Past Liz M.
         
         // Flip the current activation state
         isPowered = !isPowered;

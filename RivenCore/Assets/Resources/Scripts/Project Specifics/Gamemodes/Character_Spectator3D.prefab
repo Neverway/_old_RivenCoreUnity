@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 9ed85f81ebb0e6d1a81146df3053af55, type: 2}
     - target: {fileID: 5542459799266477335, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: m_Name
-      value: Spectator_Character
+      value: Character_Spectator3D
       objectReference: {fileID: 0}
     - target: {fileID: 7183290310932379079, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -59,6 +59,10 @@ PrefabInstance:
     - target: {fileID: 7183290310932379079, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137317661361399833, guid: 7875267240746e17cbf682c2d52513ec, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

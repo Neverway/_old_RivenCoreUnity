@@ -147,10 +147,13 @@ public class WB_LevelEditor : MonoBehaviour
     /// </summary>
     private void InitializeEventListeners()
     {
+        
         // File buttons
         fileButtons[0].onClick.AddListener(NewMap);
+        if (!levelManager) levelManager = FindObjectOfType<System_LevelManager>();
         fileButtons[1].onClick.AddListener(() => { levelManager.ModifyLevelFile("Load"); });
         fileButtons[2].onClick.AddListener(SaveCurrentMap);
+        if (!levelManager) levelManager = FindObjectOfType<System_LevelManager>();
         fileButtons[3].onClick.AddListener(() => { levelManager.ModifyLevelFile("Save"); });
         fileButtons[6].onClick.AddListener(Application.Quit);
 
@@ -161,6 +164,7 @@ public class WB_LevelEditor : MonoBehaviour
         }
 
         // Filebar buttons
+        if (!levelManager) levelManager = FindObjectOfType<System_LevelManager>();
         filebarButtons[0].onClick.AddListener(() => { levelManager.ModifyLevelFile("Load"); });
         filebarButtons[1].onClick.AddListener(SaveCurrentMap);
         filebarButtons[2].onClick.AddListener(() => { StartOrStopTest(true); });
