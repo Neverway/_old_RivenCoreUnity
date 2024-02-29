@@ -23,27 +23,30 @@ public class WB_Title_Extras : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
+    private System_SceneLoader sceneLoader;
     [SerializeField] private Button Bttn_Back;
+    [SerializeField] private Button Bttn_Extra1, Bttn_Extra2, Bttn_Extra3;
 
     //=-----------------=
     // Mono Functions
     //=-----------------=
     private void Start()
     {
-        Bttn_Back.onClick.AddListener(delegate { OnClick("Back"); });
+        Bttn_Back.onClick.AddListener(() => { Destroy(gameObject); });
+        Bttn_Extra1.onClick.AddListener(() =>
+        {
+            if (!sceneLoader)
+            {
+                sceneLoader = FindObjectOfType<System_SceneLoader>();
+            }
+            sceneLoader.LoadScene("Dev_LevelEditor");
+        });
     }
 
 
     //=-----------------=
     // Internal Functions
     //=-----------------=
-    private void OnClick(string button)
-    {
-        if (button == "Back")
-        {
-            Destroy(gameObject);
-        }
-    }
 
 
     //=-----------------=
