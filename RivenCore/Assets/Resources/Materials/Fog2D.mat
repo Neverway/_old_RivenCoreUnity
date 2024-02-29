@@ -40,8 +40,8 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Power: 3.5
-    - _Scale: 200
+    - _Power: 5
+    - _Scale: 150
     - _Speed: 0.0025
     m_Colors:
     - _Color: {r: 0.7188679, g: 0.7188679, b: 0.7188679, a: 1}
