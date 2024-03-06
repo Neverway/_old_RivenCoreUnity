@@ -7401,6 +7401,40 @@
             "id": "AutumnCastle_21",
             "uniqueId": 0,
             "position": {
+                "x": 13,
+                "y": 2,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_11",
+            "uniqueId": 0,
+            "position": {
+                "x": 13,
+                "y": 3,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 2,
+            "layerID": "L1 Wall 1",
+            "id": "AutumnCastle_21",
+            "uniqueId": 0,
+            "position": {
                 "x": 14,
                 "y": -14,
                 "z": 0
@@ -12753,40 +12787,6 @@
         {
             "layer": 11,
             "layerID": "L2 Wall 1",
-            "id": "AutumnCastle_7",
-            "uniqueId": 0,
-            "position": {
-                "x": 13,
-                "y": 2,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            },
-            "assetData": []
-        },
-        {
-            "layer": 11,
-            "layerID": "L2 Wall 1",
-            "id": "AutumnCastle_2",
-            "uniqueId": 0,
-            "position": {
-                "x": 13,
-                "y": 3,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            },
-            "assetData": []
-        },
-        {
-            "layer": 11,
-            "layerID": "L2 Wall 1",
             "id": "AutumnCastle_1",
             "uniqueId": 0,
             "position": {
@@ -13309,49 +13309,6 @@
                     "name": "positionOffsetX",
                     "type": "System.Single",
                     "value": "0"
-                },
-                {
-                    "name": "positionOffsetY",
-                    "type": "System.Single",
-                    "value": "0"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
-            "id": "[Prop] Autumn Door Gate",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": 4.5,
-                "y": 2.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "0"
-                },
-                {
-                    "name": "scaleX",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleY",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "positionOffsetX",
-                    "type": "System.Single",
-                    "value": "0.5"
                 },
                 {
                     "name": "positionOffsetY",
@@ -14275,49 +14232,6 @@
         {
             "layer": 0,
             "layerID": "",
-            "id": "[Prop] Autumn Door Gate",
-            "uniqueId": 0,
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "unsnappedPosition": {
-                "x": -1.5,
-                "y": -14.0,
-                "z": 0.0
-            },
-            "assetData": [
-                {
-                    "name": "depthLayer",
-                    "type": "System.Int32",
-                    "value": "0"
-                },
-                {
-                    "name": "scaleX",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "scaleY",
-                    "type": "System.Single",
-                    "value": "1"
-                },
-                {
-                    "name": "positionOffsetX",
-                    "type": "System.Single",
-                    "value": "0.5"
-                },
-                {
-                    "name": "positionOffsetY",
-                    "type": "System.Single",
-                    "value": "0"
-                }
-            ]
-        },
-        {
-            "layer": 0,
-            "layerID": "",
             "id": "[Prop] AutumnRuins Pillar",
             "uniqueId": 0,
             "position": {
@@ -14334,7 +14248,7 @@
                 {
                     "name": "depthLayer",
                     "type": "System.Int32",
-                    "value": "1"
+                    "value": "0"
                 },
                 {
                     "name": "scaleX",
@@ -14377,7 +14291,7 @@
                 {
                     "name": "depthLayer",
                     "type": "System.Int32",
-                    "value": "1"
+                    "value": "0"
                 },
                 {
                     "name": "scaleX",
@@ -15991,6 +15905,152 @@
         {
             "layer": 0,
             "layerID": "",
+            "id": "[Trigger] Warp",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -39.0,
+                "y": -16.5,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "3"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "-0.5"
+                },
+                {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "warpID",
+                    "type": "System.String",
+                    "value": "firstpassage"
+                },
+                {
+                    "name": "exitWarpID",
+                    "type": "System.String",
+                    "value": "fallthrough"
+                },
+                {
+                    "name": "exitOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "exitOffsetY",
+                    "type": "System.Single",
+                    "value": "5"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Trigger] Warp",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -1.5,
+                "y": -24.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "-0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "owningTeam",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "affectsOwnTeam",
+                    "type": "System.Boolean",
+                    "value": "False"
+                },
+                {
+                    "name": "warpID",
+                    "type": "System.String",
+                    "value": "fallthrough"
+                },
+                {
+                    "name": "exitWarpID",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "exitOffsetX",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "exitOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
             "id": "Player Start",
             "uniqueId": 0,
             "position": {
@@ -16004,6 +16064,343 @@
                 "z": 0.0
             },
             "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Armour 2",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -46.5,
+                "y": -14.5,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0.5"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Armour 1",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -49.5,
+                "y": -14.5,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0.5"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] AutumnRuins Armour",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -43.5,
+                "y": -14.5,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "-0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0.5"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Logic] Textbox",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -57.0,
+                "y": -7.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Logic] Textbox",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -57.0,
+                "y": -8.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Logic] Textbox",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -57.0,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Logic] Textbox",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -56.0,
+                "y": -7.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Logic] Textbox",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -56.0,
+                "y": -8.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Logic] Textbox",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -56.0,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "assetData": []
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] Generic Door Gate",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": -1.5,
+                "y": -14.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": "door1"
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "layer": 0,
+            "layerID": "",
+            "id": "[Prop] Generic Door Gate",
+            "uniqueId": 0,
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "unsnappedPosition": {
+                "x": 4.5,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "assetData": [
+                {
+                    "name": "depthLayer",
+                    "type": "System.Int32",
+                    "value": "0"
+                },
+                {
+                    "name": "scaleX",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "scaleY",
+                    "type": "System.Single",
+                    "value": "1"
+                },
+                {
+                    "name": "positionOffsetX",
+                    "type": "System.Single",
+                    "value": "0.5"
+                },
+                {
+                    "name": "positionOffsetY",
+                    "type": "System.Single",
+                    "value": "0"
+                },
+                {
+                    "name": "signalChannel",
+                    "type": "System.String",
+                    "value": ""
+                },
+                {
+                    "name": "isPowered",
+                    "type": "System.Boolean",
+                    "value": "False"
+                }
+            ]
         }
     ]
 }

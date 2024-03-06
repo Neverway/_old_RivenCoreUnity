@@ -28,7 +28,7 @@ public class System_LevelManager : MonoBehaviour
     public List<Item> itemMemory;
     public Tile missingTileFallback;
     public GameObject missingObjectFallback;
-    public Tile missingSpriteFallback;
+    public Sprite missingSpriteFallback;
     [Header("READ-ONLY (Don't touch!)")]
     [Tooltip("A list of all of the 'tile layers' used in the scene")]
     public List<Tilemap> tilemaps;
@@ -403,9 +403,19 @@ public class System_LevelManager : MonoBehaviour
     {
         foreach (var item in itemMemory)
         {
-                if (item.itemName == _itemID) return item;
+            if (item.itemName == _itemID) return item;
         }
 
         return null;
+    }
+
+    public Sprite GetSpriteFromMemory(string _spriteID)
+    {
+        foreach (var sprite in spriteMemory)
+        {
+            if (sprite.name == _spriteID) return sprite;
+        }
+
+        return missingSpriteFallback;
     }
 }

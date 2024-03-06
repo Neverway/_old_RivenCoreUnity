@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1566786936114327553}
   - component: {fileID: 4786988212645953397}
   - component: {fileID: 3715486313302003108}
+  - component: {fileID: 7895677270080832391}
   m_Layer: 0
   m_Name: '[Decor]'
   m_TagString: Untagged
@@ -121,4 +122,20 @@ MonoBehaviour:
     - scaleY
     - positionOffsetX
     - positionOffsetY
+  - targetScript: {fileID: 7895677270080832391}
+    exposedVariables:
+    - spriteOverride
   storedVariableData: []
+--- !u!114 &7895677270080832391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7874037791496066305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47bc482f3743951b8af1d6c7efc1900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteOverride: none

@@ -21,7 +21,6 @@
 
 
 using System;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -119,6 +118,7 @@ public class WB_LevelEditor : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        levelManager = FindObjectOfType<System_LevelManager>();
         // Update UI elements
         UpdateUIElements();
 
@@ -164,7 +164,6 @@ public class WB_LevelEditor : MonoBehaviour
         }
 
         // Filebar buttons
-        if (!levelManager) levelManager = FindObjectOfType<System_LevelManager>();
         filebarButtons[0].onClick.AddListener(() => { levelManager.ModifyLevelFile("Load"); });
         filebarButtons[1].onClick.AddListener(SaveCurrentMap);
         filebarButtons[2].onClick.AddListener(() => { StartOrStopTest(true); });
@@ -741,11 +740,13 @@ public class WB_LevelEditor : MonoBehaviour
             if (_direction < 0 && viewCamera.orthographicSize > viewZoomRange.x)
             {
                 viewCamera.orthographicSize--;
+                if (!editorPlayer) editorPlayer = FindObjectOfType<GameInstance>().localPlayerCharacter;
                 editorPlayer.currentStats.movementSpeed--;
             }
             else if (_direction > 0 && viewCamera.orthographicSize < viewZoomRange.y)
             {
                 viewCamera.orthographicSize++;
+                if (!editorPlayer) editorPlayer = FindObjectOfType<GameInstance>().localPlayerCharacter;
                 editorPlayer.currentStats.movementSpeed++;
             }
         }

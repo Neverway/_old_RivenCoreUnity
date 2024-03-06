@@ -29,7 +29,7 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    [SerializeField] private GameObject stringField, intField, floatField, boolField, fieldListRoot;
+    [SerializeField] private GameObject stringField, intField, floatField, boolField, spriteStringField, fieldListRoot;
     
 
     //=-----------------=
@@ -43,7 +43,14 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
             switch (target.storedVariableData[i].type)
             {
                 case "System.String":
-                    target.SetVariableValue(null, target.storedVariableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
+                    if (target.storedVariableData[i].name.StartsWith("sprite"))
+                    {
+                        target.SetVariableValue(null, target.storedVariableData[i].name, fields[i].transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text);
+                    }
+                    else
+                    {
+                        target.SetVariableValue(null, target.storedVariableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
+                    }
                     break;
                 case "System.Int32":
                     target.SetVariableValue(null, target.storedVariableData[i].name, fields[i].transform.GetChild(1).GetComponent<TMP_InputField>().text);
@@ -82,8 +89,16 @@ public class WB_LevelEditor_Inspector : MonoBehaviour
             switch (target.storedVariableData[i].type)
             {
                 case "System.String":
-                    field = Instantiate(stringField, fieldListRoot.transform);
-                    field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.storedVariableData[i].value;
+                    if (target.storedVariableData[i].name.StartsWith("sprite"))
+                    {
+                        field = Instantiate(spriteStringField, fieldListRoot.transform);
+                        field.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = target.storedVariableData[i].value;
+                    }
+                    else
+                    {
+                        field = Instantiate(stringField, fieldListRoot.transform);
+                        field.transform.GetChild(1).GetComponent<TMP_InputField>().text = target.storedVariableData[i].value;
+                    }
                     break;
                 case "System.Int32":
                     field = Instantiate(intField, fieldListRoot.transform);

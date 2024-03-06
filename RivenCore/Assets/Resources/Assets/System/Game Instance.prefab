@@ -677,6 +677,7 @@ MonoBehaviour:
     - {fileID: 3601029168914885687, guid: 9ea99651ab07af3c685b598d5845478c, type: 3}
     - {fileID: 2332245345589349154, guid: 72b8f84df1e78ee4daa2d22fb1423db8, type: 3}
     - {fileID: 7922057297963016001, guid: b5cde969c3a7060f6b3a3a6914596ff4, type: 3}
+    - {fileID: 7922057297963016001, guid: 720dc80ed508aa6119172c9f8fd52ecb, type: 3}
     - {fileID: 180546214018986940, guid: e2d81fe5643ccb6708e58e8111dbf501, type: 3}
     - {fileID: 7534426266867017587, guid: 8b3bf821729d438dfa054003d1b07fbc, type: 3}
     - {fileID: 1757335017082320018, guid: 7017ff9daec705f28aad6b744513faaa, type: 3}
@@ -691,6 +692,7 @@ MonoBehaviour:
     spacers: []
   - name: General
     assets:
+    - {fileID: 7874037791496066305, guid: b03e9aa4a797a29bfb436565b73a1dcf, type: 3}
     - {fileID: 4291901077265551956, guid: 0212631ca034f55d096b5f4a2acc4b25, type: 3}
     - {fileID: 2169051669899643382, guid: d4f879056ce2e20d5a9233b53be37219, type: 3}
     - {fileID: 4003037813998541683, guid: 6a5090b9f891bdcb6a7a0b4e3d823b2c, type: 3}
@@ -735,6 +737,9 @@ MonoBehaviour:
     - {fileID: 3228016374961770188, guid: 0b437ed569a0e0f5e9c5ffbfa2f0117c, type: 3}
     - {fileID: 4428499950028505700, guid: f210299b2c14c57319618ff3d3866707, type: 3}
     - {fileID: 3436431032717455876, guid: 3d9c4e1cfd39513799110d9a52aeadeb, type: 3}
+    - {fileID: 5221929607545191465, guid: 0938a09f75e6463d2b0ffbbbdf7809fe, type: 3}
+    - {fileID: 5221929607545191465, guid: af318c3a26f5b143bb87e8c9c601d3b8, type: 3}
+    - {fileID: 5221929607545191465, guid: 6d9ae34cbfb982544ada9767a67c723f, type: 3}
     spacers: []
   spriteMemory:
   - {fileID: 21300000, guid: ed0983fc685fa38efbe80bc3275475b7, type: 3}
@@ -799,7 +804,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7e417adde7c96a383b330a8dc1e5d5d2, type: 2}
   missingTileFallback: {fileID: 0}
   missingObjectFallback: {fileID: 6965910688571006578, guid: 0d2f9a2fc0684444e948d48d2309d85f, type: 3}
-  missingSpriteFallback: {fileID: 0}
+  missingSpriteFallback: {fileID: 21300000, guid: 6557c4572c10cca909fd0c5446993926, type: 3}
   tilemaps: []
   assetsRoot: {fileID: 0}
   filePath: 

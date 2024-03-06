@@ -16895,16 +16895,6 @@
                     "name": "positionOffsetY",
                     "type": "System.Single",
                     "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "ruinswitch"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
                 }
             ]
         },
@@ -16948,16 +16938,6 @@
                     "name": "positionOffsetY",
                     "type": "System.Single",
                     "value": "0"
-                },
-                {
-                    "name": "signalChannel",
-                    "type": "System.String",
-                    "value": "ruinButton"
-                },
-                {
-                    "name": "isPowered",
-                    "type": "System.Boolean",
-                    "value": "False"
                 }
             ]
         },
